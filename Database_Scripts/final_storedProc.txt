@@ -5,6 +5,7 @@
 
 use mmn_FinalProject;
 
+--*** Add records ***
 --add client
 CREATE PROC addNewClient (
 	@fName VARCHAR(25),
@@ -26,7 +27,7 @@ AS
 		SELECT 1 FROM client
 		WHERE UPPER(fName) = UPPER(@fName)
 			AND UPPER(lName) = UPPER(@lName)
-			AND dateOfBirth == @dateOfBirth
+			AND dateOfBirth = @dateOfBirth
 	)
 BEGIN
 	SET NOCOUNT ON;
@@ -297,7 +298,7 @@ BEGIN
 	SET NOCOUNT ON;
 	BEGIN TRANSACTION
 		INSERT INTO payment(refillID, paymentType)
-		VALUES(@refillID, @paymentType)
+		VALUES(@refillID, UPPER(@paymentType))
 
 		IF @@ERROR <> 0
 			BEGIN
@@ -309,6 +310,207 @@ BEGIN
 			BEGIN
 				COMMIT TRANSACTION
 				PRINT('Record added successfully!')
+			END
+END
+GO
+
+-- *** Select Records ***
+--select client
+CREATE PROC selectClient (
+	@clientID INT
+)
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+	SELECT *
+	FROM client
+	WHERE clientID = @clientID
+END 
+GO
+
+--select prescription for certain client
+CREATE PROC selectPrescriptionPerClient (
+	@clientID INT
+)
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+	SELECT * 
+	FROM prescription
+	WHERE clientID = @clientID
+END
+GO
+
+--select client info and prescription info
+CREATE PROC selectClientPrescription (
+	@clientID INT
+)
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+	SELECT p.ClientID, (client.fName + ' ' + client.lName) AS 'Client Name'
+	FROM prescription AS P
+	INNER JOIN client ON client.clientID = p.clientID
+	WHERE client.clientID = @clientID
+END
+GO
+
+--select refills
+CREATE PROC selectRefill (
+	@refillID INT
+)
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+	SELECT *
+	FROM  refill
+	WHERE refillID = @refillID
+END
+GO
+
+-- *** Update Records ***
+-- update client
+CREATE PROC updateClient (
+	@clientID INT,
+	@fName VARCHAR(25),
+	@mInitial CHAR(1) = '',
+	@lName VARCHAR(25),
+	@street1 VARCHAR(100) = '',
+	@street2 VARCHAR(100) = '',
+	@city VARCHAR(25) = '',
+	@addr_state VARCHAR(25) = '',
+	@zip VARCHAR(10) = '',
+	@phone VARCHAR(15) = '',
+	@email VARCHAR(100) = '',
+	@gender CHAR(1),
+	@dateOfBirth DATE,
+	@username VARCHAR(25) = ''
+)
+AS
+BEGIN
+	SET NOCOUNT ON;
+	BEGIN TRANSACTION
+		UPDATE client
+		SET fName = @fName,
+			mInitial = @mInitial,
+			lName = @lName,
+			street1 = @street1,
+			street2 = @street2,
+			city = @city,
+			addr_state = @addr_state,
+			zip = @zip,
+			phone = @phone,
+			email = @email,
+			gender = @gender,
+			dateOfBirth = @dateOfBirth/*,
+			username = @username*/
+		WHERE clientID = @clientID
+
+		IF @@ERROR <> 0
+			BEGIN
+				ROLLBACK TRANSACTION
+				RAISERROR('Unable to update record.',16,1)
+				RETURN -1
+			END
+		ELSE
+			BEGIN
+				COMMIT TRANSACTION
+				PRINT('Record updated successfully.')
+			END
+END
+GO
+
+--update client username
+CREATE PROC updateClientUsername (
+	@username VARCHAR(25),
+	@clientID INT
+)
+AS
+BEGIN
+	SET NOCOUNT ON;
+	BEGIN TRANSACTION
+		UPDATE client
+		SET username = @username
+		WHERE clientID = @clientID
+
+		IF @@ERROR <> 0
+			BEGIN
+				ROLLBACK TRANSACTION
+				RAISERROR('Unable to update record.',16,1)
+				RETURN -1
+			END
+		ELSE
+			BEGIN
+				COMMIT TRANSACTION
+				PRINT('Record updated successfully!')
+			END
+END
+GO
+
+--update refill
+CREATE PROC updateRefill (
+	@refillID INT,
+	@prescriptionID INT,
+	@dosage VARCHAR(50),
+	@frequency VARCHAR(50),
+	@supplyDays TINYINT,
+	@quantitySupplied TINYINT,
+	@amountDue DECIMAL(7,2)
+)
+AS
+BEGIN
+	SET NOCOUNT ON;
+	BEGIN TRANSACTION
+		UPDATE refill
+		SET prescriptionID = @prescriptionID,
+			dosage = @dosage,
+			frequency = @frequency,
+			supplyDays = @supplyDays,
+			quantitySupplied = @quantitySupplied,
+			amountDue = @amountDue
+		WHERE refillID = @refillID
+
+		IF @@ERROR <> 0
+			BEGIN
+				ROLLBACK TRANSACTION
+				RAISERROR('Unable to update record.',16,1)
+				RETURN -1
+			END
+		ELSE
+			BEGIN
+				COMMIT TRANSACTION
+				PRINT('Record updated successfully!')
+			END
+END
+GO
+
+-- *** Delete Records ***
+--delete refill
+CREATE PROC deleteRefill (
+	@refillID INT
+)
+AS
+BEGIN
+	SET NOCOUNT ON;
+	BEGIN TRANSACTION
+		DELETE
+		FROM refill
+		WHERE refillID = @refillID
+
+		IF @@ERROR <> 0
+			BEGIN
+				ROLLBACK TRANSACTION
+				RAISERROR('Unable to delete record.',16,1)
+				RETURN -1
+			END
+		ELSE
+			BEGIN
+				COMMIT TRANSACTION
+				PRINT('Record deleted successfully!')
 			END
 END
 GO
