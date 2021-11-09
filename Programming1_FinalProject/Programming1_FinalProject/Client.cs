@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace Programming1_FinalProject
 {
+<<<<<<< Updated upstream
     public partial class Client : Form
     {
         public Client()
@@ -26,5 +27,19 @@ namespace Programming1_FinalProject
         {
 
         }
+=======
+<<<<<<< Updated upstream:Programming1_FinalProject/Programming1_FinalProject/Update.cs
+    public partial class Update : Form
+    {
+        public Update()
+=======
+    public partial class Client : Form
+    {
+        public Client()
+>>>>>>> Stashed changes:Programming1_FinalProject/Programming1_FinalProject/Client.cs
+        {
+            InitializeComponent();
+        }
+>>>>>>> Stashed changes
     }
 }
