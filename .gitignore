@@ -3,3 +3,5 @@ Programming1_FinalProject\FinalProject\FinalProject\bin\*
 Programming1_FinalProject\FinalProject\FinalProject\obj\*
 
 *.cache
+
+*.suo
