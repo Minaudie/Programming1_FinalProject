@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace Programming1_FinalProject
 {
-    public partial class Form1 : Form
+    public partial class Update : Form
     {
-        public Form1()
+        public Update()
         {
             InitializeComponent();
-        }
-
-        private void tabPage2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

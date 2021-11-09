@@ -1,7 +1,7 @@
 ﻿
 namespace Programming1_FinalProject
 {
-    partial class Form1
+    partial class Update
     {
         /// <summary>
         /// Required designer variable.
@@ -29,6 +29,7 @@ namespace Programming1_FinalProject
         /// </summary>
         private void InitializeComponent()
         {
+<<<<<<< Updated upstream:Programming1_FinalProject/Programming1_FinalProject/Form1.Designer.cs
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -88,11 +89,34 @@ namespace Programming1_FinalProject
             this.Name = "Form1";
             this.Text = "Form1";
             this.tabControl1.ResumeLayout(false);
+=======
+            this.lblUpdateHeader = new System.Windows.Forms.Label();
+            this.SuspendLayout();
+            // 
+            // lblUpdateHeader
+            // 
+            this.lblUpdateHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUpdateHeader.Location = new System.Drawing.Point(149, 46);
+            this.lblUpdateHeader.Name = "lblUpdateHeader";
+            this.lblUpdateHeader.Size = new System.Drawing.Size(490, 71);
+            this.lblUpdateHeader.TabIndex = 0;
+            this.lblUpdateHeader.Text = "Update Information";
+            // 
+            // Update
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblUpdateHeader);
+            this.Name = "Update";
+            this.Text = "Update";
+>>>>>>> Stashed changes:Programming1_FinalProject/Programming1_FinalProject/Update.Designer.cs
             this.ResumeLayout(false);
 
         }
 
         #endregion
+<<<<<<< Updated upstream:Programming1_FinalProject/Programming1_FinalProject/Form1.Designer.cs
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
@@ -100,4 +124,9 @@ namespace Programming1_FinalProject
         private System.Windows.Forms.TabPage tabPage5;
     }
 }
+=======
+>>>>>>> Stashed changes:Programming1_FinalProject/Programming1_FinalProject/Update.Designer.cs
 
+        private System.Windows.Forms.Label lblUpdateHeader;
+    }
+}
