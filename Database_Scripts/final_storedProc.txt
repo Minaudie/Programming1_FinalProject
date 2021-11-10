@@ -1,9 +1,15 @@
 /*
 	CNSA 212 Final Prokject
 	Stored Procedures
+
+	TO USE:
+	Select and execute the first line.
+	Then, unselect and run the entire thing. You will get errors.
+	Select and execute the first stored procedure.
+	Now you have all the procedures (yes it's weird).
 */
 
-use mmn_FinalProject;
+USE mmn_FinalProject;
 
 --*** Add records ***
 --add client

@@ -1,6 +1,11 @@
 /*
 	CNSA 212 Final Project
 	Database creation
+
+	TO USE:
+	Uncomment the first 2 lines, select them, and execute them.
+	Then, recomment them, select and execute the 3rd line (USE mmn...)
+	Then, unselect everything and run the entire script.
 */
 
 --USE master;

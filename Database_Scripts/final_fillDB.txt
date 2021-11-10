@@ -56,6 +56,6 @@ EXEC addNewRefill 1,'50mg','Twice daily',30,60,80.00
 
 EXEC addNewRefill 2,'10mg','Once daily',60,60,45.00
 
-EXEC newPayment 1,'CREDIT'
+EXEC newPayment 1000,'CREDIT'
 
-EXEC newPayment 2,'CASH'
+EXEC newPayment 1001,'CASH'
