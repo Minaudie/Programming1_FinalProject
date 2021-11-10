@@ -29,51 +29,56 @@ namespace Programming1_FinalProject
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtUsernameRegister = new System.Windows.Forms.TextBox();
-            this.txtPasswordRegister = new System.Windows.Forms.TextBox();
-            this.lblUsernameRegister = new System.Windows.Forms.Label();
-            this.lblPasswordRegister = new System.Windows.Forms.Label();
+            this.txtRegisterUsername = new System.Windows.Forms.TextBox();
+            this.txtRegisterPassword = new System.Windows.Forms.TextBox();
+            this.lblRegisterUsername = new System.Windows.Forms.Label();
+            this.lblRegisterPassword = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // txtUsernameRegister
+            // txtRegisterUsername
             // 
-            this.txtUsernameRegister.Location = new System.Drawing.Point(167, 168);
-            this.txtUsernameRegister.Name = "txtUsernameRegister";
-            this.txtUsernameRegister.Size = new System.Drawing.Size(384, 31);
-            this.txtUsernameRegister.TabIndex = 0;
+            this.txtRegisterUsername.Location = new System.Drawing.Point(84, 87);
+            this.txtRegisterUsername.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtRegisterUsername.Name = "txtRegisterUsername";
+            this.txtRegisterUsername.Size = new System.Drawing.Size(194, 20);
+            this.txtRegisterUsername.TabIndex = 0;
             // 
-            // txtPasswordRegister
+            // txtRegisterPassword
             // 
-            this.txtPasswordRegister.Location = new System.Drawing.Point(167, 294);
-            this.txtPasswordRegister.Name = "txtPasswordRegister";
-            this.txtPasswordRegister.Size = new System.Drawing.Size(384, 31);
-            this.txtPasswordRegister.TabIndex = 1;
+            this.txtRegisterPassword.Location = new System.Drawing.Point(84, 153);
+            this.txtRegisterPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtRegisterPassword.Name = "txtRegisterPassword";
+            this.txtRegisterPassword.Size = new System.Drawing.Size(194, 20);
+            this.txtRegisterPassword.TabIndex = 1;
             // 
-            // lblUsernameRegister
+            // lblRegisterUsername
             // 
-            this.lblUsernameRegister.Location = new System.Drawing.Point(273, 112);
-            this.lblUsernameRegister.Name = "lblUsernameRegister";
-            this.lblUsernameRegister.Size = new System.Drawing.Size(224, 35);
-            this.lblUsernameRegister.TabIndex = 2;
-            this.lblUsernameRegister.Text = "Create Username:";
+            this.lblRegisterUsername.Location = new System.Drawing.Point(136, 58);
+            this.lblRegisterUsername.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblRegisterUsername.Name = "lblRegisterUsername";
+            this.lblRegisterUsername.Size = new System.Drawing.Size(112, 18);
+            this.lblRegisterUsername.TabIndex = 2;
+            this.lblRegisterUsername.Text = "Create Username:";
             // 
-            // lblPasswordRegister
+            // lblRegisterPassword
             // 
-            this.lblPasswordRegister.Location = new System.Drawing.Point(273, 234);
-            this.lblPasswordRegister.Name = "lblPasswordRegister";
-            this.lblPasswordRegister.Size = new System.Drawing.Size(224, 35);
-            this.lblPasswordRegister.TabIndex = 3;
-            this.lblPasswordRegister.Text = "Create Password:";
+            this.lblRegisterPassword.Location = new System.Drawing.Point(136, 122);
+            this.lblRegisterPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblRegisterPassword.Name = "lblRegisterPassword";
+            this.lblRegisterPassword.Size = new System.Drawing.Size(112, 18);
+            this.lblRegisterPassword.TabIndex = 3;
+            this.lblRegisterPassword.Text = "Create Password:";
             // 
             // Register
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.lblPasswordRegister);
-            this.Controls.Add(this.lblUsernameRegister);
-            this.Controls.Add(this.txtPasswordRegister);
-            this.Controls.Add(this.txtUsernameRegister);
+            this.ClientSize = new System.Drawing.Size(400, 234);
+            this.Controls.Add(this.lblRegisterPassword);
+            this.Controls.Add(this.lblRegisterUsername);
+            this.Controls.Add(this.txtRegisterPassword);
+            this.Controls.Add(this.txtRegisterUsername);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Register";
             this.Text = "Register";
             this.ResumeLayout(false);
@@ -83,9 +88,9 @@ namespace Programming1_FinalProject
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtUsernameRegister;
-        private System.Windows.Forms.TextBox txtPasswordRegister;
-        private System.Windows.Forms.Label lblUsernameRegister;
-        private System.Windows.Forms.Label lblPasswordRegister;
+        private System.Windows.Forms.TextBox txtRegisterUsername;
+        private System.Windows.Forms.TextBox txtRegisterPassword;
+        private System.Windows.Forms.Label lblRegisterUsername;
+        private System.Windows.Forms.Label lblRegisterPassword;
     }
 }

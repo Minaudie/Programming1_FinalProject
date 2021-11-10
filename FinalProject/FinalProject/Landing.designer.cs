@@ -29,64 +29,70 @@ namespace Programming1_FinalProject
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtUsernameLanding = new System.Windows.Forms.TextBox();
-            this.txtPasswordLanding = new System.Windows.Forms.TextBox();
-            this.lblUsernameLanding = new System.Windows.Forms.Label();
-            this.lblPasswordLanding = new System.Windows.Forms.Label();
-            this.lblWelcomeLanding = new System.Windows.Forms.Label();
+            this.txtLandingUsername = new System.Windows.Forms.TextBox();
+            this.txtLandingPassword = new System.Windows.Forms.TextBox();
+            this.lblLandingUsername = new System.Windows.Forms.Label();
+            this.lblLandingPassword = new System.Windows.Forms.Label();
+            this.lblLandingWelcome = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // txtUsernameLanding
+            // txtLandingUsername
             // 
-            this.txtUsernameLanding.Location = new System.Drawing.Point(263, 202);
-            this.txtUsernameLanding.Name = "txtUsernameLanding";
-            this.txtUsernameLanding.Size = new System.Drawing.Size(416, 31);
-            this.txtUsernameLanding.TabIndex = 0;
+            this.txtLandingUsername.Location = new System.Drawing.Point(132, 105);
+            this.txtLandingUsername.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtLandingUsername.Name = "txtLandingUsername";
+            this.txtLandingUsername.Size = new System.Drawing.Size(210, 20);
+            this.txtLandingUsername.TabIndex = 0;
             // 
-            // txtPasswordLanding
+            // txtLandingPassword
             // 
-            this.txtPasswordLanding.Location = new System.Drawing.Point(263, 290);
-            this.txtPasswordLanding.Name = "txtPasswordLanding";
-            this.txtPasswordLanding.Size = new System.Drawing.Size(416, 31);
-            this.txtPasswordLanding.TabIndex = 1;
+            this.txtLandingPassword.Location = new System.Drawing.Point(132, 151);
+            this.txtLandingPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtLandingPassword.Name = "txtLandingPassword";
+            this.txtLandingPassword.Size = new System.Drawing.Size(210, 20);
+            this.txtLandingPassword.TabIndex = 1;
             // 
-            // lblUsernameLanding
+            // lblLandingUsername
             // 
-            this.lblUsernameLanding.AutoSize = true;
-            this.lblUsernameLanding.Location = new System.Drawing.Point(63, 207);
-            this.lblUsernameLanding.Name = "lblUsernameLanding";
-            this.lblUsernameLanding.Size = new System.Drawing.Size(116, 25);
-            this.lblUsernameLanding.TabIndex = 2;
-            this.lblUsernameLanding.Text = "Username:";
+            this.lblLandingUsername.AutoSize = true;
+            this.lblLandingUsername.Location = new System.Drawing.Point(32, 108);
+            this.lblLandingUsername.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblLandingUsername.Name = "lblLandingUsername";
+            this.lblLandingUsername.Size = new System.Drawing.Size(58, 13);
+            this.lblLandingUsername.TabIndex = 2;
+            this.lblLandingUsername.Text = "Username:";
             // 
-            // lblPasswordLanding
+            // lblLandingPassword
             // 
-            this.lblPasswordLanding.AutoSize = true;
-            this.lblPasswordLanding.Location = new System.Drawing.Point(63, 290);
-            this.lblPasswordLanding.Name = "lblPasswordLanding";
-            this.lblPasswordLanding.Size = new System.Drawing.Size(112, 25);
-            this.lblPasswordLanding.TabIndex = 3;
-            this.lblPasswordLanding.Text = "Password:";
+            this.lblLandingPassword.AutoSize = true;
+            this.lblLandingPassword.Location = new System.Drawing.Point(32, 151);
+            this.lblLandingPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblLandingPassword.Name = "lblLandingPassword";
+            this.lblLandingPassword.Size = new System.Drawing.Size(56, 13);
+            this.lblLandingPassword.TabIndex = 3;
+            this.lblLandingPassword.Text = "Password:";
             // 
-            // lblWelcomeLanding
+            // lblLandingWelcome
             // 
-            this.lblWelcomeLanding.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWelcomeLanding.Location = new System.Drawing.Point(311, 68);
-            this.lblWelcomeLanding.Name = "lblWelcomeLanding";
-            this.lblWelcomeLanding.Size = new System.Drawing.Size(416, 92);
-            this.lblWelcomeLanding.TabIndex = 4;
-            this.lblWelcomeLanding.Text = "Welcome";
+            this.lblLandingWelcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLandingWelcome.Location = new System.Drawing.Point(156, 35);
+            this.lblLandingWelcome.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblLandingWelcome.Name = "lblLandingWelcome";
+            this.lblLandingWelcome.Size = new System.Drawing.Size(208, 48);
+            this.lblLandingWelcome.TabIndex = 4;
+            this.lblLandingWelcome.Text = "Welcome";
             // 
             // Landing
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(890, 440);
-            this.Controls.Add(this.lblWelcomeLanding);
-            this.Controls.Add(this.lblPasswordLanding);
-            this.Controls.Add(this.lblUsernameLanding);
-            this.Controls.Add(this.txtPasswordLanding);
-            this.Controls.Add(this.txtUsernameLanding);
+            this.ClientSize = new System.Drawing.Size(445, 229);
+            this.Controls.Add(this.lblLandingWelcome);
+            this.Controls.Add(this.lblLandingPassword);
+            this.Controls.Add(this.lblLandingUsername);
+            this.Controls.Add(this.txtLandingPassword);
+            this.Controls.Add(this.txtLandingUsername);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Landing";
             this.Text = "Landing";
             this.ResumeLayout(false);
@@ -96,10 +102,10 @@ namespace Programming1_FinalProject
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtUsernameLanding;
-        private System.Windows.Forms.TextBox txtPasswordLanding;
-        private System.Windows.Forms.Label lblUsernameLanding;
-        private System.Windows.Forms.Label lblPasswordLanding;
-        private System.Windows.Forms.Label lblWelcomeLanding;
+        private System.Windows.Forms.TextBox txtLandingUsername;
+        private System.Windows.Forms.TextBox txtLandingPassword;
+        private System.Windows.Forms.Label lblLandingUsername;
+        private System.Windows.Forms.Label lblLandingPassword;
+        private System.Windows.Forms.Label lblLandingWelcome;
     }
 }
