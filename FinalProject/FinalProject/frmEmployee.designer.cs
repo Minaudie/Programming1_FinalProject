@@ -32,12 +32,12 @@ namespace Final_Project_Work_Space
         private void InitializeComponent()
         {
             this.tbWhole = new System.Windows.Forms.TabControl();
-            this.tbNewClient = new System.Windows.Forms.TabPage();
+            this.tbEmployee = new System.Windows.Forms.TabPage();
             this.btnEmployeeSave = new System.Windows.Forms.Button();
             this.btnCliClear = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.txtCliInsurance = new System.Windows.Forms.TextBox();
-            this.txtCliDOB = new System.Windows.Forms.TextBox();
+            this.txtEmployeeDOB = new System.Windows.Forms.TextBox();
             this.txtEmployeeGender = new System.Windows.Forms.TextBox();
             this.txtEmployeeEmail = new System.Windows.Forms.TextBox();
             this.txtEmployeePhone = new System.Windows.Forms.TextBox();
@@ -112,7 +112,7 @@ namespace Final_Project_Work_Space
             this.btnSeaDelete = new System.Windows.Forms.Button();
             this.btnSeaUpdate = new System.Windows.Forms.Button();
             this.tbWhole.SuspendLayout();
-            this.tbNewClient.SuspendLayout();
+            this.tbEmployee.SuspendLayout();
             this.tbNewPhysican.SuspendLayout();
             this.tbNewPerscription.SuspendLayout();
             this.tbNewRefill.SuspendLayout();
@@ -122,7 +122,7 @@ namespace Final_Project_Work_Space
             // 
             // tbWhole
             // 
-            this.tbWhole.Controls.Add(this.tbNewClient);
+            this.tbWhole.Controls.Add(this.tbEmployee);
             this.tbWhole.Controls.Add(this.tbNewPhysican);
             this.tbWhole.Controls.Add(this.tbNewPerscription);
             this.tbWhole.Controls.Add(this.tbNewRefill);
@@ -134,41 +134,41 @@ namespace Final_Project_Work_Space
             this.tbWhole.Size = new System.Drawing.Size(1576, 810);
             this.tbWhole.TabIndex = 0;
             // 
-            // tbNewClient
+            // tbEmployee
             // 
-            this.tbNewClient.Controls.Add(this.btnEmployeeSave);
-            this.tbNewClient.Controls.Add(this.btnCliClear);
-            this.tbNewClient.Controls.Add(this.label13);
-            this.tbNewClient.Controls.Add(this.txtCliInsurance);
-            this.tbNewClient.Controls.Add(this.txtCliDOB);
-            this.tbNewClient.Controls.Add(this.txtEmployeeGender);
-            this.tbNewClient.Controls.Add(this.txtEmployeeEmail);
-            this.tbNewClient.Controls.Add(this.txtEmployeePhone);
-            this.tbNewClient.Controls.Add(this.txtEmployeeZip);
-            this.tbNewClient.Controls.Add(this.txtEmployeeState);
-            this.tbNewClient.Controls.Add(this.txtEmployeeCity);
-            this.tbNewClient.Controls.Add(this.txtEmployeeAddress);
-            this.tbNewClient.Controls.Add(this.txtEmployeeLname);
-            this.tbNewClient.Controls.Add(this.txtEmployeeFname);
-            this.tbNewClient.Controls.Add(this.label11);
-            this.tbNewClient.Controls.Add(this.label10);
-            this.tbNewClient.Controls.Add(this.label9);
-            this.tbNewClient.Controls.Add(this.label8);
-            this.tbNewClient.Controls.Add(this.label7);
-            this.tbNewClient.Controls.Add(this.label6);
-            this.tbNewClient.Controls.Add(this.label5);
-            this.tbNewClient.Controls.Add(this.label4);
-            this.tbNewClient.Controls.Add(this.label3);
-            this.tbNewClient.Controls.Add(this.label2);
-            this.tbNewClient.Controls.Add(this.label1);
-            this.tbNewClient.Location = new System.Drawing.Point(8, 39);
-            this.tbNewClient.Margin = new System.Windows.Forms.Padding(6);
-            this.tbNewClient.Name = "tbNewClient";
-            this.tbNewClient.Padding = new System.Windows.Forms.Padding(6);
-            this.tbNewClient.Size = new System.Drawing.Size(1560, 763);
-            this.tbNewClient.TabIndex = 0;
-            this.tbNewClient.UseVisualStyleBackColor = true;
-            this.tbNewClient.Click += new System.EventHandler(this.tbNewClient_Click);
+            this.tbEmployee.Controls.Add(this.btnEmployeeSave);
+            this.tbEmployee.Controls.Add(this.btnCliClear);
+            this.tbEmployee.Controls.Add(this.label13);
+            this.tbEmployee.Controls.Add(this.txtCliInsurance);
+            this.tbEmployee.Controls.Add(this.txtEmployeeDOB);
+            this.tbEmployee.Controls.Add(this.txtEmployeeGender);
+            this.tbEmployee.Controls.Add(this.txtEmployeeEmail);
+            this.tbEmployee.Controls.Add(this.txtEmployeePhone);
+            this.tbEmployee.Controls.Add(this.txtEmployeeZip);
+            this.tbEmployee.Controls.Add(this.txtEmployeeState);
+            this.tbEmployee.Controls.Add(this.txtEmployeeCity);
+            this.tbEmployee.Controls.Add(this.txtEmployeeAddress);
+            this.tbEmployee.Controls.Add(this.txtEmployeeLname);
+            this.tbEmployee.Controls.Add(this.txtEmployeeFname);
+            this.tbEmployee.Controls.Add(this.label11);
+            this.tbEmployee.Controls.Add(this.label10);
+            this.tbEmployee.Controls.Add(this.label9);
+            this.tbEmployee.Controls.Add(this.label8);
+            this.tbEmployee.Controls.Add(this.label7);
+            this.tbEmployee.Controls.Add(this.label6);
+            this.tbEmployee.Controls.Add(this.label5);
+            this.tbEmployee.Controls.Add(this.label4);
+            this.tbEmployee.Controls.Add(this.label3);
+            this.tbEmployee.Controls.Add(this.label2);
+            this.tbEmployee.Controls.Add(this.label1);
+            this.tbEmployee.Location = new System.Drawing.Point(8, 39);
+            this.tbEmployee.Margin = new System.Windows.Forms.Padding(6);
+            this.tbEmployee.Name = "tbEmployee";
+            this.tbEmployee.Padding = new System.Windows.Forms.Padding(6);
+            this.tbEmployee.Size = new System.Drawing.Size(1560, 763);
+            this.tbEmployee.TabIndex = 0;
+            this.tbEmployee.UseVisualStyleBackColor = true;
+            this.tbEmployee.Click += new System.EventHandler(this.tbNewClient_Click);
             // 
             // btnEmployeeSave
             // 
@@ -208,13 +208,14 @@ namespace Final_Project_Work_Space
             this.txtCliInsurance.Size = new System.Drawing.Size(196, 31);
             this.txtCliInsurance.TabIndex = 24;
             // 
-            // txtCliDOB
+            // txtEmployeeDOB
             // 
-            this.txtCliDOB.Location = new System.Drawing.Point(704, 513);
-            this.txtCliDOB.Margin = new System.Windows.Forms.Padding(6);
-            this.txtCliDOB.Name = "txtCliDOB";
-            this.txtCliDOB.Size = new System.Drawing.Size(196, 31);
-            this.txtCliDOB.TabIndex = 22;
+            this.txtEmployeeDOB.Location = new System.Drawing.Point(704, 513);
+            this.txtEmployeeDOB.Margin = new System.Windows.Forms.Padding(6);
+            this.txtEmployeeDOB.Name = "txtEmployeeDOB";
+            this.txtEmployeeDOB.Size = new System.Drawing.Size(196, 31);
+            this.txtEmployeeDOB.TabIndex = 22;
+            this.txtEmployeeDOB.TextChanged += new System.EventHandler(this.txtEmployeeDOB_TextChanged);
             // 
             // txtEmployeeGender
             // 
@@ -223,7 +224,6 @@ namespace Final_Project_Work_Space
             this.txtEmployeeGender.Name = "txtEmployeeGender";
             this.txtEmployeeGender.Size = new System.Drawing.Size(196, 31);
             this.txtEmployeeGender.TabIndex = 21;
-           
             // 
             // txtEmployeeEmail
             // 
@@ -961,8 +961,8 @@ namespace Final_Project_Work_Space
             this.Text = "Employee";
             this.Load += new System.EventHandler(this.Employee_Load);
             this.tbWhole.ResumeLayout(false);
-            this.tbNewClient.ResumeLayout(false);
-            this.tbNewClient.PerformLayout();
+            this.tbEmployee.ResumeLayout(false);
+            this.tbEmployee.PerformLayout();
             this.tbNewPhysican.ResumeLayout(false);
             this.tbNewPhysican.PerformLayout();
             this.tbNewPerscription.ResumeLayout(false);
@@ -983,13 +983,13 @@ namespace Final_Project_Work_Space
         #endregion
 
         private System.Windows.Forms.TabControl tbWhole;
-        private System.Windows.Forms.TabPage tbNewClient;
+        private System.Windows.Forms.TabPage tbEmployee;
         private System.Windows.Forms.TabPage tbNewPhysican;
         private System.Windows.Forms.TabPage tbNewPerscription;
         private System.Windows.Forms.TabPage tbNewRefill;
         private System.Windows.Forms.TabPage tbSearch;
         private System.Windows.Forms.TextBox txtCliInsurance;
-        private System.Windows.Forms.TextBox txtCliDOB;
+        private System.Windows.Forms.TextBox txtEmployeeDOB;
         private System.Windows.Forms.TextBox txtEmployeeGender;
         private System.Windows.Forms.TextBox txtEmployeeEmail;
         private System.Windows.Forms.TextBox txtEmployeePhone;
