@@ -38,5 +38,58 @@ namespace Final_Project_Work_Space
         {
 
         }
+
+        private void btnCliClear_Click(object sender, EventArgs e)
+        {
+            txtCliFname.Text = "";
+            txtCliLname.Text = "";
+            txtCliAddress.Text = "";
+            txtCliCity.Text = "";
+            txtCliState.Text = "";
+            txtCliZip.Text = "";
+            txtCliPhone.Text = "";
+            txtCliEmail.Text = "";
+            txtCliAddress2.Text = "";
+            txtCliMidInt.Text = "";
+            rdoCliMale.Checked = false;
+            rdoCliFemale.Checked = false;
+            
+            ///Need Somthing for combo box yet
+
+        }
+
+        private void btnPhyClear_Click(object sender, EventArgs e)
+        {
+            txtPhyFname.Text = "";
+            txtPhyMidInt.Text = "";
+            txtPhyLname.Text = "";
+            txtPhyPhone.Text = "";
+            txtPhyEmail.Text = "";
+
+        }
+
+        private void btnPerClear_Click(object sender, EventArgs e)
+        {
+            txtPerClientID.Text = "";
+            txtPerPhysicanID.Text = "";
+            txtPerMedicationID.Text = "";
+            txtPerNumOfRefills.Text = "";
+
+                
+        }
+
+        private void btnRefCle_Click(object sender, EventArgs e)
+        {
+            txtRefPerscriptionID.Text = "";
+            txtRefDosage.Text = "";
+            txtRefFrequency.Text= "";
+            txtRefSupplyDays.Text = "";
+            txtRefQuantitySupplied.Text = "";
+            txtRefPrice.Text = "";
+            txtRefRefillID.Text = "";
+           /// need to clear payment type
+
+
+        }
     }
 }

@@ -31,10 +31,9 @@ namespace Final_Project_Work_Space
         {
             this.tbWhole = new System.Windows.Forms.TabControl();
             this.tbNewClient = new System.Windows.Forms.TabPage();
+            this.btnCliSave = new System.Windows.Forms.Button();
+            this.btnCliClear = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
-            this.txtCliInsurance = new System.Windows.Forms.TextBox();
-            this.txtCliDOB = new System.Windows.Forms.TextBox();
-            this.txtCliGender = new System.Windows.Forms.TextBox();
             this.txtCliEmail = new System.Windows.Forms.TextBox();
             this.txtCliPhone = new System.Windows.Forms.TextBox();
             this.txtCliZip = new System.Windows.Forms.TextBox();
@@ -55,6 +54,8 @@ namespace Final_Project_Work_Space
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tbNewPhysican = new System.Windows.Forms.TabPage();
+            this.btnPhySave = new System.Windows.Forms.Button();
+            this.btnPhyClear = new System.Windows.Forms.Button();
             this.txtPhyEmail = new System.Windows.Forms.TextBox();
             this.txtPhyPhone = new System.Windows.Forms.TextBox();
             this.txtPhyLname = new System.Windows.Forms.TextBox();
@@ -66,6 +67,8 @@ namespace Final_Project_Work_Space
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.tbNewPerscription = new System.Windows.Forms.TabPage();
+            this.btnPerSave = new System.Windows.Forms.Button();
+            this.btnPerClear = new System.Windows.Forms.Button();
             this.dtpPerStartDate = new System.Windows.Forms.DateTimePicker();
             this.dtptxtPerExperationDate = new System.Windows.Forms.DateTimePicker();
             this.label24 = new System.Windows.Forms.Label();
@@ -79,6 +82,8 @@ namespace Final_Project_Work_Space
             this.txtPerPhysicanID = new System.Windows.Forms.TextBox();
             this.txtPerClientID = new System.Windows.Forms.TextBox();
             this.tbNewRefill = new System.Windows.Forms.TabPage();
+            this.btnRefSave = new System.Windows.Forms.Button();
+            this.btnRefCle = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtRefRefillID = new System.Windows.Forms.TextBox();
             this.txtRefPaymentType = new System.Windows.Forms.ComboBox();
@@ -101,14 +106,14 @@ namespace Final_Project_Work_Space
             this.label25 = new System.Windows.Forms.Label();
             this.btnSeaDelete = new System.Windows.Forms.Button();
             this.btnSeaUpdate = new System.Windows.Forms.Button();
-            this.btnCliClear = new System.Windows.Forms.Button();
-            this.btnCliSave = new System.Windows.Forms.Button();
-            this.btnPhySave = new System.Windows.Forms.Button();
-            this.btnPhyClear = new System.Windows.Forms.Button();
-            this.btnPerSave = new System.Windows.Forms.Button();
-            this.btnPerClear = new System.Windows.Forms.Button();
-            this.btnRefSave = new System.Windows.Forms.Button();
-            this.btnRefCle = new System.Windows.Forms.Button();
+            this.rdoCliMale = new System.Windows.Forms.RadioButton();
+            this.rdoCliFemale = new System.Windows.Forms.RadioButton();
+            this.dtpCliDOB = new System.Windows.Forms.DateTimePicker();
+            this.cmbCliInsurance = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtCliAddress2 = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.txtCliMidInt = new System.Windows.Forms.TextBox();
             this.tbWhole.SuspendLayout();
             this.tbNewClient.SuspendLayout();
             this.tbNewPhysican.SuspendLayout();
@@ -133,12 +138,17 @@ namespace Final_Project_Work_Space
             // 
             // tbNewClient
             // 
+            this.tbNewClient.Controls.Add(this.txtCliMidInt);
+            this.tbNewClient.Controls.Add(this.label26);
+            this.tbNewClient.Controls.Add(this.txtCliAddress2);
+            this.tbNewClient.Controls.Add(this.label12);
+            this.tbNewClient.Controls.Add(this.cmbCliInsurance);
+            this.tbNewClient.Controls.Add(this.dtpCliDOB);
+            this.tbNewClient.Controls.Add(this.rdoCliFemale);
+            this.tbNewClient.Controls.Add(this.rdoCliMale);
             this.tbNewClient.Controls.Add(this.btnCliSave);
             this.tbNewClient.Controls.Add(this.btnCliClear);
             this.tbNewClient.Controls.Add(this.label13);
-            this.tbNewClient.Controls.Add(this.txtCliInsurance);
-            this.tbNewClient.Controls.Add(this.txtCliDOB);
-            this.tbNewClient.Controls.Add(this.txtCliGender);
             this.tbNewClient.Controls.Add(this.txtCliEmail);
             this.tbNewClient.Controls.Add(this.txtCliPhone);
             this.tbNewClient.Controls.Add(this.txtCliZip);
@@ -166,88 +176,86 @@ namespace Final_Project_Work_Space
             this.tbNewClient.Text = "New Client";
             this.tbNewClient.UseVisualStyleBackColor = true;
             // 
+            // btnCliSave
+            // 
+            this.btnCliSave.Location = new System.Drawing.Point(322, 369);
+            this.btnCliSave.Name = "btnCliSave";
+            this.btnCliSave.Size = new System.Drawing.Size(75, 23);
+            this.btnCliSave.TabIndex = 27;
+            this.btnCliSave.Text = "&Save";
+            this.btnCliSave.UseVisualStyleBackColor = true;
+            // 
+            // btnCliClear
+            // 
+            this.btnCliClear.Location = new System.Drawing.Point(517, 369);
+            this.btnCliClear.Name = "btnCliClear";
+            this.btnCliClear.Size = new System.Drawing.Size(75, 23);
+            this.btnCliClear.TabIndex = 26;
+            this.btnCliClear.Text = "&Clear";
+            this.btnCliClear.UseVisualStyleBackColor = true;
+            this.btnCliClear.Click += new System.EventHandler(this.btnCliClear_Click);
+            // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(293, 297);
+            this.label13.Location = new System.Drawing.Point(293, 321);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(54, 13);
             this.label13.TabIndex = 25;
             this.label13.Text = "Insurance";
             // 
-            // txtCliInsurance
-            // 
-            this.txtCliInsurance.Location = new System.Drawing.Point(352, 297);
-            this.txtCliInsurance.Name = "txtCliInsurance";
-            this.txtCliInsurance.Size = new System.Drawing.Size(100, 20);
-            this.txtCliInsurance.TabIndex = 24;
-            // 
-            // txtCliDOB
-            // 
-            this.txtCliDOB.Location = new System.Drawing.Point(352, 267);
-            this.txtCliDOB.Name = "txtCliDOB";
-            this.txtCliDOB.Size = new System.Drawing.Size(100, 20);
-            this.txtCliDOB.TabIndex = 22;
-            // 
-            // txtCliGender
-            // 
-            this.txtCliGender.Location = new System.Drawing.Point(352, 241);
-            this.txtCliGender.Name = "txtCliGender";
-            this.txtCliGender.Size = new System.Drawing.Size(100, 20);
-            this.txtCliGender.TabIndex = 21;
-            // 
             // txtCliEmail
             // 
-            this.txtCliEmail.Location = new System.Drawing.Point(352, 215);
+            this.txtCliEmail.Location = new System.Drawing.Point(402, 239);
             this.txtCliEmail.Name = "txtCliEmail";
             this.txtCliEmail.Size = new System.Drawing.Size(100, 20);
             this.txtCliEmail.TabIndex = 20;
             // 
             // txtCliPhone
             // 
-            this.txtCliPhone.Location = new System.Drawing.Point(352, 189);
+            this.txtCliPhone.Location = new System.Drawing.Point(402, 213);
             this.txtCliPhone.Name = "txtCliPhone";
             this.txtCliPhone.Size = new System.Drawing.Size(100, 20);
             this.txtCliPhone.TabIndex = 19;
             // 
             // txtCliZip
             // 
-            this.txtCliZip.Location = new System.Drawing.Point(352, 163);
+            this.txtCliZip.Location = new System.Drawing.Point(402, 187);
             this.txtCliZip.Name = "txtCliZip";
             this.txtCliZip.Size = new System.Drawing.Size(100, 20);
             this.txtCliZip.TabIndex = 17;
             // 
             // txtCliState
             // 
-            this.txtCliState.Location = new System.Drawing.Point(352, 137);
+            this.txtCliState.Location = new System.Drawing.Point(402, 161);
             this.txtCliState.Name = "txtCliState";
             this.txtCliState.Size = new System.Drawing.Size(100, 20);
             this.txtCliState.TabIndex = 16;
             // 
             // txtCliCity
             // 
-            this.txtCliCity.Location = new System.Drawing.Point(352, 108);
+            this.txtCliCity.Location = new System.Drawing.Point(402, 132);
             this.txtCliCity.Name = "txtCliCity";
             this.txtCliCity.Size = new System.Drawing.Size(100, 20);
             this.txtCliCity.TabIndex = 15;
             // 
             // txtCliAddress
             // 
-            this.txtCliAddress.Location = new System.Drawing.Point(352, 82);
+            this.txtCliAddress.Location = new System.Drawing.Point(402, 82);
             this.txtCliAddress.Name = "txtCliAddress";
             this.txtCliAddress.Size = new System.Drawing.Size(100, 20);
             this.txtCliAddress.TabIndex = 14;
             // 
             // txtCliLname
             // 
-            this.txtCliLname.Location = new System.Drawing.Point(352, 56);
+            this.txtCliLname.Location = new System.Drawing.Point(402, 28);
             this.txtCliLname.Name = "txtCliLname";
             this.txtCliLname.Size = new System.Drawing.Size(100, 20);
             this.txtCliLname.TabIndex = 13;
             // 
             // txtCliFname
             // 
-            this.txtCliFname.Location = new System.Drawing.Point(352, 33);
+            this.txtCliFname.Location = new System.Drawing.Point(402, 5);
             this.txtCliFname.Name = "txtCliFname";
             this.txtCliFname.Size = new System.Drawing.Size(100, 20);
             this.txtCliFname.TabIndex = 12;
@@ -255,7 +263,7 @@ namespace Final_Project_Work_Space
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(313, 274);
+            this.label11.Location = new System.Drawing.Point(313, 298);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(30, 13);
             this.label11.TabIndex = 10;
@@ -264,7 +272,7 @@ namespace Final_Project_Work_Space
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(301, 248);
+            this.label10.Location = new System.Drawing.Point(301, 272);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(42, 13);
             this.label10.TabIndex = 9;
@@ -274,7 +282,7 @@ namespace Final_Project_Work_Space
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(311, 222);
+            this.label9.Location = new System.Drawing.Point(311, 246);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(32, 13);
             this.label9.TabIndex = 8;
@@ -283,7 +291,7 @@ namespace Final_Project_Work_Space
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(343, 218);
+            this.label8.Location = new System.Drawing.Point(343, 242);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(0, 13);
             this.label8.TabIndex = 7;
@@ -291,7 +299,7 @@ namespace Final_Project_Work_Space
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(305, 189);
+            this.label7.Location = new System.Drawing.Point(305, 213);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(38, 13);
             this.label7.TabIndex = 6;
@@ -300,7 +308,7 @@ namespace Final_Project_Work_Space
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(293, 166);
+            this.label6.Location = new System.Drawing.Point(293, 190);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(50, 13);
             this.label6.TabIndex = 5;
@@ -309,7 +317,7 @@ namespace Final_Project_Work_Space
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(311, 140);
+            this.label5.Location = new System.Drawing.Point(311, 164);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(32, 13);
             this.label5.TabIndex = 4;
@@ -318,7 +326,7 @@ namespace Final_Project_Work_Space
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(319, 115);
+            this.label4.Location = new System.Drawing.Point(319, 139);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(24, 13);
             this.label4.TabIndex = 3;
@@ -329,14 +337,14 @@ namespace Final_Project_Work_Space
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(298, 84);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(45, 13);
+            this.label3.Size = new System.Drawing.Size(54, 13);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Address";
+            this.label3.Text = "Address 1";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(285, 56);
+            this.label2.Location = new System.Drawing.Point(285, 28);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 13);
             this.label2.TabIndex = 1;
@@ -345,7 +353,7 @@ namespace Final_Project_Work_Space
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(286, 33);
+            this.label1.Location = new System.Drawing.Point(286, 5);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 13);
             this.label1.TabIndex = 0;
@@ -373,6 +381,25 @@ namespace Final_Project_Work_Space
             this.tbNewPhysican.TabIndex = 1;
             this.tbNewPhysican.Text = "New Physican";
             this.tbNewPhysican.UseVisualStyleBackColor = true;
+            // 
+            // btnPhySave
+            // 
+            this.btnPhySave.Location = new System.Drawing.Point(223, 215);
+            this.btnPhySave.Name = "btnPhySave";
+            this.btnPhySave.Size = new System.Drawing.Size(75, 23);
+            this.btnPhySave.TabIndex = 29;
+            this.btnPhySave.Text = "&Save";
+            this.btnPhySave.UseVisualStyleBackColor = true;
+            // 
+            // btnPhyClear
+            // 
+            this.btnPhyClear.Location = new System.Drawing.Point(417, 215);
+            this.btnPhyClear.Name = "btnPhyClear";
+            this.btnPhyClear.Size = new System.Drawing.Size(75, 23);
+            this.btnPhyClear.TabIndex = 28;
+            this.btnPhyClear.Text = "&Clear";
+            this.btnPhyClear.UseVisualStyleBackColor = true;
+            this.btnPhyClear.Click += new System.EventHandler(this.btnPhyClear_Click);
             // 
             // txtPhyEmail
             // 
@@ -477,6 +504,25 @@ namespace Final_Project_Work_Space
             this.tbNewPerscription.TabIndex = 2;
             this.tbNewPerscription.Text = "New Perscription";
             this.tbNewPerscription.UseVisualStyleBackColor = true;
+            // 
+            // btnPerSave
+            // 
+            this.btnPerSave.Location = new System.Drawing.Point(273, 249);
+            this.btnPerSave.Name = "btnPerSave";
+            this.btnPerSave.Size = new System.Drawing.Size(75, 23);
+            this.btnPerSave.TabIndex = 29;
+            this.btnPerSave.Text = "&Save";
+            this.btnPerSave.UseVisualStyleBackColor = true;
+            // 
+            // btnPerClear
+            // 
+            this.btnPerClear.Location = new System.Drawing.Point(467, 249);
+            this.btnPerClear.Name = "btnPerClear";
+            this.btnPerClear.Size = new System.Drawing.Size(75, 23);
+            this.btnPerClear.TabIndex = 28;
+            this.btnPerClear.Text = "&Clear";
+            this.btnPerClear.UseVisualStyleBackColor = true;
+            this.btnPerClear.Click += new System.EventHandler(this.btnPerClear_Click);
             // 
             // dtpPerStartDate
             // 
@@ -599,6 +645,25 @@ namespace Final_Project_Work_Space
             this.tbNewRefill.Text = "New Refill";
             this.tbNewRefill.UseVisualStyleBackColor = true;
             this.tbNewRefill.Click += new System.EventHandler(this.tbNewRefill_Click);
+            // 
+            // btnRefSave
+            // 
+            this.btnRefSave.Location = new System.Drawing.Point(214, 329);
+            this.btnRefSave.Name = "btnRefSave";
+            this.btnRefSave.Size = new System.Drawing.Size(75, 23);
+            this.btnRefSave.TabIndex = 29;
+            this.btnRefSave.Text = "&Save";
+            this.btnRefSave.UseVisualStyleBackColor = true;
+            // 
+            // btnRefCle
+            // 
+            this.btnRefCle.Location = new System.Drawing.Point(408, 329);
+            this.btnRefCle.Name = "btnRefCle";
+            this.btnRefCle.Size = new System.Drawing.Size(75, 23);
+            this.btnRefCle.TabIndex = 28;
+            this.btnRefCle.Text = "&Clear";
+            this.btnRefCle.UseVisualStyleBackColor = true;
+            this.btnRefCle.Click += new System.EventHandler(this.btnRefCle_Click);
             // 
             // groupBox1
             // 
@@ -791,77 +856,74 @@ namespace Final_Project_Work_Space
             this.btnSeaUpdate.Text = "Update";
             this.btnSeaUpdate.UseVisualStyleBackColor = true;
             // 
-            // btnCliClear
+            // rdoCliMale
             // 
-            this.btnCliClear.Location = new System.Drawing.Point(446, 345);
-            this.btnCliClear.Name = "btnCliClear";
-            this.btnCliClear.Size = new System.Drawing.Size(75, 23);
-            this.btnCliClear.TabIndex = 26;
-            this.btnCliClear.Text = "&Clear";
-            this.btnCliClear.UseVisualStyleBackColor = true;
+            this.rdoCliMale.AutoSize = true;
+            this.rdoCliMale.Location = new System.Drawing.Point(389, 272);
+            this.rdoCliMale.Name = "rdoCliMale";
+            this.rdoCliMale.Size = new System.Drawing.Size(48, 17);
+            this.rdoCliMale.TabIndex = 28;
+            this.rdoCliMale.TabStop = true;
+            this.rdoCliMale.Text = "Male";
+            this.rdoCliMale.UseVisualStyleBackColor = true;
             // 
-            // btnCliSave
+            // rdoCliFemale
             // 
-            this.btnCliSave.Location = new System.Drawing.Point(252, 345);
-            this.btnCliSave.Name = "btnCliSave";
-            this.btnCliSave.Size = new System.Drawing.Size(75, 23);
-            this.btnCliSave.TabIndex = 27;
-            this.btnCliSave.Text = "&Save";
-            this.btnCliSave.UseVisualStyleBackColor = true;
+            this.rdoCliFemale.AutoSize = true;
+            this.rdoCliFemale.Location = new System.Drawing.Point(462, 270);
+            this.rdoCliFemale.Name = "rdoCliFemale";
+            this.rdoCliFemale.Size = new System.Drawing.Size(59, 17);
+            this.rdoCliFemale.TabIndex = 29;
+            this.rdoCliFemale.TabStop = true;
+            this.rdoCliFemale.Text = "Female";
+            this.rdoCliFemale.UseVisualStyleBackColor = true;
             // 
-            // btnPhySave
+            // dtpCliDOB
             // 
-            this.btnPhySave.Location = new System.Drawing.Point(223, 215);
-            this.btnPhySave.Name = "btnPhySave";
-            this.btnPhySave.Size = new System.Drawing.Size(75, 23);
-            this.btnPhySave.TabIndex = 29;
-            this.btnPhySave.Text = "&Save";
-            this.btnPhySave.UseVisualStyleBackColor = true;
+            this.dtpCliDOB.Location = new System.Drawing.Point(352, 295);
+            this.dtpCliDOB.Name = "dtpCliDOB";
+            this.dtpCliDOB.Size = new System.Drawing.Size(200, 20);
+            this.dtpCliDOB.TabIndex = 30;
             // 
-            // btnPhyClear
+            // cmbCliInsurance
             // 
-            this.btnPhyClear.Location = new System.Drawing.Point(417, 215);
-            this.btnPhyClear.Name = "btnPhyClear";
-            this.btnPhyClear.Size = new System.Drawing.Size(75, 23);
-            this.btnPhyClear.TabIndex = 28;
-            this.btnPhyClear.Text = "&Clear";
-            this.btnPhyClear.UseVisualStyleBackColor = true;
+            this.cmbCliInsurance.FormattingEnabled = true;
+            this.cmbCliInsurance.Location = new System.Drawing.Point(389, 321);
+            this.cmbCliInsurance.Name = "cmbCliInsurance";
+            this.cmbCliInsurance.Size = new System.Drawing.Size(121, 21);
+            this.cmbCliInsurance.TabIndex = 31;
             // 
-            // btnPerSave
+            // label12
             // 
-            this.btnPerSave.Location = new System.Drawing.Point(273, 249);
-            this.btnPerSave.Name = "btnPerSave";
-            this.btnPerSave.Size = new System.Drawing.Size(75, 23);
-            this.btnPerSave.TabIndex = 29;
-            this.btnPerSave.Text = "&Save";
-            this.btnPerSave.UseVisualStyleBackColor = true;
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(298, 113);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(54, 13);
+            this.label12.TabIndex = 32;
+            this.label12.Text = "Address 2";
             // 
-            // btnPerClear
+            // txtCliAddress2
             // 
-            this.btnPerClear.Location = new System.Drawing.Point(467, 249);
-            this.btnPerClear.Name = "btnPerClear";
-            this.btnPerClear.Size = new System.Drawing.Size(75, 23);
-            this.btnPerClear.TabIndex = 28;
-            this.btnPerClear.Text = "&Clear";
-            this.btnPerClear.UseVisualStyleBackColor = true;
+            this.txtCliAddress2.Location = new System.Drawing.Point(402, 106);
+            this.txtCliAddress2.Name = "txtCliAddress2";
+            this.txtCliAddress2.Size = new System.Drawing.Size(100, 20);
+            this.txtCliAddress2.TabIndex = 33;
             // 
-            // btnRefSave
+            // label26
             // 
-            this.btnRefSave.Location = new System.Drawing.Point(214, 329);
-            this.btnRefSave.Name = "btnRefSave";
-            this.btnRefSave.Size = new System.Drawing.Size(75, 23);
-            this.btnRefSave.TabIndex = 29;
-            this.btnRefSave.Text = "&Save";
-            this.btnRefSave.UseVisualStyleBackColor = true;
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(298, 57);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(39, 13);
+            this.label26.TabIndex = 34;
+            this.label26.Text = "Mid Int";
             // 
-            // btnRefCle
+            // txtCliMidInt
             // 
-            this.btnRefCle.Location = new System.Drawing.Point(408, 329);
-            this.btnRefCle.Name = "btnRefCle";
-            this.btnRefCle.Size = new System.Drawing.Size(75, 23);
-            this.btnRefCle.TabIndex = 28;
-            this.btnRefCle.Text = "&Clear";
-            this.btnRefCle.UseVisualStyleBackColor = true;
+            this.txtCliMidInt.Location = new System.Drawing.Point(434, 54);
+            this.txtCliMidInt.Name = "txtCliMidInt";
+            this.txtCliMidInt.Size = new System.Drawing.Size(35, 20);
+            this.txtCliMidInt.TabIndex = 35;
             // 
             // Employee
             // 
@@ -896,9 +958,6 @@ namespace Final_Project_Work_Space
         private System.Windows.Forms.TabPage tbNewPerscription;
         private System.Windows.Forms.TabPage tbNewRefill;
         private System.Windows.Forms.TabPage tbSearch;
-        private System.Windows.Forms.TextBox txtCliInsurance;
-        private System.Windows.Forms.TextBox txtCliDOB;
-        private System.Windows.Forms.TextBox txtCliGender;
         private System.Windows.Forms.TextBox txtCliEmail;
         private System.Windows.Forms.TextBox txtCliPhone;
         private System.Windows.Forms.TextBox txtCliZip;
@@ -970,5 +1029,13 @@ namespace Final_Project_Work_Space
         private System.Windows.Forms.Button btnPerClear;
         private System.Windows.Forms.Button btnRefSave;
         private System.Windows.Forms.Button btnRefCle;
+        private System.Windows.Forms.ComboBox cmbCliInsurance;
+        private System.Windows.Forms.DateTimePicker dtpCliDOB;
+        private System.Windows.Forms.RadioButton rdoCliFemale;
+        private System.Windows.Forms.RadioButton rdoCliMale;
+        private System.Windows.Forms.TextBox txtCliAddress2;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtCliMidInt;
+        private System.Windows.Forms.Label label26;
     }
 }
