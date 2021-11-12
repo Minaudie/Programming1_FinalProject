@@ -27,7 +27,14 @@ namespace Final_Project_Work_Space
 
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+       
+
+        private void txtRefFrequency_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbNewRefill_Click(object sender, EventArgs e)
         {
 
         }
