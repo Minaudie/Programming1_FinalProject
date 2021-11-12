@@ -97,10 +97,18 @@ namespace Final_Project_Work_Space
             this.label28 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.tbSearch = new System.Windows.Forms.TabPage();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.btnSeaDelete = new System.Windows.Forms.Button();
             this.btnSeaUpdate = new System.Windows.Forms.Button();
-            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.btnCliClear = new System.Windows.Forms.Button();
+            this.btnCliSave = new System.Windows.Forms.Button();
+            this.btnPhySave = new System.Windows.Forms.Button();
+            this.btnPhyClear = new System.Windows.Forms.Button();
+            this.btnPerSave = new System.Windows.Forms.Button();
+            this.btnPerClear = new System.Windows.Forms.Button();
+            this.btnRefSave = new System.Windows.Forms.Button();
+            this.btnRefCle = new System.Windows.Forms.Button();
             this.tbWhole.SuspendLayout();
             this.tbNewClient.SuspendLayout();
             this.tbNewPhysican.SuspendLayout();
@@ -125,6 +133,8 @@ namespace Final_Project_Work_Space
             // 
             // tbNewClient
             // 
+            this.tbNewClient.Controls.Add(this.btnCliSave);
+            this.tbNewClient.Controls.Add(this.btnCliClear);
             this.tbNewClient.Controls.Add(this.label13);
             this.tbNewClient.Controls.Add(this.txtCliInsurance);
             this.tbNewClient.Controls.Add(this.txtCliDOB);
@@ -344,6 +354,8 @@ namespace Final_Project_Work_Space
             // 
             // tbNewPhysican
             // 
+            this.tbNewPhysican.Controls.Add(this.btnPhySave);
+            this.tbNewPhysican.Controls.Add(this.btnPhyClear);
             this.tbNewPhysican.Controls.Add(this.txtPhyEmail);
             this.tbNewPhysican.Controls.Add(this.txtPhyPhone);
             this.tbNewPhysican.Controls.Add(this.txtPhyLname);
@@ -444,6 +456,8 @@ namespace Final_Project_Work_Space
             // 
             // tbNewPerscription
             // 
+            this.tbNewPerscription.Controls.Add(this.btnPerSave);
+            this.tbNewPerscription.Controls.Add(this.btnPerClear);
             this.tbNewPerscription.Controls.Add(this.dtpPerStartDate);
             this.tbNewPerscription.Controls.Add(this.dtptxtPerExperationDate);
             this.tbNewPerscription.Controls.Add(this.label24);
@@ -562,6 +576,8 @@ namespace Final_Project_Work_Space
             // 
             // tbNewRefill
             // 
+            this.tbNewRefill.Controls.Add(this.btnRefSave);
+            this.tbNewRefill.Controls.Add(this.btnRefCle);
             this.tbNewRefill.Controls.Add(this.groupBox1);
             this.tbNewRefill.Controls.Add(this.txtRefPerscriptionID);
             this.tbNewRefill.Controls.Add(this.txtRefDosage);
@@ -741,6 +757,13 @@ namespace Final_Project_Work_Space
             this.tbSearch.Text = "Search";
             this.tbSearch.UseVisualStyleBackColor = true;
             // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(342, 93);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(100, 20);
+            this.txtSearch.TabIndex = 4;
+            // 
             // label25
             // 
             this.label25.AutoSize = true;
@@ -768,12 +791,77 @@ namespace Final_Project_Work_Space
             this.btnSeaUpdate.Text = "Update";
             this.btnSeaUpdate.UseVisualStyleBackColor = true;
             // 
-            // txtSearch
+            // btnCliClear
             // 
-            this.txtSearch.Location = new System.Drawing.Point(342, 93);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(100, 20);
-            this.txtSearch.TabIndex = 4;
+            this.btnCliClear.Location = new System.Drawing.Point(446, 345);
+            this.btnCliClear.Name = "btnCliClear";
+            this.btnCliClear.Size = new System.Drawing.Size(75, 23);
+            this.btnCliClear.TabIndex = 26;
+            this.btnCliClear.Text = "&Clear";
+            this.btnCliClear.UseVisualStyleBackColor = true;
+            // 
+            // btnCliSave
+            // 
+            this.btnCliSave.Location = new System.Drawing.Point(252, 345);
+            this.btnCliSave.Name = "btnCliSave";
+            this.btnCliSave.Size = new System.Drawing.Size(75, 23);
+            this.btnCliSave.TabIndex = 27;
+            this.btnCliSave.Text = "&Save";
+            this.btnCliSave.UseVisualStyleBackColor = true;
+            // 
+            // btnPhySave
+            // 
+            this.btnPhySave.Location = new System.Drawing.Point(223, 215);
+            this.btnPhySave.Name = "btnPhySave";
+            this.btnPhySave.Size = new System.Drawing.Size(75, 23);
+            this.btnPhySave.TabIndex = 29;
+            this.btnPhySave.Text = "&Save";
+            this.btnPhySave.UseVisualStyleBackColor = true;
+            // 
+            // btnPhyClear
+            // 
+            this.btnPhyClear.Location = new System.Drawing.Point(417, 215);
+            this.btnPhyClear.Name = "btnPhyClear";
+            this.btnPhyClear.Size = new System.Drawing.Size(75, 23);
+            this.btnPhyClear.TabIndex = 28;
+            this.btnPhyClear.Text = "&Clear";
+            this.btnPhyClear.UseVisualStyleBackColor = true;
+            // 
+            // btnPerSave
+            // 
+            this.btnPerSave.Location = new System.Drawing.Point(273, 249);
+            this.btnPerSave.Name = "btnPerSave";
+            this.btnPerSave.Size = new System.Drawing.Size(75, 23);
+            this.btnPerSave.TabIndex = 29;
+            this.btnPerSave.Text = "&Save";
+            this.btnPerSave.UseVisualStyleBackColor = true;
+            // 
+            // btnPerClear
+            // 
+            this.btnPerClear.Location = new System.Drawing.Point(467, 249);
+            this.btnPerClear.Name = "btnPerClear";
+            this.btnPerClear.Size = new System.Drawing.Size(75, 23);
+            this.btnPerClear.TabIndex = 28;
+            this.btnPerClear.Text = "&Clear";
+            this.btnPerClear.UseVisualStyleBackColor = true;
+            // 
+            // btnRefSave
+            // 
+            this.btnRefSave.Location = new System.Drawing.Point(214, 329);
+            this.btnRefSave.Name = "btnRefSave";
+            this.btnRefSave.Size = new System.Drawing.Size(75, 23);
+            this.btnRefSave.TabIndex = 29;
+            this.btnRefSave.Text = "&Save";
+            this.btnRefSave.UseVisualStyleBackColor = true;
+            // 
+            // btnRefCle
+            // 
+            this.btnRefCle.Location = new System.Drawing.Point(408, 329);
+            this.btnRefCle.Name = "btnRefCle";
+            this.btnRefCle.Size = new System.Drawing.Size(75, 23);
+            this.btnRefCle.TabIndex = 28;
+            this.btnRefCle.Text = "&Clear";
+            this.btnRefCle.UseVisualStyleBackColor = true;
             // 
             // Employee
             // 
@@ -874,5 +962,13 @@ namespace Final_Project_Work_Space
         private System.Windows.Forms.TextBox txtRefPrice;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Button btnCliSave;
+        private System.Windows.Forms.Button btnCliClear;
+        private System.Windows.Forms.Button btnPhySave;
+        private System.Windows.Forms.Button btnPhyClear;
+        private System.Windows.Forms.Button btnPerSave;
+        private System.Windows.Forms.Button btnPerClear;
+        private System.Windows.Forms.Button btnRefSave;
+        private System.Windows.Forms.Button btnRefCle;
     }
 }
