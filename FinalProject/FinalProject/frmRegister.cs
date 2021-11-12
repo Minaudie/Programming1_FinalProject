@@ -39,6 +39,11 @@ namespace Programming1_FinalProject
                 btnRegistrationRegister.Enabled = true;
 
             }
+
+            else if ((txtRegisterPassword.Text.Trim().Length > 0) && (txtRegisterUsername.Text.Trim().Length > 0))
+            {
+                btnRegistrationRegister.Enabled = true;
+            }
             else
             {
                 btnRegistrationRegister.Enabled = false;
@@ -49,6 +54,21 @@ namespace Programming1_FinalProject
         private void Register_Load(object sender, EventArgs e) //disable button on form load
         {
             btnRegistrationRegister.Enabled = false;
+        }
+
+        private void txtRegisterClientID_TextChanged(object sender, EventArgs e)
+        {
+            if ((txtRegisterClientID.Text.Trim().Length > 0) && (txtRegisterUsername.Text.Trim().Length > 0))
+
+            {
+                btnRegistrationRegister.Enabled = true;
+
+            }
+            else
+            {
+                btnRegistrationRegister.Enabled = false;
+                //disable buttons
+            }
         }
     }
 }
