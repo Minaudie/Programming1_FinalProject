@@ -1,5 +1,4 @@
-﻿using Final_Project_Work_Space;
-using Programming1_FinalProject;
+﻿using Programming1_FinalProject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +17,7 @@ namespace FinalProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Employee());
+            Application.Run(new Register());
         }
     }
 }

@@ -32,7 +32,7 @@ CREATE TABLE clientPassword (
 	clientID INT NOT NULL --IDENTITY(1,1)
 		CONSTRAINT PK_clientIDPassword PRIMARY KEY
 		FOREIGN KEY(clientID) REFERENCES client(clientID),
-	client_password VARCHAR(50) NOT NULL
+	client_password VARCHAR(50) 
 );
 
 CREATE TABLE insurance (

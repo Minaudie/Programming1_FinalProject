@@ -17,14 +17,56 @@ namespace Programming1_FinalProject
             InitializeComponent();
         }
 
+        private void txtLandingUsername_TextChanged(object sender, EventArgs e)
+        {
+
+            if ((txtLandingUsername.Text.Trim().Length > 0) && (txtLandingPassword.Text.Trim().Length > 0))
+            {
+                btnLandingLogin.Enabled = true;
+
+            }
+            else
+            {
+                btnLandingLogin.Enabled = false;
+                //disable buttons
+            }
+        }
+
+        private void txtLandingPassword_TextChanged(object sender, EventArgs e)
+        {
+
+            if ((txtLandingPassword.Text.Trim().Length > 0) && (txtLandingUsername.Text.Trim().Length > 0))
+            {
+                btnLandingLogin.Enabled = true;
+
+            }
+            else
+            {
+                btnLandingLogin.Enabled = false;
+                //disable buttons
+            }
+        }
+
+        private void lblLandingWelcome_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Landing_Load(object sender, EventArgs e)
+        {
+            btnLandingLogin.Enabled = false;
+        }
+    }
+
         ///login button
         ///check for username: client or employee
         ///check password in relevant table
         ///allow login
         ///client -> client form
         ///employee -> employee form
-        
+
         ///new client registration link
         ///send to register form
     }
-}
+
+

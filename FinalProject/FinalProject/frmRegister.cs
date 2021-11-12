@@ -16,5 +16,45 @@ namespace Programming1_FinalProject
         {
             InitializeComponent();
         }
+
+        private void txtRegisterUsername_TextChanged(object sender, EventArgs e) //disable button unless values in fields
+        {
+
+            if ((txtRegisterUsername.Text.Trim().Length > 0) && (txtRegisterPassword.Text.Trim().Length > 0))
+            {
+                btnRegistrationRegister.Enabled = true;
+
+            }
+            else
+            {
+                btnRegistrationRegister.Enabled = false;
+                //disable buttons
+            }
+        }
+
+        private void txtRegisterPassword_TextChanged(object sender, EventArgs e) //disable button unless values in fields
+        {
+            if ((txtRegisterPassword.Text.Trim().Length > 0) && (txtRegisterUsername.Text.Trim().Length > 0))
+            {
+                btnRegistrationRegister.Enabled = true;
+
+            }
+            else
+            {
+                btnRegistrationRegister.Enabled = false;
+                //disable buttons
+            }
+        }
+
+        private void Register_Load(object sender, EventArgs e) //disable button on form load
+        {
+            btnRegistrationRegister.Enabled = false;
+        }
     }
 }
+
+///register username: register client username
+///register password: register client password
+///register button -> add new password to client table and new username to client table
+
+///cancel the operation / close the current form
