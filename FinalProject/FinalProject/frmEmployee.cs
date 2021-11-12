@@ -91,5 +91,10 @@ namespace Final_Project_Work_Space
 
 
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

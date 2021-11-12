@@ -31,6 +31,14 @@ namespace Final_Project_Work_Space
         {
             this.tbWhole = new System.Windows.Forms.TabControl();
             this.tbNewClient = new System.Windows.Forms.TabPage();
+            this.txtCliMidInt = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.txtCliAddress2 = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.cmbCliInsurance = new System.Windows.Forms.ComboBox();
+            this.dtpCliDOB = new System.Windows.Forms.DateTimePicker();
+            this.rdoCliFemale = new System.Windows.Forms.RadioButton();
+            this.rdoCliMale = new System.Windows.Forms.RadioButton();
             this.btnCliSave = new System.Windows.Forms.Button();
             this.btnCliClear = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
@@ -69,11 +77,9 @@ namespace Final_Project_Work_Space
             this.tbNewPerscription = new System.Windows.Forms.TabPage();
             this.btnPerSave = new System.Windows.Forms.Button();
             this.btnPerClear = new System.Windows.Forms.Button();
-            this.dtpPerStartDate = new System.Windows.Forms.DateTimePicker();
             this.dtptxtPerExperationDate = new System.Windows.Forms.DateTimePicker();
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -106,14 +112,6 @@ namespace Final_Project_Work_Space
             this.label25 = new System.Windows.Forms.Label();
             this.btnSeaDelete = new System.Windows.Forms.Button();
             this.btnSeaUpdate = new System.Windows.Forms.Button();
-            this.rdoCliMale = new System.Windows.Forms.RadioButton();
-            this.rdoCliFemale = new System.Windows.Forms.RadioButton();
-            this.dtpCliDOB = new System.Windows.Forms.DateTimePicker();
-            this.cmbCliInsurance = new System.Windows.Forms.ComboBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.txtCliAddress2 = new System.Windows.Forms.TextBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.txtCliMidInt = new System.Windows.Forms.TextBox();
             this.tbWhole.SuspendLayout();
             this.tbNewClient.SuspendLayout();
             this.tbNewPhysican.SuspendLayout();
@@ -175,6 +173,75 @@ namespace Final_Project_Work_Space
             this.tbNewClient.TabIndex = 0;
             this.tbNewClient.Text = "New Client";
             this.tbNewClient.UseVisualStyleBackColor = true;
+            // 
+            // txtCliMidInt
+            // 
+            this.txtCliMidInt.Location = new System.Drawing.Point(434, 54);
+            this.txtCliMidInt.Name = "txtCliMidInt";
+            this.txtCliMidInt.Size = new System.Drawing.Size(35, 20);
+            this.txtCliMidInt.TabIndex = 35;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(298, 57);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(39, 13);
+            this.label26.TabIndex = 34;
+            this.label26.Text = "Mid Int";
+            // 
+            // txtCliAddress2
+            // 
+            this.txtCliAddress2.Location = new System.Drawing.Point(402, 106);
+            this.txtCliAddress2.Name = "txtCliAddress2";
+            this.txtCliAddress2.Size = new System.Drawing.Size(100, 20);
+            this.txtCliAddress2.TabIndex = 33;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(298, 113);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(54, 13);
+            this.label12.TabIndex = 32;
+            this.label12.Text = "Address 2";
+            // 
+            // cmbCliInsurance
+            // 
+            this.cmbCliInsurance.FormattingEnabled = true;
+            this.cmbCliInsurance.Location = new System.Drawing.Point(389, 321);
+            this.cmbCliInsurance.Name = "cmbCliInsurance";
+            this.cmbCliInsurance.Size = new System.Drawing.Size(121, 21);
+            this.cmbCliInsurance.TabIndex = 31;
+            // 
+            // dtpCliDOB
+            // 
+            this.dtpCliDOB.Location = new System.Drawing.Point(352, 295);
+            this.dtpCliDOB.Name = "dtpCliDOB";
+            this.dtpCliDOB.Size = new System.Drawing.Size(200, 20);
+            this.dtpCliDOB.TabIndex = 30;
+            // 
+            // rdoCliFemale
+            // 
+            this.rdoCliFemale.AutoSize = true;
+            this.rdoCliFemale.Location = new System.Drawing.Point(462, 270);
+            this.rdoCliFemale.Name = "rdoCliFemale";
+            this.rdoCliFemale.Size = new System.Drawing.Size(59, 17);
+            this.rdoCliFemale.TabIndex = 29;
+            this.rdoCliFemale.TabStop = true;
+            this.rdoCliFemale.Text = "Female";
+            this.rdoCliFemale.UseVisualStyleBackColor = true;
+            // 
+            // rdoCliMale
+            // 
+            this.rdoCliMale.AutoSize = true;
+            this.rdoCliMale.Location = new System.Drawing.Point(389, 272);
+            this.rdoCliMale.Name = "rdoCliMale";
+            this.rdoCliMale.Size = new System.Drawing.Size(48, 17);
+            this.rdoCliMale.TabIndex = 28;
+            this.rdoCliMale.TabStop = true;
+            this.rdoCliMale.Text = "Male";
+            this.rdoCliMale.UseVisualStyleBackColor = true;
             // 
             // btnCliSave
             // 
@@ -265,18 +332,18 @@ namespace Final_Project_Work_Space
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(313, 298);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(30, 13);
+            this.label11.Size = new System.Drawing.Size(34, 13);
             this.label11.TabIndex = 10;
-            this.label11.Text = "DOB";
+            this.label11.Text = "DOB*";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(301, 272);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(42, 13);
+            this.label10.Size = new System.Drawing.Size(46, 13);
             this.label10.TabIndex = 9;
-            this.label10.Text = "Gender";
+            this.label10.Text = "Gender*";
             this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // label9
@@ -340,24 +407,25 @@ namespace Final_Project_Work_Space
             this.label3.Size = new System.Drawing.Size(54, 13);
             this.label3.TabIndex = 2;
             this.label3.Text = "Address 1";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(285, 28);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 13);
+            this.label2.Size = new System.Drawing.Size(62, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Last Name";
+            this.label2.Text = "Last Name*";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(286, 5);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 13);
+            this.label1.Size = new System.Drawing.Size(61, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "First Name";
+            this.label1.Text = "First Name*";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // tbNewPhysican
@@ -459,9 +527,9 @@ namespace Final_Project_Work_Space
             this.label16.AutoSize = true;
             this.label16.Location = new System.Drawing.Point(250, 116);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(58, 13);
+            this.label16.Size = new System.Drawing.Size(62, 13);
             this.label16.TabIndex = 2;
-            this.label16.Text = "Last Name";
+            this.label16.Text = "Last Name*";
             // 
             // label15
             // 
@@ -477,19 +545,17 @@ namespace Final_Project_Work_Space
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(251, 64);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(57, 13);
+            this.label14.Size = new System.Drawing.Size(61, 13);
             this.label14.TabIndex = 0;
-            this.label14.Text = "First Name";
+            this.label14.Text = "First Name*";
             // 
             // tbNewPerscription
             // 
             this.tbNewPerscription.Controls.Add(this.btnPerSave);
             this.tbNewPerscription.Controls.Add(this.btnPerClear);
-            this.tbNewPerscription.Controls.Add(this.dtpPerStartDate);
             this.tbNewPerscription.Controls.Add(this.dtptxtPerExperationDate);
             this.tbNewPerscription.Controls.Add(this.label24);
             this.tbNewPerscription.Controls.Add(this.label23);
-            this.tbNewPerscription.Controls.Add(this.label22);
             this.tbNewPerscription.Controls.Add(this.label21);
             this.tbNewPerscription.Controls.Add(this.label20);
             this.tbNewPerscription.Controls.Add(this.label19);
@@ -507,7 +573,7 @@ namespace Final_Project_Work_Space
             // 
             // btnPerSave
             // 
-            this.btnPerSave.Location = new System.Drawing.Point(273, 249);
+            this.btnPerSave.Location = new System.Drawing.Point(273, 223);
             this.btnPerSave.Name = "btnPerSave";
             this.btnPerSave.Size = new System.Drawing.Size(75, 23);
             this.btnPerSave.TabIndex = 29;
@@ -516,7 +582,7 @@ namespace Final_Project_Work_Space
             // 
             // btnPerClear
             // 
-            this.btnPerClear.Location = new System.Drawing.Point(467, 249);
+            this.btnPerClear.Location = new System.Drawing.Point(467, 223);
             this.btnPerClear.Name = "btnPerClear";
             this.btnPerClear.Size = new System.Drawing.Size(75, 23);
             this.btnPerClear.TabIndex = 28;
@@ -524,16 +590,9 @@ namespace Final_Project_Work_Space
             this.btnPerClear.UseVisualStyleBackColor = true;
             this.btnPerClear.Click += new System.EventHandler(this.btnPerClear_Click);
             // 
-            // dtpPerStartDate
-            // 
-            this.dtpPerStartDate.Location = new System.Drawing.Point(363, 149);
-            this.dtpPerStartDate.Name = "dtpPerStartDate";
-            this.dtpPerStartDate.Size = new System.Drawing.Size(200, 20);
-            this.dtpPerStartDate.TabIndex = 13;
-            // 
             // dtptxtPerExperationDate
             // 
-            this.dtptxtPerExperationDate.Location = new System.Drawing.Point(363, 175);
+            this.dtptxtPerExperationDate.Location = new System.Drawing.Point(363, 149);
             this.dtptxtPerExperationDate.Name = "dtptxtPerExperationDate";
             this.dtptxtPerExperationDate.Size = new System.Drawing.Size(200, 20);
             this.dtptxtPerExperationDate.TabIndex = 12;
@@ -541,60 +600,51 @@ namespace Final_Project_Work_Space
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(270, 203);
+            this.label24.Location = new System.Drawing.Point(270, 177);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(87, 13);
+            this.label24.Size = new System.Drawing.Size(91, 13);
             this.label24.TabIndex = 11;
-            this.label24.Text = "Number of Refills";
+            this.label24.Text = "Number of Refills*";
             // 
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(274, 177);
+            this.label23.Location = new System.Drawing.Point(274, 151);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(83, 13);
+            this.label23.Size = new System.Drawing.Size(87, 13);
             this.label23.TabIndex = 10;
-            this.label23.Text = "Experation Date";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(302, 155);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(55, 13);
-            this.label22.TabIndex = 9;
-            this.label22.Text = "Start Date";
+            this.label23.Text = "Experation Date*";
             // 
             // label21
             // 
             this.label21.AutoSize = true;
             this.label21.Location = new System.Drawing.Point(284, 125);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(73, 13);
+            this.label21.Size = new System.Drawing.Size(77, 13);
             this.label21.TabIndex = 8;
-            this.label21.Text = "Medication ID";
+            this.label21.Text = "Medication ID*";
             // 
             // label20
             // 
             this.label20.AutoSize = true;
             this.label20.Location = new System.Drawing.Point(293, 99);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(64, 13);
+            this.label20.Size = new System.Drawing.Size(68, 13);
             this.label20.TabIndex = 7;
-            this.label20.Text = "Physican ID";
+            this.label20.Text = "Physican ID*";
             // 
             // label19
             // 
             this.label19.AutoSize = true;
             this.label19.Location = new System.Drawing.Point(310, 72);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(47, 13);
+            this.label19.Size = new System.Drawing.Size(51, 13);
             this.label19.TabIndex = 6;
-            this.label19.Text = "Client ID";
+            this.label19.Text = "Client ID*";
             // 
             // txtPerNumOfRefills
             // 
-            this.txtPerNumOfRefills.Location = new System.Drawing.Point(363, 200);
+            this.txtPerNumOfRefills.Location = new System.Drawing.Point(363, 174);
             this.txtPerNumOfRefills.Name = "txtPerNumOfRefills";
             this.txtPerNumOfRefills.Size = new System.Drawing.Size(100, 20);
             this.txtPerNumOfRefills.TabIndex = 5;
@@ -698,9 +748,9 @@ namespace Final_Project_Work_Space
             this.label34.AutoSize = true;
             this.label34.Location = new System.Drawing.Point(74, 22);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(44, 13);
+            this.label34.Size = new System.Drawing.Size(48, 13);
             this.label34.TabIndex = 9;
-            this.label34.Text = "Refill ID";
+            this.label34.Text = "Refill ID*";
             // 
             // label35
             // 
@@ -768,45 +818,45 @@ namespace Final_Project_Work_Space
             this.label31.AutoSize = true;
             this.label31.Location = new System.Drawing.Point(212, 140);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(90, 13);
+            this.label31.Size = new System.Drawing.Size(94, 13);
             this.label31.TabIndex = 6;
-            this.label31.Text = "Qauntity Supplied";
+            this.label31.Text = "Qauntity Supplied*";
             // 
             // label30
             // 
             this.label30.AutoSize = true;
             this.label30.Location = new System.Drawing.Point(225, 114);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(77, 13);
+            this.label30.Size = new System.Drawing.Size(81, 13);
             this.label30.TabIndex = 5;
-            this.label30.Text = "Supply in Days";
+            this.label30.Text = "Supply in Days*";
             // 
             // label29
             // 
             this.label29.AutoSize = true;
             this.label29.Location = new System.Drawing.Point(245, 87);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(57, 13);
+            this.label29.Size = new System.Drawing.Size(61, 13);
             this.label29.TabIndex = 4;
-            this.label29.Text = "Frequency";
+            this.label29.Text = "Frequency*";
             // 
             // label28
             // 
             this.label28.AutoSize = true;
             this.label28.Location = new System.Drawing.Point(258, 63);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(44, 13);
+            this.label28.Size = new System.Drawing.Size(48, 13);
             this.label28.TabIndex = 3;
-            this.label28.Text = "Dosage";
+            this.label28.Text = "Dosage*";
             // 
             // label27
             // 
             this.label27.AutoSize = true;
             this.label27.Location = new System.Drawing.Point(226, 36);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(76, 13);
+            this.label27.Size = new System.Drawing.Size(80, 13);
             this.label27.TabIndex = 2;
-            this.label27.Text = "Perscription ID";
+            this.label27.Text = "Perscription ID*";
             // 
             // tbSearch
             // 
@@ -855,75 +905,6 @@ namespace Final_Project_Work_Space
             this.btnSeaUpdate.TabIndex = 0;
             this.btnSeaUpdate.Text = "Update";
             this.btnSeaUpdate.UseVisualStyleBackColor = true;
-            // 
-            // rdoCliMale
-            // 
-            this.rdoCliMale.AutoSize = true;
-            this.rdoCliMale.Location = new System.Drawing.Point(389, 272);
-            this.rdoCliMale.Name = "rdoCliMale";
-            this.rdoCliMale.Size = new System.Drawing.Size(48, 17);
-            this.rdoCliMale.TabIndex = 28;
-            this.rdoCliMale.TabStop = true;
-            this.rdoCliMale.Text = "Male";
-            this.rdoCliMale.UseVisualStyleBackColor = true;
-            // 
-            // rdoCliFemale
-            // 
-            this.rdoCliFemale.AutoSize = true;
-            this.rdoCliFemale.Location = new System.Drawing.Point(462, 270);
-            this.rdoCliFemale.Name = "rdoCliFemale";
-            this.rdoCliFemale.Size = new System.Drawing.Size(59, 17);
-            this.rdoCliFemale.TabIndex = 29;
-            this.rdoCliFemale.TabStop = true;
-            this.rdoCliFemale.Text = "Female";
-            this.rdoCliFemale.UseVisualStyleBackColor = true;
-            // 
-            // dtpCliDOB
-            // 
-            this.dtpCliDOB.Location = new System.Drawing.Point(352, 295);
-            this.dtpCliDOB.Name = "dtpCliDOB";
-            this.dtpCliDOB.Size = new System.Drawing.Size(200, 20);
-            this.dtpCliDOB.TabIndex = 30;
-            // 
-            // cmbCliInsurance
-            // 
-            this.cmbCliInsurance.FormattingEnabled = true;
-            this.cmbCliInsurance.Location = new System.Drawing.Point(389, 321);
-            this.cmbCliInsurance.Name = "cmbCliInsurance";
-            this.cmbCliInsurance.Size = new System.Drawing.Size(121, 21);
-            this.cmbCliInsurance.TabIndex = 31;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(298, 113);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(54, 13);
-            this.label12.TabIndex = 32;
-            this.label12.Text = "Address 2";
-            // 
-            // txtCliAddress2
-            // 
-            this.txtCliAddress2.Location = new System.Drawing.Point(402, 106);
-            this.txtCliAddress2.Name = "txtCliAddress2";
-            this.txtCliAddress2.Size = new System.Drawing.Size(100, 20);
-            this.txtCliAddress2.TabIndex = 33;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(298, 57);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(39, 13);
-            this.label26.TabIndex = 34;
-            this.label26.Text = "Mid Int";
-            // 
-            // txtCliMidInt
-            // 
-            this.txtCliMidInt.Location = new System.Drawing.Point(434, 54);
-            this.txtCliMidInt.Name = "txtCliMidInt";
-            this.txtCliMidInt.Size = new System.Drawing.Size(35, 20);
-            this.txtCliMidInt.TabIndex = 35;
             // 
             // Employee
             // 
@@ -990,7 +971,6 @@ namespace Final_Project_Work_Space
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label19;
@@ -1016,7 +996,6 @@ namespace Final_Project_Work_Space
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Button btnSeaDelete;
         private System.Windows.Forms.Button btnSeaUpdate;
-        private System.Windows.Forms.DateTimePicker dtpPerStartDate;
         private System.Windows.Forms.DateTimePicker dtptxtPerExperationDate;
         private System.Windows.Forms.TextBox txtRefPrice;
         private System.Windows.Forms.Label label32;
