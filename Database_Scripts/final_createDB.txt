@@ -116,6 +116,7 @@ CREATE TABLE payment (
 	paymentType VARCHAR(6)
 		CHECK(paymentType IN('CASH','CREDIT','DEBIT','CHECK')),
 	dateOfPayment DATETIME DEFAULT GETDATE()
+);
 
 CREATE TABLE employee (
 	employeeID INT NOT NULL IDENTITY(1,1)
