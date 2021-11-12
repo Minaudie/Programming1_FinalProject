@@ -16,5 +16,15 @@ namespace Programming1_FinalProject
         {
             InitializeComponent();
         }
+
+        ///login button
+        ///check for username: client or employee
+        ///check password in relevant table
+        ///allow login
+        ///client -> client form
+        ///employee -> employee form
+        
+        ///new client registration link
+        ///send to register form
     }
 }
