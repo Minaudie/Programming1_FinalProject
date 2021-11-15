@@ -17,17 +17,22 @@ namespace Programming1_FinalProject
             InitializeComponent();
         }
 
+        private void Register_Load(object sender, EventArgs e) //disable button on form load
+        {
+            btnRegisterRegister.Enabled = false;
+        }
+
         private void txtRegisterUsername_TextChanged(object sender, EventArgs e) //disable button unless values in fields
         {
 
             if ((txtRegisterUsername.Text.Trim().Length > 0) && (txtRegisterPassword.Text.Trim().Length > 0))
             {
-                btnRegistrationRegister.Enabled = true;
+                btnRegisterRegister.Enabled = true;
 
             }
             else
             {
-                btnRegistrationRegister.Enabled = false;
+                btnRegisterRegister.Enabled = false;
                 //disable buttons
             }
         }
@@ -36,37 +41,33 @@ namespace Programming1_FinalProject
         {
             if ((txtRegisterPassword.Text.Trim().Length > 0) && (txtRegisterUsername.Text.Trim().Length > 0))
             {
-                btnRegistrationRegister.Enabled = true;
+                btnRegisterRegister.Enabled = true;
 
             }
 
             else if ((txtRegisterPassword.Text.Trim().Length > 0) && (txtRegisterUsername.Text.Trim().Length > 0))
             {
-                btnRegistrationRegister.Enabled = true;
+                btnRegisterRegister.Enabled = true;
             }
             else
             {
-                btnRegistrationRegister.Enabled = false;
+                btnRegisterRegister.Enabled = false;
                 //disable buttons
             }
         }
 
-        private void Register_Load(object sender, EventArgs e) //disable button on form load
-        {
-            btnRegistrationRegister.Enabled = false;
-        }
 
         private void txtRegisterClientID_TextChanged(object sender, EventArgs e)
         {
             if ((txtRegisterClientID.Text.Trim().Length > 0) && (txtRegisterUsername.Text.Trim().Length > 0))
 
             {
-                btnRegistrationRegister.Enabled = true;
+                btnRegisterRegister.Enabled = true;
 
             }
             else
             {
-                btnRegistrationRegister.Enabled = false;
+                btnRegisterRegister.Enabled = false;
                 //disable buttons
             }
         }

@@ -90,7 +90,6 @@ namespace Programming1_FinalProject
             this.lblLandingWelcome.TabIndex = 4;
             this.lblLandingWelcome.Text = "Welcome";
             this.lblLandingWelcome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblLandingWelcome.Click += new System.EventHandler(this.lblLandingWelcome_Click);
             // 
             // btnLandingLogin
             // 

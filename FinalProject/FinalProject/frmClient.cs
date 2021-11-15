@@ -19,11 +19,6 @@ namespace Programming1_FinalProject
             InitializeComponent();
         }
 
-        private void lblLandingWelcome_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Client_Load(object sender, EventArgs e) //disable update button on loading
         {
             btnClientUpdate.Enabled = false;

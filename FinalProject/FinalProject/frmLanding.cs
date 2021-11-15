@@ -16,6 +16,10 @@ namespace Programming1_FinalProject
         {
             InitializeComponent();
         }
+        private void Landing_Load(object sender, EventArgs e)
+        {
+            btnLandingLogin.Enabled = false;
+        }
 
         private void txtLandingUsername_TextChanged(object sender, EventArgs e)
         {
@@ -47,15 +51,6 @@ namespace Programming1_FinalProject
             }
         }
 
-        private void lblLandingWelcome_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Landing_Load(object sender, EventArgs e)
-        {
-            btnLandingLogin.Enabled = false;
-        }
     }
 
         ///login button
