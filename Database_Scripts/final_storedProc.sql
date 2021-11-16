@@ -337,7 +337,7 @@ AS
 BEGIN
 	SET NOCOUNT ON;
 
-	SELECT * 
+	SELECT *
 	FROM prescription
 	WHERE clientID = @clientID
 END
@@ -351,10 +351,11 @@ AS
 BEGIN
 	SET NOCOUNT ON;
 
-	SELECT p.ClientID, (client.fName + ' ' + client.lName) AS 'Client Name'
-	FROM prescription AS P
-	INNER JOIN client ON client.clientID = p.clientID
-	WHERE client.clientID = @clientID
+	SELECT p.prescriptionID, p.clientID, c.fName + ' ' + c.lName AS 'Client Name',
+		p.physicianID, p.medicineID, p.startDate, p.expiryDate, p.refillCounter
+	FROM prescription AS p
+	INNER JOIN client AS c on c.clientID = p.clientID
+	WHERE p.clientID = @clientID
 END
 GO
 
