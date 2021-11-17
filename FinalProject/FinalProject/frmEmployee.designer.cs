@@ -34,8 +34,6 @@ namespace Final_Project_Work_Space
             this.tabSearch = new System.Windows.Forms.TabPage();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
-            this.btnSeaDelete = new System.Windows.Forms.Button();
-            this.btnSeaUpdate = new System.Windows.Forms.Button();
             this.tabNewRefill = new System.Windows.Forms.TabPage();
             this.btnRefSave = new System.Windows.Forms.Button();
             this.btnRefClear = new System.Windows.Forms.Button();
@@ -107,6 +105,19 @@ namespace Final_Project_Work_Space
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabEmployee = new System.Windows.Forms.TabControl();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.btnSeaSearch = new System.Windows.Forms.Button();
             this.tabSearch.SuspendLayout();
             this.tabNewRefill.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -114,25 +125,30 @@ namespace Final_Project_Work_Space
             this.tabNewPhysician.SuspendLayout();
             this.tabNewClient.SuspendLayout();
             this.tabEmployee.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.SuspendLayout();
             // 
             // tabSearch
             // 
+            this.tabSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.tabSearch.Controls.Add(this.btnSeaSearch);
+            this.tabSearch.Controls.Add(this.dataGridView3);
+            this.tabSearch.Controls.Add(this.dataGridView2);
+            this.tabSearch.Controls.Add(this.dataGridView1);
             this.tabSearch.Controls.Add(this.txtSearch);
             this.tabSearch.Controls.Add(this.label25);
-            this.tabSearch.Controls.Add(this.btnSeaDelete);
-            this.tabSearch.Controls.Add(this.btnSeaUpdate);
-            this.tabSearch.Location = new System.Drawing.Point(4, 22);
+            this.tabSearch.Location = new System.Drawing.Point(4, 25);
             this.tabSearch.Name = "tabSearch";
             this.tabSearch.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSearch.Size = new System.Drawing.Size(780, 395);
+            this.tabSearch.Size = new System.Drawing.Size(780, 392);
             this.tabSearch.TabIndex = 4;
             this.tabSearch.Text = "Search";
-            this.tabSearch.UseVisualStyleBackColor = true;
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(342, 93);
+            this.txtSearch.Location = new System.Drawing.Point(343, 93);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(100, 20);
             this.txtSearch.TabIndex = 4;
@@ -140,32 +156,15 @@ namespace Final_Project_Work_Space
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(287, 96);
+            this.label25.Location = new System.Drawing.Point(244, 96);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(40, 13);
             this.label25.TabIndex = 3;
             this.label25.Text = "Select:";
             // 
-            // btnSeaDelete
-            // 
-            this.btnSeaDelete.Location = new System.Drawing.Point(445, 156);
-            this.btnSeaDelete.Name = "btnSeaDelete";
-            this.btnSeaDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnSeaDelete.TabIndex = 1;
-            this.btnSeaDelete.Text = "Delete";
-            this.btnSeaDelete.UseVisualStyleBackColor = true;
-            // 
-            // btnSeaUpdate
-            // 
-            this.btnSeaUpdate.Location = new System.Drawing.Point(267, 156);
-            this.btnSeaUpdate.Name = "btnSeaUpdate";
-            this.btnSeaUpdate.Size = new System.Drawing.Size(75, 23);
-            this.btnSeaUpdate.TabIndex = 0;
-            this.btnSeaUpdate.Text = "Update";
-            this.btnSeaUpdate.UseVisualStyleBackColor = true;
-            // 
             // tabNewRefill
             // 
+            this.tabNewRefill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.tabNewRefill.Controls.Add(this.btnRefSave);
             this.tabNewRefill.Controls.Add(this.btnRefClear);
             this.tabNewRefill.Controls.Add(this.groupBox1);
@@ -181,13 +180,12 @@ namespace Final_Project_Work_Space
             this.tabNewRefill.Controls.Add(this.label29);
             this.tabNewRefill.Controls.Add(this.label28);
             this.tabNewRefill.Controls.Add(this.label27);
-            this.tabNewRefill.Location = new System.Drawing.Point(4, 22);
+            this.tabNewRefill.Location = new System.Drawing.Point(4, 25);
             this.tabNewRefill.Name = "tabNewRefill";
             this.tabNewRefill.Padding = new System.Windows.Forms.Padding(3);
-            this.tabNewRefill.Size = new System.Drawing.Size(780, 395);
+            this.tabNewRefill.Size = new System.Drawing.Size(780, 392);
             this.tabNewRefill.TabIndex = 3;
             this.tabNewRefill.Text = "New Refill";
-            this.tabNewRefill.UseVisualStyleBackColor = true;
             this.tabNewRefill.Click += new System.EventHandler(this.tabNewRefill_Click);
             // 
             // btnRefSave
@@ -343,6 +341,10 @@ namespace Final_Project_Work_Space
             // 
             // tabNewPrescription
             // 
+            this.tabNewPrescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.tabNewPrescription.Controls.Add(this.label39);
+            this.tabNewPrescription.Controls.Add(this.label38);
+            this.tabNewPrescription.Controls.Add(this.label37);
             this.tabNewPrescription.Controls.Add(this.btnPreSave);
             this.tabNewPrescription.Controls.Add(this.btnPreClear);
             this.tabNewPrescription.Controls.Add(this.dtpPreExpirationDate);
@@ -355,13 +357,12 @@ namespace Final_Project_Work_Space
             this.tabNewPrescription.Controls.Add(this.txtPreMedicationID);
             this.tabNewPrescription.Controls.Add(this.txtPrePhysicanID);
             this.tabNewPrescription.Controls.Add(this.txtPreClientID);
-            this.tabNewPrescription.Location = new System.Drawing.Point(4, 22);
+            this.tabNewPrescription.Location = new System.Drawing.Point(4, 25);
             this.tabNewPrescription.Name = "tabNewPrescription";
             this.tabNewPrescription.Padding = new System.Windows.Forms.Padding(3);
-            this.tabNewPrescription.Size = new System.Drawing.Size(780, 395);
+            this.tabNewPrescription.Size = new System.Drawing.Size(780, 392);
             this.tabNewPrescription.TabIndex = 2;
             this.tabNewPrescription.Text = "New Prescription";
-            this.tabNewPrescription.UseVisualStyleBackColor = true;
             this.tabNewPrescription.Click += new System.EventHandler(this.tabNewPrescription_Click);
             // 
             // btnPreSave
@@ -404,7 +405,7 @@ namespace Final_Project_Work_Space
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(274, 177);
+            this.label23.Location = new System.Drawing.Point(269, 177);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(79, 13);
             this.label23.TabIndex = 10;
@@ -413,7 +414,7 @@ namespace Final_Project_Work_Space
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(284, 125);
+            this.label21.Location = new System.Drawing.Point(279, 125);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(73, 13);
             this.label21.TabIndex = 8;
@@ -422,7 +423,7 @@ namespace Final_Project_Work_Space
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(293, 99);
+            this.label20.Location = new System.Drawing.Point(288, 99);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(64, 13);
             this.label20.TabIndex = 7;
@@ -431,7 +432,7 @@ namespace Final_Project_Work_Space
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(310, 72);
+            this.label19.Location = new System.Drawing.Point(305, 72);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(47, 13);
             this.label19.TabIndex = 6;
@@ -471,6 +472,9 @@ namespace Final_Project_Work_Space
             // 
             // tabNewPhysician
             // 
+            this.tabNewPhysician.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.tabNewPhysician.Controls.Add(this.label36);
+            this.tabNewPhysician.Controls.Add(this.label34);
             this.tabNewPhysician.Controls.Add(this.btnPhySave);
             this.tabNewPhysician.Controls.Add(this.btnPhyClear);
             this.tabNewPhysician.Controls.Add(this.txtPhyEmail);
@@ -483,13 +487,12 @@ namespace Final_Project_Work_Space
             this.tabNewPhysician.Controls.Add(this.label16);
             this.tabNewPhysician.Controls.Add(this.label15);
             this.tabNewPhysician.Controls.Add(this.label14);
-            this.tabNewPhysician.Location = new System.Drawing.Point(4, 22);
+            this.tabNewPhysician.Location = new System.Drawing.Point(4, 25);
             this.tabNewPhysician.Name = "tabNewPhysician";
             this.tabNewPhysician.Padding = new System.Windows.Forms.Padding(3);
-            this.tabNewPhysician.Size = new System.Drawing.Size(780, 395);
+            this.tabNewPhysician.Size = new System.Drawing.Size(780, 392);
             this.tabNewPhysician.TabIndex = 1;
             this.tabNewPhysician.Text = "New Physician";
-            this.tabNewPhysician.UseVisualStyleBackColor = true;
             this.tabNewPhysician.Click += new System.EventHandler(this.tabNewPhysician_Click);
             // 
             // btnPhySave
@@ -552,7 +555,7 @@ namespace Final_Project_Work_Space
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(276, 171);
+            this.label18.Location = new System.Drawing.Point(273, 171);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(32, 13);
             this.label18.TabIndex = 4;
@@ -561,7 +564,7 @@ namespace Final_Project_Work_Space
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(270, 142);
+            this.label17.Location = new System.Drawing.Point(267, 142);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(38, 13);
             this.label17.TabIndex = 3;
@@ -570,7 +573,7 @@ namespace Final_Project_Work_Space
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(250, 116);
+            this.label16.Location = new System.Drawing.Point(247, 116);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(58, 13);
             this.label16.TabIndex = 2;
@@ -579,7 +582,7 @@ namespace Final_Project_Work_Space
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(269, 93);
+            this.label15.Location = new System.Drawing.Point(266, 93);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(39, 13);
             this.label15.TabIndex = 1;
@@ -588,7 +591,7 @@ namespace Final_Project_Work_Space
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(251, 64);
+            this.label14.Location = new System.Drawing.Point(248, 64);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(57, 13);
             this.label14.TabIndex = 0;
@@ -596,6 +599,11 @@ namespace Final_Project_Work_Space
             // 
             // tabNewClient
             // 
+            this.tabNewClient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.tabNewClient.Controls.Add(this.label33);
+            this.tabNewClient.Controls.Add(this.label26);
+            this.tabNewClient.Controls.Add(this.label22);
+            this.tabNewClient.Controls.Add(this.label12);
             this.tabNewClient.Controls.Add(this.btnClientSave);
             this.tabNewClient.Controls.Add(this.btnClientClear);
             this.tabNewClient.Controls.Add(this.label13);
@@ -621,13 +629,12 @@ namespace Final_Project_Work_Space
             this.tabNewClient.Controls.Add(this.label3);
             this.tabNewClient.Controls.Add(this.label2);
             this.tabNewClient.Controls.Add(this.label1);
-            this.tabNewClient.Location = new System.Drawing.Point(4, 22);
+            this.tabNewClient.Location = new System.Drawing.Point(4, 25);
             this.tabNewClient.Name = "tabNewClient";
             this.tabNewClient.Padding = new System.Windows.Forms.Padding(3);
-            this.tabNewClient.Size = new System.Drawing.Size(780, 395);
+            this.tabNewClient.Size = new System.Drawing.Size(780, 392);
             this.tabNewClient.TabIndex = 0;
             this.tabNewClient.Text = "New Client";
-            this.tabNewClient.UseVisualStyleBackColor = true;
             this.tabNewClient.Click += new System.EventHandler(this.tbNewClient_Click);
             // 
             // btnClientSave
@@ -834,12 +841,13 @@ namespace Final_Project_Work_Space
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(286, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 13);
+            this.label1.Size = new System.Drawing.Size(60, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "First Name";
+            this.label1.Text = "First Name ";
             // 
             // tabEmployee
             // 
+            this.tabEmployee.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
             this.tabEmployee.Controls.Add(this.tabNewClient);
             this.tabEmployee.Controls.Add(this.tabNewPhysician);
             this.tabEmployee.Controls.Add(this.tabNewPrescription);
@@ -850,6 +858,138 @@ namespace Final_Project_Work_Space
             this.tabEmployee.SelectedIndex = 0;
             this.tabEmployee.Size = new System.Drawing.Size(788, 421);
             this.tabEmployee.TabIndex = 0;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.Red;
+            this.label12.Location = new System.Drawing.Point(339, 33);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(13, 16);
+            this.label12.TabIndex = 28;
+            this.label12.Text = "*";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.ForeColor = System.Drawing.Color.Red;
+            this.label22.Location = new System.Drawing.Point(339, 53);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(13, 16);
+            this.label22.TabIndex = 29;
+            this.label22.Text = "*";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.ForeColor = System.Drawing.Color.Red;
+            this.label26.Location = new System.Drawing.Point(339, 245);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(13, 16);
+            this.label26.TabIndex = 30;
+            this.label26.Text = "*";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.ForeColor = System.Drawing.Color.Red;
+            this.label33.Location = new System.Drawing.Point(339, 272);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(13, 16);
+            this.label33.TabIndex = 31;
+            this.label33.Text = "*";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.ForeColor = System.Drawing.Color.Red;
+            this.label34.Location = new System.Drawing.Point(300, 62);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(13, 16);
+            this.label34.TabIndex = 30;
+            this.label34.Text = "*";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label36.ForeColor = System.Drawing.Color.Red;
+            this.label36.Location = new System.Drawing.Point(300, 114);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(13, 16);
+            this.label36.TabIndex = 31;
+            this.label36.Text = "*";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label37.ForeColor = System.Drawing.Color.Red;
+            this.label37.Location = new System.Drawing.Point(347, 96);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(13, 16);
+            this.label37.TabIndex = 30;
+            this.label37.Text = "*";
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label38.ForeColor = System.Drawing.Color.Red;
+            this.label38.Location = new System.Drawing.Point(347, 70);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(13, 16);
+            this.label38.TabIndex = 31;
+            this.label38.Text = "*";
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label39.ForeColor = System.Drawing.Color.Red;
+            this.label39.Location = new System.Drawing.Point(347, 122);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(13, 16);
+            this.label39.TabIndex = 32;
+            this.label39.Text = "*";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(522, 190);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.TabIndex = 5;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(267, 190);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView2.TabIndex = 6;
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(8, 190);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView3.TabIndex = 7;
+            // 
+            // btnSeaSearch
+            // 
+            this.btnSeaSearch.Location = new System.Drawing.Point(498, 93);
+            this.btnSeaSearch.Name = "btnSeaSearch";
+            this.btnSeaSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSeaSearch.TabIndex = 8;
+            this.btnSeaSearch.Text = "Search";
+            this.btnSeaSearch.UseVisualStyleBackColor = true;
             // 
             // Employee
             // 
@@ -873,6 +1013,9 @@ namespace Final_Project_Work_Space
             this.tabNewClient.ResumeLayout(false);
             this.tabNewClient.PerformLayout();
             this.tabEmployee.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -885,8 +1028,6 @@ namespace Final_Project_Work_Space
         private System.Windows.Forms.TabPage tabSearch;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Button btnSeaDelete;
-        private System.Windows.Forms.Button btnSeaUpdate;
         private System.Windows.Forms.TabPage tabNewRefill;
         private System.Windows.Forms.Button btnRefSave;
         private System.Windows.Forms.Button btnRefClear;
@@ -958,5 +1099,18 @@ namespace Final_Project_Work_Space
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabControl tabEmployee;
+        private System.Windows.Forms.Button btnSeaSearch;
+        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label12;
     }
 }

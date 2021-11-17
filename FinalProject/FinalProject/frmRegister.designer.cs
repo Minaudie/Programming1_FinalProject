@@ -44,7 +44,7 @@ namespace Programming1_FinalProject
             // 
             this.txtRegisterUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRegisterUsername.Location = new System.Drawing.Point(91, 163);
-            this.txtRegisterUsername.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtRegisterUsername.Margin = new System.Windows.Forms.Padding(2);
             this.txtRegisterUsername.Name = "txtRegisterUsername";
             this.txtRegisterUsername.Size = new System.Drawing.Size(213, 23);
             this.txtRegisterUsername.TabIndex = 0;
@@ -54,7 +54,7 @@ namespace Programming1_FinalProject
             // 
             this.txtRegisterPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRegisterPassword.Location = new System.Drawing.Point(91, 228);
-            this.txtRegisterPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtRegisterPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtRegisterPassword.Name = "txtRegisterPassword";
             this.txtRegisterPassword.Size = new System.Drawing.Size(213, 23);
             this.txtRegisterPassword.TabIndex = 1;
@@ -115,7 +115,7 @@ namespace Programming1_FinalProject
             // txtRegisterClientID
             // 
             this.txtRegisterClientID.Location = new System.Drawing.Point(91, 100);
-            this.txtRegisterClientID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtRegisterClientID.Margin = new System.Windows.Forms.Padding(2);
             this.txtRegisterClientID.Name = "txtRegisterClientID";
             this.txtRegisterClientID.Size = new System.Drawing.Size(213, 20);
             this.txtRegisterClientID.TabIndex = 6;
@@ -135,6 +135,7 @@ namespace Programming1_FinalProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(393, 378);
             this.Controls.Add(this.lblRegisterClientID);
             this.Controls.Add(this.txtRegisterClientID);
@@ -145,7 +146,7 @@ namespace Programming1_FinalProject
             this.Controls.Add(this.lblRegisterUsername);
             this.Controls.Add(this.txtRegisterPassword);
             this.Controls.Add(this.txtRegisterUsername);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Register";
             this.Text = "Register";
             this.Load += new System.EventHandler(this.Register_Load);
