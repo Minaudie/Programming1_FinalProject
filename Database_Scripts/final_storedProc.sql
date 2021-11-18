@@ -444,8 +444,7 @@ CREATE PROC updateClient (
 	@phone VARCHAR(15) = '',
 	@email VARCHAR(100) = '',
 	@gender CHAR(1),
-	@dateOfBirth DATE,
-	@username VARCHAR(25) = ''
+	@dateOfBirth DATE
 )
 AS
 BEGIN
@@ -463,8 +462,7 @@ BEGIN
 			phone = @phone,
 			email = @email,
 			gender = @gender,
-			dateOfBirth = @dateOfBirth/*,
-			username = @username*/
+			dateOfBirth = @dateOfBirth
 		WHERE clientID = @clientID
 
 		IF @@ERROR <> 0
@@ -548,6 +546,40 @@ BEGIN
 END
 GO
 
+CREATE PROC updatePrescription (
+	@prescriptionID INT,
+	@clientID INT,
+	@physicianID INT,
+	@medicineID INT,
+	@expiryDate DATE,
+	@refillCounter TINYINT
+)
+AS
+BEGIN
+	SET NOCOUNT ON;
+	BEGIN TRANSACTION
+		UPDATE prescription
+		SET clientID = @clientID,
+			physicianID = @physicianID,
+			medicineID = @medicineID,
+			expiryDate = @expiryDate,
+			refillCounter = @refillCounter
+		WHERE prescriptionID = @prescriptionID
+
+		IF @@ERROR <> 0
+			BEGIN
+				ROLLBACK TRANSACTION
+				RAISERROR('Unable to update record.',16,1)
+				RETURN -1
+			END
+		ELSE
+			BEGIN
+				COMMIT TRANSACTION
+				PRINT('Record updated successfully!')
+			END
+END
+GO
+
 --update refill
 CREATE PROC updateRefill (
 	@refillID INT,
@@ -555,8 +587,7 @@ CREATE PROC updateRefill (
 	@dosage VARCHAR(50),
 	@frequency VARCHAR(50),
 	@supplyDays TINYINT,
-	@quantitySupplied TINYINT,
-	@amountDue DECIMAL(7,2)
+	@quantitySupplied TINYINT
 )
 AS
 BEGIN
@@ -567,8 +598,7 @@ BEGIN
 			dosage = @dosage,
 			frequency = @frequency,
 			supplyDays = @supplyDays,
-			quantitySupplied = @quantitySupplied,
-			amountDue = @amountDue
+			quantitySupplied = @quantitySupplied
 		WHERE refillID = @refillID
 
 		IF @@ERROR <> 0
