@@ -48,13 +48,13 @@ EXEC addNewMedicine 'Morphine','oral',100.00
 
 EXEC addNewMedicine 'Sophiclox','oral',50.00
 
-EXEC addNewPrescription 2,1,1,'2022/11/05',11
+EXEC addNewPrescription 2,1,1,'2022/11/05',12
 
-EXEC addNewPrescription 3,1,2,'2022/10/05',10
+EXEC addNewPrescription 3,1,2,'2022/10/05',12
 
-EXEC addNewRefill 1,'50mg','Twice daily',30,60,80.00
+EXEC addNewRefill 1,'50mg','Twice daily',30,60
 
-EXEC addNewRefill 2,'10mg','Once daily',60,60,45.00
+EXEC addNewRefill 2,'10mg','Once daily',60,60
 
 EXEC newPayment 1000,'CREDIT'
 
