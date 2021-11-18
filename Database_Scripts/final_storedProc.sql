@@ -594,6 +594,11 @@ AS
 BEGIN
 	SET NOCOUNT ON;
 	BEGIN TRANSACTION
+
+		DELETE
+		FROM payment
+		WHERE refillID = @refillID
+
 		DELETE
 		FROM refill
 		WHERE refillID = @refillID

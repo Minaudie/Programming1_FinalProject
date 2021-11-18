@@ -1,0 +1,36 @@
+To Do List
+put a note with your name after the item if you did it! TY
+-------------
+New forms:
+	Update client information
+	update prescription information
+	update refill information
+
+frmEmployee search stuff set up (Miranda will do this)
+
+context menu:
+	on frmEmployee (search tab specifically)
+		Search Prescription (when right click on client, search all prescriptions for that client)
+		Search Refill (when right click on client, search all refills for that client)
+		Edit (edit client info -> update client info form
+			ON PRESC -> update presc info form
+			ON REFILL -> update refill info form)
+		delete (ON REFILL ONLY, delete refill info)
+
+Tab control
+	frmEmployee
+		new client tab
+		new phys tab
+		new presc tab
+		new refill
+		search
+	frmClient
+	frmLanding
+	frmRegister
+
+marking what is not optional on frmEmployee and update forms
+	look at database, for columns not null
+
+----------------
+TESTING
+**Please note what you have tested here**
