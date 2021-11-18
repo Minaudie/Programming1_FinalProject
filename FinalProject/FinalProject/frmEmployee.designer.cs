@@ -88,6 +88,12 @@ namespace Final_Project_Work_Space
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.tabNewClient = new System.Windows.Forms.TabPage();
+            this.txtClientUserName = new System.Windows.Forms.TextBox();
+            this.label42 = new System.Windows.Forms.Label();
+            this.txtClientAdd2 = new System.Windows.Forms.TextBox();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.txtClientMidInt = new System.Windows.Forms.TextBox();
             this.label33 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
@@ -118,12 +124,8 @@ namespace Final_Project_Work_Space
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabEmployee = new System.Windows.Forms.TabControl();
-            this.txtClientMidInt = new System.Windows.Forms.TextBox();
-            this.label40 = new System.Windows.Forms.Label();
-            this.label41 = new System.Windows.Forms.Label();
-            this.txtClientAdd2 = new System.Windows.Forms.TextBox();
-            this.label42 = new System.Windows.Forms.Label();
-            this.txtClientUserName = new System.Windows.Forms.TextBox();
+            this.label43 = new System.Windows.Forms.Label();
+            this.dtpPreStartDate = new System.Windows.Forms.DateTimePicker();
             this.tabSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -148,7 +150,7 @@ namespace Final_Project_Work_Space
             this.tabSearch.Location = new System.Drawing.Point(4, 25);
             this.tabSearch.Name = "tabSearch";
             this.tabSearch.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSearch.Size = new System.Drawing.Size(780, 392);
+            this.tabSearch.Size = new System.Drawing.Size(794, 430);
             this.tabSearch.TabIndex = 4;
             this.tabSearch.Text = "Search";
             // 
@@ -222,7 +224,7 @@ namespace Final_Project_Work_Space
             this.tabNewRefill.Location = new System.Drawing.Point(4, 25);
             this.tabNewRefill.Name = "tabNewRefill";
             this.tabNewRefill.Padding = new System.Windows.Forms.Padding(3);
-            this.tabNewRefill.Size = new System.Drawing.Size(780, 392);
+            this.tabNewRefill.Size = new System.Drawing.Size(794, 430);
             this.tabNewRefill.TabIndex = 3;
             this.tabNewRefill.Text = "New Refill";
             this.tabNewRefill.Click += new System.EventHandler(this.tabNewRefill_Click);
@@ -381,6 +383,8 @@ namespace Final_Project_Work_Space
             // tabNewPrescription
             // 
             this.tabNewPrescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.tabNewPrescription.Controls.Add(this.dtpPreStartDate);
+            this.tabNewPrescription.Controls.Add(this.label43);
             this.tabNewPrescription.Controls.Add(this.label39);
             this.tabNewPrescription.Controls.Add(this.label38);
             this.tabNewPrescription.Controls.Add(this.label37);
@@ -399,7 +403,7 @@ namespace Final_Project_Work_Space
             this.tabNewPrescription.Location = new System.Drawing.Point(4, 25);
             this.tabNewPrescription.Name = "tabNewPrescription";
             this.tabNewPrescription.Padding = new System.Windows.Forms.Padding(3);
-            this.tabNewPrescription.Size = new System.Drawing.Size(780, 392);
+            this.tabNewPrescription.Size = new System.Drawing.Size(794, 430);
             this.tabNewPrescription.TabIndex = 2;
             this.tabNewPrescription.Text = "New Prescription";
             this.tabNewPrescription.Click += new System.EventHandler(this.tabNewPrescription_Click);
@@ -468,7 +472,7 @@ namespace Final_Project_Work_Space
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(270, 203);
+            this.label24.Location = new System.Drawing.Point(261, 203);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(87, 13);
             this.label24.TabIndex = 11;
@@ -486,7 +490,7 @@ namespace Final_Project_Work_Space
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(279, 125);
+            this.label21.Location = new System.Drawing.Point(275, 125);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(73, 13);
             this.label21.TabIndex = 8;
@@ -495,7 +499,7 @@ namespace Final_Project_Work_Space
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(288, 99);
+            this.label20.Location = new System.Drawing.Point(284, 99);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(64, 13);
             this.label20.TabIndex = 7;
@@ -504,7 +508,7 @@ namespace Final_Project_Work_Space
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(305, 72);
+            this.label19.Location = new System.Drawing.Point(301, 72);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(47, 13);
             this.label19.TabIndex = 6;
@@ -562,7 +566,7 @@ namespace Final_Project_Work_Space
             this.tabNewPhysician.Location = new System.Drawing.Point(4, 25);
             this.tabNewPhysician.Name = "tabNewPhysician";
             this.tabNewPhysician.Padding = new System.Windows.Forms.Padding(3);
-            this.tabNewPhysician.Size = new System.Drawing.Size(780, 392);
+            this.tabNewPhysician.Size = new System.Drawing.Size(794, 430);
             this.tabNewPhysician.TabIndex = 1;
             this.tabNewPhysician.Text = "New Physician";
             this.tabNewPhysician.Click += new System.EventHandler(this.tabNewPhysician_Click);
@@ -736,6 +740,54 @@ namespace Final_Project_Work_Space
             this.tabNewClient.TabIndex = 0;
             this.tabNewClient.Text = "New Client";
             this.tabNewClient.Click += new System.EventHandler(this.tbNewClient_Click);
+            // 
+            // txtClientUserName
+            // 
+            this.txtClientUserName.Location = new System.Drawing.Point(348, 340);
+            this.txtClientUserName.Name = "txtClientUserName";
+            this.txtClientUserName.Size = new System.Drawing.Size(100, 20);
+            this.txtClientUserName.TabIndex = 37;
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(275, 343);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(55, 13);
+            this.label42.TabIndex = 36;
+            this.label42.Text = "Username";
+            // 
+            // txtClientAdd2
+            // 
+            this.txtClientAdd2.Location = new System.Drawing.Point(349, 127);
+            this.txtClientAdd2.Name = "txtClientAdd2";
+            this.txtClientAdd2.Size = new System.Drawing.Size(100, 20);
+            this.txtClientAdd2.TabIndex = 35;
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(284, 130);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(51, 13);
+            this.label41.TabIndex = 34;
+            this.label41.Text = "Address2";
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(287, 46);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(39, 13);
+            this.label40.TabIndex = 33;
+            this.label40.Text = "Mid Int";
+            // 
+            // txtClientMidInt
+            // 
+            this.txtClientMidInt.Location = new System.Drawing.Point(349, 47);
+            this.txtClientMidInt.Name = "txtClientMidInt";
+            this.txtClientMidInt.Size = new System.Drawing.Size(100, 20);
+            this.txtClientMidInt.TabIndex = 32;
             // 
             // label33
             // 
@@ -1014,53 +1066,21 @@ namespace Final_Project_Work_Space
             this.tabEmployee.Size = new System.Drawing.Size(802, 459);
             this.tabEmployee.TabIndex = 0;
             // 
-            // txtClientMidInt
+            // label43
             // 
-            this.txtClientMidInt.Location = new System.Drawing.Point(349, 47);
-            this.txtClientMidInt.Name = "txtClientMidInt";
-            this.txtClientMidInt.Size = new System.Drawing.Size(100, 20);
-            this.txtClientMidInt.TabIndex = 32;
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(293, 155);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(55, 13);
+            this.label43.TabIndex = 33;
+            this.label43.Text = "Start Date";
             // 
-            // label40
+            // dtpPreStartDate
             // 
-            this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(287, 46);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(39, 13);
-            this.label40.TabIndex = 33;
-            this.label40.Text = "Mid Int";
-            // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(284, 130);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(51, 13);
-            this.label41.TabIndex = 34;
-            this.label41.Text = "Address2";
-            // 
-            // txtClientAdd2
-            // 
-            this.txtClientAdd2.Location = new System.Drawing.Point(349, 127);
-            this.txtClientAdd2.Name = "txtClientAdd2";
-            this.txtClientAdd2.Size = new System.Drawing.Size(100, 20);
-            this.txtClientAdd2.TabIndex = 35;
-            // 
-            // label42
-            // 
-            this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(275, 343);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(55, 13);
-            this.label42.TabIndex = 36;
-            this.label42.Text = "Username";
-            // 
-            // txtClientUserName
-            // 
-            this.txtClientUserName.Location = new System.Drawing.Point(348, 340);
-            this.txtClientUserName.Name = "txtClientUserName";
-            this.txtClientUserName.Size = new System.Drawing.Size(100, 20);
-            this.txtClientUserName.TabIndex = 37;
+            this.dtpPreStartDate.Location = new System.Drawing.Point(363, 148);
+            this.dtpPreStartDate.Name = "dtpPreStartDate";
+            this.dtpPreStartDate.Size = new System.Drawing.Size(200, 20);
+            this.dtpPreStartDate.TabIndex = 34;
             // 
             // Employee
             // 
@@ -1189,5 +1209,7 @@ namespace Final_Project_Work_Space
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.TextBox txtClientUserName;
         private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.DateTimePicker dtpPreStartDate;
+        private System.Windows.Forms.Label label43;
     }
 }

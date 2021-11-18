@@ -29,60 +29,33 @@ namespace Final_Project_Work_Space
                txtRefSupplyDays, txtRefQuantitySupplied, txtRefPrice(idk about this one)
                txtRefPaymentType
        */
-        private void addNewClient(object sender, EventArgs e)
+        private void addNewClient()
         {
-            try
-            {
-                DataSet ds = new DataSet();
-                DatabaseConnections ncf = new DatabaseConnections();
-
-  
-
-                if (ds.Tables[0].Rows.Count > 0)
-                {
-                    txtClientFName.Text = ds.Tables[0].Rows[0]["fName"].ToString();
-                    txtClientMidInt.Text = ds.Tables[0].Rows[0]["mInitial"].ToString();
-                    txtClientLName.Text = ds.Tables[0].Rows[0]["lName"].ToString();
-                    txtClientAddress.Text = ds.Tables[0].Rows[0]["street1"].ToString();
-                    txtClientAdd2.Text = ds.Tables[0].Rows[0]["street2"].ToString();
-                    txtClientCity.Text = ds.Tables[0].Rows[0]["city"].ToString();
-                    txtClientState.Text = ds.Tables[0].Rows[0]["state"].ToString();
-                    txtClientZip.Text = ds.Tables[0].Rows[0]["zip"].ToString();
-                    txtClientPhone.Text = ds.Tables[0].Rows[0]["phone"].ToString();
-                    txtClientEmail.Text = ds.Tables[0].Rows[0]["email"].ToString();
-                    txtClientGender.Text = ds.Tables[0].Rows[0]["gender"].ToString();
-                    txtClientDOB.Text = ds.Tables[0].Rows[0]["dateOfBirth"].ToString();
-                    txtClientUserName.Text = ds.Tables[0].Rows[0]["username"].ToString();
-                    
-
-                }
-
-            }
-            catch (Exception ex)
-            {
-                throw new ArgumentException(ex.Message);
-            }
-        }
-        private void addNewPhysician(object sender, EventArgs e)
-        {
-            try
-            {
-                DataSet ds = new DataSet();
-                DatabaseConnections ncf = new DatabaseConnections();
-
-
-
-                if (ds.Tables[0].Rows.Count > 0)
-                {
-                    txtPhyFName.Text = ds.Tables[0].Rows[0]["fName"].ToString();
-                    txtPhyMidInt.Text = ds.Tables[0].Rows[0]["mInitial"].ToString();
-                    txtPhyLName.Text = ds.Tables[0].Rows[0]["lName"].ToString();
-                    txtPhyPhone.Text = ds.Tables[0].Rows[0]["phone"].ToString();
-                    txtPhyEmail.Text = ds.Tables[0].Rows[0]["email"].ToString();
+            string fname = "", initial = "", lname = "", street1 = "", street2 = "", 
+                city = "", state = "", zip = "", phone = "", email = "", gender = "", DOB = "", username = "";
              
+            try
+            {
+                
+                
+                DatabaseConnections ncf = new DatabaseConnections();
+    
+                    fname = txtClientFName.Text.Trim();
+                    initial = txtClientMidInt.Text.Trim();
+                    lname = txtClientLName.Text.Trim();
+                    street1 = txtClientAddress.Text.Trim();
+                    street2 =txtClientAdd2.Text.Trim();
+                    city =txtClientCity.Text.Trim();
+                    state = txtClientState.Text.Trim();
+                    zip = txtClientZip.Text.Trim();
+                    phone = txtClientPhone.Text.Trim();
+                    email = txtClientEmail.Text.Trim();
+                    gender =txtClientGender.Text.Trim();
+                    DOB =txtClientDOB.Text.Trim();
+                    username = txtClientUserName.Text.Trim();
 
-
-                }
+                ncf.NewClient(fname, initial, lname, street1, street2, city, state, zip, phone, email, gender, DOB, username);
+                
 
             }
             catch (Exception ex)
@@ -90,25 +63,77 @@ namespace Final_Project_Work_Space
                 throw new ArgumentException(ex.Message);
             }
         }
-        private void addNewRefill(object sender, EventArgs e)
+        private void addNewPhysician()
         {
+            string fname = "", initial = "", lname = "", phone = "", email = "";
+
             try
             {
-                DataSet ds = new DataSet();
-                DatabaseConnections ncf = new DatabaseConnections();
+          
+                DatabaseConnections npf = new DatabaseConnections();
+
+                
+                
+                    fname = txtPhyFName.Text.Trim();
+                    initial = txtPhyMidInt.Text.Trim();
+                    lname = txtPhyLName.Text.Trim();
+                    phone = txtPhyLName.Text.Trim();
+                    email = txtPhyEmail.Text.Trim();
+
+                npf.NewPhysician(fname, initial, lname, phone, email);
+
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException(ex.Message);
+            }
+        }
+        private void addNewRefill()
+        {
+            string dosage = "", frequency = "";
+            int supplydays = 0, quantitysupplied = 0, perscriptionid = 0;
+            try
+            {
+               
+                DatabaseConnections nrf = new DatabaseConnections();
 
 
+                    perscriptionid = int.Parse(txtRefPrescriptionID.Text.Trim());
+                    dosage = txtRefDosage.Text.Trim();
+                    frequency = txtRefFrequency.Text.Trim();                
+                    supplydays = int.Parse(txtRefSupplyDays.Text.Trim());
+                    quantitysupplied = int.Parse(txtRefQuantitySupplied.Text.Trim());
 
-                if (ds.Tables[0].Rows.Count > 0)
-                {
-                    txtRefDosage.Text = ds.Tables[0].Rows[0]["dosage"].ToString();
-                    txtRefFrequency.Text = ds.Tables[0].Rows[0]["frequency"].ToString();
-                    txtRefSupplyDays.Text = ds.Tables[0].Rows[0]["supplyDays"].ToString();
-                    txtRefQuantitySupplied.Text = ds.Tables[0].Rows[0]["quantitySupplied"].ToString();
-                    txtRefPrice.Text = ds.Tables[0].Rows[0]["amountDue"].ToString();
-                    
 
-                }
+                nrf.NewRefill(perscriptionid, dosage, frequency, supplydays, quantitysupplied);
+
+
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException(ex.Message);
+            }
+        }
+        private void addNewPerscreiption()
+        {
+            int clientid = 0, physician = 0, medicationid = 0, refillcounter = 0;
+            string startdate = "", expirydate = "";
+            try
+            {
+
+                DatabaseConnections npf = new DatabaseConnections();
+
+
+                clientid = int.Parse(txtPreClientID.Text.Trim());
+                physician = int.Parse(txtPrePhysicanID.Text.Trim());
+                medicationid = int.Parse(txtPreMedicationID.Text.Trim());
+                expirydate = dtpPreExpirationDate.Value.ToString();
+                refillcounter = int.Parse(txtPreNumOfRefills.Text.Trim());
+                
+
+
+                npf.NewPerscription(clientid, physician, medicationid, expirydate, refillcounter);
+
 
             }
             catch (Exception ex)
@@ -147,13 +172,13 @@ namespace Final_Project_Work_Space
         //client tab load
         private void tbNewClient_Click(object sender, EventArgs e)
         {
-            btnClientClear_Click(sender, e);
-            btnClientSave.Enabled = false;
+            
         }
 
         private void btnClientClear_Click(object sender, EventArgs e)
         {
             txtClientFName.Clear();
+            txtClientMidInt.Clear();
             txtClientLName.Clear();
             txtClientAddress.Clear();
             txtClientCity.Clear();
@@ -164,10 +189,13 @@ namespace Final_Project_Work_Space
             txtClientGender.Clear();
             txtClientDOB.Clear();
             txtClientInsurance.Clear();
+            txtClientUserName.Clear();
         }
 
         private void btnClientSave_Click(object sender, EventArgs e)
         {
+            addNewClient();
+            btnClientClear_Click(sender,e);
 
         }
 
@@ -250,7 +278,9 @@ namespace Final_Project_Work_Space
 
         private void btnPhySave_Click(object sender, EventArgs e)
         {
-            
+            addNewPhysician();
+            btnPhyClear_Click(sender, e);
+
         }
 
         private void txtPhyFName_TextChanged(object sender, EventArgs e)
@@ -310,6 +340,8 @@ namespace Final_Project_Work_Space
 
         private void btnPerSave_Click(object sender, EventArgs e)
         {
+            addNewPerscreiption();
+            btnPerClear_Click(sender, e);
 
         }
 
@@ -407,6 +439,8 @@ namespace Final_Project_Work_Space
 
         private void btnRefSave_Click(object sender, EventArgs e)
         {
+            addNewRefill();
+            btnRefClear_Click(sender, e);
 
         }
 
