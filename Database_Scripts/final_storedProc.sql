@@ -262,17 +262,16 @@ CREATE PROC addNewRefill (
 	@dosage VARCHAR(50),
 	@frequency VARCHAR(50),
 	@supplyDays TINYINT,
-	@quantitySupplied TINYINT,
-	@amountDue DECIMAL(7,2) = ''
+	@quantitySupplied TINYINT
 )
 AS
 BEGIN
 	SET NOCOUNT ON;
 	BEGIN TRANSACTION
 		INSERT INTO refill(prescriptionID, dosage, frequency, supplyDays,
-			quantitySupplied, amountDue)
+			quantitySupplied)
 		VALUES(@prescriptionID, @dosage, @frequency, @supplyDays,
-			@quantitySupplied, @amountDue)
+			@quantitySupplied)
 
 		IF @@ERROR <> 0
 			BEGIN
@@ -337,8 +336,22 @@ AS
 BEGIN
 	SET NOCOUNT ON;
 
-	SELECT * 
+	SELECT *
 	FROM prescription
+	WHERE clientID = @clientID
+END
+GO
+
+--select refill by client
+CREATE PROC selectRefillPerClient (
+	@clientID INT
+)
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+	SELECT *
+	FROM refill
 	WHERE clientID = @clientID
 END
 GO
@@ -351,10 +364,11 @@ AS
 BEGIN
 	SET NOCOUNT ON;
 
-	SELECT p.ClientID, (client.fName + ' ' + client.lName) AS 'Client Name'
-	FROM prescription AS P
-	INNER JOIN client ON client.clientID = p.clientID
-	WHERE client.clientID = @clientID
+	SELECT p.prescriptionID, p.clientID, c.fName + ' ' + c.lName AS 'Client Name',
+		p.physicianID, p.medicineID, p.startDate, p.expiryDate, p.refillCounter
+	FROM prescription AS p
+	INNER JOIN client AS c on c.clientID = p.clientID
+	WHERE p.clientID = @clientID
 END
 GO
 
@@ -514,3 +528,103 @@ BEGIN
 			END
 END
 GO
+
+-- *** TRIGGERS ***
+--check refill counter and expiry date when creating new refill
+CREATE TRIGGER trg_checkRefillCounter
+ON refill
+FOR INSERT 
+AS 
+BEGIN
+	DECLARE @prescriptionID INT
+	DECLARE @refillCount TINYINT
+	DECLARE @expiryDate DATE
+
+	SELECT @prescriptionID = (SELECT prescriptionID FROM inserted)
+	SELECT @refillCount = (SELECT refillCounter 
+							FROM prescription
+							WHERE prescriptionID = @prescriptionID)
+	SELECT @expiryDate = (SELECT expiryDate 
+							FROM prescription
+							WHERE prescriptionID = @prescriptionID)
+
+	IF @refillCount = 0 OR @expiryDate < GETDATE()
+		RAISERROR('This prescription has expired/reached the refill limit.',16,1)
+	ELSE
+		BEGIN
+			UPDATE prescription
+			SET refillCounter = @refillCount - 1
+			WHERE prescriptionID = @prescriptionID
+		END
+
+	IF @@ERROR <> 0
+		RAISERROR('Unable to insert record.',16,1)
+END
+
+--trigger for price of prescription
+CREATE TRIGGER trg_setPrescriptionPrice
+ON prescription
+FOR INSERT
+AS
+BEGIN
+	DECLARE @medicineID INT
+	DECLARE @medicineCost DECIMAL(7,2)
+	DECLARE @clientID INT
+	DECLARE @insuranceID INT
+	DECLARE @insuranceCoverage DECIMAL(5,2)
+	DECLARE @prescriptionID INT
+	DECLARE @prescriptionPrice DECIMAL(7,2)
+
+	SELECT @medicineID = (SELECT medicineID FROM inserted)
+	SELECT @medicineCost = (SELECT cost 
+							FROM medicine
+							WHERE medicineID = @medicineID)
+	SELECT @clientID = (SELECT clientID FROM inserted)
+	SELECT @insuranceID = (SELECT insuranceID 
+							FROM clientInsurance
+							WHERE clientID = @clientID)
+
+	SELECT @insuranceCoverage = (SELECT coveragePercent 
+								FROM insurance
+								WHERE insuranceID = @insuranceID)
+
+	SELECT @prescriptionID = (SELECT prescriptionID FROM inserted)
+
+	SET @prescriptionPrice = @medicineCost * (1 + @insuranceCoverage)
+
+	UPDATE prescription
+	SET price = @prescriptionPrice
+	WHERE prescriptionID = @prescriptionID
+
+	IF @@ERROR <> 0
+		BEGIN
+			RAISERROR('Unable to insert record.',16,1)
+		END
+END
+
+--set refill price
+CREATE TRIGGER trg_setRefillPrice
+ON refill
+FOR INSERT
+AS
+BEGIN
+	DECLARE @prescriptionID INT
+	DECLARE @refillID INT
+	DECLARE @prescriptionPrice DECIMAL(7,2)
+
+	SELECT @prescriptionID = (SELECT prescriptionID FROM inserted)
+	SELECT @refillID = (SELECT refillID FROM inserted)
+
+	SELECT @prescriptionPrice = (SELECT price
+									FROM prescription
+									WHERE prescriptionID = @prescriptionID)
+
+	UPDATE refill
+	SET amountDue = @prescriptionPrice
+	WHERE refillID = @refillID
+
+	IF @@ERROR <> 0
+		BEGIN
+			RAISERROR('Unable to insert record.',16,1)
+		END
+END

@@ -16,6 +16,10 @@ namespace Programming1_FinalProject
         {
             InitializeComponent();
         }
+        private void Landing_Load(object sender, EventArgs e)
+        {
+            btnLandingLogin.Enabled = false;
+        }
 
 
 
@@ -74,6 +78,7 @@ namespace Programming1_FinalProject
 
 
 
+    }
 
         ///login button
         ///check for username: client or employee
