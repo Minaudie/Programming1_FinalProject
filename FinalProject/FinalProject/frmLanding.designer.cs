@@ -99,7 +99,7 @@ namespace Programming1_FinalProject
             this.btnLandingLogin.Margin = new System.Windows.Forms.Padding(6);
             this.btnLandingLogin.Name = "btnLandingLogin";
             this.btnLandingLogin.Size = new System.Drawing.Size(164, 56);
-            this.btnLandingLogin.TabIndex = 5;
+            this.btnLandingLogin.TabIndex = 3;
             this.btnLandingLogin.Text = "Login";
             this.btnLandingLogin.UseVisualStyleBackColor = true;
             this.btnLandingLogin.Click += new System.EventHandler(this.btnLandingLogin_Click);
