@@ -107,7 +107,7 @@ namespace Programming1_FinalProject
             // 
             this.lnkLandingNewClient.AutoSize = true;
             this.lnkLandingNewClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lnkLandingNewClient.Location = new System.Drawing.Point(228, 304);
+            this.lnkLandingNewClient.Location = new System.Drawing.Point(306, 315);
             this.lnkLandingNewClient.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lnkLandingNewClient.Name = "lnkLandingNewClient";
             this.lnkLandingNewClient.Size = new System.Drawing.Size(266, 29);
