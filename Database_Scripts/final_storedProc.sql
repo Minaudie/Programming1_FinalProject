@@ -350,9 +350,12 @@ AS
 BEGIN
 	SET NOCOUNT ON;
 
-	SELECT *
-	FROM refill
-	WHERE clientID = @clientID
+	SELECT r.refillID, r.prescriptionID, r.dosage, r.frequency, 
+		r.supplyDays, r.quantitySupplied, r.amountDue, r.dateOfRefill
+	FROM refill r
+	LEFT JOIN prescription p
+	ON r.prescriptionID = p.prescriptionID
+	WHERE p.clientID = @clientID
 END
 GO
 
@@ -383,6 +386,46 @@ BEGIN
 	SELECT *
 	FROM  refill
 	WHERE refillID = @refillID
+END
+GO
+
+CREATE PROC checkUsername(
+	@suppliedUsername VARCHAR(25)
+)
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+	DECLARE @clientID INT
+
+	SET @clientID = (SELECT clientID
+						FROM client
+						WHERE username = @suppliedUsername)
+	RETURN @clientID
+END
+GO
+
+--if password matches, return 1
+--if no match, return 0
+CREATE PROC checkPassword(
+	@clientID INT,
+	@suppliedPassword VARCHAR(50)
+)
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+	DECLARE @RETURN INT
+
+	IF EXISTS(
+		SELECT 1 FROM clientPassword
+		WHERE clientID = @clientID
+			AND client_password = @suppliedPassword
+	)
+		SET @RETURN = 1;
+	ELSE
+		SET @RETURN = 0;
+
 END
 GO
 
@@ -461,6 +504,46 @@ BEGIN
 			BEGIN
 				COMMIT TRANSACTION
 				PRINT('Record updated successfully!')
+			END
+END
+GO
+
+CREATE PROC updateClientUserPass (
+	@username VARCHAR(25),
+	@newUsername VARCHAR(25),
+	@clientPassword VARCHAR(50)
+)
+AS
+BEGIN
+	SET NOCOUNT ON;
+	BEGIN TRANSACTION
+
+		--get clientID based on current username
+		DECLARE @clientID INT
+		SELECT @clientID = (SELECT clientID
+							FROM client
+							WHERE username = @username)
+
+		--update username to the new one
+		UPDATE client
+		SET username = @newUsername
+		WHERE username = @username
+
+		--update password to the new one
+		UPDATE clientPassword
+		SET client_password = @clientPassword
+		WHERE clientID = @clientID
+
+		IF @@ERROR <> 0
+			BEGIN
+				ROLLBACK TRANSACTION
+				RAISERROR('Unable to update record.',16,1)
+				RETURN -1
+			END
+		ELSE
+			BEGIN
+				COMMIT TRANSACTION
+				PRINT('Record updated successfully')
 			END
 END
 GO
@@ -590,7 +673,7 @@ BEGIN
 
 	SELECT @prescriptionID = (SELECT prescriptionID FROM inserted)
 
-	SET @prescriptionPrice = @medicineCost * (1 + @insuranceCoverage)
+	SET @prescriptionPrice = @medicineCost - (@medicineCost / @insuranceCoverage)
 
 	UPDATE prescription
 	SET price = @prescriptionPrice
