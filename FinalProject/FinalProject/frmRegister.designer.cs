@@ -103,6 +103,7 @@ namespace Programming1_FinalProject
             this.btnRegisterRegister.TabIndex = 5;
             this.btnRegisterRegister.Text = "Register";
             this.btnRegisterRegister.UseVisualStyleBackColor = true;
+            this.btnRegisterRegister.Click += new System.EventHandler(this.btnRegisterRegister_Click);
             // 
             // btnRegisterCancel
             // 

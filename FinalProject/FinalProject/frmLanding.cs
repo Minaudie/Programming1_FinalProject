@@ -83,7 +83,42 @@ namespace Programming1_FinalProject
           //this.Hide();
 
         }
+
+        private void btnLandingLogin_Click(object sender, EventArgs e)
+        {
+            string clientUsername = "";
+            string clientPassword = "";
+            
+
+            try
+            {
+                //DatabaseConnections FinalDT = new DatabaseConnections();
+
+                clientUsername = txtLandingUsername.Text.Trim();
+                clientPassword = txtLandingPassword.Text.Trim();
+             
+
+             
+
+                //DatabaseConnections.ClientLogin(clientUsername, clientPassword);
+
+                //doesnt work
+                //frmsearch.dgvStudents.Refresh();
+
+                //frmsearch.btnSearch_Click(sender, e);
+
+                //close form
+                this.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK);
+            }
+        }
     }
+}
+    
 
         ///login button
         ///check for username: client or employee
@@ -94,6 +129,6 @@ namespace Programming1_FinalProject
 
         ///new client registration link
         ///send to register form
-    }
+    
 
 

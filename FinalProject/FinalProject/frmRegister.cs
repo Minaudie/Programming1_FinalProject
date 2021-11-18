@@ -80,12 +80,46 @@ namespace Programming1_FinalProject
             this.Visible = false;
         }
 
+        private void btnRegisterRegister_Click(object sender, EventArgs e)
+        {
+            string clientid = "";
+            string clientUsername = "";
+            string clientPassword = "";
+      
+
+            try
+            {
+             //   DatabaseConnections NewClientDS = new DatabaseConnections();
+
+                clientid = txtRegisterClientID.Text.Trim();
+                clientUsername = txtRegisterUsername.Text.Trim();
+                clientPassword = txtRegisterPassword.Text.Trim();
+             
+
+
+              //DatabaseConnections.RegisterNew(clientid, clientUsername, clientPassword);
+
+                //doesnt work
+                //frmsearch.dgvStudents.Refresh();
+
+               //frmsearch.btnSearch_Click(sender, e);
+
+                //close form
+                this.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK);
+            }
+        }
+    }
+}
+
         //this.Hide();
 
 
-    }
-    }
-
+    
 
 ///register username: register client username
 ///register password: register client password

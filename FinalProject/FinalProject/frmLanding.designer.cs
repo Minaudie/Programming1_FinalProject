@@ -102,6 +102,7 @@ namespace Programming1_FinalProject
             this.btnLandingLogin.TabIndex = 5;
             this.btnLandingLogin.Text = "Login";
             this.btnLandingLogin.UseVisualStyleBackColor = true;
+            this.btnLandingLogin.Click += new System.EventHandler(this.btnLandingLogin_Click);
             // 
             // lnkLandingNewClient
             // 
