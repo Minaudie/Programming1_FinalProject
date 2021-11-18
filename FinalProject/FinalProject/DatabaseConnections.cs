@@ -462,5 +462,63 @@ namespace FinalProject
                 myConn.Close();
             }
         }
+
+        //if returns 0, employee login, else it returns clientid
+        public int CheckUsername(string username)
+        {
+            try
+            {
+                myConn.Open();
+                cmdString.Parameters.Clear();
+                cmdString.CommandType = CommandType.StoredProcedure;
+                cmdString.CommandTimeout = 1500;
+                cmdString.CommandText = "checkUsername";
+
+                cmdString.Parameters.Add("@suppliedUsername", SqlDbType.VarChar, 25).Value = username;
+
+                SqlDataAdapter aAdapter = new SqlDataAdapter();
+
+                aAdapter.SelectCommand = cmdString;
+
+                return cmdString.ExecuteNonQuery();
+            } catch (Exception ex)
+            {
+                throw new ArgumentException(ex.Message);
+            } finally
+            {
+                myConn.Close();
+            }
+        }
+
+        //check client password
+        //returns 1 for success, 0 for failure
+        public int CheckPassword(int clientid, string password)
+        {
+            try
+            {
+                myConn.Open();
+                cmdString.Parameters.Clear();
+                cmdString.CommandType = CommandType.StoredProcedure;
+                cmdString.CommandTimeout = 1500;
+                cmdString.CommandText = "checkPassword";
+
+                cmdString.Parameters.Add("@clientID", SqlDbType.Int).Value = clientid;
+                cmdString.Parameters.Add("@suppliedPassword", SqlDbType.VarChar, 25).Value = password;
+
+                SqlDataAdapter aAdapter = new SqlDataAdapter();
+
+                aAdapter.SelectCommand = cmdString;
+
+                return cmdString.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException(ex.Message);
+            }
+            finally
+            {
+                myConn.Close();
+            }
+        }
     }
 }

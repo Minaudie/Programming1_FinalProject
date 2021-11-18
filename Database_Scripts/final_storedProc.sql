@@ -398,9 +398,16 @@ BEGIN
 
 	DECLARE @clientID INT
 
-	SET @clientID = (SELECT clientID
+	--if an employee username
+	IF EXISTS(SELECT 1 FROM employee
+					WHERE username = @suppliedUsername)
+		SET @clientID = 0
+	ELSE
+		SET @clientID = (SELECT clientID
 						FROM client
 						WHERE username = @suppliedUsername)
+	
+	--0 is employee, !0 is client
 	RETURN @clientID
 END
 GO
