@@ -87,7 +87,8 @@ CREATE TABLE prescription (
 		FOREIGN KEY(medicineID) REFERENCES medicine(medicineID),
 	startDate DATE DEFAULT GETDATE(),
 	expiryDate DATE NOT NULL,
-	refillCounter TINYINT NOT NULL
+	refillCounter TINYINT NOT NULL,
+	price DECIMAL(7,2)
 );
 
 CREATE TABLE refill (
