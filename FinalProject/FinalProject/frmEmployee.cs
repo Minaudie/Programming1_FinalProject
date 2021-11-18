@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FinalProject;
 
 namespace Final_Project_Work_Space
 {
     public partial class Employee : Form
     {
 
+        
         /*
            Required fields:
            Client
@@ -27,6 +29,93 @@ namespace Final_Project_Work_Space
                txtRefSupplyDays, txtRefQuantitySupplied, txtRefPrice(idk about this one)
                txtRefPaymentType
        */
+        private void addNewClient(object sender, EventArgs e)
+        {
+            try
+            {
+                DataSet ds = new DataSet();
+                DatabaseConnections ncf = new DatabaseConnections();
+
+  
+
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    txtClientFName.Text = ds.Tables[0].Rows[0]["fName"].ToString();
+                    txtClientMidInt.Text = ds.Tables[0].Rows[0]["mInitial"].ToString();
+                    txtClientLName.Text = ds.Tables[0].Rows[0]["lName"].ToString();
+                    txtClientAddress.Text = ds.Tables[0].Rows[0]["street1"].ToString();
+                    txtClientAdd2.Text = ds.Tables[0].Rows[0]["street2"].ToString();
+                    txtClientCity.Text = ds.Tables[0].Rows[0]["city"].ToString();
+                    txtClientState.Text = ds.Tables[0].Rows[0]["state"].ToString();
+                    txtClientZip.Text = ds.Tables[0].Rows[0]["zip"].ToString();
+                    txtClientPhone.Text = ds.Tables[0].Rows[0]["phone"].ToString();
+                    txtClientEmail.Text = ds.Tables[0].Rows[0]["email"].ToString();
+                    txtClientGender.Text = ds.Tables[0].Rows[0]["gender"].ToString();
+                    txtClientDOB.Text = ds.Tables[0].Rows[0]["dateOfBirth"].ToString();
+                    txtClientUserName.Text = ds.Tables[0].Rows[0]["username"].ToString();
+                    
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException(ex.Message);
+            }
+        }
+        private void addNewPhysician(object sender, EventArgs e)
+        {
+            try
+            {
+                DataSet ds = new DataSet();
+                DatabaseConnections ncf = new DatabaseConnections();
+
+
+
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    txtPhyFName.Text = ds.Tables[0].Rows[0]["fName"].ToString();
+                    txtPhyMidInt.Text = ds.Tables[0].Rows[0]["mInitial"].ToString();
+                    txtPhyLName.Text = ds.Tables[0].Rows[0]["lName"].ToString();
+                    txtPhyPhone.Text = ds.Tables[0].Rows[0]["phone"].ToString();
+                    txtPhyEmail.Text = ds.Tables[0].Rows[0]["email"].ToString();
+             
+
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException(ex.Message);
+            }
+        }
+        private void addNewRefill(object sender, EventArgs e)
+        {
+            try
+            {
+                DataSet ds = new DataSet();
+                DatabaseConnections ncf = new DatabaseConnections();
+
+
+
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    txtRefDosage.Text = ds.Tables[0].Rows[0]["dosage"].ToString();
+                    txtRefFrequency.Text = ds.Tables[0].Rows[0]["frequency"].ToString();
+                    txtRefSupplyDays.Text = ds.Tables[0].Rows[0]["supplyDays"].ToString();
+                    txtRefQuantitySupplied.Text = ds.Tables[0].Rows[0]["quantitySupplied"].ToString();
+                    txtRefPrice.Text = ds.Tables[0].Rows[0]["amountDue"].ToString();
+                    
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException(ex.Message);
+            }
+        }
 
         public Employee()
         {

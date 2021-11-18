@@ -32,6 +32,10 @@ namespace Final_Project_Work_Space
         private void InitializeComponent()
         {
             this.tabSearch = new System.Windows.Forms.TabPage();
+            this.btnSeaSearch = new System.Windows.Forms.Button();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.tabNewRefill = new System.Windows.Forms.TabPage();
@@ -53,6 +57,9 @@ namespace Final_Project_Work_Space
             this.label28 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.tabNewPrescription = new System.Windows.Forms.TabPage();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
             this.btnPreSave = new System.Windows.Forms.Button();
             this.btnPreClear = new System.Windows.Forms.Button();
             this.dtpPreExpirationDate = new System.Windows.Forms.DateTimePicker();
@@ -66,6 +73,8 @@ namespace Final_Project_Work_Space
             this.txtPrePhysicanID = new System.Windows.Forms.TextBox();
             this.txtPreClientID = new System.Windows.Forms.TextBox();
             this.tabNewPhysician = new System.Windows.Forms.TabPage();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
             this.btnPhySave = new System.Windows.Forms.Button();
             this.btnPhyClear = new System.Windows.Forms.Button();
             this.txtPhyEmail = new System.Windows.Forms.TextBox();
@@ -79,6 +88,10 @@ namespace Final_Project_Work_Space
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.tabNewClient = new System.Windows.Forms.TabPage();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.btnClientSave = new System.Windows.Forms.Button();
             this.btnClientClear = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
@@ -105,29 +118,22 @@ namespace Final_Project_Work_Space
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabEmployee = new System.Windows.Forms.TabControl();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
-            this.label38 = new System.Windows.Forms.Label();
-            this.label39 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.btnSeaSearch = new System.Windows.Forms.Button();
+            this.txtClientMidInt = new System.Windows.Forms.TextBox();
+            this.label40 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.txtClientAdd2 = new System.Windows.Forms.TextBox();
+            this.label42 = new System.Windows.Forms.Label();
+            this.txtClientUserName = new System.Windows.Forms.TextBox();
             this.tabSearch.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabNewRefill.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabNewPrescription.SuspendLayout();
             this.tabNewPhysician.SuspendLayout();
             this.tabNewClient.SuspendLayout();
             this.tabEmployee.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.SuspendLayout();
             // 
             // tabSearch
@@ -145,6 +151,39 @@ namespace Final_Project_Work_Space
             this.tabSearch.Size = new System.Drawing.Size(780, 392);
             this.tabSearch.TabIndex = 4;
             this.tabSearch.Text = "Search";
+            // 
+            // btnSeaSearch
+            // 
+            this.btnSeaSearch.Location = new System.Drawing.Point(498, 93);
+            this.btnSeaSearch.Name = "btnSeaSearch";
+            this.btnSeaSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSeaSearch.TabIndex = 8;
+            this.btnSeaSearch.Text = "Search";
+            this.btnSeaSearch.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(8, 190);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView3.TabIndex = 7;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(267, 190);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView2.TabIndex = 6;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(522, 190);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.TabIndex = 5;
             // 
             // txtSearch
             // 
@@ -365,6 +404,39 @@ namespace Final_Project_Work_Space
             this.tabNewPrescription.Text = "New Prescription";
             this.tabNewPrescription.Click += new System.EventHandler(this.tabNewPrescription_Click);
             // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label39.ForeColor = System.Drawing.Color.Red;
+            this.label39.Location = new System.Drawing.Point(347, 122);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(13, 16);
+            this.label39.TabIndex = 32;
+            this.label39.Text = "*";
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label38.ForeColor = System.Drawing.Color.Red;
+            this.label38.Location = new System.Drawing.Point(347, 70);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(13, 16);
+            this.label38.TabIndex = 31;
+            this.label38.Text = "*";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label37.ForeColor = System.Drawing.Color.Red;
+            this.label37.Location = new System.Drawing.Point(347, 96);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(13, 16);
+            this.label37.TabIndex = 30;
+            this.label37.Text = "*";
+            // 
             // btnPreSave
             // 
             this.btnPreSave.Location = new System.Drawing.Point(273, 249);
@@ -495,6 +567,28 @@ namespace Final_Project_Work_Space
             this.tabNewPhysician.Text = "New Physician";
             this.tabNewPhysician.Click += new System.EventHandler(this.tabNewPhysician_Click);
             // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label36.ForeColor = System.Drawing.Color.Red;
+            this.label36.Location = new System.Drawing.Point(300, 114);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(13, 16);
+            this.label36.TabIndex = 31;
+            this.label36.Text = "*";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.ForeColor = System.Drawing.Color.Red;
+            this.label34.Location = new System.Drawing.Point(300, 62);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(13, 16);
+            this.label34.TabIndex = 30;
+            this.label34.Text = "*";
+            // 
             // btnPhySave
             // 
             this.btnPhySave.Location = new System.Drawing.Point(223, 215);
@@ -600,6 +694,12 @@ namespace Final_Project_Work_Space
             // tabNewClient
             // 
             this.tabNewClient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.tabNewClient.Controls.Add(this.txtClientUserName);
+            this.tabNewClient.Controls.Add(this.label42);
+            this.tabNewClient.Controls.Add(this.txtClientAdd2);
+            this.tabNewClient.Controls.Add(this.label41);
+            this.tabNewClient.Controls.Add(this.label40);
+            this.tabNewClient.Controls.Add(this.txtClientMidInt);
             this.tabNewClient.Controls.Add(this.label33);
             this.tabNewClient.Controls.Add(this.label26);
             this.tabNewClient.Controls.Add(this.label22);
@@ -632,14 +732,58 @@ namespace Final_Project_Work_Space
             this.tabNewClient.Location = new System.Drawing.Point(4, 25);
             this.tabNewClient.Name = "tabNewClient";
             this.tabNewClient.Padding = new System.Windows.Forms.Padding(3);
-            this.tabNewClient.Size = new System.Drawing.Size(780, 392);
+            this.tabNewClient.Size = new System.Drawing.Size(794, 430);
             this.tabNewClient.TabIndex = 0;
             this.tabNewClient.Text = "New Client";
             this.tabNewClient.Click += new System.EventHandler(this.tbNewClient_Click);
             // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label33.Location = new System.Drawing.Point(330, 286);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(13, 16);
+            this.label33.TabIndex = 31;
+            this.label33.Text = "*";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label26.Location = new System.Drawing.Point(330, 263);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(13, 16);
+            this.label26.TabIndex = 30;
+            this.label26.Text = "*";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label22.Location = new System.Drawing.Point(325, 69);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(13, 16);
+            this.label22.TabIndex = 29;
+            this.label22.Text = "*";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label12.Location = new System.Drawing.Point(322, 21);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(13, 16);
+            this.label12.TabIndex = 28;
+            this.label12.Text = "*";
+            // 
             // btnClientSave
             // 
-            this.btnClientSave.Location = new System.Drawing.Point(252, 345);
+            this.btnClientSave.Location = new System.Drawing.Point(254, 393);
             this.btnClientSave.Name = "btnClientSave";
             this.btnClientSave.Size = new System.Drawing.Size(75, 23);
             this.btnClientSave.TabIndex = 27;
@@ -649,7 +793,7 @@ namespace Final_Project_Work_Space
             // 
             // btnClientClear
             // 
-            this.btnClientClear.Location = new System.Drawing.Point(446, 345);
+            this.btnClientClear.Location = new System.Drawing.Point(448, 393);
             this.btnClientClear.Name = "btnClientClear";
             this.btnClientClear.Size = new System.Drawing.Size(75, 23);
             this.btnClientClear.TabIndex = 26;
@@ -660,7 +804,8 @@ namespace Final_Project_Work_Space
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(293, 297);
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label13.Location = new System.Drawing.Point(275, 370);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(54, 13);
             this.label13.TabIndex = 25;
@@ -668,14 +813,14 @@ namespace Final_Project_Work_Space
             // 
             // txtClientInsurance
             // 
-            this.txtClientInsurance.Location = new System.Drawing.Point(352, 297);
+            this.txtClientInsurance.Location = new System.Drawing.Point(348, 366);
             this.txtClientInsurance.Name = "txtClientInsurance";
             this.txtClientInsurance.Size = new System.Drawing.Size(100, 20);
             this.txtClientInsurance.TabIndex = 24;
             // 
             // txtClientDOB
             // 
-            this.txtClientDOB.Location = new System.Drawing.Point(352, 267);
+            this.txtClientDOB.Location = new System.Drawing.Point(348, 311);
             this.txtClientDOB.Name = "txtClientDOB";
             this.txtClientDOB.Size = new System.Drawing.Size(100, 20);
             this.txtClientDOB.TabIndex = 22;
@@ -683,7 +828,7 @@ namespace Final_Project_Work_Space
             // 
             // txtClientGender
             // 
-            this.txtClientGender.Location = new System.Drawing.Point(352, 241);
+            this.txtClientGender.Location = new System.Drawing.Point(348, 285);
             this.txtClientGender.Name = "txtClientGender";
             this.txtClientGender.Size = new System.Drawing.Size(100, 20);
             this.txtClientGender.TabIndex = 21;
@@ -691,49 +836,49 @@ namespace Final_Project_Work_Space
             // 
             // txtClientEmail
             // 
-            this.txtClientEmail.Location = new System.Drawing.Point(352, 215);
+            this.txtClientEmail.Location = new System.Drawing.Point(348, 259);
             this.txtClientEmail.Name = "txtClientEmail";
             this.txtClientEmail.Size = new System.Drawing.Size(100, 20);
             this.txtClientEmail.TabIndex = 20;
             // 
             // txtClientPhone
             // 
-            this.txtClientPhone.Location = new System.Drawing.Point(352, 189);
+            this.txtClientPhone.Location = new System.Drawing.Point(349, 234);
             this.txtClientPhone.Name = "txtClientPhone";
             this.txtClientPhone.Size = new System.Drawing.Size(100, 20);
             this.txtClientPhone.TabIndex = 19;
             // 
             // txtClientZip
             // 
-            this.txtClientZip.Location = new System.Drawing.Point(352, 163);
+            this.txtClientZip.Location = new System.Drawing.Point(349, 208);
             this.txtClientZip.Name = "txtClientZip";
             this.txtClientZip.Size = new System.Drawing.Size(100, 20);
             this.txtClientZip.TabIndex = 17;
             // 
             // txtClientState
             // 
-            this.txtClientState.Location = new System.Drawing.Point(352, 137);
+            this.txtClientState.Location = new System.Drawing.Point(349, 182);
             this.txtClientState.Name = "txtClientState";
             this.txtClientState.Size = new System.Drawing.Size(100, 20);
             this.txtClientState.TabIndex = 16;
             // 
             // txtClientCity
             // 
-            this.txtClientCity.Location = new System.Drawing.Point(352, 108);
+            this.txtClientCity.Location = new System.Drawing.Point(348, 153);
             this.txtClientCity.Name = "txtClientCity";
             this.txtClientCity.Size = new System.Drawing.Size(100, 20);
             this.txtClientCity.TabIndex = 15;
             // 
             // txtClientAddress
             // 
-            this.txtClientAddress.Location = new System.Drawing.Point(352, 82);
+            this.txtClientAddress.Location = new System.Drawing.Point(349, 99);
             this.txtClientAddress.Name = "txtClientAddress";
             this.txtClientAddress.Size = new System.Drawing.Size(100, 20);
             this.txtClientAddress.TabIndex = 14;
             // 
             // txtClientLName
             // 
-            this.txtClientLName.Location = new System.Drawing.Point(352, 56);
+            this.txtClientLName.Location = new System.Drawing.Point(349, 72);
             this.txtClientLName.Name = "txtClientLName";
             this.txtClientLName.Size = new System.Drawing.Size(100, 20);
             this.txtClientLName.TabIndex = 13;
@@ -741,7 +886,7 @@ namespace Final_Project_Work_Space
             // 
             // txtClientFName
             // 
-            this.txtClientFName.Location = new System.Drawing.Point(352, 33);
+            this.txtClientFName.Location = new System.Drawing.Point(349, 21);
             this.txtClientFName.Name = "txtClientFName";
             this.txtClientFName.Size = new System.Drawing.Size(100, 20);
             this.txtClientFName.TabIndex = 12;
@@ -750,7 +895,8 @@ namespace Final_Project_Work_Space
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(313, 274);
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label11.Location = new System.Drawing.Point(299, 315);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(30, 13);
             this.label11.TabIndex = 10;
@@ -759,7 +905,8 @@ namespace Final_Project_Work_Space
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(301, 248);
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label10.Location = new System.Drawing.Point(287, 289);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(42, 13);
             this.label10.TabIndex = 9;
@@ -768,7 +915,8 @@ namespace Final_Project_Work_Space
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(311, 222);
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label9.Location = new System.Drawing.Point(297, 266);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(32, 13);
             this.label9.TabIndex = 8;
@@ -777,7 +925,7 @@ namespace Final_Project_Work_Space
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(343, 218);
+            this.label8.Location = new System.Drawing.Point(343, 237);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(0, 13);
             this.label8.TabIndex = 7;
@@ -785,7 +933,8 @@ namespace Final_Project_Work_Space
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(305, 189);
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label7.Location = new System.Drawing.Point(291, 241);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(38, 13);
             this.label7.TabIndex = 6;
@@ -794,7 +943,8 @@ namespace Final_Project_Work_Space
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(293, 166);
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label6.Location = new System.Drawing.Point(279, 215);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(50, 13);
             this.label6.TabIndex = 5;
@@ -803,7 +953,8 @@ namespace Final_Project_Work_Space
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(311, 140);
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label5.Location = new System.Drawing.Point(297, 185);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(32, 13);
             this.label5.TabIndex = 4;
@@ -812,7 +963,8 @@ namespace Final_Project_Work_Space
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(319, 115);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label4.Location = new System.Drawing.Point(305, 156);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(24, 13);
             this.label4.TabIndex = 3;
@@ -821,7 +973,8 @@ namespace Final_Project_Work_Space
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(298, 84);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label3.Location = new System.Drawing.Point(284, 99);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(45, 13);
             this.label3.TabIndex = 2;
@@ -830,7 +983,8 @@ namespace Final_Project_Work_Space
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(285, 56);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label2.Location = new System.Drawing.Point(271, 72);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 13);
             this.label2.TabIndex = 1;
@@ -839,7 +993,8 @@ namespace Final_Project_Work_Space
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(286, 33);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label1.Location = new System.Drawing.Point(269, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 13);
             this.label1.TabIndex = 0;
@@ -856,140 +1011,56 @@ namespace Final_Project_Work_Space
             this.tabEmployee.Location = new System.Drawing.Point(0, 0);
             this.tabEmployee.Name = "tabEmployee";
             this.tabEmployee.SelectedIndex = 0;
-            this.tabEmployee.Size = new System.Drawing.Size(788, 421);
+            this.tabEmployee.Size = new System.Drawing.Size(802, 459);
             this.tabEmployee.TabIndex = 0;
             // 
-            // label12
+            // txtClientMidInt
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.Red;
-            this.label12.Location = new System.Drawing.Point(339, 33);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(13, 16);
-            this.label12.TabIndex = 28;
-            this.label12.Text = "*";
+            this.txtClientMidInt.Location = new System.Drawing.Point(349, 47);
+            this.txtClientMidInt.Name = "txtClientMidInt";
+            this.txtClientMidInt.Size = new System.Drawing.Size(100, 20);
+            this.txtClientMidInt.TabIndex = 32;
             // 
-            // label22
+            // label40
             // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.ForeColor = System.Drawing.Color.Red;
-            this.label22.Location = new System.Drawing.Point(339, 53);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(13, 16);
-            this.label22.TabIndex = 29;
-            this.label22.Text = "*";
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(287, 46);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(39, 13);
+            this.label40.TabIndex = 33;
+            this.label40.Text = "Mid Int";
             // 
-            // label26
+            // label41
             // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.ForeColor = System.Drawing.Color.Red;
-            this.label26.Location = new System.Drawing.Point(339, 245);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(13, 16);
-            this.label26.TabIndex = 30;
-            this.label26.Text = "*";
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(284, 130);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(51, 13);
+            this.label41.TabIndex = 34;
+            this.label41.Text = "Address2";
             // 
-            // label33
+            // txtClientAdd2
             // 
-            this.label33.AutoSize = true;
-            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.ForeColor = System.Drawing.Color.Red;
-            this.label33.Location = new System.Drawing.Point(339, 272);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(13, 16);
-            this.label33.TabIndex = 31;
-            this.label33.Text = "*";
+            this.txtClientAdd2.Location = new System.Drawing.Point(349, 127);
+            this.txtClientAdd2.Name = "txtClientAdd2";
+            this.txtClientAdd2.Size = new System.Drawing.Size(100, 20);
+            this.txtClientAdd2.TabIndex = 35;
             // 
-            // label34
+            // label42
             // 
-            this.label34.AutoSize = true;
-            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.ForeColor = System.Drawing.Color.Red;
-            this.label34.Location = new System.Drawing.Point(300, 62);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(13, 16);
-            this.label34.TabIndex = 30;
-            this.label34.Text = "*";
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(275, 343);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(55, 13);
+            this.label42.TabIndex = 36;
+            this.label42.Text = "Username";
             // 
-            // label36
+            // txtClientUserName
             // 
-            this.label36.AutoSize = true;
-            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.ForeColor = System.Drawing.Color.Red;
-            this.label36.Location = new System.Drawing.Point(300, 114);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(13, 16);
-            this.label36.TabIndex = 31;
-            this.label36.Text = "*";
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.ForeColor = System.Drawing.Color.Red;
-            this.label37.Location = new System.Drawing.Point(347, 96);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(13, 16);
-            this.label37.TabIndex = 30;
-            this.label37.Text = "*";
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.ForeColor = System.Drawing.Color.Red;
-            this.label38.Location = new System.Drawing.Point(347, 70);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(13, 16);
-            this.label38.TabIndex = 31;
-            this.label38.Text = "*";
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label39.ForeColor = System.Drawing.Color.Red;
-            this.label39.Location = new System.Drawing.Point(347, 122);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(13, 16);
-            this.label39.TabIndex = 32;
-            this.label39.Text = "*";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(522, 190);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView1.TabIndex = 5;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(267, 190);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView2.TabIndex = 6;
-            // 
-            // dataGridView3
-            // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(8, 190);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView3.TabIndex = 7;
-            // 
-            // btnSeaSearch
-            // 
-            this.btnSeaSearch.Location = new System.Drawing.Point(498, 93);
-            this.btnSeaSearch.Name = "btnSeaSearch";
-            this.btnSeaSearch.Size = new System.Drawing.Size(75, 23);
-            this.btnSeaSearch.TabIndex = 8;
-            this.btnSeaSearch.Text = "Search";
-            this.btnSeaSearch.UseVisualStyleBackColor = true;
+            this.txtClientUserName.Location = new System.Drawing.Point(348, 340);
+            this.txtClientUserName.Name = "txtClientUserName";
+            this.txtClientUserName.Size = new System.Drawing.Size(100, 20);
+            this.txtClientUserName.TabIndex = 37;
             // 
             // Employee
             // 
@@ -1002,6 +1073,9 @@ namespace Final_Project_Work_Space
             this.Load += new System.EventHandler(this.Employee_Load);
             this.tabSearch.ResumeLayout(false);
             this.tabSearch.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabNewRefill.ResumeLayout(false);
             this.tabNewRefill.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -1013,9 +1087,6 @@ namespace Final_Project_Work_Space
             this.tabNewClient.ResumeLayout(false);
             this.tabNewClient.PerformLayout();
             this.tabEmployee.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1112,5 +1183,11 @@ namespace Final_Project_Work_Space
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.TextBox txtClientMidInt;
+        private System.Windows.Forms.TextBox txtClientAdd2;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.TextBox txtClientUserName;
+        private System.Windows.Forms.Label label42;
     }
 }
