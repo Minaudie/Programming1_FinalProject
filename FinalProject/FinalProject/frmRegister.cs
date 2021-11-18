@@ -17,6 +17,9 @@ namespace Programming1_FinalProject
             InitializeComponent();
         }
 
+
+
+
         private void txtRegisterUsername_TextChanged(object sender, EventArgs e) //disable button unless values in fields
         {
 

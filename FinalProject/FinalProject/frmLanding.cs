@@ -17,6 +17,8 @@ namespace Programming1_FinalProject
             InitializeComponent();
         }
 
+
+
         private void txtLandingUsername_TextChanged(object sender, EventArgs e)
         {
 
@@ -56,7 +58,22 @@ namespace Programming1_FinalProject
         {
             btnLandingLogin.Enabled = false;
         }
-    }
+
+        private void lnkLandingNewClient_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+
+
+
+            Register frm = new Register();
+            frm.Show();
+            this.Hide();
+
+            //this.Close = false;
+        }
+
+
+
 
         ///login button
         ///check for username: client or employee
@@ -68,5 +85,6 @@ namespace Programming1_FinalProject
         ///new client registration link
         ///send to register form
     }
+}
 
 

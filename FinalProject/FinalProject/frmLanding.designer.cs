@@ -42,7 +42,7 @@ namespace Programming1_FinalProject
             // 
             this.txtLandingUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLandingUsername.Location = new System.Drawing.Point(234, 171);
-            this.txtLandingUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLandingUsername.Margin = new System.Windows.Forms.Padding(4);
             this.txtLandingUsername.Name = "txtLandingUsername";
             this.txtLandingUsername.Size = new System.Drawing.Size(416, 38);
             this.txtLandingUsername.TabIndex = 0;
@@ -52,7 +52,7 @@ namespace Programming1_FinalProject
             // 
             this.txtLandingPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLandingPassword.Location = new System.Drawing.Point(234, 254);
-            this.txtLandingPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLandingPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtLandingPassword.Name = "txtLandingPassword";
             this.txtLandingPassword.Size = new System.Drawing.Size(416, 38);
             this.txtLandingPassword.TabIndex = 1;
@@ -96,7 +96,7 @@ namespace Programming1_FinalProject
             // 
             this.btnLandingLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLandingLogin.Location = new System.Drawing.Point(358, 373);
-            this.btnLandingLogin.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnLandingLogin.Margin = new System.Windows.Forms.Padding(6);
             this.btnLandingLogin.Name = "btnLandingLogin";
             this.btnLandingLogin.Size = new System.Drawing.Size(164, 56);
             this.btnLandingLogin.TabIndex = 5;
@@ -114,6 +114,7 @@ namespace Programming1_FinalProject
             this.lnkLandingNewClient.TabIndex = 6;
             this.lnkLandingNewClient.TabStop = true;
             this.lnkLandingNewClient.Text = "New Client Registration";
+            this.lnkLandingNewClient.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkLandingNewClient_LinkClicked);
             // 
             // Landing
             // 
@@ -127,7 +128,7 @@ namespace Programming1_FinalProject
             this.Controls.Add(this.lblLandingUsername);
             this.Controls.Add(this.txtLandingPassword);
             this.Controls.Add(this.txtLandingUsername);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Landing";
             this.Text = "Landing";
             this.Load += new System.EventHandler(this.Landing_Load);
