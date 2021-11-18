@@ -71,8 +71,21 @@ namespace Programming1_FinalProject
                 //disable buttons
             }
         }
+
+        private void btnRegisterCancel_Click(object sender, EventArgs e)
+        {
+
+            //subForm myNewForm = new subForm();
+
+            this.Visible = false;
+        }
+
+        //this.Hide();
+
+
     }
-}
+    }
+
 
 ///register username: register client username
 ///register password: register client password

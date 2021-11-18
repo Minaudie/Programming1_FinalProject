@@ -58,26 +58,31 @@ namespace Programming1_FinalProject
 
         }
 
-        private void Landing_Load(object sender, EventArgs e)
-        {
-            btnLandingLogin.Enabled = false;
-        }
+      
 
         private void lnkLandingNewClient_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
 
-
-
-
-            Register frm = new Register();
-            frm.Show();
-            this.Hide();
-
-            //this.Close = false;
+          
         }
 
+        private void lblLandingWelcome_Click_1(object sender, EventArgs e)
+        {
 
+        }
 
+        private void Landing_Load_1(object sender, EventArgs e)
+        {
+            btnLandingLogin.Enabled = false;
+        }
+
+        private void lnkLandingNewClient_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Register frm = new Register();
+            frm.Show();
+          //this.Hide();
+
+        }
     }
 
         ///login button
@@ -90,6 +95,5 @@ namespace Programming1_FinalProject
         ///new client registration link
         ///send to register form
     }
-}
 
 
