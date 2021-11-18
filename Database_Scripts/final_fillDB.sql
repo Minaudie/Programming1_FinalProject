@@ -38,9 +38,25 @@ EXEC addNewClient 'Melanie','J','Tucker','26 Timber Oak Drive','','Sherman Oaks'
 EXEC addNewInsurance 'Green Falls Insurance',20.0,'717-555-2929','181 West Fork Drive','',
 	'Hollywood','Florida','33024'
 
+EXEC newClientInsuranceRecord 1,1,1
+
 EXEC newClientInsuranceRecord 2,1,1034
 
 EXEC newClientInsuranceRecord 3,1,6004
+
+EXEC newClientInsuranceRecord 4,1,2
+
+EXEC newClientInsuranceRecord 5,1,3
+
+EXEC newClientInsuranceRecord 6,1,4
+
+EXEC newClientInsuranceRecord 7,1,5
+
+EXEC newClientInsuranceRecord 8,1,6
+
+EXEC newClientInsuranceRecord 9,1,7
+
+EXEC newClientInsuranceRecord 10,1,8
 
 EXEC addNewPhysician 'Margaret','D','Vecchio','954-555-0866','margaretmd@yahoo.com'
 
@@ -48,13 +64,49 @@ EXEC addNewMedicine 'Morphine','oral',100.00
 
 EXEC addNewMedicine 'Sophiclox','oral',50.00
 
+EXEC addNewPrescription 1,1,1,'2022/11/05',12
+
+EXEC addNewPrescription 1,1,2,'2022/11/05',12
+
 EXEC addNewPrescription 2,1,1,'2022/11/05',12
 
 EXEC addNewPrescription 3,1,2,'2022/10/05',12
 
+EXEC addNewPrescription 4,1,1,'2022/11/05',12
+
+EXEC addNewPrescription 5,1,2,'2022/11/05',12
+
+EXEC addNewPrescription 6,1,1,'2022/11/05',12
+
+EXEC addNewPrescription 7,1,2,'2022/11/05',12
+
+EXEC addNewPrescription 8,1,2,'2022/11/05',12
+
+EXEC addNewPrescription 9,1,1,'2022/11/05',12
+
+EXEC addNewPrescription 10,1,2,'2022/11/05',12
+
 EXEC addNewRefill 1,'50mg','Twice daily',30,60
 
 EXEC addNewRefill 2,'10mg','Once daily',60,60
+
+EXEC addNewRefill 2,'10mg','Once daily',60,60
+
+EXEC addNewRefill 3,'10mg','Once daily',60,60
+
+EXEC addNewRefill 4,'10mg','Once daily',60,60
+
+EXEC addNewRefill 5,'10mg','Once daily',60,60
+
+EXEC addNewRefill 6,'10mg','Once daily',60,60
+
+EXEC addNewRefill 7,'10mg','Once daily',60,60
+
+EXEC addNewRefill 8,'10mg','Once daily',60,60
+
+EXEC addNewRefill 9,'10mg','Once daily',60,60
+
+EXEC addNewRefill 10,'10mg','Once daily',60,60
 
 EXEC newPayment 1000,'CREDIT'
 

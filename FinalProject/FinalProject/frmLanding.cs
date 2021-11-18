@@ -21,6 +21,8 @@ namespace Programming1_FinalProject
             btnLandingLogin.Enabled = false;
         }
 
+
+
         private void txtLandingUsername_TextChanged(object sender, EventArgs e)
         {
 
@@ -51,7 +53,72 @@ namespace Programming1_FinalProject
             }
         }
 
+        private void lblLandingWelcome_Click(object sender, EventArgs e)
+        {
+
+        }
+
+      
+
+        private void lnkLandingNewClient_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+          
+        }
+
+        private void lblLandingWelcome_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Landing_Load_1(object sender, EventArgs e)
+        {
+            btnLandingLogin.Enabled = false;
+        }
+
+        private void lnkLandingNewClient_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Register frm = new Register();
+            frm.Show();
+          //this.Hide();
+
+        }
+
+        private void btnLandingLogin_Click(object sender, EventArgs e)
+        {
+            string clientUsername = "";
+            string clientPassword = "";
+            
+
+            try
+            {
+                //DatabaseConnections FinalDT = new DatabaseConnections();
+
+                clientUsername = txtLandingUsername.Text.Trim();
+                clientPassword = txtLandingPassword.Text.Trim();
+             
+
+             
+
+                //DatabaseConnections.ClientLogin(clientUsername, clientPassword);
+
+                //doesnt work
+                //frmsearch.dgvStudents.Refresh();
+
+                //frmsearch.btnSearch_Click(sender, e);
+
+                //close form
+                this.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK);
+            }
+        }
     }
+}
+    
 
         ///login button
         ///check for username: client or employee
@@ -62,6 +129,6 @@ namespace Programming1_FinalProject
 
         ///new client registration link
         ///send to register form
-    }
+    
 
 
