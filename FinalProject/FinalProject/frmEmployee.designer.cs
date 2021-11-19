@@ -163,8 +163,13 @@ namespace Final_Project_Work_Space
             this.tabSearch.Location = new System.Drawing.Point(4, 37);
             this.tabSearch.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tabSearch.Name = "tabSearch";
+
             this.tabSearch.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tabSearch.Size = new System.Drawing.Size(1596, 842);
+
+            this.tabSearch.Padding = new System.Windows.Forms.Padding(3);
+            this.tabSearch.Size = new System.Drawing.Size(794, 430);
+
             this.tabSearch.TabIndex = 4;
             this.tabSearch.Text = "Search";
             // 
@@ -251,8 +256,13 @@ namespace Final_Project_Work_Space
             this.tabNewRefill.Location = new System.Drawing.Point(4, 37);
             this.tabNewRefill.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tabNewRefill.Name = "tabNewRefill";
+
             this.tabNewRefill.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tabNewRefill.Size = new System.Drawing.Size(1596, 842);
+
+            this.tabNewRefill.Padding = new System.Windows.Forms.Padding(3);
+            this.tabNewRefill.Size = new System.Drawing.Size(794, 430);
+
             this.tabNewRefill.TabIndex = 3;
             this.tabNewRefill.Text = "New Refill";
             // 
@@ -414,8 +424,13 @@ namespace Final_Project_Work_Space
             this.tabNewPrescription.Location = new System.Drawing.Point(4, 37);
             this.tabNewPrescription.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tabNewPrescription.Name = "tabNewPrescription";
+
             this.tabNewPrescription.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tabNewPrescription.Size = new System.Drawing.Size(1596, 842);
+
+            this.tabNewPrescription.Padding = new System.Windows.Forms.Padding(3);
+            this.tabNewPrescription.Size = new System.Drawing.Size(794, 430);
+
             this.tabNewPrescription.TabIndex = 2;
             this.tabNewPrescription.Text = "New Prescription";
             // 
@@ -592,8 +607,13 @@ namespace Final_Project_Work_Space
             this.tabNewPhysician.Location = new System.Drawing.Point(4, 37);
             this.tabNewPhysician.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tabNewPhysician.Name = "tabNewPhysician";
+
             this.tabNewPhysician.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tabNewPhysician.Size = new System.Drawing.Size(1596, 842);
+
+            this.tabNewPhysician.Padding = new System.Windows.Forms.Padding(3);
+            this.tabNewPhysician.Size = new System.Drawing.Size(794, 430);
+
             this.tabNewPhysician.TabIndex = 1;
             this.tabNewPhysician.Text = "New Physician";
             // 
@@ -772,10 +792,16 @@ namespace Final_Project_Work_Space
             this.tabNewClient.Location = new System.Drawing.Point(4, 37);
             this.tabNewClient.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tabNewClient.Name = "tabNewClient";
+
             this.tabNewClient.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tabNewClient.Size = new System.Drawing.Size(1596, 842);
+
+            this.tabNewClient.Padding = new System.Windows.Forms.Padding(3);
+            this.tabNewClient.Size = new System.Drawing.Size(794, 430);
+
             this.tabNewClient.TabIndex = 0;
             this.tabNewClient.Text = "New Client";
+            //this.tabNewClient.Click += new System.EventHandler(this.tabNewClient_Click);
             // 
             // txtClientAdd2
             // 
@@ -1157,6 +1183,7 @@ namespace Final_Project_Work_Space
             this.searchRefillToolStripMenuItem});
             this.contextMenuClient.Name = "contextMenuClient";
             this.contextMenuClient.Size = new System.Drawing.Size(294, 118);
+            this.contextMenuClient.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuClient_Opening);
             // 
             // contextMenuPre
             // 
@@ -1173,13 +1200,14 @@ namespace Final_Project_Work_Space
             this.updateToolStripMenuItem2,
             this.deleteToolStripMenuItem});
             this.contextMenuRefill.Name = "contextMenuRefill";
-            this.contextMenuRefill.Size = new System.Drawing.Size(168, 80);
+            this.contextMenuRefill.Size = new System.Drawing.Size(301, 124);
             // 
             // updateToolStripMenuItem
             // 
             this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-            this.updateToolStripMenuItem.Size = new System.Drawing.Size(293, 38);
+            this.updateToolStripMenuItem.Size = new System.Drawing.Size(300, 38);
             this.updateToolStripMenuItem.Text = "Update";
+            this.updateToolStripMenuItem.Click += new System.EventHandler(this.updateToolStripMenuItem_Click);
             // 
             // searchPrescriptionToolStripMenuItem
             // 
@@ -1196,14 +1224,16 @@ namespace Final_Project_Work_Space
             // updateToolStripMenuItem1
             // 
             this.updateToolStripMenuItem1.Name = "updateToolStripMenuItem1";
-            this.updateToolStripMenuItem1.Size = new System.Drawing.Size(167, 38);
+            this.updateToolStripMenuItem1.Size = new System.Drawing.Size(300, 38);
             this.updateToolStripMenuItem1.Text = "Update";
+            this.updateToolStripMenuItem1.Click += new System.EventHandler(this.updateToolStripMenuItem1_Click);
             // 
             // updateToolStripMenuItem2
             // 
             this.updateToolStripMenuItem2.Name = "updateToolStripMenuItem2";
-            this.updateToolStripMenuItem2.Size = new System.Drawing.Size(167, 38);
+            this.updateToolStripMenuItem2.Size = new System.Drawing.Size(300, 38);
             this.updateToolStripMenuItem2.Text = "Update";
+            this.updateToolStripMenuItem2.Click += new System.EventHandler(this.updateToolStripMenuItem2_Click);
             // 
             // deleteToolStripMenuItem
             // 
