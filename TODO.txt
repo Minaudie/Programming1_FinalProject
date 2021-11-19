@@ -3,35 +3,19 @@ put a note with your name after the item if you did it! TY
 -------------
 frmEmployee (reference frmEdit and frmSearch from inclass)
 	global variables for IDs of client/prescription/refill
-	
-	Edit frmUpdateXX to take a frmEmployee as argument
 
-	return new clientID when creating a new client
+	return new clientID when creating a new client (miranda)
 
 New forms:
-	Update client information (DatabaseConnections method ready)
-		show client id info, but disable the text field so it cant be edited
-		the ID gets sent to the update stored procedure
-	update prescription information (DC method ready)
-		show prescription id info, but disable the text field
-	update refill information (DC method ready)
-		show refill id info, disable text field
-
-FIELDS TO DELETE
-	frmUpdatePrescription - start date -Mariah Completed
-	frmEmployee-	
-		client - username deleted, change not optional to gender + dob
-		presc - remove start date
-		refill - remove price
-	frmUpdateRefill - price, payment type -Mariah Complted
-	frmUpdateClient - username, insurance, change not optional to gender + dob -Mariah Completed
+	reference to frmEmployee
 
 frmEmployee search stuff set up (Miranda will do this)
 
 frmEmployee new client tab - insurance drop down
 	get company name from db?
+	edit new client proc to always insert manually into clientInsurance (miranda)
 
-context menu:
+context menu: (miranda)
 	on frmEmployee (search tab specifically)
 		Search Prescription (when right click on client, search all prescriptions for that client) (DC method ready)
 		Search Refill (when right click on client, search all refills for that client) (DC method ready)
@@ -47,15 +31,7 @@ context menu:
 	context menu for refill dgv
 		edit, delete
 
-frmEmployee
-	new refill - disable price text box (auto filled when prescription id entered)
-		     the star thingys - placement and make red
-		     payment drop down - 'CASH','CREDIT','DEBIT','CHECK'
-
-marking what is not optional on frmEmployee and update forms
-	look at database, for columns not null
-
-If unused, selectClientPrescription (stored proc)
+If unused, selectClientPrescription (stored proc) (miranda)
 
 Login
 	register new client (dc ready)
@@ -68,7 +44,7 @@ set icon and form titles
 
 *** Low priority updates ***
 
-gender can only be M, F, or O, so maybe check for that before sending to DB. Addt'ly, payment can only be one of a few types.
+gender can only be M, F, or O, so maybe check for that before sending to DB. 
 
 Limit types of characters that can be entered in text fields
 
