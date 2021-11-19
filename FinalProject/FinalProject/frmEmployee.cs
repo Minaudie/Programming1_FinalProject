@@ -52,9 +52,9 @@ namespace Final_Project_Work_Space
                     email = txtClientEmail.Text.Trim();
                     gender =txtClientGender.Text.Trim();
                     DOB =txtClientDOB.Text.Trim();
-                    username = txtClientUserName.Text.Trim();
+                  //  username = txtClientUserName.Text.Trim();
 
-                ncf.NewClient(fname, initial, lname, street1, street2, city, state, zip, phone, email, gender, DOB, username);
+                ncf.NewClient(fname, initial, lname, street1, street2, city, state, zip, phone, email, gender, DOB);
                 
 
             }
@@ -184,7 +184,7 @@ namespace Final_Project_Work_Space
             txtClientGender.Clear();
             txtClientDOB.Clear();
             txtClientInsurance.Clear();
-            txtClientUserName.Clear();
+            //txtClientUserName.Clear();
         }
 
         private void btnClientSave_Click(object sender, EventArgs e)
@@ -408,7 +408,7 @@ namespace Final_Project_Work_Space
             txtRefSupplyDays.Clear();
             txtRefQuantitySupplied.Clear();
             txtRefPrice.Clear();
-            txtRefPaymentType.SelectedIndex = -1;
+            cmboRefInsurance.SelectedIndex = -1;
         }
 
         private void btnRefSave_Click(object sender, EventArgs e)
@@ -499,6 +499,11 @@ namespace Final_Project_Work_Space
             {
                 btnRefSave.Enabled = false;
             }
+        }
+
+        private void cmboRefInsurance_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

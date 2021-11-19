@@ -119,6 +119,8 @@ namespace Final_Project_Work_Space
             this.label1 = new System.Windows.Forms.Label();
             this.tabEmployee = new System.Windows.Forms.TabControl();
             this.label35 = new System.Windows.Forms.Label();
+            this.cmboRefInsurance = new System.Windows.Forms.ComboBox();
+            this.txtRefPaymentType = new System.Windows.Forms.Label();
             this.tabSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -208,6 +210,8 @@ namespace Final_Project_Work_Space
             // tabNewRefill
             // 
             this.tabNewRefill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.tabNewRefill.Controls.Add(this.txtRefPaymentType);
+            this.tabNewRefill.Controls.Add(this.cmboRefInsurance);
             this.tabNewRefill.Controls.Add(this.btnRefSave);
             this.tabNewRefill.Controls.Add(this.btnRefClear);
             this.tabNewRefill.Controls.Add(this.txtRefPrescriptionID);
@@ -232,7 +236,7 @@ namespace Final_Project_Work_Space
             // 
             // btnRefSave
             // 
-            this.btnRefSave.Location = new System.Drawing.Point(428, 633);
+            this.btnRefSave.Location = new System.Drawing.Point(457, 477);
             this.btnRefSave.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnRefSave.Name = "btnRefSave";
             this.btnRefSave.Size = new System.Drawing.Size(150, 44);
@@ -243,7 +247,7 @@ namespace Final_Project_Work_Space
             // 
             // btnRefClear
             // 
-            this.btnRefClear.Location = new System.Drawing.Point(816, 633);
+            this.btnRefClear.Location = new System.Drawing.Point(817, 477);
             this.btnRefClear.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnRefClear.Name = "btnRefClear";
             this.btnRefClear.Size = new System.Drawing.Size(150, 44);
@@ -1092,6 +1096,29 @@ namespace Final_Project_Work_Space
             this.label35.TabIndex = 35;
             this.label35.Text = "*";
             // 
+            // cmboRefInsurance
+            // 
+            this.cmboRefInsurance.FormattingEnabled = true;
+            this.cmboRefInsurance.Items.AddRange(new object[] {
+            "Cash",
+            "Credit",
+            "Debit",
+            "Check"});
+            this.cmboRefInsurance.Location = new System.Drawing.Point(616, 366);
+            this.cmboRefInsurance.Name = "cmboRefInsurance";
+            this.cmboRefInsurance.Size = new System.Drawing.Size(196, 33);
+            this.cmboRefInsurance.TabIndex = 6;
+            this.cmboRefInsurance.SelectedIndexChanged += new System.EventHandler(this.cmboRefInsurance_SelectedIndexChanged);
+            // 
+            // txtRefPaymentType
+            // 
+            this.txtRefPaymentType.AutoSize = true;
+            this.txtRefPaymentType.Location = new System.Drawing.Point(450, 369);
+            this.txtRefPaymentType.Name = "txtRefPaymentType";
+            this.txtRefPaymentType.Size = new System.Drawing.Size(156, 25);
+            this.txtRefPaymentType.TabIndex = 10;
+            this.txtRefPaymentType.Text = "Payment Type:";
+            // 
             // Employee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -1213,5 +1240,7 @@ namespace Final_Project_Work_Space
         private System.Windows.Forms.TextBox txtClientAdd2;
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label txtRefPaymentType;
+        private System.Windows.Forms.ComboBox cmboRefInsurance;
     }
 }
