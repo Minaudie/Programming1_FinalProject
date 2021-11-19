@@ -31,11 +31,12 @@ namespace Final_Project_Work_Space
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabSearch = new System.Windows.Forms.TabPage();
             this.btnSeaSearch = new System.Windows.Forms.Button();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvClient = new System.Windows.Forms.DataGridView();
+            this.dgvPre = new System.Windows.Forms.DataGridView();
+            this.dgvRefill = new System.Windows.Forms.DataGridView();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.tabNewRefill = new System.Windows.Forms.TabPage();
@@ -121,24 +122,42 @@ namespace Final_Project_Work_Space
             this.cmboRefInsurance = new System.Windows.Forms.ComboBox();
             this.txtRefPaymentType = new System.Windows.Forms.Label();
             this.cmboClientInsurance = new System.Windows.Forms.ComboBox();
+            this.contextMenuClient = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.contextMenuPre = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.contextMenuRefill = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.searchPrescriptionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.searchRefillToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.updateToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.updateToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblClient = new System.Windows.Forms.Label();
+            this.lblPrescription = new System.Windows.Forms.Label();
+            this.lblRefill = new System.Windows.Forms.Label();
             this.tabSearch.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClient)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPre)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRefill)).BeginInit();
             this.tabNewRefill.SuspendLayout();
             this.tabNewPrescription.SuspendLayout();
             this.tabNewPhysician.SuspendLayout();
             this.tabNewClient.SuspendLayout();
             this.tabEmployee.SuspendLayout();
+            this.contextMenuClient.SuspendLayout();
+            this.contextMenuPre.SuspendLayout();
+            this.contextMenuRefill.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabSearch
             // 
             this.tabSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.tabSearch.Controls.Add(this.lblRefill);
+            this.tabSearch.Controls.Add(this.lblPrescription);
+            this.tabSearch.Controls.Add(this.lblClient);
             this.tabSearch.Controls.Add(this.btnSeaSearch);
-            this.tabSearch.Controls.Add(this.dataGridView3);
-            this.tabSearch.Controls.Add(this.dataGridView2);
-            this.tabSearch.Controls.Add(this.dataGridView1);
+            this.tabSearch.Controls.Add(this.dgvClient);
+            this.tabSearch.Controls.Add(this.dgvPre);
+            this.tabSearch.Controls.Add(this.dgvRefill);
             this.tabSearch.Controls.Add(this.txtSearch);
             this.tabSearch.Controls.Add(this.label25);
             this.tabSearch.Location = new System.Drawing.Point(4, 37);
@@ -159,35 +178,38 @@ namespace Final_Project_Work_Space
             this.btnSeaSearch.Text = "Search";
             this.btnSeaSearch.UseVisualStyleBackColor = true;
             // 
-            // dataGridView3
+            // dgvClient
             // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(16, 365);
-            this.dataGridView3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.RowHeadersWidth = 82;
-            this.dataGridView3.Size = new System.Drawing.Size(480, 288);
-            this.dataGridView3.TabIndex = 7;
+            this.dgvClient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvClient.ContextMenuStrip = this.contextMenuClient;
+            this.dgvClient.Location = new System.Drawing.Point(16, 365);
+            this.dgvClient.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dgvClient.Name = "dgvClient";
+            this.dgvClient.RowHeadersWidth = 82;
+            this.dgvClient.Size = new System.Drawing.Size(480, 288);
+            this.dgvClient.TabIndex = 7;
             // 
-            // dataGridView2
+            // dgvPre
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(534, 365);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 82;
-            this.dataGridView2.Size = new System.Drawing.Size(480, 288);
-            this.dataGridView2.TabIndex = 6;
+            this.dgvPre.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPre.ContextMenuStrip = this.contextMenuPre;
+            this.dgvPre.Location = new System.Drawing.Point(534, 365);
+            this.dgvPre.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dgvPre.Name = "dgvPre";
+            this.dgvPre.RowHeadersWidth = 82;
+            this.dgvPre.Size = new System.Drawing.Size(480, 288);
+            this.dgvPre.TabIndex = 6;
             // 
-            // dataGridView1
+            // dgvRefill
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(1044, 365);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 82;
-            this.dataGridView1.Size = new System.Drawing.Size(480, 288);
-            this.dataGridView1.TabIndex = 5;
+            this.dgvRefill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRefill.ContextMenuStrip = this.contextMenuRefill;
+            this.dgvRefill.Location = new System.Drawing.Point(1044, 365);
+            this.dgvRefill.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dgvRefill.Name = "dgvRefill";
+            this.dgvRefill.RowHeadersWidth = 82;
+            this.dgvRefill.Size = new System.Drawing.Size(480, 288);
+            this.dgvRefill.TabIndex = 5;
             // 
             // txtSearch
             // 
@@ -1126,6 +1148,96 @@ namespace Final_Project_Work_Space
             this.cmboClientInsurance.Size = new System.Drawing.Size(196, 33);
             this.cmboClientInsurance.TabIndex = 36;
             // 
+            // contextMenuClient
+            // 
+            this.contextMenuClient.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.contextMenuClient.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.updateToolStripMenuItem,
+            this.searchPrescriptionToolStripMenuItem,
+            this.searchRefillToolStripMenuItem});
+            this.contextMenuClient.Name = "contextMenuClient";
+            this.contextMenuClient.Size = new System.Drawing.Size(294, 118);
+            // 
+            // contextMenuPre
+            // 
+            this.contextMenuPre.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.contextMenuPre.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.updateToolStripMenuItem1});
+            this.contextMenuPre.Name = "contextMenuPre";
+            this.contextMenuPre.Size = new System.Drawing.Size(168, 42);
+            // 
+            // contextMenuRefill
+            // 
+            this.contextMenuRefill.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.contextMenuRefill.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.updateToolStripMenuItem2,
+            this.deleteToolStripMenuItem});
+            this.contextMenuRefill.Name = "contextMenuRefill";
+            this.contextMenuRefill.Size = new System.Drawing.Size(168, 80);
+            // 
+            // updateToolStripMenuItem
+            // 
+            this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
+            this.updateToolStripMenuItem.Size = new System.Drawing.Size(293, 38);
+            this.updateToolStripMenuItem.Text = "Update";
+            // 
+            // searchPrescriptionToolStripMenuItem
+            // 
+            this.searchPrescriptionToolStripMenuItem.Name = "searchPrescriptionToolStripMenuItem";
+            this.searchPrescriptionToolStripMenuItem.Size = new System.Drawing.Size(293, 38);
+            this.searchPrescriptionToolStripMenuItem.Text = "Search Prescription";
+            // 
+            // searchRefillToolStripMenuItem
+            // 
+            this.searchRefillToolStripMenuItem.Name = "searchRefillToolStripMenuItem";
+            this.searchRefillToolStripMenuItem.Size = new System.Drawing.Size(293, 38);
+            this.searchRefillToolStripMenuItem.Text = "Search Refill";
+            // 
+            // updateToolStripMenuItem1
+            // 
+            this.updateToolStripMenuItem1.Name = "updateToolStripMenuItem1";
+            this.updateToolStripMenuItem1.Size = new System.Drawing.Size(167, 38);
+            this.updateToolStripMenuItem1.Text = "Update";
+            // 
+            // updateToolStripMenuItem2
+            // 
+            this.updateToolStripMenuItem2.Name = "updateToolStripMenuItem2";
+            this.updateToolStripMenuItem2.Size = new System.Drawing.Size(167, 38);
+            this.updateToolStripMenuItem2.Text = "Update";
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(167, 38);
+            this.deleteToolStripMenuItem.Text = "Delete";
+            // 
+            // lblClient
+            // 
+            this.lblClient.AutoSize = true;
+            this.lblClient.Location = new System.Drawing.Point(217, 313);
+            this.lblClient.Name = "lblClient";
+            this.lblClient.Size = new System.Drawing.Size(67, 25);
+            this.lblClient.TabIndex = 9;
+            this.lblClient.Text = "Client";
+            // 
+            // lblPrescription
+            // 
+            this.lblPrescription.AutoSize = true;
+            this.lblPrescription.Location = new System.Drawing.Point(717, 313);
+            this.lblPrescription.Name = "lblPrescription";
+            this.lblPrescription.Size = new System.Drawing.Size(126, 25);
+            this.lblPrescription.TabIndex = 10;
+            this.lblPrescription.Text = "Prescription";
+            // 
+            // lblRefill
+            // 
+            this.lblRefill.AutoSize = true;
+            this.lblRefill.Location = new System.Drawing.Point(1263, 313);
+            this.lblRefill.Name = "lblRefill";
+            this.lblRefill.Size = new System.Drawing.Size(60, 25);
+            this.lblRefill.TabIndex = 11;
+            this.lblRefill.Text = "Refill";
+            // 
             // Employee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -1138,9 +1250,9 @@ namespace Final_Project_Work_Space
             this.Load += new System.EventHandler(this.Employee_Load);
             this.tabSearch.ResumeLayout(false);
             this.tabSearch.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClient)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPre)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRefill)).EndInit();
             this.tabNewRefill.ResumeLayout(false);
             this.tabNewRefill.PerformLayout();
             this.tabNewPrescription.ResumeLayout(false);
@@ -1150,6 +1262,9 @@ namespace Final_Project_Work_Space
             this.tabNewClient.ResumeLayout(false);
             this.tabNewClient.PerformLayout();
             this.tabEmployee.ResumeLayout(false);
+            this.contextMenuClient.ResumeLayout(false);
+            this.contextMenuPre.ResumeLayout(false);
+            this.contextMenuRefill.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1230,9 +1345,9 @@ namespace Final_Project_Work_Space
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabControl tabEmployee;
         private System.Windows.Forms.Button btnSeaSearch;
-        private System.Windows.Forms.DataGridView dataGridView3;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvClient;
+        private System.Windows.Forms.DataGridView dgvPre;
+        private System.Windows.Forms.DataGridView dgvRefill;
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.Label label37;
@@ -1249,5 +1364,17 @@ namespace Final_Project_Work_Space
         private System.Windows.Forms.Label txtRefPaymentType;
         private System.Windows.Forms.ComboBox cmboRefInsurance;
         private System.Windows.Forms.ComboBox cmboClientInsurance;
+        private System.Windows.Forms.ContextMenuStrip contextMenuClient;
+        private System.Windows.Forms.ContextMenuStrip contextMenuPre;
+        private System.Windows.Forms.ContextMenuStrip contextMenuRefill;
+        private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem searchPrescriptionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem searchRefillToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
+        private System.Windows.Forms.Label lblRefill;
+        private System.Windows.Forms.Label lblPrescription;
+        private System.Windows.Forms.Label lblClient;
     }
 }
