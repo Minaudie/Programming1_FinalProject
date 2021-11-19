@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FinalProject;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,59 +18,41 @@ namespace Programming1_FinalProject
             InitializeComponent();
         }
 
-        private void Register_Load(object sender, EventArgs e) //disable button on form load
+        //disable button on form load
+        private void Register_Load(object sender, EventArgs e) 
         {
             btnRegisterRegister.Enabled = false;
         }
 
-        private void txtRegisterUsername_TextChanged(object sender, EventArgs e) //disable button unless values in fields
+        private void checkFields()
         {
-
-            if ((txtRegisterUsername.Text.Trim().Length > 0) && (txtRegisterPassword.Text.Trim().Length > 0))
+            if (txtRegisterUsername.Text.Trim().Length > 0 && txtRegisterPassword.Text.Trim().Length > 0
+                && txtRegisterClientID.Text.Trim().Length > 0)
             {
                 btnRegisterRegister.Enabled = true;
-
             }
             else
             {
                 btnRegisterRegister.Enabled = false;
-                //disable buttons
             }
         }
 
-        private void txtRegisterPassword_TextChanged(object sender, EventArgs e) //disable button unless values in fields
+        //disable button unless values in fields
+        private void txtRegisterUsername_TextChanged(object sender, EventArgs e) 
         {
-            if ((txtRegisterPassword.Text.Trim().Length > 0) && (txtRegisterUsername.Text.Trim().Length > 0))
-            {
-                btnRegisterRegister.Enabled = true;
+            checkFields();            
+        }
 
-            }
-
-            else if ((txtRegisterPassword.Text.Trim().Length > 0) && (txtRegisterUsername.Text.Trim().Length > 0))
-            {
-                btnRegisterRegister.Enabled = true;
-            }
-            else
-            {
-                btnRegisterRegister.Enabled = false;
-                //disable buttons
-            }
+        //disable button unless values in fields
+        private void txtRegisterPassword_TextChanged(object sender, EventArgs e) 
+        {
+            checkFields();
         }
 
 
         private void txtRegisterClientID_TextChanged(object sender, EventArgs e)
         {
-            if ((txtRegisterClientID.Text.Trim().Length > 0) && (txtRegisterUsername.Text.Trim().Length > 0))
-
-            {
-                btnRegisterRegister.Enabled = true;
-
-            }
-            else
-            {
-                btnRegisterRegister.Enabled = false;
-                //disable buttons
-            }
+            checkFields();
         }
 
         private void btnRegisterCancel_Click(object sender, EventArgs e)
@@ -77,36 +60,89 @@ namespace Programming1_FinalProject
 
             //subForm myNewForm = new subForm();
 
-            this.Visible = false;
+            //this.Visible = false;
+
+            this.Close();
         }
 
         private void btnRegisterRegister_Click(object sender, EventArgs e)
         {
-            string clientid = "";
+            byte[] salt = Utilities.Get_SALT();
+            int clientid;
+            int myResult;
             string clientUsername = "";
             string clientPassword = "";
-      
 
             try
             {
-             //   DatabaseConnections NewClientDS = new DatabaseConnections();
-
-                clientid = txtRegisterClientID.Text.Trim();
+                clientid = int.Parse(txtRegisterClientID.Text.Trim());
                 clientUsername = txtRegisterUsername.Text.Trim();
                 clientPassword = txtRegisterPassword.Text.Trim();
-             
 
+                //create hash
+                string myval = Utilities.SaltKey;
+                var hash = Utilities.Get_HASH_SHA512(clientPassword, salt);
 
-              //DatabaseConnections.RegisterNew(clientid, clientUsername, clientPassword);
+                DatabaseConnections dc = new DatabaseConnections();
 
-                //doesnt work
-                //frmsearch.dgvStudents.Refresh();
+                myResult = dc.NewClientRegistration(clientid, clientUsername, hash, hash, Utilities.SaltKey);
 
-               //frmsearch.btnSearch_Click(sender, e);
+                Utilities.mySalt = new byte[0];
 
-                //close form
-                this.Close();
+                if(myResult == -1)
+                {
+                    MessageBox.Show("Successfully created new user. Welcome.", "Welcome", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                    //close form
+                    this.Close();
+
+                } else //myResult == 1
+                {
+                    MessageBox.Show("Error: Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK);
+            }
+        }
+
+        private void btnEmployeeCreate_Click(object sender, EventArgs e)
+        {
+            byte[] salt = Utilities.Get_SALT();
+            int empID;
+            int myResult;
+            string empUsername = "";
+            string empPassword = "";
+
+            try
+            {
+                empID = int.Parse(txtRegisterClientID.Text.Trim());
+                empUsername = txtRegisterUsername.Text.Trim();
+                empPassword = txtRegisterPassword.Text.Trim();
+
+                //create hash
+                string myval = Utilities.SaltKey;
+                var hash = Utilities.Get_HASH_SHA512(empPassword, salt);
+
+                DatabaseConnections dc = new DatabaseConnections();
+
+                myResult = dc.NewEmployeeRegistration(empID, empUsername, hash, hash, Utilities.SaltKey);
+
+                Utilities.mySalt = new byte[0];
+
+                if (myResult == -1)
+                {
+                    MessageBox.Show("Successfully created new employee. Welcome.", "Welcome", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    //close form
+                    this.Close();
+
+                }
+                else //myResult == 1
+                {
+                    MessageBox.Show("Error: Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             catch (Exception ex)
             {
@@ -115,14 +151,3 @@ namespace Programming1_FinalProject
         }
     }
 }
-
-        //this.Hide();
-
-
-    
-
-///register username: register client username
-///register password: register client password
-///register button -> add new password to client table and new username to client table
-
-///cancel the operation / close the current form

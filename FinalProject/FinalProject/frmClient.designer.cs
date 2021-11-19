@@ -42,7 +42,7 @@ namespace Programming1_FinalProject
             // 
             this.txtClientUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtClientUsername.Location = new System.Drawing.Point(81, 110);
-            this.txtClientUsername.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtClientUsername.Margin = new System.Windows.Forms.Padding(2);
             this.txtClientUsername.Name = "txtClientUsername";
             this.txtClientUsername.Size = new System.Drawing.Size(218, 23);
             this.txtClientUsername.TabIndex = 0;
@@ -52,7 +52,7 @@ namespace Programming1_FinalProject
             // 
             this.txtClientPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtClientPassword.Location = new System.Drawing.Point(81, 174);
-            this.txtClientPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtClientPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtClientPassword.Name = "txtClientPassword";
             this.txtClientPassword.Size = new System.Drawing.Size(218, 23);
             this.txtClientPassword.TabIndex = 1;
@@ -100,6 +100,7 @@ namespace Programming1_FinalProject
             this.btnClientUpdate.TabIndex = 6;
             this.btnClientUpdate.Text = "Update";
             this.btnClientUpdate.UseVisualStyleBackColor = true;
+            this.btnClientUpdate.Click += new System.EventHandler(this.btnClientUpdate_Click);
             // 
             // btnClientCancel
             // 
@@ -125,7 +126,7 @@ namespace Programming1_FinalProject
             this.Controls.Add(this.lblClientUsername);
             this.Controls.Add(this.txtClientPassword);
             this.Controls.Add(this.txtClientUsername);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Client";
             this.Text = "Client";
             this.Load += new System.EventHandler(this.Client_Load);

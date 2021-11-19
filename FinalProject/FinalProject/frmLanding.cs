@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FinalProject;
+using Final_Project_Work_Space;
 
 namespace Programming1_FinalProject
 {
@@ -53,24 +55,6 @@ namespace Programming1_FinalProject
             }
         }
 
-        private void lblLandingWelcome_Click(object sender, EventArgs e)
-        {
-
-        }
-
-      
-
-        private void lnkLandingNewClient_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-
-          
-        }
-
-        private void lblLandingWelcome_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void Landing_Load_1(object sender, EventArgs e)
         {
             btnLandingLogin.Enabled = false;
@@ -86,30 +70,48 @@ namespace Programming1_FinalProject
 
         private void btnLandingLogin_Click(object sender, EventArgs e)
         {
-            string clientUsername = "";
-            string clientPassword = "";
-            
+            string username = "";
+            string password = "";
 
             try
             {
-                //DatabaseConnections FinalDT = new DatabaseConnections();
+                username = txtLandingUsername.Text.Trim();
+                password = txtLandingPassword.Text.Trim();
 
-                clientUsername = txtLandingUsername.Text.Trim();
-                clientPassword = txtLandingPassword.Text.Trim();
-             
+                DatabaseConnections dc = new DatabaseConnections();
+                DataSet ds = new DataSet();
+                ds = dc.GetLoginInfo(username);
 
-             
+                if(ds.Tables[0].Rows.Count > 0)
+                {
+                    var val = ds.Tables[0].Rows[0]["salt"].ToString();
+                    var myval = Utilities.returnSaltBytes(val);
+                    var hash = Utilities.Return_HASH_SHA512(password, myval);
 
-                //DatabaseConnections.ClientLogin(clientUsername, clientPassword);
+                    bool isVerified = ds.Tables[0].Rows[0]["userPassword"].ToString().Equals(hash);
 
-                //doesnt work
-                //frmsearch.dgvStudents.Refresh();
+                    if(isVerified)
+                    {
+                        //successful login
+                        //find if employee or client
+                        int user = dc.FindUsername(username);
 
-                //frmsearch.btnSearch_Click(sender, e);
+                        if(user == 1) //client
+                        {
+                            Client frmClient = new Client();
+                            frmClient.ShowDialog();
 
-                //close form
-                this.Close();
-
+                        } else //2, employee
+                        {
+                            Employee frmEmp = new Employee();
+                            frmEmp.ShowDialog();
+                        }
+                        
+                    } else
+                    {
+                        MessageBox.Show("Invalid login", "Failure", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -118,17 +120,3 @@ namespace Programming1_FinalProject
         }
     }
 }
-    
-
-        ///login button
-        ///check for username: client or employee
-        ///check password in relevant table
-        ///allow login
-        ///client -> client form
-        ///employee -> employee form
-
-        ///new client registration link
-        ///send to register form
-    
-
-

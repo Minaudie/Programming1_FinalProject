@@ -496,15 +496,24 @@ BEGIN
 END
 GO
 
---CREATE PROC returnClientIDByUsername(
---	@username VARCHAR(25)
---)
---AS
---BEGIN
---	SET NOCOUNT ON;
+CREATE PROC returnClientIDByUsername(
+	@username VARCHAR(25)
+)
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+	BEGIN
+		SELECT clientID
+		FROM client
+		WHERE username = @username
+	END
+END
+GO
+
 
 CREATE PROC updateClientUserPass (
-	@clientID VARCHAR(25),
+	@clientID INT,
 	@newUsername VARCHAR(25),
 	@userPassword NVARCHAR(MAX),
 	@comPassword NVARCHAR(MAX),
@@ -525,7 +534,7 @@ BEGIN
 		SET userPassword = @userPassword,
 			comPassword = @comPassword,
 			salt = @salt
-		WHERE clientID = @clientID
+		WHERE userID = @clientID
 
 		IF @@ERROR <> 0
 			BEGIN

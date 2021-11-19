@@ -198,6 +198,41 @@ namespace FinalProject
             }
         }
 
+        public DataSet ReturnClientIDByUsername(string username)
+        {
+            try
+            {
+                myConn.Open();
+                cmdString.Parameters.Clear();
+                cmdString.Connection = myConn;
+
+                //stored procedure -> selectRefill, takes @refillID
+                cmdString.CommandType = CommandType.StoredProcedure;
+                cmdString.CommandTimeout = 1500;
+                cmdString.CommandText = "returnClientIDByUsername";
+
+                //paramenters
+                cmdString.Parameters.Add("@username", SqlDbType.Int).Value = username;
+
+                SqlDataAdapter aAdapter = new SqlDataAdapter();
+                aAdapter.SelectCommand = cmdString;
+
+                DataSet aDataSet = new DataSet();
+                aAdapter.Fill(aDataSet);
+
+                return aDataSet;
+
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException(ex.Message);
+            }
+            finally
+            {
+                myConn.Close();
+            }
+        }
+
         //new client
         public void NewClient(string fname, string initial, string lname, string street1, string street2, string city, 
             string state, string zip, string phone, string email, string gender, string DOB)

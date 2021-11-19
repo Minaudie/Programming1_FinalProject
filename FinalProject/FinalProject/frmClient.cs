@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FinalProject;
 
 namespace Programming1_FinalProject
 {
@@ -58,16 +59,33 @@ namespace Programming1_FinalProject
         {
             //currnetly has no assigned function
         }
+
+        private void btnClientUpdate_Click(object sender, EventArgs e)
+        {
+            byte[] salt = Utilities.Get_SALT();
+            string username;
+            string password;
+            int clientid;
+
+            try
+            {
+                username = txtClientUsername.Text.Trim();
+                password = txtClientPassword.Text.Trim();
+
+                DatabaseConnections dc = new DatabaseConnections();
+                DataSet ds = new DataSet();
+                ds = dc.ReturnClientIDByUsername(username);
+                clientid = int.Parse(ds.Tables[0].Rows[0]["clientID"].ToString());
+
+                string myval = Utilities.SaltKey;
+                var hash = Utilities.Get_HASH_SHA512(password, salt);
+
+                dc.UpdateClientLogin(clientid, username, hash, hash, Utilities.SaltKey);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK);
+            }
+        }
     }
-    }
-    
-
-
-        ///change username: change client username
-        ///change password: change client password
-        ///update button -> add new password to password table and new username to username table
-
-        ///cancel the operation / close the current form
-
-    
-
+}

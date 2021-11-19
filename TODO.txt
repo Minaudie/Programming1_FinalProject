@@ -55,9 +55,7 @@ frmEmployee
 marking what is not optional on frmEmployee and update forms
 	look at database, for columns not null
 
-If unused, delete GetRefillByID in DatabaseConnections
-	selectClientPrescription (stored proc)
-	selectRefill (stored proc)
+If unused, selectClientPrescription (stored proc)
 
 Login
 	register new client (dc ready)
