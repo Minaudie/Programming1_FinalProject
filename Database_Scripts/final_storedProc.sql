@@ -19,8 +19,7 @@ CREATE PROC addNewClient (
 	@phone VARCHAR(15) = '',
 	@email VARCHAR(100) = '',
 	@gender CHAR(1),
-	@dateOfBirth DATE,
-	@username VARCHAR(25) = ''
+	@dateOfBirth DATE
 )
 AS
 	IF NOT EXISTS (
@@ -34,10 +33,10 @@ BEGIN
 	BEGIN TRANSACTION
 		INSERT INTO client(fName, mInitial, lName, street1,
 			street2, city, addr_state, zip, phone, email,
-			gender, dateOfBirth, username)
+			gender, dateOfBirth)
 		VALUES(@fName, @mInitial, @lName, @street1,
 			@street2, @city, @addr_state, @zip, @phone, @email,
-			@gender, @dateOfBirth, @username)
+			@gender, @dateOfBirth)
 
 		IF @@ERROR <> 0
 			BEGIN
@@ -56,6 +55,38 @@ ELSE
 		PRINT('Record already exists.')
 		RETURN
 	END
+GO
+
+CREATE PROC newClientRegistration(
+	@clientID INT,
+	@username VARCHAR(25),
+	@clientPassword NVARCHAR(MAX),
+	@comPassword NVARCHAR(MAX),
+	@salt NVARCHAR(512)
+)
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+	--insert username into client
+	BEGIN TRANSACTION
+		UPDATE client
+		SET username = @username
+		WHERE clientID = @clientID
+
+		IF @@ERROR <> 0
+			BEGIN
+				ROLLBACK TRANSACTION
+				RETURN
+			END
+		ELSE
+			BEGIN
+				COMMIT TRANSACTION
+
+				INSERT INTO clientUser
+				VALUES(@clientID, @clientPassword, @comPassword, @salt)
+			END
+END
 GO
 
 --add insurance company
@@ -108,11 +139,6 @@ CREATE PROC newClientInsuranceRecord (
 	@clientInsuranceNum INT
 )
 AS
-	/*IF NOT EXISTS (
-		SELECT 1 FROM clientInsurance
-		WHERE clientID = @clientID
-			AND insuranceID = @insuranceID
-	)*/
 BEGIN
 	SET NOCOUNT ON;
 	BEGIN TRANSACTION
@@ -131,11 +157,6 @@ BEGIN
 				PRINT('Record added successfully!')
 			END
 END
-/*ELSE 
-	BEGIN
-		PRINT('Record already exists.')
-		RETURN
-	END*/
 GO
 
 --new physician
@@ -224,12 +245,6 @@ CREATE PROC addNewPrescription (
 	@refillCounter TINYINT = ''
 )
 AS
-	/*IF NOT EXISTS (
-		SELECT 1 FROM prescription
-		WHERE clientID = @clientID
-			AND startDate = GETDATE()
-			AND medicineID = @medicineID
-	)*/
 BEGIN
 	SET NOCOUNT ON;
 	BEGIN TRANSACTION
@@ -249,11 +264,6 @@ BEGIN
 				PRINT('Record added successfully!')
 			END
 END
-/*ELSE
-	BEGIN
-		PRINT('Record already exists.')
-		RETURN
-	END*/
 GO
 
 --new refill
@@ -389,52 +399,6 @@ BEGIN
 END
 GO
 
-CREATE PROC checkUsername(
-	@suppliedUsername VARCHAR(25)
-)
-AS
-BEGIN
-	SET NOCOUNT ON;
-
-	DECLARE @clientID INT
-
-	--if an employee username
-	IF EXISTS(SELECT 1 FROM employee
-					WHERE username = @suppliedUsername)
-		SET @clientID = 0
-	ELSE
-		SET @clientID = (SELECT clientID
-						FROM client
-						WHERE username = @suppliedUsername)
-	
-	--0 is employee, !0 is client
-	RETURN @clientID
-END
-GO
-
---if password matches, return 1
---if no match, return 0
-CREATE PROC checkPassword(
-	@clientID INT,
-	@suppliedPassword VARCHAR(50)
-)
-AS
-BEGIN
-	SET NOCOUNT ON;
-
-	DECLARE @RETURN INT
-
-	IF EXISTS(
-		SELECT 1 FROM clientPassword
-		WHERE clientID = @clientID
-			AND client_password = @suppliedPassword
-	)
-		SET @RETURN = 1;
-	ELSE
-		SET @RETURN = 0;
-
-END
-GO
 
 -- *** Update Records ***
 -- update client
@@ -486,57 +450,28 @@ BEGIN
 END
 GO
 
---update client username
-CREATE PROC updateClientUsername (
-	@username VARCHAR(25),
-	@clientID INT
-)
-AS
-BEGIN
-	SET NOCOUNT ON;
-	BEGIN TRANSACTION
-		UPDATE client
-		SET username = @username
-		WHERE clientID = @clientID
-
-		IF @@ERROR <> 0
-			BEGIN
-				ROLLBACK TRANSACTION
-				RAISERROR('Unable to update record.',16,1)
-				RETURN -1
-			END
-		ELSE
-			BEGIN
-				COMMIT TRANSACTION
-				PRINT('Record updated successfully!')
-			END
-END
-GO
-
 CREATE PROC updateClientUserPass (
-	@username VARCHAR(25),
+	@clientID VARCHAR(25),
 	@newUsername VARCHAR(25),
-	@clientPassword VARCHAR(50)
+	@userPassword NVARCHAR(MAX),
+	@comPassword NVARCHAR(MAX),
+	@salt NVARCHAR(512)
 )
 AS
 BEGIN
 	SET NOCOUNT ON;
 	BEGIN TRANSACTION
-
-		--get clientID based on current username
-		DECLARE @clientID INT
-		SELECT @clientID = (SELECT clientID
-							FROM client
-							WHERE username = @username)
 
 		--update username to the new one
 		UPDATE client
 		SET username = @newUsername
-		WHERE username = @username
+		WHERE clientID = @clientID
 
 		--update password to the new one
-		UPDATE clientPassword
-		SET client_password = @clientPassword
+		UPDATE users
+		SET userPassword = @userPassword,
+			comPassword = @comPassword,
+			salt = @salt
 		WHERE clientID = @clientID
 
 		IF @@ERROR <> 0
@@ -654,6 +589,46 @@ BEGIN
 END
 GO
 
+--used for verifying if the login info is correct
+CREATE PROC getLoginInfo(
+	@username NVARCHAR(64)
+)
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+	SELECT u.clientPassword, u.salt, c.username
+	FROM client c
+	INNER JOIN users u on c.clientID = u.clientID
+	WHERE c.username = @username
+END
+GO
+
+--returns 0 if username is not found in db
+--returns 1 if username is a client
+--returns 2 if username is an employee
+CREATE PROC findUsername (
+	@username VARCHAR(25)
+)
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+	IF EXISTS( SELECT 1 FROM client WHERE username = @username)
+		BEGIN
+			RETURN 1
+		END
+
+	ELSE
+		BEGIN
+			IF EXISTS( SELECT 1 FROM employee WHERE username = @username)
+				RETURN 2
+			ELSE
+				RETURN 0
+		END
+END
+GO 
+
 -- *** TRIGGERS ***
 --check refill counter and expiry date when creating new refill
 CREATE TRIGGER trg_checkRefillCounter
@@ -685,6 +660,7 @@ BEGIN
 	IF @@ERROR <> 0
 		RAISERROR('Unable to insert record.',16,1)
 END
+GO
 
 --trigger for price of prescription
 CREATE TRIGGER trg_setPrescriptionPrice
@@ -726,6 +702,7 @@ BEGIN
 			RAISERROR('Unable to insert record.',16,1)
 		END
 END
+GO
 
 --set refill price
 CREATE TRIGGER trg_setRefillPrice
@@ -753,3 +730,4 @@ BEGIN
 			RAISERROR('Unable to insert record.',16,1)
 		END
 END
+GO

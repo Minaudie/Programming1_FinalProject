@@ -4,6 +4,7 @@ put a note with your name after the item if you did it! TY
 New forms:
 	Update client information (DatabaseConnections method ready)
 		show client id info, but disable the text field so it cant be edited
+		the ID gets sent to the update stored procedure
 	update prescription information (DC method ready)
 		show prescription id info, but disable the text field
 	update refill information (DC method ready)
@@ -45,10 +46,12 @@ frmEmployee tab "load"
 If unused, delete GetRefillByID in DatabaseConnections
 
 Login
-	register new client
-	check username -> employee or client
+	register new client (dc ready)
+	check username -> employee or client (dc ready)
 	if employee, open employee form
 	if client, open client (update) form
+
+set icon and form titles
 
 *** Low priority updates ***
 

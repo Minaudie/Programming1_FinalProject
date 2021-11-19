@@ -463,53 +463,93 @@ namespace FinalProject
             }
         }
 
-        //if returns 0, employee login, else it returns clientid
-        public int CheckUsername(string username)
+        public int NewClientRegistration(int clientid, string username, string clientpassword,
+            string compassword, string salt)
         {
             try
             {
                 myConn.Open();
                 cmdString.Parameters.Clear();
+                cmdString.Connection = myConn;
                 cmdString.CommandType = CommandType.StoredProcedure;
                 cmdString.CommandTimeout = 1500;
-                cmdString.CommandText = "checkUsername";
+                cmdString.CommandText = "newClientRegistration";
 
-                cmdString.Parameters.Add("@suppliedUsername", SqlDbType.VarChar, 25).Value = username;
+                cmdString.Parameters.Add("@clientID", SqlDbType.Int).Value = clientid;
+                cmdString.Parameters.Add("@username", SqlDbType.VarChar, 25).Value = username;
+                cmdString.Parameters.Add("@clientPassword", SqlDbType.NVarChar).Value = clientpassword;
+                cmdString.Parameters.Add("@comPassword", SqlDbType.NVarChar).Value = compassword;
+                cmdString.Parameters.Add("@salt", SqlDbType.NVarChar, 512).Value = salt;
 
                 SqlDataAdapter aAdapter = new SqlDataAdapter();
-
                 aAdapter.SelectCommand = cmdString;
 
                 return cmdString.ExecuteNonQuery();
-            } catch (Exception ex)
+
+            }
+            catch (Exception ex)
             {
                 throw new ArgumentException(ex.Message);
-            } finally
+            }
+            finally
             {
                 myConn.Close();
             }
         }
 
-        //check client password
-        //returns 1 for success, 0 for failure
-        public int CheckPassword(int clientid, string password)
+        public DataSet GetLoginInfo(string username)
         {
             try
             {
                 myConn.Open();
                 cmdString.Parameters.Clear();
+                cmdString.Connection = myConn;
                 cmdString.CommandType = CommandType.StoredProcedure;
                 cmdString.CommandTimeout = 1500;
-                cmdString.CommandText = "checkPassword";
+                cmdString.CommandText = "getLoginInfo";
 
-                cmdString.Parameters.Add("@clientID", SqlDbType.Int).Value = clientid;
-                cmdString.Parameters.Add("@suppliedPassword", SqlDbType.VarChar, 25).Value = password;
+                cmdString.Parameters.Add("@username", SqlDbType.NVarChar, 64).Value = username;
 
                 SqlDataAdapter aAdapter = new SqlDataAdapter();
+                aAdapter.SelectCommand = cmdString;
 
+                DataSet aDataSet = new DataSet();
+                aAdapter.Fill(aDataSet);
+
+                return aDataSet;
+
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException(ex.Message);
+            }
+            finally
+            {
+                myConn.Close();
+            }
+        }
+
+        // 0 == username not found in db
+        // 1 == username is client
+        // 2 == username is employee
+        public int FindUsername(string username)
+        {
+            try
+            {
+                myConn.Open();
+                cmdString.Parameters.Clear();
+                cmdString.Connection = myConn;
+                cmdString.CommandType = CommandType.StoredProcedure;
+                cmdString.CommandTimeout = 1500;
+                cmdString.CommandText = "findUsername";
+
+                cmdString.Parameters.Add("@username", SqlDbType.VarChar, 25).Value = username;
+
+                SqlDataAdapter aAdapter = new SqlDataAdapter();
                 aAdapter.SelectCommand = cmdString;
 
                 return cmdString.ExecuteNonQuery();
+
             }
             catch (Exception ex)
             {
