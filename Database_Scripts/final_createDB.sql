@@ -28,11 +28,12 @@ CREATE TABLE client (
 	username VARCHAR(25)
 );
 
-CREATE TABLE clientPassword (
-	clientID INT NOT NULL --IDENTITY(1,1)
-		CONSTRAINT PK_clientIDPassword PRIMARY KEY
-		FOREIGN KEY(clientID) REFERENCES client(clientID),
-	client_password VARCHAR(50) 
+CREATE TABLE users (
+	userID INT NOT NULL IDENTITY(1,1)
+		CONSTRAINT PK_userIDPassword PRIMARY KEY,
+	userPassword NVARCHAR(MAX) NOT NULL,
+	comPassword NVARCHAR(MAX) NOT NULL,
+	salt NVARCHAR(512) NOT NULL
 );
 
 CREATE TABLE insurance (
@@ -117,6 +118,5 @@ CREATE TABLE payment (
 CREATE TABLE employee (
 	employeeID INT NOT NULL IDENTITY(1,1)
 		CONSTRAINT PK_employeeID PRIMARY KEY,
-	username VARCHAR(25) NOT NULL,
-	password VARCHAR(25) NOT NULL
+	username VARCHAR(25) NOT NULL
 );

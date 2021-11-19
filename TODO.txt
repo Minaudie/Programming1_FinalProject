@@ -2,20 +2,24 @@ To Do List
 put a note with your name after the item if you did it! TY
 -------------
 New forms:
-	Update client information
-	update prescription information
-	update refill information
+	Update client information (DatabaseConnections method ready)
+		show client id info, but disable the text field so it cant be edited
+		the ID gets sent to the update stored procedure
+	update prescription information (DC method ready)
+		show prescription id info, but disable the text field
+	update refill information (DC method ready)
+		show refill id info, disable text field
 
 frmEmployee search stuff set up (Miranda will do this)
 
 context menu:
 	on frmEmployee (search tab specifically)
-		Search Prescription (when right click on client, search all prescriptions for that client)
-		Search Refill (when right click on client, search all refills for that client)
+		Search Prescription (when right click on client, search all prescriptions for that client) (DC method ready)
+		Search Refill (when right click on client, search all refills for that client) (DC method ready)
 		Edit (edit client info -> update client info form
 			ON PRESC -> update presc info form
 			ON REFILL -> update refill info form)
-		delete (ON REFILL ONLY, delete refill info)
+		delete (ON REFILL ONLY, delete refill info) (dc method ready)
 
 Tab control
 	frmEmployee
@@ -30,6 +34,38 @@ Tab control
 
 marking what is not optional on frmEmployee and update forms
 	look at database, for columns not null
+
+Typo corrections to do:
+	DatabaseConnections - NewPrescription -> change in frmEmployee as well
+	frmEmployee - addNewPrescription()
+
+frmEmployee tab "load" 
+	I (Miranda) thought that each tab had a loading event, but they're click events. These need to be removed.
+	I guess each tabs load when the entire form loads, so Employee_Load should have that code instead.
+
+If unused, delete GetRefillByID in DatabaseConnections
+
+Login
+	register new client (dc ready)
+	check username -> employee or client (dc ready)
+	if employee, open employee form
+	if client, open client (update) form
+
+set icon and form titles
+
+*** Low priority updates ***
+
+gender can only be M, F, or O, so maybe check for that before sending to DB. Addt'ly, payment can only be one of a few types.
+
+Limit types of characters that can be entered in text fields
+
+add update trigger on prescription to update cost if med changes/on refill to update cost if prescid changes
+
+add @RESULT vars in stored procedures for returing success/failure
+
+fix namespace mess (Miranda)
+
+whitespace/naming convention check (miranda)
 
 ----------------
 TESTING
