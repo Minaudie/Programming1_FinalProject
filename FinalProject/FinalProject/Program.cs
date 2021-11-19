@@ -5,12 +5,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using FinalProject;
-
-
-    
-
-
 
 namespace FinalProject
 {
@@ -24,7 +18,7 @@ namespace FinalProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmUpdatePrescription());
+            Application.Run(new Employee());
         }
     }
 }

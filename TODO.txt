@@ -10,7 +10,19 @@ New forms:
 	update refill information (DC method ready)
 		show refill id info, disable text field
 
+FIELDS TO DELETE
+	frmUpdatePrescription - start date
+	frmEmployee-	
+		client - username deleted, change not optional to gender + dob
+		presc - remove start date
+		refill - remove price
+	frmUpdateRefill - price, payment type
+	frmUpdateClient - username, insurance, change not optional to gender + dob
+
 frmEmployee search stuff set up (Miranda will do this)
+
+frmEmployee new client tab - insurance drop down
+	get company name from db?
 
 context menu:
 	on frmEmployee (search tab specifically)
@@ -21,35 +33,28 @@ context menu:
 			ON REFILL -> update refill info form)
 		delete (ON REFILL ONLY, delete refill info) (dc method ready)
 
-Tab control
-	frmEmployee
-		new client tab
-		new phys tab
-		new presc tab
-		new refill
-		search
-	frmClient
-	frmLanding
-	frmRegister
+frmEmployee
+	new refill - disable price text box (auto filled when prescription id entered)
+		     the star thingys - placement and make red
+		     payment drop down - 'CASH','CREDIT','DEBIT','CHECK'
 
 marking what is not optional on frmEmployee and update forms
 	look at database, for columns not null
-
-Typo corrections to do:
-	DatabaseConnections - NewPrescription -> change in frmEmployee as well
-	frmEmployee - addNewPrescription()
 
 frmEmployee tab "load" 
 	I (Miranda) thought that each tab had a loading event, but they're click events. These need to be removed.
 	I guess each tabs load when the entire form loads, so Employee_Load should have that code instead.
 
 If unused, delete GetRefillByID in DatabaseConnections
+	selectClientPrescription (stored proc)
+	selectRefill (stored proc)
 
 Login
 	register new client (dc ready)
 	check username -> employee or client (dc ready)
 	if employee, open employee form
 	if client, open client (update) form
+		updateClientUserPass stored proc
 
 set icon and form titles
 

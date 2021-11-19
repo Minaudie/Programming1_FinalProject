@@ -153,7 +153,6 @@ namespace Final_Project_Work_Space
             this.tabSearch.Size = new System.Drawing.Size(794, 430);
             this.tabSearch.TabIndex = 4;
             this.tabSearch.Text = "Search";
-            this.tabSearch.Click += new System.EventHandler(this.tabSearch_Click);
             // 
             // btnSeaSearch
             // 
@@ -163,7 +162,6 @@ namespace Final_Project_Work_Space
             this.btnSeaSearch.TabIndex = 8;
             this.btnSeaSearch.Text = "Search";
             this.btnSeaSearch.UseVisualStyleBackColor = true;
-            this.btnSeaSearch.Click += new System.EventHandler(this.btnSeaSearch_Click);
             // 
             // dataGridView3
             // 
@@ -173,7 +171,6 @@ namespace Final_Project_Work_Space
             this.dataGridView3.RowHeadersWidth = 82;
             this.dataGridView3.Size = new System.Drawing.Size(240, 150);
             this.dataGridView3.TabIndex = 7;
-            this.dataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick);
             // 
             // dataGridView2
             // 
@@ -183,7 +180,6 @@ namespace Final_Project_Work_Space
             this.dataGridView2.RowHeadersWidth = 82;
             this.dataGridView2.Size = new System.Drawing.Size(240, 150);
             this.dataGridView2.TabIndex = 6;
-            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // dataGridView1
             // 
@@ -193,7 +189,6 @@ namespace Final_Project_Work_Space
             this.dataGridView1.RowHeadersWidth = 82;
             this.dataGridView1.Size = new System.Drawing.Size(240, 150);
             this.dataGridView1.TabIndex = 5;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // txtSearch
             // 
@@ -201,7 +196,6 @@ namespace Final_Project_Work_Space
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(100, 20);
             this.txtSearch.TabIndex = 4;
-            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // label25
             // 
@@ -211,7 +205,6 @@ namespace Final_Project_Work_Space
             this.label25.Size = new System.Drawing.Size(40, 13);
             this.label25.TabIndex = 3;
             this.label25.Text = "Select:";
-            this.label25.Click += new System.EventHandler(this.label25_Click);
             // 
             // tabNewRefill
             // 
@@ -237,7 +230,6 @@ namespace Final_Project_Work_Space
             this.tabNewRefill.Size = new System.Drawing.Size(794, 430);
             this.tabNewRefill.TabIndex = 3;
             this.tabNewRefill.Text = "New Refill";
-            this.tabNewRefill.Click += new System.EventHandler(this.tabNewRefill_Click);
             // 
             // btnRefSave
             // 
@@ -269,7 +261,6 @@ namespace Final_Project_Work_Space
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Payment";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // txtRefPaymentType
             // 
@@ -288,7 +279,6 @@ namespace Final_Project_Work_Space
             this.label35.Size = new System.Drawing.Size(75, 13);
             this.label35.TabIndex = 10;
             this.label35.Text = "Payment Type";
-            this.label35.Click += new System.EventHandler(this.label35_Click);
             // 
             // txtRefPrescriptionID
             // 
@@ -346,7 +336,6 @@ namespace Final_Project_Work_Space
             this.label32.Size = new System.Drawing.Size(31, 13);
             this.label32.TabIndex = 7;
             this.label32.Text = "Price";
-            this.label32.Click += new System.EventHandler(this.label32_Click);
             // 
             // label31
             // 
@@ -356,7 +345,6 @@ namespace Final_Project_Work_Space
             this.label31.Size = new System.Drawing.Size(90, 13);
             this.label31.TabIndex = 6;
             this.label31.Text = "Qauntity Supplied";
-            this.label31.Click += new System.EventHandler(this.label31_Click);
             // 
             // label30
             // 
@@ -366,7 +354,6 @@ namespace Final_Project_Work_Space
             this.label30.Size = new System.Drawing.Size(77, 13);
             this.label30.TabIndex = 5;
             this.label30.Text = "Supply in Days";
-            this.label30.Click += new System.EventHandler(this.label30_Click);
             // 
             // label29
             // 
@@ -376,7 +363,6 @@ namespace Final_Project_Work_Space
             this.label29.Size = new System.Drawing.Size(57, 13);
             this.label29.TabIndex = 4;
             this.label29.Text = "Frequency";
-            this.label29.Click += new System.EventHandler(this.label29_Click);
             // 
             // label28
             // 
@@ -386,7 +372,6 @@ namespace Final_Project_Work_Space
             this.label28.Size = new System.Drawing.Size(44, 13);
             this.label28.TabIndex = 3;
             this.label28.Text = "Dosage";
-            this.label28.Click += new System.EventHandler(this.label28_Click);
             // 
             // label27
             // 
@@ -396,7 +381,6 @@ namespace Final_Project_Work_Space
             this.label27.Size = new System.Drawing.Size(76, 13);
             this.label27.TabIndex = 2;
             this.label27.Text = "Perscription ID";
-            this.label27.Click += new System.EventHandler(this.label27_Click);
             // 
             // tabNewPrescription
             // 
@@ -424,7 +408,6 @@ namespace Final_Project_Work_Space
             this.tabNewPrescription.Size = new System.Drawing.Size(794, 430);
             this.tabNewPrescription.TabIndex = 2;
             this.tabNewPrescription.Text = "New Prescription";
-            this.tabNewPrescription.Click += new System.EventHandler(this.tabNewPrescription_Click);
             // 
             // dtpPreStartDate
             // 
@@ -432,7 +415,6 @@ namespace Final_Project_Work_Space
             this.dtpPreStartDate.Name = "dtpPreStartDate";
             this.dtpPreStartDate.Size = new System.Drawing.Size(200, 20);
             this.dtpPreStartDate.TabIndex = 3;
-            this.dtpPreStartDate.ValueChanged += new System.EventHandler(this.dtpPreStartDate_ValueChanged);
             // 
             // label43
             // 
@@ -442,7 +424,6 @@ namespace Final_Project_Work_Space
             this.label43.Size = new System.Drawing.Size(55, 13);
             this.label43.TabIndex = 33;
             this.label43.Text = "Start Date";
-            this.label43.Click += new System.EventHandler(this.label43_Click);
             // 
             // label39
             // 
@@ -454,7 +435,6 @@ namespace Final_Project_Work_Space
             this.label39.Size = new System.Drawing.Size(13, 16);
             this.label39.TabIndex = 32;
             this.label39.Text = "*";
-            this.label39.Click += new System.EventHandler(this.label39_Click);
             // 
             // label38
             // 
@@ -466,7 +446,6 @@ namespace Final_Project_Work_Space
             this.label38.Size = new System.Drawing.Size(13, 16);
             this.label38.TabIndex = 31;
             this.label38.Text = "*";
-            this.label38.Click += new System.EventHandler(this.label38_Click);
             // 
             // label37
             // 
@@ -478,7 +457,6 @@ namespace Final_Project_Work_Space
             this.label37.Size = new System.Drawing.Size(13, 16);
             this.label37.TabIndex = 30;
             this.label37.Text = "*";
-            this.label37.Click += new System.EventHandler(this.label37_Click);
             // 
             // btnPreSave
             // 
@@ -516,7 +494,6 @@ namespace Final_Project_Work_Space
             this.label24.Size = new System.Drawing.Size(87, 13);
             this.label24.TabIndex = 11;
             this.label24.Text = "Number of Refills";
-            this.label24.Click += new System.EventHandler(this.label24_Click);
             // 
             // label23
             // 
@@ -526,7 +503,6 @@ namespace Final_Project_Work_Space
             this.label23.Size = new System.Drawing.Size(79, 13);
             this.label23.TabIndex = 10;
             this.label23.Text = "Expiration Date";
-            this.label23.Click += new System.EventHandler(this.label23_Click);
             // 
             // label21
             // 
@@ -536,7 +512,6 @@ namespace Final_Project_Work_Space
             this.label21.Size = new System.Drawing.Size(73, 13);
             this.label21.TabIndex = 8;
             this.label21.Text = "Medication ID";
-            this.label21.Click += new System.EventHandler(this.label21_Click);
             // 
             // label20
             // 
@@ -546,7 +521,6 @@ namespace Final_Project_Work_Space
             this.label20.Size = new System.Drawing.Size(64, 13);
             this.label20.TabIndex = 7;
             this.label20.Text = "Physican ID";
-            this.label20.Click += new System.EventHandler(this.label20_Click);
             // 
             // label19
             // 
@@ -556,7 +530,6 @@ namespace Final_Project_Work_Space
             this.label19.Size = new System.Drawing.Size(47, 13);
             this.label19.TabIndex = 6;
             this.label19.Text = "Client ID";
-            this.label19.Click += new System.EventHandler(this.label19_Click);
             // 
             // txtPreNumOfRefills
             // 
@@ -613,7 +586,6 @@ namespace Final_Project_Work_Space
             this.tabNewPhysician.Size = new System.Drawing.Size(794, 430);
             this.tabNewPhysician.TabIndex = 1;
             this.tabNewPhysician.Text = "New Physician";
-            this.tabNewPhysician.Click += new System.EventHandler(this.tabNewPhysician_Click);
             // 
             // label36
             // 
@@ -625,7 +597,6 @@ namespace Final_Project_Work_Space
             this.label36.Size = new System.Drawing.Size(13, 16);
             this.label36.TabIndex = 31;
             this.label36.Text = "*";
-            this.label36.Click += new System.EventHandler(this.label36_Click);
             // 
             // label34
             // 
@@ -637,7 +608,6 @@ namespace Final_Project_Work_Space
             this.label34.Size = new System.Drawing.Size(13, 16);
             this.label34.TabIndex = 30;
             this.label34.Text = "*";
-            this.label34.Click += new System.EventHandler(this.label34_Click);
             // 
             // btnPhySave
             // 
@@ -665,7 +635,6 @@ namespace Final_Project_Work_Space
             this.txtPhyEmail.Name = "txtPhyEmail";
             this.txtPhyEmail.Size = new System.Drawing.Size(100, 20);
             this.txtPhyEmail.TabIndex = 4;
-            this.txtPhyEmail.TextChanged += new System.EventHandler(this.txtPhyEmail_TextChanged);
             // 
             // txtPhyPhone
             // 
@@ -673,7 +642,6 @@ namespace Final_Project_Work_Space
             this.txtPhyPhone.Name = "txtPhyPhone";
             this.txtPhyPhone.Size = new System.Drawing.Size(100, 20);
             this.txtPhyPhone.TabIndex = 3;
-            this.txtPhyPhone.TextChanged += new System.EventHandler(this.txtPhyPhone_TextChanged);
             // 
             // txtPhyLName
             // 
@@ -689,7 +657,6 @@ namespace Final_Project_Work_Space
             this.txtPhyMidInt.Name = "txtPhyMidInt";
             this.txtPhyMidInt.Size = new System.Drawing.Size(100, 20);
             this.txtPhyMidInt.TabIndex = 1;
-            this.txtPhyMidInt.TextChanged += new System.EventHandler(this.txtPhyMidInt_TextChanged);
             // 
             // txtPhyFName
             // 
@@ -707,7 +674,6 @@ namespace Final_Project_Work_Space
             this.label18.Size = new System.Drawing.Size(32, 13);
             this.label18.TabIndex = 4;
             this.label18.Text = "Email";
-            this.label18.Click += new System.EventHandler(this.label18_Click);
             // 
             // label17
             // 
@@ -717,7 +683,6 @@ namespace Final_Project_Work_Space
             this.label17.Size = new System.Drawing.Size(38, 13);
             this.label17.TabIndex = 3;
             this.label17.Text = "Phone";
-            this.label17.Click += new System.EventHandler(this.label17_Click);
             // 
             // label16
             // 
@@ -727,7 +692,6 @@ namespace Final_Project_Work_Space
             this.label16.Size = new System.Drawing.Size(58, 13);
             this.label16.TabIndex = 2;
             this.label16.Text = "Last Name";
-            this.label16.Click += new System.EventHandler(this.label16_Click);
             // 
             // label15
             // 
@@ -737,7 +701,6 @@ namespace Final_Project_Work_Space
             this.label15.Size = new System.Drawing.Size(39, 13);
             this.label15.TabIndex = 1;
             this.label15.Text = "Mid Int";
-            this.label15.Click += new System.EventHandler(this.label15_Click);
             // 
             // label14
             // 
@@ -747,7 +710,6 @@ namespace Final_Project_Work_Space
             this.label14.Size = new System.Drawing.Size(57, 13);
             this.label14.TabIndex = 0;
             this.label14.Text = "First Name";
-            this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
             // tabNewClient
             // 
@@ -793,7 +755,6 @@ namespace Final_Project_Work_Space
             this.tabNewClient.Size = new System.Drawing.Size(794, 430);
             this.tabNewClient.TabIndex = 0;
             this.tabNewClient.Text = "New Client";
-            this.tabNewClient.Click += new System.EventHandler(this.tbNewClient_Click);
             // 
             // txtClientUserName
             // 
@@ -801,7 +762,6 @@ namespace Final_Project_Work_Space
             this.txtClientUserName.Name = "txtClientUserName";
             this.txtClientUserName.Size = new System.Drawing.Size(100, 20);
             this.txtClientUserName.TabIndex = 12;
-            this.txtClientUserName.TextChanged += new System.EventHandler(this.txtClientUserName_TextChanged);
             // 
             // label42
             // 
@@ -811,7 +771,6 @@ namespace Final_Project_Work_Space
             this.label42.Size = new System.Drawing.Size(55, 13);
             this.label42.TabIndex = 36;
             this.label42.Text = "Username";
-            this.label42.Click += new System.EventHandler(this.label42_Click);
             // 
             // txtClientAdd2
             // 
@@ -819,7 +778,6 @@ namespace Final_Project_Work_Space
             this.txtClientAdd2.Name = "txtClientAdd2";
             this.txtClientAdd2.Size = new System.Drawing.Size(100, 20);
             this.txtClientAdd2.TabIndex = 4;
-            this.txtClientAdd2.TextChanged += new System.EventHandler(this.txtClientAdd2_TextChanged);
             // 
             // label41
             // 
@@ -829,7 +787,6 @@ namespace Final_Project_Work_Space
             this.label41.Size = new System.Drawing.Size(51, 13);
             this.label41.TabIndex = 34;
             this.label41.Text = "Address2";
-            this.label41.Click += new System.EventHandler(this.label41_Click);
             // 
             // label40
             // 
@@ -839,7 +796,6 @@ namespace Final_Project_Work_Space
             this.label40.Size = new System.Drawing.Size(39, 13);
             this.label40.TabIndex = 33;
             this.label40.Text = "Mid Int";
-            this.label40.Click += new System.EventHandler(this.label40_Click);
             // 
             // txtClientMidInt
             // 
@@ -847,7 +803,6 @@ namespace Final_Project_Work_Space
             this.txtClientMidInt.Name = "txtClientMidInt";
             this.txtClientMidInt.Size = new System.Drawing.Size(100, 20);
             this.txtClientMidInt.TabIndex = 1;
-            this.txtClientMidInt.TextChanged += new System.EventHandler(this.txtClientMidInt_TextChanged);
             // 
             // label33
             // 
@@ -859,7 +814,6 @@ namespace Final_Project_Work_Space
             this.label33.Size = new System.Drawing.Size(13, 16);
             this.label33.TabIndex = 31;
             this.label33.Text = "*";
-            this.label33.Click += new System.EventHandler(this.label33_Click);
             // 
             // label26
             // 
@@ -871,7 +825,6 @@ namespace Final_Project_Work_Space
             this.label26.Size = new System.Drawing.Size(13, 16);
             this.label26.TabIndex = 30;
             this.label26.Text = "*";
-            this.label26.Click += new System.EventHandler(this.label26_Click);
             // 
             // label22
             // 
@@ -883,7 +836,6 @@ namespace Final_Project_Work_Space
             this.label22.Size = new System.Drawing.Size(13, 16);
             this.label22.TabIndex = 29;
             this.label22.Text = "*";
-            this.label22.Click += new System.EventHandler(this.label22_Click);
             // 
             // label12
             // 
@@ -895,7 +847,6 @@ namespace Final_Project_Work_Space
             this.label12.Size = new System.Drawing.Size(13, 16);
             this.label12.TabIndex = 28;
             this.label12.Text = "*";
-            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // btnClientSave
             // 
@@ -926,7 +877,6 @@ namespace Final_Project_Work_Space
             this.label13.Size = new System.Drawing.Size(54, 13);
             this.label13.TabIndex = 25;
             this.label13.Text = "Insurance";
-            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // txtClientInsurance
             // 
@@ -934,7 +884,6 @@ namespace Final_Project_Work_Space
             this.txtClientInsurance.Name = "txtClientInsurance";
             this.txtClientInsurance.Size = new System.Drawing.Size(100, 20);
             this.txtClientInsurance.TabIndex = 13;
-            this.txtClientInsurance.TextChanged += new System.EventHandler(this.txtClientInsurance_TextChanged);
             // 
             // txtClientDOB
             // 
@@ -958,7 +907,6 @@ namespace Final_Project_Work_Space
             this.txtClientEmail.Name = "txtClientEmail";
             this.txtClientEmail.Size = new System.Drawing.Size(100, 20);
             this.txtClientEmail.TabIndex = 9;
-            this.txtClientEmail.TextChanged += new System.EventHandler(this.txtClientEmail_TextChanged);
             // 
             // txtClientPhone
             // 
@@ -966,7 +914,6 @@ namespace Final_Project_Work_Space
             this.txtClientPhone.Name = "txtClientPhone";
             this.txtClientPhone.Size = new System.Drawing.Size(100, 20);
             this.txtClientPhone.TabIndex = 8;
-            this.txtClientPhone.TextChanged += new System.EventHandler(this.txtClientPhone_TextChanged);
             // 
             // txtClientZip
             // 
@@ -974,7 +921,6 @@ namespace Final_Project_Work_Space
             this.txtClientZip.Name = "txtClientZip";
             this.txtClientZip.Size = new System.Drawing.Size(100, 20);
             this.txtClientZip.TabIndex = 7;
-            this.txtClientZip.TextChanged += new System.EventHandler(this.txtClientZip_TextChanged);
             // 
             // txtClientState
             // 
@@ -982,7 +928,6 @@ namespace Final_Project_Work_Space
             this.txtClientState.Name = "txtClientState";
             this.txtClientState.Size = new System.Drawing.Size(100, 20);
             this.txtClientState.TabIndex = 6;
-            this.txtClientState.TextChanged += new System.EventHandler(this.txtClientState_TextChanged);
             // 
             // txtClientCity
             // 
@@ -990,7 +935,6 @@ namespace Final_Project_Work_Space
             this.txtClientCity.Name = "txtClientCity";
             this.txtClientCity.Size = new System.Drawing.Size(100, 20);
             this.txtClientCity.TabIndex = 5;
-            this.txtClientCity.TextChanged += new System.EventHandler(this.txtClientCity_TextChanged);
             // 
             // txtClientAddress
             // 
@@ -998,7 +942,6 @@ namespace Final_Project_Work_Space
             this.txtClientAddress.Name = "txtClientAddress";
             this.txtClientAddress.Size = new System.Drawing.Size(100, 20);
             this.txtClientAddress.TabIndex = 3;
-            this.txtClientAddress.TextChanged += new System.EventHandler(this.txtClientAddress_TextChanged);
             // 
             // txtClientLName
             // 
@@ -1025,7 +968,6 @@ namespace Final_Project_Work_Space
             this.label11.Size = new System.Drawing.Size(30, 13);
             this.label11.TabIndex = 10;
             this.label11.Text = "DOB";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // label10
             // 
@@ -1036,7 +978,6 @@ namespace Final_Project_Work_Space
             this.label10.Size = new System.Drawing.Size(42, 13);
             this.label10.TabIndex = 9;
             this.label10.Text = "Gender";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // label9
             // 
@@ -1047,7 +988,6 @@ namespace Final_Project_Work_Space
             this.label9.Size = new System.Drawing.Size(32, 13);
             this.label9.TabIndex = 8;
             this.label9.Text = "Email";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // label8
             // 
@@ -1056,7 +996,6 @@ namespace Final_Project_Work_Space
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(0, 13);
             this.label8.TabIndex = 7;
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label7
             // 
@@ -1067,7 +1006,6 @@ namespace Final_Project_Work_Space
             this.label7.Size = new System.Drawing.Size(38, 13);
             this.label7.TabIndex = 6;
             this.label7.Text = "Phone";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label6
             // 
@@ -1078,7 +1016,6 @@ namespace Final_Project_Work_Space
             this.label6.Size = new System.Drawing.Size(50, 13);
             this.label6.TabIndex = 5;
             this.label6.Text = "Zip Code";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label5
             // 
@@ -1089,7 +1026,6 @@ namespace Final_Project_Work_Space
             this.label5.Size = new System.Drawing.Size(32, 13);
             this.label5.TabIndex = 4;
             this.label5.Text = "State";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label4
             // 
@@ -1100,7 +1036,6 @@ namespace Final_Project_Work_Space
             this.label4.Size = new System.Drawing.Size(24, 13);
             this.label4.TabIndex = 3;
             this.label4.Text = "City";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
@@ -1111,7 +1046,6 @@ namespace Final_Project_Work_Space
             this.label3.Size = new System.Drawing.Size(45, 13);
             this.label3.TabIndex = 2;
             this.label3.Text = "Address";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
@@ -1122,7 +1056,6 @@ namespace Final_Project_Work_Space
             this.label2.Size = new System.Drawing.Size(58, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Last Name";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -1133,7 +1066,6 @@ namespace Final_Project_Work_Space
             this.label1.Size = new System.Drawing.Size(60, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "First Name ";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // tabEmployee
             // 
@@ -1148,7 +1080,6 @@ namespace Final_Project_Work_Space
             this.tabEmployee.SelectedIndex = 0;
             this.tabEmployee.Size = new System.Drawing.Size(802, 459);
             this.tabEmployee.TabIndex = 0;
-            this.tabEmployee.SelectedIndexChanged += new System.EventHandler(this.tabEmployee_SelectedIndexChanged);
             // 
             // Employee
             // 

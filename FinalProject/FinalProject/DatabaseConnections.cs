@@ -164,7 +164,7 @@ namespace FinalProject
 
         //new client
         public void NewClient(string fname, string initial, string lname, string street1, string street2, string city, 
-            string state, string zip, string phone, string email, string gender, string DOB, string username )
+            string state, string zip, string phone, string email, string gender, string DOB)
         {
             try
             { 
@@ -189,7 +189,6 @@ namespace FinalProject
                 cmdString.Parameters.Add("@email", SqlDbType.VarChar, 100).Value = email;
                 cmdString.Parameters.Add("@gender", SqlDbType.VarChar,1 ).Value = gender;
                 cmdString.Parameters.Add("@DateOfBirth", SqlDbType.Date ).Value = DateTime.Parse(DOB);
-                cmdString.Parameters.Add("@username", SqlDbType.VarChar, 25).Value = username;
 
                 SqlDataAdapter aAdapter = new SqlDataAdapter();
                 aAdapter.SelectCommand = cmdString;
@@ -275,7 +274,7 @@ namespace FinalProject
             }
         }
 
-        public void NewPerscription(int physician, int clientid, int medicationid, string expirydate, int refillcounter)
+        public void NewPrescription(int physician, int clientid, int medicationid, string expirydate, int refillcounter)
         {
             try
             {

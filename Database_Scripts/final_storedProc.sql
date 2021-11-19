@@ -84,7 +84,7 @@ BEGIN
 				COMMIT TRANSACTION
 
 				INSERT INTO clientUser
-				VALUES(@clientID, @clientPassword, @comPassword, @salt)
+				VALUES(@clientPassword, @comPassword, @salt)
 			END
 END
 GO

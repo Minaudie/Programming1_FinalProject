@@ -114,7 +114,7 @@ namespace Final_Project_Work_Space
                 throw new ArgumentException(ex.Message);
             }
         }
-        private void addNewPerscreiption()
+        private void addNewPrescreiption()
         {
             int clientid = 0, physician = 0, medicationid = 0, refillcounter = 0;
             string expirydate = "";
@@ -132,7 +132,7 @@ namespace Final_Project_Work_Space
                 
 
 
-                npf.NewPerscription(clientid, physician, medicationid, expirydate, refillcounter);
+                npf.NewPrescription(clientid, physician, medicationid, expirydate, refillcounter);
 
 
             }
@@ -151,6 +151,7 @@ namespace Final_Project_Work_Space
         private void Employee_Load(object sender, EventArgs e)
         {
             btnClientSave.Enabled = false;
+            //disabling buttons/cclear text fields
         }
 
         /***     CLIENT TAB     ***/
@@ -167,12 +168,6 @@ namespace Final_Project_Work_Space
             {
                 return false;
             }
-        }
-
-        //client tab load
-        private void tbNewClient_Click(object sender, EventArgs e)
-        {
-            
         }
 
         private void btnClientClear_Click(object sender, EventArgs e)
@@ -260,13 +255,6 @@ namespace Final_Project_Work_Space
             }
         }
 
-        //physician tab load
-        private void tabNewPhysician_Click(object sender, EventArgs e)
-        {
-            btnPhyClear_Click(sender, e);
-            btnPhySave.Enabled = false;
-        }
-
         private void btnPhyClear_Click(object sender, EventArgs e)
         {
             txtPhyFName.Clear();
@@ -322,13 +310,6 @@ namespace Final_Project_Work_Space
             }
         }
 
-        //prescription tab load
-        private void tabNewPrescription_Click(object sender, EventArgs e)
-        {
-            btnPerClear_Click(sender, e);
-            btnPreSave.Enabled = false;
-        }
-
         private void btnPerClear_Click(object sender, EventArgs e)
         {
             txtPreClientID.Clear();
@@ -340,7 +321,7 @@ namespace Final_Project_Work_Space
 
         private void btnPerSave_Click(object sender, EventArgs e)
         {
-            addNewPerscreiption();
+            addNewPrescreiption();
             btnPerClear_Click(sender, e);
 
         }
@@ -417,13 +398,6 @@ namespace Final_Project_Work_Space
             {
                 return false;
             }
-        }
-
-        //refill tab load
-        private void tabNewRefill_Click(object sender, EventArgs e)
-        {
-            btnRefClear_Click(sender, e);
-            btnRefSave.Enabled = false;
         }
 
         private void btnRefClear_Click(object sender, EventArgs e)
@@ -525,331 +499,6 @@ namespace Final_Project_Work_Space
             {
                 btnRefSave.Enabled = false;
             }
-        }
-
-        private void tabSearch_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnSeaSearch_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void txtSearch_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label25_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label35_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label32_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label31_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label30_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label29_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label28_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label27_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dtpPreStartDate_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label43_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label39_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label38_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label37_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label24_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label23_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label21_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label20_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label19_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label36_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label34_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtPhyEmail_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtPhyPhone_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtPhyMidInt_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label18_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label17_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label16_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label15_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label14_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtClientUserName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label42_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtClientAdd2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label41_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label40_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtClientMidInt_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label33_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label26_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label22_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label13_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtClientInsurance_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtClientEmail_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtClientPhone_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtClientZip_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtClientState_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtClientCity_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtClientAddress_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabEmployee_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
