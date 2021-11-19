@@ -162,6 +162,42 @@ namespace FinalProject
             }
         }
 
+        //select prescription by PRESCRIPTION ID
+        public DataSet GetPrescriptionByID(int prescriptionid)
+        {
+            try
+            {
+                myConn.Open();
+                cmdString.Parameters.Clear();
+                cmdString.Connection = myConn;
+
+                //stored procedure -> selectRefill, takes @refillID
+                cmdString.CommandType = CommandType.StoredProcedure;
+                cmdString.CommandTimeout = 1500;
+                cmdString.CommandText = "selectPrescription";
+
+                //paramenters
+                cmdString.Parameters.Add("@prescriptionID", SqlDbType.Int).Value = prescriptionid;
+
+                SqlDataAdapter aAdapter = new SqlDataAdapter();
+                aAdapter.SelectCommand = cmdString;
+
+                DataSet aDataSet = new DataSet();
+                aAdapter.Fill(aDataSet);
+
+                return aDataSet;
+
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException(ex.Message);
+            }
+            finally
+            {
+                myConn.Close();
+            }
+        }
+
         //new client
         public void NewClient(string fname, string initial, string lname, string street1, string street2, string city, 
             string state, string zip, string phone, string email, string gender, string DOB)
@@ -496,6 +532,40 @@ namespace FinalProject
             }
         }
 
+        public int NewEmployeeRegistration(int empid, string username, string clientpassword,
+            string compassword, string salt)
+        {
+            try
+            {
+                myConn.Open();
+                cmdString.Parameters.Clear();
+                cmdString.Connection = myConn;
+                cmdString.CommandType = CommandType.StoredProcedure;
+                cmdString.CommandTimeout = 1500;
+                cmdString.CommandText = "newClientRegistration";
+
+                cmdString.Parameters.Add("@employeeID", SqlDbType.Int).Value = empid;
+                cmdString.Parameters.Add("@username", SqlDbType.VarChar, 25).Value = username;
+                cmdString.Parameters.Add("@empPassword", SqlDbType.NVarChar).Value = clientpassword;
+                cmdString.Parameters.Add("@comPassword", SqlDbType.NVarChar).Value = compassword;
+                cmdString.Parameters.Add("@salt", SqlDbType.NVarChar, 512).Value = salt;
+
+                SqlDataAdapter aAdapter = new SqlDataAdapter();
+                aAdapter.SelectCommand = cmdString;
+
+                return cmdString.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException(ex.Message);
+            }
+            finally
+            {
+                myConn.Close();
+            }
+        }
+
         public DataSet GetLoginInfo(string username)
         {
             try
@@ -548,6 +618,40 @@ namespace FinalProject
                 aAdapter.SelectCommand = cmdString;
 
                 return cmdString.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException(ex.Message);
+            }
+            finally
+            {
+                myConn.Close();
+            }
+        }
+
+        public void UpdateClientLogin(int clientid, string username, string clientpassword,
+            string compassword, string salt)
+        {
+            try
+            {
+                myConn.Open();
+                cmdString.Parameters.Clear();
+                cmdString.Connection = myConn;
+                cmdString.CommandType = CommandType.StoredProcedure;
+                cmdString.CommandTimeout = 1500;
+                cmdString.CommandText = "updateClientUserPass";
+
+                cmdString.Parameters.Add("@clientID", SqlDbType.Int).Value = clientid;
+                cmdString.Parameters.Add("@username", SqlDbType.VarChar, 25).Value = username;
+                cmdString.Parameters.Add("@clientPassword", SqlDbType.NVarChar).Value = clientpassword;
+                cmdString.Parameters.Add("@comPassword", SqlDbType.NVarChar).Value = compassword;
+                cmdString.Parameters.Add("@salt", SqlDbType.NVarChar, 512).Value = salt;
+
+                SqlDataAdapter aAdapter = new SqlDataAdapter();
+                aAdapter.SelectCommand = cmdString;
+
+                cmdString.ExecuteNonQuery();
 
             }
             catch (Exception ex)
