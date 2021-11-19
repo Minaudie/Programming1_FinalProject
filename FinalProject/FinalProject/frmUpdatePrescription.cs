@@ -26,18 +26,18 @@ namespace FinalProject
             {
                 DataSet ds = new DataSet();
                 DatabaseConnections upf = new DatabaseConnections();
-                //prescriptionID
-                ds = upf.GetPrescriptionByID(int.Parse(frmEmployee.g_prescriptionID.ToString()));
+
+                ds = upf.GetPrescriptionByID(frmEmployee.g_prescriptionID);
+
                 if (ds.Tables[0].Rows.Count > 0)
                 {
                     txtUpdatePrescriptionID.Text = ds.Tables[0].Rows[0]["prescriptionID"].ToString();
                     txtUpdatePrescriptionID.Enabled = false;
                     txtUpdatePreClientID.Text = ds.Tables[0].Rows[0]["clientID"].ToString();
-                    txtUpdatePrePhysicanID.Text = ds.Tables[0].Rows[0]["physician"].ToString();
+                    txtUpdatePrePhysicanID.Text = ds.Tables[0].Rows[0]["physicianID"].ToString();
                     txtUpdatePreMedicationID.Text = ds.Tables[0].Rows[0]["medicineID"].ToString();
                     dtpUpdatePreExpirationDate.Value = DateTime.Parse(ds.Tables[0].Rows[0]["expiryDate"].ToString());
                     txtUpdatePreNumOfRefills.Text = ds.Tables[0].Rows[0]["refillCounter"].ToString();
-
                 }
             }
             catch (Exception ex)
@@ -49,6 +49,11 @@ namespace FinalProject
         private void btnUpdatePreUpdate_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnUpdatePreClear_Click(object sender, EventArgs e)
+        {
+            frmUpdatePrescription_Load(sender, e);
         }
     }
 }

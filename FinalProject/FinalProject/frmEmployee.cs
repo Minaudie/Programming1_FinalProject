@@ -12,9 +12,9 @@ namespace FinalProject
 {
     public partial class frmEmployee : Form
     {
-        public static string g_clientID = "";
-        public static string g_prescriptionID = "";
-        public static string g_refillID = "";
+        public static int g_clientID;
+        public static int g_prescriptionID;
+        public static int g_refillID;
         
         private void addNewClient()
         {
@@ -121,6 +121,24 @@ namespace FinalProject
         public frmEmployee()
         {
             InitializeComponent();
+            dgvClient.DoubleClick += new EventHandler(dgvClient_DoubleClick);
+            dgvPre.DoubleClick += new EventHandler(dgvPre_DoubleClick);
+            dgvRefill.DoubleClick += new EventHandler(dgvRefill_DoubleClick);
+        }
+
+        private void dgvClient_DoubleClick(object sender, EventArgs e)
+        {
+            cmuClientUpdate_Click(sender, e);
+        }
+
+        private void dgvPre_DoubleClick(object sender, EventArgs e)
+        {
+            cmuPrescriptionUpdate_Click(sender, e);
+        }
+
+        private void dgvRefill_DoubleClick(object sender, EventArgs e)
+        {
+            cmuRefillUpdate_Click(sender, e);
         }
 
         //overall form load
@@ -475,6 +493,33 @@ namespace FinalProject
             }
         }
 
+        /***    SEARCH TAB       ***/
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            int clientid;
+
+            try
+            {
+                DataSet ds = new DataSet();
+                DatabaseConnections dc = new DatabaseConnections();
+
+                clientid = int.Parse(txtSearch.Text.Trim());
+
+                ds = dc.GetClientByID(clientid);
+
+                dgvClient.Visible = true;
+                dgvPre.Visible = false;
+                dgvRefill.Visible = false;
+
+                dgvClient.DataSource = ds.Tables[0];
+
+            } catch (Exception ex)
+            {
+                throw new ArgumentException(ex.Message);
+            }
+        }
+
         /***    CONTEXT MENUS    ***/
 
         private void cmuClientUpdate_Click(object sender, EventArgs e)
@@ -487,19 +532,63 @@ namespace FinalProject
                 frmUpdateClient clientform = new frmUpdateClient(this);
 
                 clientid = row.Cells[0].Value.ToString().Trim();
-                g_clientID = clientid;
+                g_clientID = int.Parse(clientid);
                 clientform.ShowDialog();
             }
         }
 
         private void cmuClientSearchPre_Click(object sender, EventArgs e)
         {
-            
+            int clientid;
+
+            try
+            {
+                DataSet ds = new DataSet();
+                DatabaseConnections dc = new DatabaseConnections();
+
+                DataGridViewRow row = dgvClient.SelectedRows[0];
+                clientid = int.Parse(row.Cells[0].Value.ToString().Trim());
+
+                ds = dc.GetAllClientPrescriptions(clientid);
+
+                dgvPre.Visible = true;
+                dgvClient.Visible = false;
+                dgvRefill.Visible = false;
+
+                dgvPre.DataSource = ds.Tables[0];
+
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException(ex.Message);
+            }
         }
 
         private void cmuClientSearchRefill_Click(object sender, EventArgs e)
         {
-            
+            int clientid;
+
+            try
+            {
+                DataSet ds = new DataSet();
+                DatabaseConnections dc = new DatabaseConnections();
+
+                DataGridViewRow row = dgvClient.SelectedRows[0];
+                clientid = int.Parse(row.Cells[0].Value.ToString().Trim());
+
+                ds = dc.GetAllClientRefills(clientid);
+
+                dgvRefill.Visible = true;
+                dgvClient.Visible = false;
+                dgvPre.Visible = false;
+
+                dgvRefill.DataSource = ds.Tables[0];
+
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException(ex.Message);
+            }
         }
 
         private void cmuPrescriptionUpdate_Click(object sender, EventArgs e)
@@ -512,7 +601,7 @@ namespace FinalProject
                 frmUpdatePrescription prescriptionform = new frmUpdatePrescription(this);
 
                 prescriptionid = row.Cells[0].Value.ToString().Trim();
-                g_clientID = prescriptionid;
+                g_prescriptionID = int.Parse(prescriptionid);
                 prescriptionform.ShowDialog();
             }
         }
@@ -527,14 +616,36 @@ namespace FinalProject
                 frmUpdateRefill refillform = new frmUpdateRefill(this);
 
                 refillid = row.Cells[0].Value.ToString().Trim();
-                g_clientID = refillid;
+                g_refillID = int.Parse(refillid);
                 refillform.ShowDialog();
             }
         }
 
         private void cmuRefillDelete_Click(object sender, EventArgs e)
         {
+            int refillid;
 
+            try
+            {
+                DatabaseConnections dc = new DatabaseConnections();
+                DataGridViewRow row = dgvRefill.SelectedRows[0];
+
+                refillid = int.Parse(row.Cells[0].Value.ToString().Trim());
+
+                dc.DeleteRefill(refillid);
+
+                //refresh the data grid to reflect deleted row
+                DataSet ds = new DataSet();
+                int clientid = int.Parse(row.Cells[0].Value.ToString().Trim());
+
+                ds = dc.GetAllClientRefills(clientid);
+
+                dgvRefill.DataSource = ds.Tables[0];
+
+            } catch (Exception ex)
+            {
+                throw new ArgumentException(ex.Message);
+            }
         }
     }
 }

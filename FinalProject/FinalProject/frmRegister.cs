@@ -110,14 +110,14 @@ namespace FinalProject
         private void btnEmployeeCreate_Click(object sender, EventArgs e)
         {
             byte[] salt = Utilities.Get_SALT();
-            int empID;
+            //int empID;
             int myResult;
-            string empUsername = "";
-            string empPassword = "";
+            string empUsername;
+            string empPassword;
 
             try
             {
-                empID = int.Parse(txtRegisterClientID.Text.Trim());
+                //empID = int.Parse(txtRegisterClientID.Text.Trim());
                 empUsername = txtRegisterUsername.Text.Trim();
                 empPassword = txtRegisterPassword.Text.Trim();
 
@@ -127,7 +127,7 @@ namespace FinalProject
 
                 DatabaseConnections dc = new DatabaseConnections();
 
-                myResult = dc.NewEmployeeRegistration(empID, empUsername, hash, hash, Utilities.SaltKey);
+                myResult = dc.NewEmployeeRegistration(empUsername, hash, hash, Utilities.SaltKey);
 
                 Utilities.mySalt = new byte[0];
 

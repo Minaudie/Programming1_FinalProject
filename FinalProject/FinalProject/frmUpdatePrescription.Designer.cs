@@ -105,6 +105,7 @@ namespace FinalProject
             this.btnUpdatePreClear.TabIndex = 7;
             this.btnUpdatePreClear.Text = "&Clear";
             this.btnUpdatePreClear.UseVisualStyleBackColor = true;
+            this.btnUpdatePreClear.Click += new System.EventHandler(this.btnUpdatePreClear_Click);
             // 
             // dtpUpdatePreExpirationDate
             // 
@@ -200,7 +201,7 @@ namespace FinalProject
             this.txtUpdatePrescriptionID.Location = new System.Drawing.Point(230, 43);
             this.txtUpdatePrescriptionID.Name = "txtUpdatePrescriptionID";
             this.txtUpdatePrescriptionID.Size = new System.Drawing.Size(100, 20);
-            this.txtUpdatePrescriptionID.TabIndex = 51;
+            this.txtUpdatePrescriptionID.TabIndex = 0;
             // 
             // label2
             // 

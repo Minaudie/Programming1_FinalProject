@@ -27,24 +27,37 @@ namespace FinalProject
                 DataSet ds = new DataSet();
                 DatabaseConnections urf = new DatabaseConnections();
                 //refillID
-                ds = urf.GetRefillByID(int.Parse(frmEmployee.g_refillID.ToString()));
+                ds = urf.GetRefillByID(frmEmployee.g_refillID);
 
                 if (ds.Tables[0].Rows.Count > 0)
                 {
                     txtUpdateRefillID.Text = ds.Tables[0].Rows[0]["refillID"].ToString();
                     txtUpdateRefillID.Enabled = false;
-                    txtUpdateRefPrescriptionID.Text = ds.Tables[0].Rows[0]["perscriptionID"].ToString();
+                    txtUpdateRefPrescriptionID.Text = ds.Tables[0].Rows[0]["prescriptionID"].ToString();
                     txtUpdateRefDosage.Text = ds.Tables[0].Rows[0]["dosage"].ToString();
                     txtUpdateRefFrequency.Text = ds.Tables[0].Rows[0]["frequency"].ToString();
                     txtUpdateRefSupplyDays.Text = ds.Tables[0].Rows[0]["supplyDays"].ToString();
-                    txtUpdateRefQuantitySupplied.Text = ds.Tables[0].Rows[0]["quantity"].ToString();
-
+                    txtUpdateRefQuantitySupplied.Text = ds.Tables[0].Rows[0]["quantitySupplied"].ToString();
+                    txtUpdateRefAmountDue.Text = ds.Tables[0].Rows[0]["amountDue"].ToString();
+                    txtUpdateRefAmountDue.Enabled = false;
+                    dtpUpdateRefDateOfRefill.Value = DateTime.Parse(ds.Tables[0].Rows[0]["dateOfRefill"].ToString());
+                    dtpUpdateRefDateOfRefill.Enabled = false;
                 }
             }
             catch(Exception ex)
             {
                 throw new ArgumentException(ex.Message);
             }
+        }
+
+        private void btnUpdateRefillUpdate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnUpdateRefillClear_Click(object sender, EventArgs e)
+        {
+            frmUpdateRefill_Load(sender, e);
         }
     }
 }

@@ -41,6 +41,12 @@ namespace FinalProject
             this.label27 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtUpdateRefillID = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtUpdateRefAmountDue = new System.Windows.Forms.TextBox();
+            this.dtpUpdateRefDateOfRefill = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnUpdateRefillUpdate = new System.Windows.Forms.Button();
+            this.btnUpdateRefillClear = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtUpdateRefPrescriptionID
@@ -85,7 +91,7 @@ namespace FinalProject
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(90, 13);
             this.label31.TabIndex = 34;
-            this.label31.Text = "Qauntity Supplied";
+            this.label31.Text = "Quantity Supplied";
             // 
             // label30
             // 
@@ -99,7 +105,7 @@ namespace FinalProject
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(187, 115);
+            this.label29.Location = new System.Drawing.Point(187, 116);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(57, 13);
             this.label29.TabIndex = 32;
@@ -108,7 +114,7 @@ namespace FinalProject
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(200, 92);
+            this.label28.Location = new System.Drawing.Point(200, 90);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(44, 13);
             this.label28.TabIndex = 31;
@@ -139,25 +145,84 @@ namespace FinalProject
             this.txtUpdateRefillID.Size = new System.Drawing.Size(100, 20);
             this.txtUpdateRefillID.TabIndex = 37;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(178, 194);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(66, 13);
+            this.label2.TabIndex = 34;
+            this.label2.Text = "Amount Due";
+            // 
+            // txtUpdateRefAmountDue
+            // 
+            this.txtUpdateRefAmountDue.Location = new System.Drawing.Point(250, 191);
+            this.txtUpdateRefAmountDue.Name = "txtUpdateRefAmountDue";
+            this.txtUpdateRefAmountDue.Size = new System.Drawing.Size(100, 20);
+            this.txtUpdateRefAmountDue.TabIndex = 4;
+            // 
+            // dtpUpdateRefDateOfRefill
+            // 
+            this.dtpUpdateRefDateOfRefill.Enabled = false;
+            this.dtpUpdateRefDateOfRefill.Location = new System.Drawing.Point(250, 217);
+            this.dtpUpdateRefDateOfRefill.Name = "dtpUpdateRefDateOfRefill";
+            this.dtpUpdateRefDateOfRefill.Size = new System.Drawing.Size(184, 20);
+            this.dtpUpdateRefDateOfRefill.TabIndex = 38;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(178, 220);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(68, 13);
+            this.label3.TabIndex = 34;
+            this.label3.Text = "Date of Refill";
+            // 
+            // btnUpdateRefillUpdate
+            // 
+            this.btnUpdateRefillUpdate.Location = new System.Drawing.Point(181, 268);
+            this.btnUpdateRefillUpdate.Name = "btnUpdateRefillUpdate";
+            this.btnUpdateRefillUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdateRefillUpdate.TabIndex = 39;
+            this.btnUpdateRefillUpdate.Text = "&Update";
+            this.btnUpdateRefillUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdateRefillUpdate.Click += new System.EventHandler(this.btnUpdateRefillUpdate_Click);
+            // 
+            // btnUpdateRefillClear
+            // 
+            this.btnUpdateRefillClear.Location = new System.Drawing.Point(345, 268);
+            this.btnUpdateRefillClear.Name = "btnUpdateRefillClear";
+            this.btnUpdateRefillClear.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdateRefillClear.TabIndex = 40;
+            this.btnUpdateRefillClear.Text = "&Clear";
+            this.btnUpdateRefillClear.UseVisualStyleBackColor = true;
+            this.btnUpdateRefillClear.Click += new System.EventHandler(this.btnUpdateRefillClear_Click);
+            // 
             // frmUpdateRefill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(595, 334);
+            this.Controls.Add(this.btnUpdateRefillUpdate);
+            this.Controls.Add(this.btnUpdateRefillClear);
+            this.Controls.Add(this.dtpUpdateRefDateOfRefill);
             this.Controls.Add(this.txtUpdateRefillID);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtUpdateRefPrescriptionID);
             this.Controls.Add(this.txtUpdateRefDosage);
             this.Controls.Add(this.txtUpdateRefFrequency);
             this.Controls.Add(this.txtUpdateRefSupplyDays);
+            this.Controls.Add(this.txtUpdateRefAmountDue);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.txtUpdateRefQuantitySupplied);
             this.Controls.Add(this.label31);
             this.Controls.Add(this.label30);
             this.Controls.Add(this.label29);
             this.Controls.Add(this.label28);
             this.Controls.Add(this.label27);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmUpdateRefill";
             this.Text = "Update Refill";
             this.Load += new System.EventHandler(this.frmUpdateRefill_Load);
@@ -179,5 +244,11 @@ namespace FinalProject
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtUpdateRefillID;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtUpdateRefAmountDue;
+        private System.Windows.Forms.DateTimePicker dtpUpdateRefDateOfRefill;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnUpdateRefillUpdate;
+        private System.Windows.Forms.Button btnUpdateRefillClear;
     }
 }

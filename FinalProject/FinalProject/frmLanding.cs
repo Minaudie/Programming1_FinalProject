@@ -23,8 +23,6 @@ namespace FinalProject
             btnLandingLogin.Enabled = false;
         }
 
-
-
         private void txtLandingUsername_TextChanged(object sender, EventArgs e)
         {
 
@@ -36,7 +34,6 @@ namespace FinalProject
             else
             {
                 btnLandingLogin.Enabled = false;
-                //disable buttons
             }
         }
 
@@ -51,16 +48,10 @@ namespace FinalProject
             else
             {
                 btnLandingLogin.Enabled = false;
-                //disable buttons
             }
         }
 
-        private void Landing_Load_1(object sender, EventArgs e)
-        {
-            btnLandingLogin.Enabled = false;
-        }
-
-        private void lnkLandingNewClient_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+        private void lnkLandingNewClient_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             frmRegister frm = new frmRegister();
             frm.Show();
@@ -101,13 +92,16 @@ namespace FinalProject
                             frmClient frmClient = new frmClient();
                             frmClient.ShowDialog();
 
-                        } else //2, employee
+                        } else if(user == 2) //2, employee
                         {
                             frmEmployee frmEmp = new frmEmployee();
                             frmEmp.ShowDialog();
+                        } else
+                        {
+                            MessageBox.Show("Unknown Username", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                         
-                    } else
+                    } else //not verified
                     {
                         MessageBox.Show("Invalid login", "Failure", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     }

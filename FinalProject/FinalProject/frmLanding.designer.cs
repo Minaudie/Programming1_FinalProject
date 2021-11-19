@@ -113,7 +113,7 @@ namespace FinalProject
             this.lnkLandingNewClient.TabIndex = 6;
             this.lnkLandingNewClient.TabStop = true;
             this.lnkLandingNewClient.Text = "New Client Registration";
-            this.lnkLandingNewClient.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkLandingNewClient_LinkClicked_1);
+            this.lnkLandingNewClient.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkLandingNewClient_LinkClicked);
             // 
             // Landing
             // 
@@ -131,7 +131,6 @@ namespace FinalProject
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Landing";
             this.Text = "Landing";
-            this.Load += new System.EventHandler(this.Landing_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
 

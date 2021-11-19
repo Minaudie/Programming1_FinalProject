@@ -54,9 +54,14 @@ namespace FinalProject
             }
         }
 
-        private void cmboClientInsurance_SelectedIndexChanged(object sender, EventArgs e)
+        private void btnUpdateClientUpdate_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnUpdateClientClear_Click(object sender, EventArgs e)
+        {
+            frmUpdateClient_Load(sender, e);
         }
     }
 }

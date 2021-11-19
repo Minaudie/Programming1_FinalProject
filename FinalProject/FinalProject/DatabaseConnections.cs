@@ -567,7 +567,7 @@ namespace FinalProject
             }
         }
 
-        public int NewEmployeeRegistration(int empid, string username, string clientpassword,
+        public int NewEmployeeRegistration(string username, string clientpassword,
             string compassword, string salt)
         {
             try
@@ -577,9 +577,8 @@ namespace FinalProject
                 cmdString.Connection = myConn;
                 cmdString.CommandType = CommandType.StoredProcedure;
                 cmdString.CommandTimeout = 1500;
-                cmdString.CommandText = "newClientRegistration";
+                cmdString.CommandText = "newEmployeeRegistration";
 
-                cmdString.Parameters.Add("@employeeID", SqlDbType.Int).Value = empid;
                 cmdString.Parameters.Add("@username", SqlDbType.VarChar, 25).Value = username;
                 cmdString.Parameters.Add("@empPassword", SqlDbType.NVarChar).Value = clientpassword;
                 cmdString.Parameters.Add("@comPassword", SqlDbType.NVarChar).Value = compassword;
@@ -649,11 +648,16 @@ namespace FinalProject
 
                 cmdString.Parameters.Add("@username", SqlDbType.VarChar, 25).Value = username;
 
+                cmdString.Parameters.Add("@Return", SqlDbType.Int).Direction = ParameterDirection.ReturnValue;
+
                 SqlDataAdapter aAdapter = new SqlDataAdapter();
                 aAdapter.SelectCommand = cmdString;
 
-                return cmdString.ExecuteNonQuery();
+                cmdString.ExecuteNonQuery();
 
+                int returnVal = (int)cmdString.Parameters["@Return"].Value;
+
+                return returnVal;
             }
             catch (Exception ex)
             {

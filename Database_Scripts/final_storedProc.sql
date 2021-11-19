@@ -84,7 +84,7 @@ BEGIN
 				COMMIT TRANSACTION
 
 				INSERT INTO users
-				VALUES(@clientPassword, @comPassword, @salt)
+				VALUES(@clientID, @clientPassword, @comPassword, @salt)
 			END
 END
 GO
@@ -325,7 +325,6 @@ GO
 
 
 CREATE PROC newEmployeeRegistration(
-	@employeeID INT,
 	@username VARCHAR(25),
 	@empPassword NVARCHAR(MAX),
 	@comPassword NVARCHAR(MAX),
@@ -335,11 +334,11 @@ AS
 BEGIN
 	SET NOCOUNT ON;
 
-	--insert username into client
 	BEGIN TRANSACTION
-		UPDATE employee
-		SET username = @username
-		WHERE employeeID = @employeeID
+		INSERT INTO employee
+		VALUES(@username)
+
+		DECLARE @employeeID INT
 
 		IF @@ERROR <> 0
 			BEGIN
@@ -350,8 +349,10 @@ BEGIN
 			BEGIN
 				COMMIT TRANSACTION
 
+				SET @employeeID = (SELECT @@IDENTITY)
+
 				INSERT INTO users
-				VALUES(@empPassword, @comPassword, @salt)
+				VALUES(@employeeID, @empPassword, @comPassword, @salt)
 			END
 END
 GO
@@ -677,6 +678,11 @@ BEGIN
 			ELSE
 				RETURN 0
 		END
+
+	IF @@ERROR <> 0
+		BEGIN
+			RETURN 3
+		END
 END
 GO
 
@@ -692,15 +698,15 @@ BEGIN
 
 	IF EXISTS( SELECT 1 FROM client WHERE username = @username)
 		BEGIN
-			RETURN 1
+			RETURN 1;
 		END
 
 	ELSE
 		BEGIN
 			IF EXISTS( SELECT 1 FROM employee WHERE username = @username)
-				RETURN 2
+				RETURN 2;
 			ELSE
-				RETURN 0
+				RETURN 0;
 		END
 END
 GO 

@@ -33,10 +33,7 @@ namespace FinalProject
         {
             this.components = new System.ComponentModel.Container();
             this.tabSearch = new System.Windows.Forms.TabPage();
-            this.lblRefill = new System.Windows.Forms.Label();
-            this.lblPrescription = new System.Windows.Forms.Label();
-            this.lblClient = new System.Windows.Forms.Label();
-            this.btnSeaSearch = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.dgvClient = new System.Windows.Forms.DataGridView();
             this.cmuClient = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cmuClientUpdate = new System.Windows.Forms.ToolStripMenuItem();
@@ -132,6 +129,35 @@ namespace FinalProject
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabEmployee = new System.Windows.Forms.TabControl();
+            this.clientID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mInitial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateOfBirth = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.street1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.street2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.city = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addr_state = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.zip = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prescriptionID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pClientID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.physicianID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.medicineID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.startDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.expiryDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.refillCounter = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.refillID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rPrescriptionID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dosage = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.frequency = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.supplyDays = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantitySupplied = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amountDue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateOfRefill = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClient)).BeginInit();
             this.cmuClient.SuspendLayout();
@@ -149,70 +175,60 @@ namespace FinalProject
             // tabSearch
             // 
             this.tabSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.tabSearch.Controls.Add(this.lblRefill);
-            this.tabSearch.Controls.Add(this.lblPrescription);
-            this.tabSearch.Controls.Add(this.lblClient);
-            this.tabSearch.Controls.Add(this.btnSeaSearch);
-            this.tabSearch.Controls.Add(this.dgvClient);
-            this.tabSearch.Controls.Add(this.dgvPre);
+            this.tabSearch.Controls.Add(this.btnSearch);
             this.tabSearch.Controls.Add(this.dgvRefill);
             this.tabSearch.Controls.Add(this.txtSearch);
             this.tabSearch.Controls.Add(this.label25);
+            this.tabSearch.Controls.Add(this.dgvClient);
+            this.tabSearch.Controls.Add(this.dgvPre);
             this.tabSearch.Location = new System.Drawing.Point(4, 25);
             this.tabSearch.Name = "tabSearch";
             this.tabSearch.Padding = new System.Windows.Forms.Padding(2);
-            this.tabSearch.Size = new System.Drawing.Size(794, 430);
+            this.tabSearch.Size = new System.Drawing.Size(794, 441);
             this.tabSearch.TabIndex = 4;
             this.tabSearch.Text = "Search";
             // 
-            // lblRefill
+            // btnSearch
             // 
-            this.lblRefill.AutoSize = true;
-            this.lblRefill.Location = new System.Drawing.Point(632, 163);
-            this.lblRefill.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblRefill.Name = "lblRefill";
-            this.lblRefill.Size = new System.Drawing.Size(30, 13);
-            this.lblRefill.TabIndex = 11;
-            this.lblRefill.Text = "Refill";
-            // 
-            // lblPrescription
-            // 
-            this.lblPrescription.AutoSize = true;
-            this.lblPrescription.Location = new System.Drawing.Point(358, 163);
-            this.lblPrescription.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblPrescription.Name = "lblPrescription";
-            this.lblPrescription.Size = new System.Drawing.Size(62, 13);
-            this.lblPrescription.TabIndex = 10;
-            this.lblPrescription.Text = "Prescription";
-            // 
-            // lblClient
-            // 
-            this.lblClient.AutoSize = true;
-            this.lblClient.Location = new System.Drawing.Point(108, 163);
-            this.lblClient.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblClient.Name = "lblClient";
-            this.lblClient.Size = new System.Drawing.Size(33, 13);
-            this.lblClient.TabIndex = 9;
-            this.lblClient.Text = "Client";
-            // 
-            // btnSeaSearch
-            // 
-            this.btnSeaSearch.Location = new System.Drawing.Point(498, 93);
-            this.btnSeaSearch.Name = "btnSeaSearch";
-            this.btnSeaSearch.Size = new System.Drawing.Size(75, 23);
-            this.btnSeaSearch.TabIndex = 8;
-            this.btnSeaSearch.Text = "Search";
-            this.btnSeaSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Location = new System.Drawing.Point(473, 33);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.TabIndex = 8;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // dgvClient
             // 
+            this.dgvClient.AllowUserToAddRows = false;
+            this.dgvClient.AllowUserToDeleteRows = false;
+            this.dgvClient.AllowUserToResizeColumns = false;
+            this.dgvClient.AllowUserToResizeRows = false;
+            this.dgvClient.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvClient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvClient.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clientID,
+            this.fName,
+            this.mInitial,
+            this.lName,
+            this.dateOfBirth,
+            this.gender,
+            this.phone,
+            this.email,
+            this.street1,
+            this.street2,
+            this.city,
+            this.addr_state,
+            this.zip});
             this.dgvClient.ContextMenuStrip = this.cmuClient;
-            this.dgvClient.Location = new System.Drawing.Point(8, 190);
+            this.dgvClient.Location = new System.Drawing.Point(8, 83);
             this.dgvClient.Name = "dgvClient";
+            this.dgvClient.ReadOnly = true;
             this.dgvClient.RowHeadersWidth = 82;
-            this.dgvClient.Size = new System.Drawing.Size(240, 150);
+            this.dgvClient.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvClient.Size = new System.Drawing.Size(775, 353);
             this.dgvClient.TabIndex = 7;
+            this.dgvClient.Visible = false;
             // 
             // cmuClient
             // 
@@ -247,13 +263,30 @@ namespace FinalProject
             // 
             // dgvPre
             // 
+            this.dgvPre.AllowUserToAddRows = false;
+            this.dgvPre.AllowUserToDeleteRows = false;
+            this.dgvPre.AllowUserToResizeColumns = false;
+            this.dgvPre.AllowUserToResizeRows = false;
+            this.dgvPre.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPre.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPre.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.prescriptionID,
+            this.pClientID,
+            this.physicianID,
+            this.medicineID,
+            this.startDate,
+            this.expiryDate,
+            this.refillCounter,
+            this.price});
             this.dgvPre.ContextMenuStrip = this.cmuPrescription;
-            this.dgvPre.Location = new System.Drawing.Point(267, 190);
+            this.dgvPre.Location = new System.Drawing.Point(8, 83);
             this.dgvPre.Name = "dgvPre";
+            this.dgvPre.ReadOnly = true;
             this.dgvPre.RowHeadersWidth = 82;
-            this.dgvPre.Size = new System.Drawing.Size(240, 150);
+            this.dgvPre.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPre.Size = new System.Drawing.Size(775, 353);
             this.dgvPre.TabIndex = 6;
+            this.dgvPre.Visible = false;
             // 
             // cmuPrescription
             // 
@@ -266,19 +299,36 @@ namespace FinalProject
             // cmuPrescriptionUpdate
             // 
             this.cmuPrescriptionUpdate.Name = "cmuPrescriptionUpdate";
-            this.cmuPrescriptionUpdate.Size = new System.Drawing.Size(180, 22);
+            this.cmuPrescriptionUpdate.Size = new System.Drawing.Size(112, 22);
             this.cmuPrescriptionUpdate.Text = "Update";
             this.cmuPrescriptionUpdate.Click += new System.EventHandler(this.cmuPrescriptionUpdate_Click);
             // 
             // dgvRefill
             // 
+            this.dgvRefill.AllowUserToAddRows = false;
+            this.dgvRefill.AllowUserToDeleteRows = false;
+            this.dgvRefill.AllowUserToResizeColumns = false;
+            this.dgvRefill.AllowUserToResizeRows = false;
+            this.dgvRefill.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvRefill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRefill.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.refillID,
+            this.rPrescriptionID,
+            this.dosage,
+            this.frequency,
+            this.supplyDays,
+            this.quantitySupplied,
+            this.amountDue,
+            this.dateOfRefill});
             this.dgvRefill.ContextMenuStrip = this.cmuRefill;
-            this.dgvRefill.Location = new System.Drawing.Point(522, 190);
+            this.dgvRefill.Location = new System.Drawing.Point(8, 83);
             this.dgvRefill.Name = "dgvRefill";
+            this.dgvRefill.ReadOnly = true;
             this.dgvRefill.RowHeadersWidth = 82;
-            this.dgvRefill.Size = new System.Drawing.Size(240, 150);
+            this.dgvRefill.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvRefill.Size = new System.Drawing.Size(775, 353);
             this.dgvRefill.TabIndex = 5;
+            this.dgvRefill.Visible = false;
             // 
             // cmuRefill
             // 
@@ -287,37 +337,37 @@ namespace FinalProject
             this.cmuRefillUpdate,
             this.cmuRefillDelete});
             this.cmuRefill.Name = "contextMenuRefill";
-            this.cmuRefill.Size = new System.Drawing.Size(181, 70);
+            this.cmuRefill.Size = new System.Drawing.Size(113, 48);
             // 
             // cmuRefillUpdate
             // 
             this.cmuRefillUpdate.Name = "cmuRefillUpdate";
-            this.cmuRefillUpdate.Size = new System.Drawing.Size(180, 22);
+            this.cmuRefillUpdate.Size = new System.Drawing.Size(112, 22);
             this.cmuRefillUpdate.Text = "Update";
             this.cmuRefillUpdate.Click += new System.EventHandler(this.cmuRefillUpdate_Click);
             // 
             // cmuRefillDelete
             // 
             this.cmuRefillDelete.Name = "cmuRefillDelete";
-            this.cmuRefillDelete.Size = new System.Drawing.Size(180, 22);
+            this.cmuRefillDelete.Size = new System.Drawing.Size(112, 22);
             this.cmuRefillDelete.Text = "Delete";
             this.cmuRefillDelete.Click += new System.EventHandler(this.cmuRefillDelete_Click);
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(343, 93);
+            this.txtSearch.Location = new System.Drawing.Point(283, 34);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(100, 20);
+            this.txtSearch.Size = new System.Drawing.Size(173, 20);
             this.txtSearch.TabIndex = 4;
             // 
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(244, 96);
+            this.label25.Location = new System.Drawing.Point(202, 37);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(40, 13);
+            this.label25.Size = new System.Drawing.Size(75, 13);
             this.label25.TabIndex = 3;
-            this.label25.Text = "Select:";
+            this.label25.Text = "Enter ClientID:";
             // 
             // tabNewRefill
             // 
@@ -1136,8 +1186,211 @@ namespace FinalProject
             this.tabEmployee.Location = new System.Drawing.Point(0, 0);
             this.tabEmployee.Name = "tabEmployee";
             this.tabEmployee.SelectedIndex = 0;
-            this.tabEmployee.Size = new System.Drawing.Size(802, 459);
+            this.tabEmployee.Size = new System.Drawing.Size(802, 470);
             this.tabEmployee.TabIndex = 0;
+            // 
+            // clientID
+            // 
+            this.clientID.DataPropertyName = "clientID";
+            this.clientID.HeaderText = "Client ID";
+            this.clientID.Name = "clientID";
+            this.clientID.ReadOnly = true;
+            // 
+            // fName
+            // 
+            this.fName.DataPropertyName = "fName";
+            this.fName.HeaderText = "First Name";
+            this.fName.Name = "fName";
+            this.fName.ReadOnly = true;
+            // 
+            // mInitial
+            // 
+            this.mInitial.DataPropertyName = "mInitial";
+            this.mInitial.HeaderText = "Mid. Init.";
+            this.mInitial.Name = "mInitial";
+            this.mInitial.ReadOnly = true;
+            // 
+            // lName
+            // 
+            this.lName.DataPropertyName = "lName";
+            this.lName.HeaderText = "Last Name";
+            this.lName.Name = "lName";
+            this.lName.ReadOnly = true;
+            // 
+            // dateOfBirth
+            // 
+            this.dateOfBirth.DataPropertyName = "dateOfBirth";
+            this.dateOfBirth.HeaderText = "Date of Birth";
+            this.dateOfBirth.Name = "dateOfBirth";
+            this.dateOfBirth.ReadOnly = true;
+            // 
+            // gender
+            // 
+            this.gender.DataPropertyName = "gender";
+            this.gender.HeaderText = "Gender";
+            this.gender.Name = "gender";
+            this.gender.ReadOnly = true;
+            // 
+            // phone
+            // 
+            this.phone.DataPropertyName = "phone";
+            this.phone.HeaderText = "Phone";
+            this.phone.Name = "phone";
+            this.phone.ReadOnly = true;
+            // 
+            // email
+            // 
+            this.email.DataPropertyName = "email";
+            this.email.HeaderText = "Email";
+            this.email.Name = "email";
+            this.email.ReadOnly = true;
+            // 
+            // street1
+            // 
+            this.street1.DataPropertyName = "street1";
+            this.street1.HeaderText = "Street 1";
+            this.street1.Name = "street1";
+            this.street1.ReadOnly = true;
+            // 
+            // street2
+            // 
+            this.street2.DataPropertyName = "street2";
+            this.street2.HeaderText = "Street 2";
+            this.street2.Name = "street2";
+            this.street2.ReadOnly = true;
+            // 
+            // city
+            // 
+            this.city.DataPropertyName = "city";
+            this.city.HeaderText = "City";
+            this.city.Name = "city";
+            this.city.ReadOnly = true;
+            // 
+            // addr_state
+            // 
+            this.addr_state.DataPropertyName = "addr_state";
+            this.addr_state.HeaderText = "State";
+            this.addr_state.Name = "addr_state";
+            this.addr_state.ReadOnly = true;
+            // 
+            // zip
+            // 
+            this.zip.DataPropertyName = "zip";
+            this.zip.HeaderText = "Zip";
+            this.zip.Name = "zip";
+            this.zip.ReadOnly = true;
+            // 
+            // prescriptionID
+            // 
+            this.prescriptionID.DataPropertyName = "prescriptionID";
+            this.prescriptionID.HeaderText = "PrescriptionID";
+            this.prescriptionID.Name = "prescriptionID";
+            this.prescriptionID.ReadOnly = true;
+            // 
+            // pClientID
+            // 
+            this.pClientID.DataPropertyName = "clientID";
+            this.pClientID.HeaderText = "Client ID";
+            this.pClientID.Name = "pClientID";
+            this.pClientID.ReadOnly = true;
+            // 
+            // physicianID
+            // 
+            this.physicianID.DataPropertyName = "physicianID";
+            this.physicianID.HeaderText = "Physician ID";
+            this.physicianID.Name = "physicianID";
+            this.physicianID.ReadOnly = true;
+            // 
+            // medicineID
+            // 
+            this.medicineID.DataPropertyName = "medicineID";
+            this.medicineID.HeaderText = "Medicine ID";
+            this.medicineID.Name = "medicineID";
+            this.medicineID.ReadOnly = true;
+            // 
+            // startDate
+            // 
+            this.startDate.DataPropertyName = "startDate";
+            this.startDate.HeaderText = "Start Date";
+            this.startDate.Name = "startDate";
+            this.startDate.ReadOnly = true;
+            // 
+            // expiryDate
+            // 
+            this.expiryDate.DataPropertyName = "expiryDate";
+            this.expiryDate.HeaderText = "Expiry Date";
+            this.expiryDate.Name = "expiryDate";
+            this.expiryDate.ReadOnly = true;
+            // 
+            // refillCounter
+            // 
+            this.refillCounter.DataPropertyName = "refillCounter";
+            this.refillCounter.HeaderText = "Refills Left";
+            this.refillCounter.Name = "refillCounter";
+            this.refillCounter.ReadOnly = true;
+            // 
+            // price
+            // 
+            this.price.DataPropertyName = "price";
+            this.price.HeaderText = "Price";
+            this.price.Name = "price";
+            this.price.ReadOnly = true;
+            // 
+            // refillID
+            // 
+            this.refillID.DataPropertyName = "refillID";
+            this.refillID.HeaderText = "Refill ID";
+            this.refillID.Name = "refillID";
+            this.refillID.ReadOnly = true;
+            // 
+            // rPrescriptionID
+            // 
+            this.rPrescriptionID.DataPropertyName = "prescriptionID";
+            this.rPrescriptionID.HeaderText = "Prescription ID";
+            this.rPrescriptionID.Name = "rPrescriptionID";
+            this.rPrescriptionID.ReadOnly = true;
+            // 
+            // dosage
+            // 
+            this.dosage.DataPropertyName = "dosage";
+            this.dosage.HeaderText = "Dosage";
+            this.dosage.Name = "dosage";
+            this.dosage.ReadOnly = true;
+            // 
+            // frequency
+            // 
+            this.frequency.DataPropertyName = "frequency";
+            this.frequency.HeaderText = "Frequency";
+            this.frequency.Name = "frequency";
+            this.frequency.ReadOnly = true;
+            // 
+            // supplyDays
+            // 
+            this.supplyDays.DataPropertyName = "supplyDays";
+            this.supplyDays.HeaderText = "Supply Days";
+            this.supplyDays.Name = "supplyDays";
+            this.supplyDays.ReadOnly = true;
+            // 
+            // quantitySupplied
+            // 
+            this.quantitySupplied.DataPropertyName = "quantitySupplied";
+            this.quantitySupplied.HeaderText = "Quantity";
+            this.quantitySupplied.Name = "quantitySupplied";
+            this.quantitySupplied.ReadOnly = true;
+            // 
+            // amountDue
+            // 
+            this.amountDue.DataPropertyName = "amountDue";
+            this.amountDue.HeaderText = "Amount Due";
+            this.amountDue.Name = "amountDue";
+            this.amountDue.ReadOnly = true;
+            // 
+            // dateOfRefill
+            // 
+            this.dateOfRefill.DataPropertyName = "dateOfRefill";
+            this.dateOfRefill.HeaderText = "Date";
+            this.dateOfRefill.Name = "dateOfRefill";
+            this.dateOfRefill.ReadOnly = true;
             // 
             // frmEmployee
             // 
@@ -1243,7 +1496,7 @@ namespace FinalProject
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabControl tabEmployee;
-        private System.Windows.Forms.Button btnSeaSearch;
+        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.DataGridView dgvClient;
         private System.Windows.Forms.DataGridView dgvPre;
         private System.Windows.Forms.DataGridView dgvRefill;
@@ -1271,8 +1524,34 @@ namespace FinalProject
         private System.Windows.Forms.ToolStripMenuItem cmuPrescriptionUpdate;
         private System.Windows.Forms.ToolStripMenuItem cmuRefillUpdate;
         private System.Windows.Forms.ToolStripMenuItem cmuRefillDelete;
-        private System.Windows.Forms.Label lblRefill;
-        private System.Windows.Forms.Label lblPrescription;
-        private System.Windows.Forms.Label lblClient;
+        private System.Windows.Forms.DataGridViewTextBoxColumn refillID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rPrescriptionID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dosage;
+        private System.Windows.Forms.DataGridViewTextBoxColumn frequency;
+        private System.Windows.Forms.DataGridViewTextBoxColumn supplyDays;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantitySupplied;
+        private System.Windows.Forms.DataGridViewTextBoxColumn amountDue;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateOfRefill;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clientID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mInitial;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateOfBirth;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gender;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn street1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn street2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn city;
+        private System.Windows.Forms.DataGridViewTextBoxColumn addr_state;
+        private System.Windows.Forms.DataGridViewTextBoxColumn zip;
+        private System.Windows.Forms.DataGridViewTextBoxColumn prescriptionID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pClientID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn physicianID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn medicineID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn startDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn expiryDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn refillCounter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn price;
     }
 }
