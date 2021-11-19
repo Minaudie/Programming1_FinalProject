@@ -83,7 +83,7 @@ BEGIN
 			BEGIN
 				COMMIT TRANSACTION
 
-				INSERT INTO clientUser
+				INSERT INTO users
 				VALUES(@clientPassword, @comPassword, @salt)
 			END
 END
@@ -323,6 +323,39 @@ BEGIN
 END
 GO
 
+
+CREATE PROC newEmployeeRegistration(
+	@employeeID INT,
+	@username VARCHAR(25),
+	@empPassword NVARCHAR(MAX),
+	@comPassword NVARCHAR(MAX),
+	@salt NVARCHAR(512)
+)
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+	--insert username into client
+	BEGIN TRANSACTION
+		UPDATE employee
+		SET username = @username
+		WHERE employeeID = @employeeID
+
+		IF @@ERROR <> 0
+			BEGIN
+				ROLLBACK TRANSACTION
+				RETURN
+			END
+		ELSE
+			BEGIN
+				COMMIT TRANSACTION
+
+				INSERT INTO users
+				VALUES(@empPassword, @comPassword, @salt)
+			END
+END
+GO
+
 -- *** Select Records ***
 --select client
 CREATE PROC selectClient (
@@ -399,6 +432,19 @@ BEGIN
 END
 GO
 
+CREATE PROC selectPrescription (
+	@prescriptionID INT
+)
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+	SELECT *
+	FROM prescription
+	WHERE prescriptionID = @prescriptionID
+END
+GO
+
 
 -- *** Update Records ***
 -- update client
@@ -449,6 +495,13 @@ BEGIN
 			END
 END
 GO
+
+--CREATE PROC returnClientIDByUsername(
+--	@username VARCHAR(25)
+--)
+--AS
+--BEGIN
+--	SET NOCOUNT ON;
 
 CREATE PROC updateClientUserPass (
 	@clientID VARCHAR(25),
@@ -597,10 +650,24 @@ AS
 BEGIN
 	SET NOCOUNT ON;
 
-	SELECT u.clientPassword, u.salt, c.username
-	FROM client c
-	INNER JOIN users u on c.clientID = u.clientID
-	WHERE c.username = @username
+	IF EXISTS( SELECT 1 FROM client WHERE username = @username)
+		BEGIN
+			SELECT u.userPassword, u.salt, c.username
+			FROM client c
+			INNER JOIN users u on c.clientID = u.userID
+			WHERE c.username = @username
+		END
+
+	ELSE
+		BEGIN
+			IF EXISTS( SELECT 1 FROM employee WHERE username = @username)
+				SELECT u.userPassword, u.salt, e.username
+				FROM employee e
+				INNER JOIN users u on e.employeeID = u.userID
+				WHERE e.username = @username
+			ELSE
+				RETURN 0
+		END
 END
 GO
 
