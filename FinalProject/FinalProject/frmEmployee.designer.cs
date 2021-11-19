@@ -95,7 +95,6 @@ namespace Final_Project_Work_Space
             this.btnClientSave = new System.Windows.Forms.Button();
             this.btnClientClear = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
-            this.txtClientInsurance = new System.Windows.Forms.TextBox();
             this.txtClientDOB = new System.Windows.Forms.TextBox();
             this.txtClientGender = new System.Windows.Forms.TextBox();
             this.txtClientEmail = new System.Windows.Forms.TextBox();
@@ -121,6 +120,7 @@ namespace Final_Project_Work_Space
             this.label35 = new System.Windows.Forms.Label();
             this.cmboRefInsurance = new System.Windows.Forms.ComboBox();
             this.txtRefPaymentType = new System.Windows.Forms.Label();
+            this.cmboClientInsurance = new System.Windows.Forms.ComboBox();
             this.tabSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -714,6 +714,7 @@ namespace Final_Project_Work_Space
             // tabNewClient
             // 
             this.tabNewClient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.tabNewClient.Controls.Add(this.cmboClientInsurance);
             this.tabNewClient.Controls.Add(this.label35);
             this.tabNewClient.Controls.Add(this.txtClientAdd2);
             this.tabNewClient.Controls.Add(this.label41);
@@ -725,7 +726,6 @@ namespace Final_Project_Work_Space
             this.tabNewClient.Controls.Add(this.btnClientSave);
             this.tabNewClient.Controls.Add(this.btnClientClear);
             this.tabNewClient.Controls.Add(this.label13);
-            this.tabNewClient.Controls.Add(this.txtClientInsurance);
             this.tabNewClient.Controls.Add(this.txtClientDOB);
             this.tabNewClient.Controls.Add(this.txtClientGender);
             this.tabNewClient.Controls.Add(this.txtClientEmail);
@@ -789,6 +789,7 @@ namespace Final_Project_Work_Space
             this.txtClientMidInt.Name = "txtClientMidInt";
             this.txtClientMidInt.Size = new System.Drawing.Size(196, 31);
             this.txtClientMidInt.TabIndex = 1;
+            this.txtClientMidInt.TextChanged += new System.EventHandler(this.txtClientMidInt_TextChanged);
             // 
             // label33
             // 
@@ -858,14 +859,6 @@ namespace Final_Project_Work_Space
             this.label13.Size = new System.Drawing.Size(106, 25);
             this.label13.TabIndex = 25;
             this.label13.Text = "Insurance";
-            // 
-            // txtClientInsurance
-            // 
-            this.txtClientInsurance.Location = new System.Drawing.Point(698, 658);
-            this.txtClientInsurance.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.txtClientInsurance.Name = "txtClientInsurance";
-            this.txtClientInsurance.Size = new System.Drawing.Size(196, 31);
-            this.txtClientInsurance.TabIndex = 13;
             // 
             // txtClientDOB
             // 
@@ -1120,6 +1113,19 @@ namespace Final_Project_Work_Space
             this.txtRefPaymentType.TabIndex = 10;
             this.txtRefPaymentType.Text = "Payment Type:";
             // 
+            // cmboClientInsurance
+            // 
+            this.cmboClientInsurance.FormattingEnabled = true;
+            this.cmboClientInsurance.Items.AddRange(new object[] {
+            "Aetna",
+            "Blue Cross",
+            "Medicare",
+            "Medicaid"});
+            this.cmboClientInsurance.Location = new System.Drawing.Point(696, 661);
+            this.cmboClientInsurance.Name = "cmboClientInsurance";
+            this.cmboClientInsurance.Size = new System.Drawing.Size(196, 33);
+            this.cmboClientInsurance.TabIndex = 36;
+            // 
             // Employee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -1201,7 +1207,6 @@ namespace Final_Project_Work_Space
         private System.Windows.Forms.Button btnClientSave;
         private System.Windows.Forms.Button btnClientClear;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox txtClientInsurance;
         private System.Windows.Forms.TextBox txtClientDOB;
         private System.Windows.Forms.TextBox txtClientGender;
         private System.Windows.Forms.TextBox txtClientEmail;
@@ -1243,5 +1248,6 @@ namespace Final_Project_Work_Space
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Label txtRefPaymentType;
         private System.Windows.Forms.ComboBox cmboRefInsurance;
+        private System.Windows.Forms.ComboBox cmboClientInsurance;
     }
 }

@@ -183,7 +183,7 @@ namespace Final_Project_Work_Space
             txtClientEmail.Clear();
             txtClientGender.Clear();
             txtClientDOB.Clear();
-            txtClientInsurance.Clear();
+            cmboClientInsurance.SelectedIndex = -1;
             //txtClientUserName.Clear();
         }
 
@@ -502,6 +502,11 @@ namespace Final_Project_Work_Space
         }
 
         private void cmboRefInsurance_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtClientMidInt_TextChanged(object sender, EventArgs e)
         {
 
         }
