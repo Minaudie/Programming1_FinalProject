@@ -66,6 +66,24 @@
     <Compile Include="frmLanding.designer.cs">
       <DependentUpon>frmLanding.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmUpdateClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUpdateClient.Designer.cs">
+      <DependentUpon>frmUpdateClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUpdatePrescription.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUpdatePrescription.Designer.cs">
+      <DependentUpon>frmUpdatePrescription.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUpdateRefill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUpdateRefill.Designer.cs">
+      <DependentUpon>frmUpdateRefill.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="frmRegister.cs">
@@ -82,6 +100,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmLanding.resx">
       <DependentUpon>frmLanding.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUpdateClient.resx">
+      <DependentUpon>frmUpdateClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUpdatePrescription.resx">
+      <DependentUpon>frmUpdatePrescription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUpdateRefill.resx">
+      <DependentUpon>frmUpdateRefill.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
