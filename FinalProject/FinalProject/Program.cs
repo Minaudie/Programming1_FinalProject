@@ -8,6 +8,10 @@ using System.Windows.Forms;
 using FinalProject;
 
 
+    
+
+
+
 namespace FinalProject
 {
     static class Program
@@ -20,7 +24,7 @@ namespace FinalProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmUpdateClient ());
+            Application.Run(new frmUpdatePrescription());
         }
     }
 }
