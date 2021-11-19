@@ -57,6 +57,8 @@ namespace Final_Project_Work_Space
             this.label28 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.tabNewPrescription = new System.Windows.Forms.TabPage();
+            this.dtpPreStartDate = new System.Windows.Forms.DateTimePicker();
+            this.label43 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
@@ -124,8 +126,6 @@ namespace Final_Project_Work_Space
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabEmployee = new System.Windows.Forms.TabControl();
-            this.label43 = new System.Windows.Forms.Label();
-            this.dtpPreStartDate = new System.Windows.Forms.DateTimePicker();
             this.tabSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -159,7 +159,7 @@ namespace Final_Project_Work_Space
             this.btnSeaSearch.Location = new System.Drawing.Point(498, 93);
             this.btnSeaSearch.Name = "btnSeaSearch";
             this.btnSeaSearch.Size = new System.Drawing.Size(75, 23);
-            this.btnSeaSearch.TabIndex = 8;
+            this.btnSeaSearch.TabIndex = 1;
             this.btnSeaSearch.Text = "Search";
             this.btnSeaSearch.UseVisualStyleBackColor = true;
             // 
@@ -192,7 +192,7 @@ namespace Final_Project_Work_Space
             this.txtSearch.Location = new System.Drawing.Point(343, 93);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(100, 20);
-            this.txtSearch.TabIndex = 4;
+            this.txtSearch.TabIndex = 0;
             // 
             // label25
             // 
@@ -234,7 +234,7 @@ namespace Final_Project_Work_Space
             this.btnRefSave.Location = new System.Drawing.Point(214, 329);
             this.btnRefSave.Name = "btnRefSave";
             this.btnRefSave.Size = new System.Drawing.Size(75, 23);
-            this.btnRefSave.TabIndex = 29;
+            this.btnRefSave.TabIndex = 8;
             this.btnRefSave.Text = "&Save";
             this.btnRefSave.UseVisualStyleBackColor = true;
             this.btnRefSave.Click += new System.EventHandler(this.btnRefSave_Click);
@@ -244,7 +244,7 @@ namespace Final_Project_Work_Space
             this.btnRefClear.Location = new System.Drawing.Point(408, 329);
             this.btnRefClear.Name = "btnRefClear";
             this.btnRefClear.Size = new System.Drawing.Size(75, 23);
-            this.btnRefClear.TabIndex = 28;
+            this.btnRefClear.TabIndex = 8;
             this.btnRefClear.Text = "&Clear";
             this.btnRefClear.UseVisualStyleBackColor = true;
             this.btnRefClear.Click += new System.EventHandler(this.btnRefClear_Click);
@@ -266,7 +266,7 @@ namespace Final_Project_Work_Space
             this.txtRefPaymentType.Location = new System.Drawing.Point(130, 50);
             this.txtRefPaymentType.Name = "txtRefPaymentType";
             this.txtRefPaymentType.Size = new System.Drawing.Size(121, 21);
-            this.txtRefPaymentType.TabIndex = 23;
+            this.txtRefPaymentType.TabIndex = 6;
             this.txtRefPaymentType.SelectedIndexChanged += new System.EventHandler(this.txtRefPaymentType_SelectedIndexChanged);
             // 
             // label35
@@ -283,7 +283,7 @@ namespace Final_Project_Work_Space
             this.txtRefPrescriptionID.Location = new System.Drawing.Point(308, 33);
             this.txtRefPrescriptionID.Name = "txtRefPrescriptionID";
             this.txtRefPrescriptionID.Size = new System.Drawing.Size(100, 20);
-            this.txtRefPrescriptionID.TabIndex = 21;
+            this.txtRefPrescriptionID.TabIndex = 0;
             this.txtRefPrescriptionID.TextChanged += new System.EventHandler(this.txtRefPrescriptionID_TextChanged);
             // 
             // txtRefDosage
@@ -291,7 +291,7 @@ namespace Final_Project_Work_Space
             this.txtRefDosage.Location = new System.Drawing.Point(308, 58);
             this.txtRefDosage.Name = "txtRefDosage";
             this.txtRefDosage.Size = new System.Drawing.Size(100, 20);
-            this.txtRefDosage.TabIndex = 20;
+            this.txtRefDosage.TabIndex = 1;
             this.txtRefDosage.TextChanged += new System.EventHandler(this.txtRefDosage_TextChanged);
             // 
             // txtRefFrequency
@@ -299,7 +299,7 @@ namespace Final_Project_Work_Space
             this.txtRefFrequency.Location = new System.Drawing.Point(308, 84);
             this.txtRefFrequency.Name = "txtRefFrequency";
             this.txtRefFrequency.Size = new System.Drawing.Size(100, 20);
-            this.txtRefFrequency.TabIndex = 19;
+            this.txtRefFrequency.TabIndex = 2;
             this.txtRefFrequency.TextChanged += new System.EventHandler(this.txtRefFrequency_TextChanged);
             // 
             // txtRefSupplyDays
@@ -307,7 +307,7 @@ namespace Final_Project_Work_Space
             this.txtRefSupplyDays.Location = new System.Drawing.Point(308, 110);
             this.txtRefSupplyDays.Name = "txtRefSupplyDays";
             this.txtRefSupplyDays.Size = new System.Drawing.Size(100, 20);
-            this.txtRefSupplyDays.TabIndex = 18;
+            this.txtRefSupplyDays.TabIndex = 3;
             this.txtRefSupplyDays.TextChanged += new System.EventHandler(this.txtRefSupplyDays_TextChanged);
             // 
             // txtRefQuantitySupplied
@@ -315,7 +315,7 @@ namespace Final_Project_Work_Space
             this.txtRefQuantitySupplied.Location = new System.Drawing.Point(308, 136);
             this.txtRefQuantitySupplied.Name = "txtRefQuantitySupplied";
             this.txtRefQuantitySupplied.Size = new System.Drawing.Size(100, 20);
-            this.txtRefQuantitySupplied.TabIndex = 17;
+            this.txtRefQuantitySupplied.TabIndex = 4;
             this.txtRefQuantitySupplied.TextChanged += new System.EventHandler(this.txtRefQuantitySupplied_TextChanged);
             // 
             // txtRefPrice
@@ -323,7 +323,7 @@ namespace Final_Project_Work_Space
             this.txtRefPrice.Location = new System.Drawing.Point(308, 162);
             this.txtRefPrice.Name = "txtRefPrice";
             this.txtRefPrice.Size = new System.Drawing.Size(100, 20);
-            this.txtRefPrice.TabIndex = 16;
+            this.txtRefPrice.TabIndex = 4;
             this.txtRefPrice.TextChanged += new System.EventHandler(this.txtRefPrice_TextChanged);
             // 
             // label32
@@ -408,6 +408,22 @@ namespace Final_Project_Work_Space
             this.tabNewPrescription.Text = "New Prescription";
             this.tabNewPrescription.Click += new System.EventHandler(this.tabNewPrescription_Click);
             // 
+            // dtpPreStartDate
+            // 
+            this.dtpPreStartDate.Location = new System.Drawing.Point(363, 148);
+            this.dtpPreStartDate.Name = "dtpPreStartDate";
+            this.dtpPreStartDate.Size = new System.Drawing.Size(200, 20);
+            this.dtpPreStartDate.TabIndex = 3;
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(293, 155);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(55, 13);
+            this.label43.TabIndex = 33;
+            this.label43.Text = "Start Date";
+            // 
             // label39
             // 
             this.label39.AutoSize = true;
@@ -446,7 +462,7 @@ namespace Final_Project_Work_Space
             this.btnPreSave.Location = new System.Drawing.Point(273, 249);
             this.btnPreSave.Name = "btnPreSave";
             this.btnPreSave.Size = new System.Drawing.Size(75, 23);
-            this.btnPreSave.TabIndex = 29;
+            this.btnPreSave.TabIndex = 6;
             this.btnPreSave.Text = "&Save";
             this.btnPreSave.UseVisualStyleBackColor = true;
             this.btnPreSave.Click += new System.EventHandler(this.btnPerSave_Click);
@@ -456,7 +472,7 @@ namespace Final_Project_Work_Space
             this.btnPreClear.Location = new System.Drawing.Point(467, 249);
             this.btnPreClear.Name = "btnPreClear";
             this.btnPreClear.Size = new System.Drawing.Size(75, 23);
-            this.btnPreClear.TabIndex = 28;
+            this.btnPreClear.TabIndex = 7;
             this.btnPreClear.Text = "&Clear";
             this.btnPreClear.UseVisualStyleBackColor = true;
             this.btnPreClear.Click += new System.EventHandler(this.btnPerClear_Click);
@@ -466,7 +482,7 @@ namespace Final_Project_Work_Space
             this.dtpPreExpirationDate.Location = new System.Drawing.Point(363, 175);
             this.dtpPreExpirationDate.Name = "dtpPreExpirationDate";
             this.dtpPreExpirationDate.Size = new System.Drawing.Size(200, 20);
-            this.dtpPreExpirationDate.TabIndex = 12;
+            this.dtpPreExpirationDate.TabIndex = 4;
             this.dtpPreExpirationDate.ValueChanged += new System.EventHandler(this.dtpPreExpirationDate_ValueChanged);
             // 
             // label24
@@ -598,7 +614,7 @@ namespace Final_Project_Work_Space
             this.btnPhySave.Location = new System.Drawing.Point(223, 215);
             this.btnPhySave.Name = "btnPhySave";
             this.btnPhySave.Size = new System.Drawing.Size(75, 23);
-            this.btnPhySave.TabIndex = 29;
+            this.btnPhySave.TabIndex = 5;
             this.btnPhySave.Text = "&Save";
             this.btnPhySave.UseVisualStyleBackColor = true;
             this.btnPhySave.Click += new System.EventHandler(this.btnPhySave_Click);
@@ -608,7 +624,7 @@ namespace Final_Project_Work_Space
             this.btnPhyClear.Location = new System.Drawing.Point(417, 215);
             this.btnPhyClear.Name = "btnPhyClear";
             this.btnPhyClear.Size = new System.Drawing.Size(75, 23);
-            this.btnPhyClear.TabIndex = 28;
+            this.btnPhyClear.TabIndex = 6;
             this.btnPhyClear.Text = "&Clear";
             this.btnPhyClear.UseVisualStyleBackColor = true;
             this.btnPhyClear.Click += new System.EventHandler(this.btnPhyClear_Click);
@@ -618,21 +634,21 @@ namespace Final_Project_Work_Space
             this.txtPhyEmail.Location = new System.Drawing.Point(313, 168);
             this.txtPhyEmail.Name = "txtPhyEmail";
             this.txtPhyEmail.Size = new System.Drawing.Size(100, 20);
-            this.txtPhyEmail.TabIndex = 9;
+            this.txtPhyEmail.TabIndex = 4;
             // 
             // txtPhyPhone
             // 
             this.txtPhyPhone.Location = new System.Drawing.Point(313, 142);
             this.txtPhyPhone.Name = "txtPhyPhone";
             this.txtPhyPhone.Size = new System.Drawing.Size(100, 20);
-            this.txtPhyPhone.TabIndex = 8;
+            this.txtPhyPhone.TabIndex = 3;
             // 
             // txtPhyLName
             // 
             this.txtPhyLName.Location = new System.Drawing.Point(313, 116);
             this.txtPhyLName.Name = "txtPhyLName";
             this.txtPhyLName.Size = new System.Drawing.Size(100, 20);
-            this.txtPhyLName.TabIndex = 7;
+            this.txtPhyLName.TabIndex = 2;
             this.txtPhyLName.TextChanged += new System.EventHandler(this.txtPhyLName_TextChanged);
             // 
             // txtPhyMidInt
@@ -640,14 +656,14 @@ namespace Final_Project_Work_Space
             this.txtPhyMidInt.Location = new System.Drawing.Point(313, 90);
             this.txtPhyMidInt.Name = "txtPhyMidInt";
             this.txtPhyMidInt.Size = new System.Drawing.Size(100, 20);
-            this.txtPhyMidInt.TabIndex = 6;
+            this.txtPhyMidInt.TabIndex = 1;
             // 
             // txtPhyFName
             // 
             this.txtPhyFName.Location = new System.Drawing.Point(313, 64);
             this.txtPhyFName.Name = "txtPhyFName";
             this.txtPhyFName.Size = new System.Drawing.Size(100, 20);
-            this.txtPhyFName.TabIndex = 5;
+            this.txtPhyFName.TabIndex = 0;
             this.txtPhyFName.TextChanged += new System.EventHandler(this.txtPhyFName_TextChanged);
             // 
             // label18
@@ -746,7 +762,7 @@ namespace Final_Project_Work_Space
             this.txtClientUserName.Location = new System.Drawing.Point(348, 340);
             this.txtClientUserName.Name = "txtClientUserName";
             this.txtClientUserName.Size = new System.Drawing.Size(100, 20);
-            this.txtClientUserName.TabIndex = 37;
+            this.txtClientUserName.TabIndex = 12;
             // 
             // label42
             // 
@@ -762,7 +778,7 @@ namespace Final_Project_Work_Space
             this.txtClientAdd2.Location = new System.Drawing.Point(349, 127);
             this.txtClientAdd2.Name = "txtClientAdd2";
             this.txtClientAdd2.Size = new System.Drawing.Size(100, 20);
-            this.txtClientAdd2.TabIndex = 35;
+            this.txtClientAdd2.TabIndex = 4;
             // 
             // label41
             // 
@@ -787,7 +803,7 @@ namespace Final_Project_Work_Space
             this.txtClientMidInt.Location = new System.Drawing.Point(349, 47);
             this.txtClientMidInt.Name = "txtClientMidInt";
             this.txtClientMidInt.Size = new System.Drawing.Size(100, 20);
-            this.txtClientMidInt.TabIndex = 32;
+            this.txtClientMidInt.TabIndex = 1;
             // 
             // label33
             // 
@@ -838,7 +854,7 @@ namespace Final_Project_Work_Space
             this.btnClientSave.Location = new System.Drawing.Point(254, 393);
             this.btnClientSave.Name = "btnClientSave";
             this.btnClientSave.Size = new System.Drawing.Size(75, 23);
-            this.btnClientSave.TabIndex = 27;
+            this.btnClientSave.TabIndex = 14;
             this.btnClientSave.Text = "&Save";
             this.btnClientSave.UseVisualStyleBackColor = true;
             this.btnClientSave.Click += new System.EventHandler(this.btnClientSave_Click);
@@ -848,7 +864,7 @@ namespace Final_Project_Work_Space
             this.btnClientClear.Location = new System.Drawing.Point(448, 393);
             this.btnClientClear.Name = "btnClientClear";
             this.btnClientClear.Size = new System.Drawing.Size(75, 23);
-            this.btnClientClear.TabIndex = 26;
+            this.btnClientClear.TabIndex = 15;
             this.btnClientClear.Text = "&Clear";
             this.btnClientClear.UseVisualStyleBackColor = true;
             this.btnClientClear.Click += new System.EventHandler(this.btnClientClear_Click);
@@ -868,14 +884,14 @@ namespace Final_Project_Work_Space
             this.txtClientInsurance.Location = new System.Drawing.Point(348, 366);
             this.txtClientInsurance.Name = "txtClientInsurance";
             this.txtClientInsurance.Size = new System.Drawing.Size(100, 20);
-            this.txtClientInsurance.TabIndex = 24;
+            this.txtClientInsurance.TabIndex = 13;
             // 
             // txtClientDOB
             // 
             this.txtClientDOB.Location = new System.Drawing.Point(348, 311);
             this.txtClientDOB.Name = "txtClientDOB";
             this.txtClientDOB.Size = new System.Drawing.Size(100, 20);
-            this.txtClientDOB.TabIndex = 22;
+            this.txtClientDOB.TabIndex = 11;
             this.txtClientDOB.TextChanged += new System.EventHandler(this.txtClientDOB_TextChanged);
             // 
             // txtClientGender
@@ -883,7 +899,7 @@ namespace Final_Project_Work_Space
             this.txtClientGender.Location = new System.Drawing.Point(348, 285);
             this.txtClientGender.Name = "txtClientGender";
             this.txtClientGender.Size = new System.Drawing.Size(100, 20);
-            this.txtClientGender.TabIndex = 21;
+            this.txtClientGender.TabIndex = 10;
             this.txtClientGender.TextChanged += new System.EventHandler(this.txtClientGender_TextChanged);
             // 
             // txtClientEmail
@@ -891,49 +907,49 @@ namespace Final_Project_Work_Space
             this.txtClientEmail.Location = new System.Drawing.Point(348, 259);
             this.txtClientEmail.Name = "txtClientEmail";
             this.txtClientEmail.Size = new System.Drawing.Size(100, 20);
-            this.txtClientEmail.TabIndex = 20;
+            this.txtClientEmail.TabIndex = 9;
             // 
             // txtClientPhone
             // 
             this.txtClientPhone.Location = new System.Drawing.Point(349, 234);
             this.txtClientPhone.Name = "txtClientPhone";
             this.txtClientPhone.Size = new System.Drawing.Size(100, 20);
-            this.txtClientPhone.TabIndex = 19;
+            this.txtClientPhone.TabIndex = 8;
             // 
             // txtClientZip
             // 
             this.txtClientZip.Location = new System.Drawing.Point(349, 208);
             this.txtClientZip.Name = "txtClientZip";
             this.txtClientZip.Size = new System.Drawing.Size(100, 20);
-            this.txtClientZip.TabIndex = 17;
+            this.txtClientZip.TabIndex = 7;
             // 
             // txtClientState
             // 
             this.txtClientState.Location = new System.Drawing.Point(349, 182);
             this.txtClientState.Name = "txtClientState";
             this.txtClientState.Size = new System.Drawing.Size(100, 20);
-            this.txtClientState.TabIndex = 16;
+            this.txtClientState.TabIndex = 6;
             // 
             // txtClientCity
             // 
             this.txtClientCity.Location = new System.Drawing.Point(348, 153);
             this.txtClientCity.Name = "txtClientCity";
             this.txtClientCity.Size = new System.Drawing.Size(100, 20);
-            this.txtClientCity.TabIndex = 15;
+            this.txtClientCity.TabIndex = 5;
             // 
             // txtClientAddress
             // 
             this.txtClientAddress.Location = new System.Drawing.Point(349, 99);
             this.txtClientAddress.Name = "txtClientAddress";
             this.txtClientAddress.Size = new System.Drawing.Size(100, 20);
-            this.txtClientAddress.TabIndex = 14;
+            this.txtClientAddress.TabIndex = 3;
             // 
             // txtClientLName
             // 
             this.txtClientLName.Location = new System.Drawing.Point(349, 72);
             this.txtClientLName.Name = "txtClientLName";
             this.txtClientLName.Size = new System.Drawing.Size(100, 20);
-            this.txtClientLName.TabIndex = 13;
+            this.txtClientLName.TabIndex = 2;
             this.txtClientLName.TextChanged += new System.EventHandler(this.txtClientLName_TextChanged);
             // 
             // txtClientFName
@@ -941,7 +957,7 @@ namespace Final_Project_Work_Space
             this.txtClientFName.Location = new System.Drawing.Point(349, 21);
             this.txtClientFName.Name = "txtClientFName";
             this.txtClientFName.Size = new System.Drawing.Size(100, 20);
-            this.txtClientFName.TabIndex = 12;
+            this.txtClientFName.TabIndex = 0;
             this.txtClientFName.TextChanged += new System.EventHandler(this.txtClientFName_TextChanged);
             // 
             // label11
@@ -1065,22 +1081,6 @@ namespace Final_Project_Work_Space
             this.tabEmployee.SelectedIndex = 0;
             this.tabEmployee.Size = new System.Drawing.Size(802, 459);
             this.tabEmployee.TabIndex = 0;
-            // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(293, 155);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(55, 13);
-            this.label43.TabIndex = 33;
-            this.label43.Text = "Start Date";
-            // 
-            // dtpPreStartDate
-            // 
-            this.dtpPreStartDate.Location = new System.Drawing.Point(363, 148);
-            this.dtpPreStartDate.Name = "dtpPreStartDate";
-            this.dtpPreStartDate.Size = new System.Drawing.Size(200, 20);
-            this.dtpPreStartDate.TabIndex = 34;
             // 
             // Employee
             // 
