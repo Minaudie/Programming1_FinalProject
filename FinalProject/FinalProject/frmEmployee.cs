@@ -13,7 +13,9 @@ namespace Final_Project_Work_Space
 {
     public partial class Employee : Form
     {
-
+        public static string g_clientID = "";
+        public static string g_prescriptionID = "";
+        public static string g_refillID = "";
         
         /*
            Required fields:
@@ -523,10 +525,17 @@ namespace Final_Project_Work_Space
 
         private void updateToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmUpdateClient aform = new frmUpdateClient(this);
-            //aform.MdiParent = this;
-            //display the new form
-            aform.Show();
+            string clientid = "";
+
+            if(dgvClient.Rows.Count > 0)
+            {
+                DataGridViewRow row = dgvClient.SelectedRows[0];
+                frmUpdateClient clientform = new frmUpdateClient(this);
+
+                clientid = row.Cells[0].Value.ToString().Trim();
+                g_clientID = clientid;
+                clientform.ShowDialog();
+            }
         }
 
         private void updateToolStripMenuItem1_Click(object sender, EventArgs e)

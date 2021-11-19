@@ -15,6 +15,7 @@ namespace FinalProject
     public partial class frmUpdateClient : Form
     {
         private Employee frmEmployee;
+
         public frmUpdateClient(Employee emp)
         {
 
@@ -29,7 +30,7 @@ namespace FinalProject
                 DataSet ds = new DataSet();
                 DatabaseConnections ucf = new DatabaseConnections();
                 //clientID
-                ds = ucf.GetClientByID(frmEmployee.clientID.ToString());
+                ds = ucf.GetClientByID(int.Parse(Employee.g_clientID.ToString()));
                 if (ds.Tables[0].Rows.Count > 0)
                 {
                     txtUpdateClientID.Text = ds.Tables[0].Rows[0]["clientID"].ToString();
