@@ -540,18 +540,47 @@ namespace Final_Project_Work_Space
 
         private void updateToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            frmUpdatePrescription aform = new frmUpdatePrescription(this);
-            //aform.MdiParent = this;
-            //display the new form
-            aform.Show();
+            string prescriptionid = "";
+
+            if (dgvClient.Rows.Count > 0)
+            {
+                DataGridViewRow row = dgvPre.SelectedRows[0];
+                frmUpdatePrescription prescriptionform = new frmUpdatePrescription(this);
+
+                prescriptionid = row.Cells[0].Value.ToString().Trim();
+                g_clientID = prescriptionid;
+                prescriptionform.ShowDialog();
+            }
         }
 
         private void updateToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            frmUpdateRefill aform = new frmUpdateRefill(this);
-            //aform.MdiParent = this;
-            //display the new form
-            aform.Show();
+            string refillid = "";
+
+            if (dgvClient.Rows.Count > 0)
+            {
+                DataGridViewRow row = dgvRefill.SelectedRows[0];
+                frmUpdateRefill refillform = new frmUpdateRefill(this);
+
+                refillid = row.Cells[0].Value.ToString().Trim();
+                g_clientID = refillid;
+                refillform.ShowDialog();
+            }
+        }
+
+        private void tabNewClient_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvClient_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void contextMenuRefill_Opening(object sender, CancelEventArgs e)
+        {
+
         }
     }
 }

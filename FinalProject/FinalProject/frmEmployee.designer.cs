@@ -162,7 +162,7 @@ namespace Final_Project_Work_Space
             this.tabSearch.Controls.Add(this.label25);
             this.tabSearch.Location = new System.Drawing.Point(4, 25);
             this.tabSearch.Name = "tabSearch";
-            this.tabSearch.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabSearch.Padding = new System.Windows.Forms.Padding(2);
             this.tabSearch.Size = new System.Drawing.Size(794, 430);
             this.tabSearch.TabIndex = 4;
             this.tabSearch.Text = "Search";
@@ -215,6 +215,7 @@ namespace Final_Project_Work_Space
             this.dgvClient.RowHeadersWidth = 82;
             this.dgvClient.Size = new System.Drawing.Size(240, 150);
             this.dgvClient.TabIndex = 7;
+            this.dgvClient.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClient_CellContentClick);
             // 
             // contextMenuClient
             // 
@@ -288,7 +289,8 @@ namespace Final_Project_Work_Space
             this.updateToolStripMenuItem2,
             this.deleteToolStripMenuItem});
             this.contextMenuRefill.Name = "contextMenuRefill";
-            this.contextMenuRefill.Size = new System.Drawing.Size(113, 48);
+            this.contextMenuRefill.Size = new System.Drawing.Size(181, 70);
+            this.contextMenuRefill.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuRefill_Opening);
             // 
             // updateToolStripMenuItem2
             // 
@@ -340,7 +342,7 @@ namespace Final_Project_Work_Space
             this.tabNewRefill.Controls.Add(this.label27);
             this.tabNewRefill.Location = new System.Drawing.Point(4, 25);
             this.tabNewRefill.Name = "tabNewRefill";
-            this.tabNewRefill.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabNewRefill.Padding = new System.Windows.Forms.Padding(2);
             this.tabNewRefill.Size = new System.Drawing.Size(794, 430);
             this.tabNewRefill.TabIndex = 3;
             this.tabNewRefill.Text = "New Refill";
@@ -364,7 +366,7 @@ namespace Final_Project_Work_Space
             "Debit",
             "Check"});
             this.cmboRefInsurance.Location = new System.Drawing.Point(308, 190);
-            this.cmboRefInsurance.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmboRefInsurance.Margin = new System.Windows.Forms.Padding(2);
             this.cmboRefInsurance.Name = "cmboRefInsurance";
             this.cmboRefInsurance.Size = new System.Drawing.Size(100, 21);
             this.cmboRefInsurance.TabIndex = 6;
@@ -513,7 +515,7 @@ namespace Final_Project_Work_Space
             this.tabNewPrescription.Controls.Add(this.txtPreClientID);
             this.tabNewPrescription.Location = new System.Drawing.Point(4, 25);
             this.tabNewPrescription.Name = "tabNewPrescription";
-            this.tabNewPrescription.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabNewPrescription.Padding = new System.Windows.Forms.Padding(2);
             this.tabNewPrescription.Size = new System.Drawing.Size(794, 430);
             this.tabNewPrescription.TabIndex = 2;
             this.tabNewPrescription.Text = "New Prescription";
@@ -675,7 +677,7 @@ namespace Final_Project_Work_Space
             this.tabNewPhysician.Controls.Add(this.label14);
             this.tabNewPhysician.Location = new System.Drawing.Point(4, 25);
             this.tabNewPhysician.Name = "tabNewPhysician";
-            this.tabNewPhysician.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabNewPhysician.Padding = new System.Windows.Forms.Padding(2);
             this.tabNewPhysician.Size = new System.Drawing.Size(794, 430);
             this.tabNewPhysician.TabIndex = 1;
             this.tabNewPhysician.Text = "New Physician";
@@ -840,10 +842,11 @@ namespace Final_Project_Work_Space
             this.tabNewClient.Controls.Add(this.label1);
             this.tabNewClient.Location = new System.Drawing.Point(4, 25);
             this.tabNewClient.Name = "tabNewClient";
-            this.tabNewClient.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabNewClient.Padding = new System.Windows.Forms.Padding(2);
             this.tabNewClient.Size = new System.Drawing.Size(794, 430);
             this.tabNewClient.TabIndex = 0;
             this.tabNewClient.Text = "New Client";
+            this.tabNewClient.Click += new System.EventHandler(this.tabNewClient_Click);
             // 
             // cmboClientInsurance
             // 
@@ -854,7 +857,7 @@ namespace Final_Project_Work_Space
             "Medicare",
             "Medicaid"});
             this.cmboClientInsurance.Location = new System.Drawing.Point(348, 344);
-            this.cmboClientInsurance.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmboClientInsurance.Margin = new System.Windows.Forms.Padding(2);
             this.cmboClientInsurance.Name = "cmboClientInsurance";
             this.cmboClientInsurance.Size = new System.Drawing.Size(100, 21);
             this.cmboClientInsurance.TabIndex = 36;
