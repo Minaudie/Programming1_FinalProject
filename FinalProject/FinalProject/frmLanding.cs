@@ -8,13 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FinalProject;
-using Final_Project_Work_Space;
+//using Final_Project_Work_Space;
 
-namespace Programming1_FinalProject
+namespace FinalProject
 {
-    public partial class Landing : Form
+    public partial class frmLanding : Form
     {
-        public Landing()
+        public frmLanding()
         {
             InitializeComponent();
         }
@@ -62,7 +62,7 @@ namespace Programming1_FinalProject
 
         private void lnkLandingNewClient_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Register frm = new Register();
+            frmRegister frm = new frmRegister();
             frm.Show();
           //this.Hide();
 
@@ -98,12 +98,12 @@ namespace Programming1_FinalProject
 
                         if(user == 1) //client
                         {
-                            Client frmClient = new Client();
+                            frmClient frmClient = new frmClient();
                             frmClient.ShowDialog();
 
                         } else //2, employee
                         {
-                            Employee frmEmp = new Employee();
+                            frmEmployee frmEmp = new frmEmployee();
                             frmEmp.ShowDialog();
                         }
                         

@@ -44,8 +44,6 @@ set icon and form titles (niko)
 
 update forms - Mariah
 
-context menu items rename
-
 *** Low priority updates ***
 
 gender can only be M, F, or O, so maybe check for that before sending to DB. (niko)

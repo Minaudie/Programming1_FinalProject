@@ -9,11 +9,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Programming1_FinalProject
+namespace FinalProject
 {
-    public partial class Register : Form
+    public partial class frmRegister : Form
     {
-        public Register()
+        public frmRegister()
         {
             InitializeComponent();
         }

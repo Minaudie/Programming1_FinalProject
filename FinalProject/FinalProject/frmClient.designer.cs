@@ -1,7 +1,7 @@
 ﻿
-namespace Programming1_FinalProject
+namespace FinalProject
 {
-    partial class Client
+    partial class frmClient
     {
         /// <summary>
         /// Required designer variable.

@@ -7,14 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Final_Project_Work_Space;
 
 namespace FinalProject
 {
     public partial class frmUpdatePrescription : Form
     {
-        private Employee frmEmployee;
-        public frmUpdatePrescription(Employee emp)
+        private frmEmployee frmEmployee;
+
+        public frmUpdatePrescription(frmEmployee emp)
         {
             InitializeComponent();
             frmEmployee = emp;
@@ -27,7 +27,7 @@ namespace FinalProject
                 DataSet ds = new DataSet();
                 DatabaseConnections upf = new DatabaseConnections();
                 //prescriptionID
-                ds = upf.GetPrescriptionByID(int.Parse(Employee.g_prescriptionID.ToString()));
+                ds = upf.GetPrescriptionByID(int.Parse(frmEmployee.g_prescriptionID.ToString()));
                 if (ds.Tables[0].Rows.Count > 0)
                 {
                     txtUpdatePrescriptionID.Text = ds.Tables[0].Rows[0]["prescriptionID"].ToString();

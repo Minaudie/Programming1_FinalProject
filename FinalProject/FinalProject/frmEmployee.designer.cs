@@ -1,9 +1,9 @@
 ﻿
 using System;
 
-namespace Final_Project_Work_Space
+namespace FinalProject
 {
-    partial class Employee
+    partial class frmEmployee
     {
         /// <summary>
         /// Required designer variable.
@@ -38,17 +38,17 @@ namespace Final_Project_Work_Space
             this.lblClient = new System.Windows.Forms.Label();
             this.btnSeaSearch = new System.Windows.Forms.Button();
             this.dgvClient = new System.Windows.Forms.DataGridView();
-            this.contextMenuClient = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.searchPrescriptionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.searchRefillToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmuClient = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.cmuClientUpdate = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmuClientSearchPre = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmuClientSearchRefill = new System.Windows.Forms.ToolStripMenuItem();
             this.dgvPre = new System.Windows.Forms.DataGridView();
-            this.contextMenuPre = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.updateToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmuPrescription = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.cmuPrescriptionUpdate = new System.Windows.Forms.ToolStripMenuItem();
             this.dgvRefill = new System.Windows.Forms.DataGridView();
-            this.contextMenuRefill = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.updateToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmuRefill = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.cmuRefillUpdate = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmuRefillDelete = new System.Windows.Forms.ToolStripMenuItem();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.tabNewRefill = new System.Windows.Forms.TabPage();
@@ -100,18 +100,10 @@ namespace Final_Project_Work_Space
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.tabNewClient = new System.Windows.Forms.TabPage();
-            this.cmboClientInsurance = new System.Windows.Forms.ComboBox();
-            this.label35 = new System.Windows.Forms.Label();
             this.txtClientAdd2 = new System.Windows.Forms.TextBox();
-            this.label41 = new System.Windows.Forms.Label();
-            this.label40 = new System.Windows.Forms.Label();
             this.txtClientMidInt = new System.Windows.Forms.TextBox();
-            this.label33 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.btnClientSave = new System.Windows.Forms.Button();
             this.btnClientClear = new System.Windows.Forms.Button();
-            this.label13 = new System.Windows.Forms.Label();
             this.txtClientDOB = new System.Windows.Forms.TextBox();
             this.txtClientGender = new System.Windows.Forms.TextBox();
             this.txtClientEmail = new System.Windows.Forms.TextBox();
@@ -122,6 +114,12 @@ namespace Final_Project_Work_Space
             this.txtClientAddress = new System.Windows.Forms.TextBox();
             this.txtClientLName = new System.Windows.Forms.TextBox();
             this.txtClientFName = new System.Windows.Forms.TextBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -136,11 +134,11 @@ namespace Final_Project_Work_Space
             this.tabEmployee = new System.Windows.Forms.TabControl();
             this.tabSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClient)).BeginInit();
-            this.contextMenuClient.SuspendLayout();
+            this.cmuClient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPre)).BeginInit();
-            this.contextMenuPre.SuspendLayout();
+            this.cmuPrescription.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRefill)).BeginInit();
-            this.contextMenuRefill.SuspendLayout();
+            this.cmuRefill.SuspendLayout();
             this.tabNewRefill.SuspendLayout();
             this.tabNewPrescription.SuspendLayout();
             this.tabNewPhysician.SuspendLayout();
@@ -209,101 +207,101 @@ namespace Final_Project_Work_Space
             // dgvClient
             // 
             this.dgvClient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClient.ContextMenuStrip = this.contextMenuClient;
+            this.dgvClient.ContextMenuStrip = this.cmuClient;
             this.dgvClient.Location = new System.Drawing.Point(8, 190);
             this.dgvClient.Name = "dgvClient";
             this.dgvClient.RowHeadersWidth = 82;
             this.dgvClient.Size = new System.Drawing.Size(240, 150);
             this.dgvClient.TabIndex = 7;
-            this.dgvClient.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClient_CellContentClick);
             // 
-            // contextMenuClient
+            // cmuClient
             // 
-            this.contextMenuClient.ImageScalingSize = new System.Drawing.Size(32, 32);
-            this.contextMenuClient.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.updateToolStripMenuItem,
-            this.searchPrescriptionToolStripMenuItem,
-            this.searchRefillToolStripMenuItem});
-            this.contextMenuClient.Name = "contextMenuClient";
-            this.contextMenuClient.Size = new System.Drawing.Size(176, 70);
-            this.contextMenuClient.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuClient_Opening);
+            this.cmuClient.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.cmuClient.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cmuClientUpdate,
+            this.cmuClientSearchPre,
+            this.cmuClientSearchRefill});
+            this.cmuClient.Name = "contextMenuClient";
+            this.cmuClient.Size = new System.Drawing.Size(176, 70);
             // 
-            // updateToolStripMenuItem
+            // cmuClientUpdate
             // 
-            this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-            this.updateToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
-            this.updateToolStripMenuItem.Text = "Update";
-            this.updateToolStripMenuItem.Click += new System.EventHandler(this.updateToolStripMenuItem_Click);
+            this.cmuClientUpdate.Name = "cmuClientUpdate";
+            this.cmuClientUpdate.Size = new System.Drawing.Size(175, 22);
+            this.cmuClientUpdate.Text = "Update";
+            this.cmuClientUpdate.Click += new System.EventHandler(this.cmuClientUpdate_Click);
             // 
-            // searchPrescriptionToolStripMenuItem
+            // cmuClientSearchPre
             // 
-            this.searchPrescriptionToolStripMenuItem.Name = "searchPrescriptionToolStripMenuItem";
-            this.searchPrescriptionToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
-            this.searchPrescriptionToolStripMenuItem.Text = "Search Prescription";
+            this.cmuClientSearchPre.Name = "cmuClientSearchPre";
+            this.cmuClientSearchPre.Size = new System.Drawing.Size(175, 22);
+            this.cmuClientSearchPre.Text = "Search Prescription";
+            this.cmuClientSearchPre.Click += new System.EventHandler(this.cmuClientSearchPre_Click);
             // 
-            // searchRefillToolStripMenuItem
+            // cmuClientSearchRefill
             // 
-            this.searchRefillToolStripMenuItem.Name = "searchRefillToolStripMenuItem";
-            this.searchRefillToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
-            this.searchRefillToolStripMenuItem.Text = "Search Refill";
+            this.cmuClientSearchRefill.Name = "cmuClientSearchRefill";
+            this.cmuClientSearchRefill.Size = new System.Drawing.Size(175, 22);
+            this.cmuClientSearchRefill.Text = "Search Refill";
+            this.cmuClientSearchRefill.Click += new System.EventHandler(this.cmuClientSearchRefill_Click);
             // 
             // dgvPre
             // 
             this.dgvPre.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPre.ContextMenuStrip = this.contextMenuPre;
+            this.dgvPre.ContextMenuStrip = this.cmuPrescription;
             this.dgvPre.Location = new System.Drawing.Point(267, 190);
             this.dgvPre.Name = "dgvPre";
             this.dgvPre.RowHeadersWidth = 82;
             this.dgvPre.Size = new System.Drawing.Size(240, 150);
             this.dgvPre.TabIndex = 6;
             // 
-            // contextMenuPre
+            // cmuPrescription
             // 
-            this.contextMenuPre.ImageScalingSize = new System.Drawing.Size(32, 32);
-            this.contextMenuPre.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.updateToolStripMenuItem1});
-            this.contextMenuPre.Name = "contextMenuPre";
-            this.contextMenuPre.Size = new System.Drawing.Size(113, 26);
+            this.cmuPrescription.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.cmuPrescription.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cmuPrescriptionUpdate});
+            this.cmuPrescription.Name = "contextMenuPre";
+            this.cmuPrescription.Size = new System.Drawing.Size(113, 26);
             // 
-            // updateToolStripMenuItem1
+            // cmuPrescriptionUpdate
             // 
-            this.updateToolStripMenuItem1.Name = "updateToolStripMenuItem1";
-            this.updateToolStripMenuItem1.Size = new System.Drawing.Size(112, 22);
-            this.updateToolStripMenuItem1.Text = "Update";
-            this.updateToolStripMenuItem1.Click += new System.EventHandler(this.updateToolStripMenuItem1_Click);
+            this.cmuPrescriptionUpdate.Name = "cmuPrescriptionUpdate";
+            this.cmuPrescriptionUpdate.Size = new System.Drawing.Size(180, 22);
+            this.cmuPrescriptionUpdate.Text = "Update";
+            this.cmuPrescriptionUpdate.Click += new System.EventHandler(this.cmuPrescriptionUpdate_Click);
             // 
             // dgvRefill
             // 
             this.dgvRefill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRefill.ContextMenuStrip = this.contextMenuRefill;
+            this.dgvRefill.ContextMenuStrip = this.cmuRefill;
             this.dgvRefill.Location = new System.Drawing.Point(522, 190);
             this.dgvRefill.Name = "dgvRefill";
             this.dgvRefill.RowHeadersWidth = 82;
             this.dgvRefill.Size = new System.Drawing.Size(240, 150);
             this.dgvRefill.TabIndex = 5;
             // 
-            // contextMenuRefill
+            // cmuRefill
             // 
-            this.contextMenuRefill.ImageScalingSize = new System.Drawing.Size(32, 32);
-            this.contextMenuRefill.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.updateToolStripMenuItem2,
-            this.deleteToolStripMenuItem});
-            this.contextMenuRefill.Name = "contextMenuRefill";
-            this.contextMenuRefill.Size = new System.Drawing.Size(181, 70);
-            this.contextMenuRefill.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuRefill_Opening);
+            this.cmuRefill.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.cmuRefill.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cmuRefillUpdate,
+            this.cmuRefillDelete});
+            this.cmuRefill.Name = "contextMenuRefill";
+            this.cmuRefill.Size = new System.Drawing.Size(181, 70);
             // 
-            // updateToolStripMenuItem2
+            // cmuRefillUpdate
             // 
-            this.updateToolStripMenuItem2.Name = "updateToolStripMenuItem2";
-            this.updateToolStripMenuItem2.Size = new System.Drawing.Size(112, 22);
-            this.updateToolStripMenuItem2.Text = "Update";
-            this.updateToolStripMenuItem2.Click += new System.EventHandler(this.updateToolStripMenuItem2_Click);
+            this.cmuRefillUpdate.Name = "cmuRefillUpdate";
+            this.cmuRefillUpdate.Size = new System.Drawing.Size(180, 22);
+            this.cmuRefillUpdate.Text = "Update";
+            this.cmuRefillUpdate.Click += new System.EventHandler(this.cmuRefillUpdate_Click);
             // 
-            // deleteToolStripMenuItem
+            // cmuRefillDelete
             // 
-            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
-            this.deleteToolStripMenuItem.Text = "Delete";
+            this.cmuRefillDelete.Name = "cmuRefillDelete";
+            this.cmuRefillDelete.Size = new System.Drawing.Size(180, 22);
+            this.cmuRefillDelete.Text = "Delete";
+            this.cmuRefillDelete.Click += new System.EventHandler(this.cmuRefillDelete_Click);
             // 
             // txtSearch
             // 
@@ -370,7 +368,6 @@ namespace Final_Project_Work_Space
             this.cmboRefInsurance.Name = "cmboRefInsurance";
             this.cmboRefInsurance.Size = new System.Drawing.Size(100, 21);
             this.cmboRefInsurance.TabIndex = 6;
-            this.cmboRefInsurance.SelectedIndexChanged += new System.EventHandler(this.cmboRefInsurance_SelectedIndexChanged);
             // 
             // btnRefSave
             // 
@@ -807,18 +804,10 @@ namespace Final_Project_Work_Space
             // tabNewClient
             // 
             this.tabNewClient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.tabNewClient.Controls.Add(this.cmboClientInsurance);
-            this.tabNewClient.Controls.Add(this.label35);
             this.tabNewClient.Controls.Add(this.txtClientAdd2);
-            this.tabNewClient.Controls.Add(this.label41);
-            this.tabNewClient.Controls.Add(this.label40);
             this.tabNewClient.Controls.Add(this.txtClientMidInt);
-            this.tabNewClient.Controls.Add(this.label33);
-            this.tabNewClient.Controls.Add(this.label22);
-            this.tabNewClient.Controls.Add(this.label12);
             this.tabNewClient.Controls.Add(this.btnClientSave);
             this.tabNewClient.Controls.Add(this.btnClientClear);
-            this.tabNewClient.Controls.Add(this.label13);
             this.tabNewClient.Controls.Add(this.txtClientDOB);
             this.tabNewClient.Controls.Add(this.txtClientGender);
             this.tabNewClient.Controls.Add(this.txtClientEmail);
@@ -829,6 +818,12 @@ namespace Final_Project_Work_Space
             this.tabNewClient.Controls.Add(this.txtClientAddress);
             this.tabNewClient.Controls.Add(this.txtClientLName);
             this.tabNewClient.Controls.Add(this.txtClientFName);
+            this.tabNewClient.Controls.Add(this.label35);
+            this.tabNewClient.Controls.Add(this.label41);
+            this.tabNewClient.Controls.Add(this.label40);
+            this.tabNewClient.Controls.Add(this.label33);
+            this.tabNewClient.Controls.Add(this.label22);
+            this.tabNewClient.Controls.Add(this.label12);
             this.tabNewClient.Controls.Add(this.label11);
             this.tabNewClient.Controls.Add(this.label10);
             this.tabNewClient.Controls.Add(this.label9);
@@ -846,101 +841,24 @@ namespace Final_Project_Work_Space
             this.tabNewClient.Size = new System.Drawing.Size(794, 430);
             this.tabNewClient.TabIndex = 0;
             this.tabNewClient.Text = "New Client";
-            this.tabNewClient.Click += new System.EventHandler(this.tabNewClient_Click);
-            // 
-            // cmboClientInsurance
-            // 
-            this.cmboClientInsurance.FormattingEnabled = true;
-            this.cmboClientInsurance.Items.AddRange(new object[] {
-            "Aetna",
-            "Blue Cross",
-            "Medicare",
-            "Medicaid"});
-            this.cmboClientInsurance.Location = new System.Drawing.Point(348, 344);
-            this.cmboClientInsurance.Margin = new System.Windows.Forms.Padding(2);
-            this.cmboClientInsurance.Name = "cmboClientInsurance";
-            this.cmboClientInsurance.Size = new System.Drawing.Size(100, 21);
-            this.cmboClientInsurance.TabIndex = 36;
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.ForeColor = System.Drawing.Color.Red;
-            this.label35.Location = new System.Drawing.Point(330, 313);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(13, 16);
-            this.label35.TabIndex = 35;
-            this.label35.Text = "*";
             // 
             // txtClientAdd2
             // 
-            this.txtClientAdd2.Location = new System.Drawing.Point(349, 127);
+            this.txtClientAdd2.Location = new System.Drawing.Point(349, 139);
             this.txtClientAdd2.Name = "txtClientAdd2";
             this.txtClientAdd2.Size = new System.Drawing.Size(100, 20);
             this.txtClientAdd2.TabIndex = 4;
             // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(284, 130);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(51, 13);
-            this.label41.TabIndex = 34;
-            this.label41.Text = "Address2";
-            // 
-            // label40
-            // 
-            this.label40.Location = new System.Drawing.Point(282, 46);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(61, 25);
-            this.label40.TabIndex = 33;
-            this.label40.Text = "Mid Int.";
-            // 
             // txtClientMidInt
             // 
-            this.txtClientMidInt.Location = new System.Drawing.Point(349, 47);
+            this.txtClientMidInt.Location = new System.Drawing.Point(349, 59);
             this.txtClientMidInt.Name = "txtClientMidInt";
             this.txtClientMidInt.Size = new System.Drawing.Size(100, 20);
             this.txtClientMidInt.TabIndex = 1;
-            this.txtClientMidInt.TextChanged += new System.EventHandler(this.txtClientMidInt_TextChanged);
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.ForeColor = System.Drawing.Color.Red;
-            this.label33.Location = new System.Drawing.Point(330, 286);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(13, 16);
-            this.label33.TabIndex = 31;
-            this.label33.Text = "*";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.ForeColor = System.Drawing.Color.Red;
-            this.label22.Location = new System.Drawing.Point(325, 69);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(13, 16);
-            this.label22.TabIndex = 29;
-            this.label22.Text = "*";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.Red;
-            this.label12.Location = new System.Drawing.Point(322, 21);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(13, 16);
-            this.label12.TabIndex = 28;
-            this.label12.Text = "*";
             // 
             // btnClientSave
             // 
-            this.btnClientSave.Location = new System.Drawing.Point(254, 393);
+            this.btnClientSave.Location = new System.Drawing.Point(265, 368);
             this.btnClientSave.Name = "btnClientSave";
             this.btnClientSave.Size = new System.Drawing.Size(75, 23);
             this.btnClientSave.TabIndex = 14;
@@ -950,7 +868,7 @@ namespace Final_Project_Work_Space
             // 
             // btnClientClear
             // 
-            this.btnClientClear.Location = new System.Drawing.Point(448, 393);
+            this.btnClientClear.Location = new System.Drawing.Point(448, 368);
             this.btnClientClear.Name = "btnClientClear";
             this.btnClientClear.Size = new System.Drawing.Size(75, 23);
             this.btnClientClear.TabIndex = 15;
@@ -958,19 +876,9 @@ namespace Final_Project_Work_Space
             this.btnClientClear.UseVisualStyleBackColor = true;
             this.btnClientClear.Click += new System.EventHandler(this.btnClientClear_Click);
             // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label13.Location = new System.Drawing.Point(277, 345);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(54, 13);
-            this.label13.TabIndex = 25;
-            this.label13.Text = "Insurance";
-            // 
             // txtClientDOB
             // 
-            this.txtClientDOB.Location = new System.Drawing.Point(348, 311);
+            this.txtClientDOB.Location = new System.Drawing.Point(348, 323);
             this.txtClientDOB.Name = "txtClientDOB";
             this.txtClientDOB.Size = new System.Drawing.Size(100, 20);
             this.txtClientDOB.TabIndex = 11;
@@ -978,7 +886,7 @@ namespace Final_Project_Work_Space
             // 
             // txtClientGender
             // 
-            this.txtClientGender.Location = new System.Drawing.Point(348, 285);
+            this.txtClientGender.Location = new System.Drawing.Point(348, 297);
             this.txtClientGender.Name = "txtClientGender";
             this.txtClientGender.Size = new System.Drawing.Size(100, 20);
             this.txtClientGender.TabIndex = 10;
@@ -986,49 +894,49 @@ namespace Final_Project_Work_Space
             // 
             // txtClientEmail
             // 
-            this.txtClientEmail.Location = new System.Drawing.Point(348, 259);
+            this.txtClientEmail.Location = new System.Drawing.Point(348, 271);
             this.txtClientEmail.Name = "txtClientEmail";
             this.txtClientEmail.Size = new System.Drawing.Size(100, 20);
             this.txtClientEmail.TabIndex = 9;
             // 
             // txtClientPhone
             // 
-            this.txtClientPhone.Location = new System.Drawing.Point(349, 234);
+            this.txtClientPhone.Location = new System.Drawing.Point(349, 246);
             this.txtClientPhone.Name = "txtClientPhone";
             this.txtClientPhone.Size = new System.Drawing.Size(100, 20);
             this.txtClientPhone.TabIndex = 8;
             // 
             // txtClientZip
             // 
-            this.txtClientZip.Location = new System.Drawing.Point(349, 208);
+            this.txtClientZip.Location = new System.Drawing.Point(349, 220);
             this.txtClientZip.Name = "txtClientZip";
             this.txtClientZip.Size = new System.Drawing.Size(100, 20);
             this.txtClientZip.TabIndex = 7;
             // 
             // txtClientState
             // 
-            this.txtClientState.Location = new System.Drawing.Point(349, 182);
+            this.txtClientState.Location = new System.Drawing.Point(349, 194);
             this.txtClientState.Name = "txtClientState";
             this.txtClientState.Size = new System.Drawing.Size(100, 20);
             this.txtClientState.TabIndex = 6;
             // 
             // txtClientCity
             // 
-            this.txtClientCity.Location = new System.Drawing.Point(348, 153);
+            this.txtClientCity.Location = new System.Drawing.Point(348, 165);
             this.txtClientCity.Name = "txtClientCity";
             this.txtClientCity.Size = new System.Drawing.Size(100, 20);
             this.txtClientCity.TabIndex = 5;
             // 
             // txtClientAddress
             // 
-            this.txtClientAddress.Location = new System.Drawing.Point(349, 99);
+            this.txtClientAddress.Location = new System.Drawing.Point(349, 111);
             this.txtClientAddress.Name = "txtClientAddress";
             this.txtClientAddress.Size = new System.Drawing.Size(100, 20);
             this.txtClientAddress.TabIndex = 3;
             // 
             // txtClientLName
             // 
-            this.txtClientLName.Location = new System.Drawing.Point(349, 72);
+            this.txtClientLName.Location = new System.Drawing.Point(349, 84);
             this.txtClientLName.Name = "txtClientLName";
             this.txtClientLName.Size = new System.Drawing.Size(100, 20);
             this.txtClientLName.TabIndex = 2;
@@ -1036,17 +944,84 @@ namespace Final_Project_Work_Space
             // 
             // txtClientFName
             // 
-            this.txtClientFName.Location = new System.Drawing.Point(349, 21);
+            this.txtClientFName.Location = new System.Drawing.Point(349, 33);
             this.txtClientFName.Name = "txtClientFName";
             this.txtClientFName.Size = new System.Drawing.Size(100, 20);
             this.txtClientFName.TabIndex = 0;
             this.txtClientFName.TextChanged += new System.EventHandler(this.txtClientFName_TextChanged);
             // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.BackColor = System.Drawing.Color.Transparent;
+            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.ForeColor = System.Drawing.Color.Red;
+            this.label35.Location = new System.Drawing.Point(337, 323);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(13, 16);
+            this.label35.TabIndex = 35;
+            this.label35.Text = "*";
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(289, 142);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(51, 13);
+            this.label41.TabIndex = 34;
+            this.label41.Text = "Address2";
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(298, 58);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(42, 13);
+            this.label40.TabIndex = 33;
+            this.label40.Text = "Mid Int.";
+            this.label40.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.BackColor = System.Drawing.Color.Transparent;
+            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.ForeColor = System.Drawing.Color.Red;
+            this.label33.Location = new System.Drawing.Point(337, 296);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(13, 16);
+            this.label33.TabIndex = 31;
+            this.label33.Text = "*";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.BackColor = System.Drawing.Color.Transparent;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.ForeColor = System.Drawing.Color.Red;
+            this.label22.Location = new System.Drawing.Point(337, 79);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(13, 16);
+            this.label22.TabIndex = 29;
+            this.label22.Text = "*";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.Red;
+            this.label12.Location = new System.Drawing.Point(337, 31);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(13, 16);
+            this.label12.TabIndex = 28;
+            this.label12.Text = "*";
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label11.Location = new System.Drawing.Point(299, 315);
+            this.label11.Location = new System.Drawing.Point(307, 327);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(33, 13);
             this.label11.TabIndex = 10;
@@ -1056,7 +1031,7 @@ namespace Final_Project_Work_Space
             // 
             this.label10.AutoSize = true;
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label10.Location = new System.Drawing.Point(287, 289);
+            this.label10.Location = new System.Drawing.Point(298, 301);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(42, 13);
             this.label10.TabIndex = 9;
@@ -1066,7 +1041,7 @@ namespace Final_Project_Work_Space
             // 
             this.label9.AutoSize = true;
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label9.Location = new System.Drawing.Point(297, 266);
+            this.label9.Location = new System.Drawing.Point(308, 278);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(32, 13);
             this.label9.TabIndex = 8;
@@ -1075,7 +1050,7 @@ namespace Final_Project_Work_Space
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(343, 237);
+            this.label8.Location = new System.Drawing.Point(343, 249);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(0, 13);
             this.label8.TabIndex = 7;
@@ -1084,7 +1059,7 @@ namespace Final_Project_Work_Space
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label7.Location = new System.Drawing.Point(291, 241);
+            this.label7.Location = new System.Drawing.Point(302, 253);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(38, 13);
             this.label7.TabIndex = 6;
@@ -1094,7 +1069,7 @@ namespace Final_Project_Work_Space
             // 
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label6.Location = new System.Drawing.Point(279, 215);
+            this.label6.Location = new System.Drawing.Point(290, 227);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(50, 13);
             this.label6.TabIndex = 5;
@@ -1104,7 +1079,7 @@ namespace Final_Project_Work_Space
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label5.Location = new System.Drawing.Point(297, 185);
+            this.label5.Location = new System.Drawing.Point(308, 197);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(32, 13);
             this.label5.TabIndex = 4;
@@ -1114,7 +1089,7 @@ namespace Final_Project_Work_Space
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label4.Location = new System.Drawing.Point(305, 156);
+            this.label4.Location = new System.Drawing.Point(316, 168);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(24, 13);
             this.label4.TabIndex = 3;
@@ -1124,7 +1099,7 @@ namespace Final_Project_Work_Space
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label3.Location = new System.Drawing.Point(284, 99);
+            this.label3.Location = new System.Drawing.Point(295, 111);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(45, 13);
             this.label3.TabIndex = 2;
@@ -1134,7 +1109,7 @@ namespace Final_Project_Work_Space
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label2.Location = new System.Drawing.Point(271, 72);
+            this.label2.Location = new System.Drawing.Point(282, 84);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 13);
             this.label2.TabIndex = 1;
@@ -1144,7 +1119,7 @@ namespace Final_Project_Work_Space
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(269, 21);
+            this.label1.Location = new System.Drawing.Point(280, 33);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 13);
             this.label1.TabIndex = 0;
@@ -1164,23 +1139,23 @@ namespace Final_Project_Work_Space
             this.tabEmployee.Size = new System.Drawing.Size(802, 459);
             this.tabEmployee.TabIndex = 0;
             // 
-            // Employee
+            // frmEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(799, 466);
             this.Controls.Add(this.tabEmployee);
-            this.Name = "Employee";
+            this.Name = "frmEmployee";
             this.Text = "Employee";
             this.Load += new System.EventHandler(this.Employee_Load);
             this.tabSearch.ResumeLayout(false);
             this.tabSearch.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClient)).EndInit();
-            this.contextMenuClient.ResumeLayout(false);
+            this.cmuClient.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPre)).EndInit();
-            this.contextMenuPre.ResumeLayout(false);
+            this.cmuPrescription.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRefill)).EndInit();
-            this.contextMenuRefill.ResumeLayout(false);
+            this.cmuRefill.ResumeLayout(false);
             this.tabNewRefill.ResumeLayout(false);
             this.tabNewRefill.PerformLayout();
             this.tabNewPrescription.ResumeLayout(false);
@@ -1246,7 +1221,6 @@ namespace Final_Project_Work_Space
         private System.Windows.Forms.TabPage tabNewClient;
         private System.Windows.Forms.Button btnClientSave;
         private System.Windows.Forms.Button btnClientClear;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtClientDOB;
         private System.Windows.Forms.TextBox txtClientGender;
         private System.Windows.Forms.TextBox txtClientEmail;
@@ -1288,16 +1262,15 @@ namespace Final_Project_Work_Space
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Label txtRefPaymentType;
         private System.Windows.Forms.ComboBox cmboRefInsurance;
-        private System.Windows.Forms.ComboBox cmboClientInsurance;
-        private System.Windows.Forms.ContextMenuStrip contextMenuClient;
-        private System.Windows.Forms.ContextMenuStrip contextMenuPre;
-        private System.Windows.Forms.ContextMenuStrip contextMenuRefill;
-        private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem searchPrescriptionToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem searchRefillToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip cmuClient;
+        private System.Windows.Forms.ContextMenuStrip cmuPrescription;
+        private System.Windows.Forms.ContextMenuStrip cmuRefill;
+        private System.Windows.Forms.ToolStripMenuItem cmuClientUpdate;
+        private System.Windows.Forms.ToolStripMenuItem cmuClientSearchPre;
+        private System.Windows.Forms.ToolStripMenuItem cmuClientSearchRefill;
+        private System.Windows.Forms.ToolStripMenuItem cmuPrescriptionUpdate;
+        private System.Windows.Forms.ToolStripMenuItem cmuRefillUpdate;
+        private System.Windows.Forms.ToolStripMenuItem cmuRefillDelete;
         private System.Windows.Forms.Label lblRefill;
         private System.Windows.Forms.Label lblPrescription;
         private System.Windows.Forms.Label lblClient;

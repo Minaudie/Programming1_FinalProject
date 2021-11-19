@@ -8,17 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FinalProject;
-using Final_Project_Work_Space;
+//using Final_Project_Work_Space;
 
 namespace FinalProject
 {
     public partial class frmUpdateClient : Form
     {
-        private Employee frmEmployee;
+        private frmEmployee frmEmployee;
 
-        public frmUpdateClient(Employee emp)
+        public frmUpdateClient(frmEmployee emp)
         {
-
             InitializeComponent();
             frmEmployee = emp;
         }
@@ -30,7 +29,7 @@ namespace FinalProject
                 DataSet ds = new DataSet();
                 DatabaseConnections ucf = new DatabaseConnections();
                 //clientID
-                ds = ucf.GetClientByID(int.Parse(Employee.g_clientID.ToString()));
+                ds = ucf.GetClientByID(int.Parse(frmEmployee.g_clientID.ToString()));
                 if (ds.Tables[0].Rows.Count > 0)
                 {
                     txtUpdateClientID.Text = ds.Tables[0].Rows[0]["clientID"].ToString();
@@ -48,19 +47,12 @@ namespace FinalProject
                     txtUpdateClientGender.Text = ds.Tables[0].Rows[0]["dateOfBirth"].ToString();
                     txtUpdateClientDOB.Text = ds.Tables[0].Rows[0]["username"].ToString();
                 }
-
-
             }
             catch (Exception ex)
             {
                 throw new ArgumentException(ex.Message);
             }
-    
-
-
-
-
-}
+        }
 
         private void cmboClientInsurance_SelectedIndexChanged(object sender, EventArgs e)
         {

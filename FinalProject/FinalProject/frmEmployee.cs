@@ -7,80 +7,60 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using FinalProject;
 
-namespace Final_Project_Work_Space
+namespace FinalProject
 {
-    public partial class Employee : Form
+    public partial class frmEmployee : Form
     {
         public static string g_clientID = "";
         public static string g_prescriptionID = "";
         public static string g_refillID = "";
         
-        /*
-           Required fields:
-           Client
-               txtClientFName, txtClientLName, txtClientDOB, txtClientGender
-           Phys
-               txtPhysFName, txtPhysLName
-           Prescription
-               txtPreClientID, txtPrePhysicianID, txtPreMedicationID
-               dtpPreExpirationDate, txtPreNumOfRefills
-           Refill
-               txtRefPrescriptionID, txtRefDosage, txtRefFrequency, 
-               txtRefSupplyDays, txtRefQuantitySupplied, txtRefPrice(idk about this one)
-               txtRefPaymentType
-       */
         private void addNewClient()
         {
-            string fname = "", initial = "", lname = "", street1 = "", street2 = "", 
-                city = "", state = "", zip = "", phone = "", email = "", gender = "", DOB = "", username = "";
+            string fname = "", initial = "", lname = "", street1 = "", street2 = "",
+                city = "", state = "", zip = "", phone = "", email = "", gender = "", DOB = "";
              
             try
             {
-                
-                
                 DatabaseConnections ncf = new DatabaseConnections();
     
-                    fname = txtClientFName.Text.Trim();
-                    initial = txtClientMidInt.Text.Trim();
-                    lname = txtClientLName.Text.Trim();
-                    street1 = txtClientAddress.Text.Trim();
-                    street2 =txtClientAdd2.Text.Trim();
-                    city =txtClientCity.Text.Trim();
-                    state = txtClientState.Text.Trim();
-                    zip = txtClientZip.Text.Trim();
-                    phone = txtClientPhone.Text.Trim();
-                    email = txtClientEmail.Text.Trim();
-                    gender =txtClientGender.Text.Trim();
-                    DOB =txtClientDOB.Text.Trim();
-                  //  username = txtClientUserName.Text.Trim();
+                fname = txtClientFName.Text.Trim();
+                initial = txtClientMidInt.Text.Trim();
+                lname = txtClientLName.Text.Trim();
+                street1 = txtClientAddress.Text.Trim();
+                street2 =txtClientAdd2.Text.Trim();
+                city =txtClientCity.Text.Trim();
+                state = txtClientState.Text.Trim();
+                zip = txtClientZip.Text.Trim();
+                phone = txtClientPhone.Text.Trim();
+                email = txtClientEmail.Text.Trim();
+                gender =txtClientGender.Text.Trim();
+                DOB =txtClientDOB.Text.Trim();
 
-                ncf.NewClient(fname, initial, lname, street1, street2, city, state, zip, phone, email, gender, DOB);
+                ncf.NewClient(fname, initial, lname, street1, street2, city, 
+                    state, zip, phone, email, gender, DOB);
                 
-
             }
             catch (Exception ex)
             {
                 throw new ArgumentException(ex.Message);
             }
         }
+
         private void addNewPhysician()
         {
             string fname = "", initial = "", lname = "", phone = "", email = "";
 
             try
             {
-          
                 DatabaseConnections npf = new DatabaseConnections();
 
-                
-                
-                    fname = txtPhyFName.Text.Trim();
-                    initial = txtPhyMidInt.Text.Trim();
-                    lname = txtPhyLName.Text.Trim();
-                    phone = txtPhyLName.Text.Trim();
-                    email = txtPhyEmail.Text.Trim();
+                fname = txtPhyFName.Text.Trim();
+                initial = txtPhyMidInt.Text.Trim();
+                lname = txtPhyLName.Text.Trim();
+                phone = txtPhyLName.Text.Trim();
+                email = txtPhyEmail.Text.Trim();
 
                 npf.NewPhysician(fname, initial, lname, phone, email);
 
@@ -90,25 +70,22 @@ namespace Final_Project_Work_Space
                 throw new ArgumentException(ex.Message);
             }
         }
+
         private void addNewRefill()
         {
             string dosage = "", frequency = "";
             int supplydays = 0, quantitysupplied = 0, perscriptionid = 0;
             try
             {
-               
                 DatabaseConnections nrf = new DatabaseConnections();
 
-
-                    perscriptionid = int.Parse(txtRefPrescriptionID.Text.Trim());
-                    dosage = txtRefDosage.Text.Trim();
-                    frequency = txtRefFrequency.Text.Trim();                
-                    supplydays = int.Parse(txtRefSupplyDays.Text.Trim());
-                    quantitysupplied = int.Parse(txtRefQuantitySupplied.Text.Trim());
-
+                perscriptionid = int.Parse(txtRefPrescriptionID.Text.Trim());
+                dosage = txtRefDosage.Text.Trim();
+                frequency = txtRefFrequency.Text.Trim();                
+                supplydays = int.Parse(txtRefSupplyDays.Text.Trim());
+                quantitysupplied = int.Parse(txtRefQuantitySupplied.Text.Trim());
 
                 nrf.NewRefill(perscriptionid, dosage, frequency, supplydays, quantitysupplied);
-
 
             }
             catch (Exception ex)
@@ -116,15 +93,15 @@ namespace Final_Project_Work_Space
                 throw new ArgumentException(ex.Message);
             }
         }
+
         private void addNewPrescreiption()
         {
             int clientid = 0, physician = 0, medicationid = 0, refillcounter = 0;
             string expirydate = "";
+
             try
             {
-
                 DatabaseConnections npf = new DatabaseConnections();
-
 
                 clientid = int.Parse(txtPreClientID.Text.Trim());
                 physician = int.Parse(txtPrePhysicanID.Text.Trim());
@@ -132,10 +109,7 @@ namespace Final_Project_Work_Space
                 expirydate = dtpPreExpirationDate.Value.ToString();
                 refillcounter = int.Parse(txtPreNumOfRefills.Text.Trim());
                 
-
-
                 npf.NewPrescription(clientid, physician, medicationid, expirydate, refillcounter);
-
 
             }
             catch (Exception ex)
@@ -144,7 +118,7 @@ namespace Final_Project_Work_Space
             }
         }
 
-        public Employee()
+        public frmEmployee()
         {
             InitializeComponent();
         }
@@ -153,7 +127,7 @@ namespace Final_Project_Work_Space
         private void Employee_Load(object sender, EventArgs e)
         {
             btnClientSave.Enabled = false;
-            //disabling buttons/cclear text fields
+            // ****TO DO ****disabling buttons/clear text fields
         }
 
         /***     CLIENT TAB     ***/
@@ -185,8 +159,6 @@ namespace Final_Project_Work_Space
             txtClientEmail.Clear();
             txtClientGender.Clear();
             txtClientDOB.Clear();
-            cmboClientInsurance.SelectedIndex = -1;
-            //txtClientUserName.Clear();
         }
 
         private void btnClientSave_Click(object sender, EventArgs e)
@@ -503,31 +475,13 @@ namespace Final_Project_Work_Space
             }
         }
 
-        private void cmboRefInsurance_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        /***    CONTEXT MENUS    ***/
 
-        }
-
-        private void txtClientMidInt_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
-        {
-
-        }
-
-        private void contextMenuClient_Opening(object sender, CancelEventArgs e)
-        {
-
-        }
-
-        private void updateToolStripMenuItem_Click(object sender, EventArgs e)
+        private void cmuClientUpdate_Click(object sender, EventArgs e)
         {
             string clientid = "";
 
-            if(dgvClient.Rows.Count > 0)
+            if (dgvClient.Rows.Count > 0)
             {
                 DataGridViewRow row = dgvClient.SelectedRows[0];
                 frmUpdateClient clientform = new frmUpdateClient(this);
@@ -538,7 +492,17 @@ namespace Final_Project_Work_Space
             }
         }
 
-        private void updateToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void cmuClientSearchPre_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void cmuClientSearchRefill_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void cmuPrescriptionUpdate_Click(object sender, EventArgs e)
         {
             string prescriptionid = "";
 
@@ -553,7 +517,7 @@ namespace Final_Project_Work_Space
             }
         }
 
-        private void updateToolStripMenuItem2_Click(object sender, EventArgs e)
+        private void cmuRefillUpdate_Click(object sender, EventArgs e)
         {
             string refillid = "";
 
@@ -568,17 +532,7 @@ namespace Final_Project_Work_Space
             }
         }
 
-        private void tabNewClient_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgvClient_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void contextMenuRefill_Opening(object sender, CancelEventArgs e)
+        private void cmuRefillDelete_Click(object sender, EventArgs e)
         {
 
         }

@@ -1,7 +1,7 @@
 ﻿
-namespace Programming1_FinalProject
+namespace FinalProject
 {
-    partial class Register
+    partial class frmRegister
     {
         /// <summary>
         /// Required designer variable.

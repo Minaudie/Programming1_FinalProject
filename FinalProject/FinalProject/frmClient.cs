@@ -7,15 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using FinalProject;
 
-namespace Programming1_FinalProject
+namespace FinalProject
 {
-    public partial class Client : Form
+    public partial class frmClient : Form
     {
-        
-
-        public Client()
+        public frmClient()
         {
             InitializeComponent();
         }

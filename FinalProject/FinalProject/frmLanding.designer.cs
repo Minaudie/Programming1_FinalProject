@@ -1,7 +1,7 @@
 ﻿
-namespace Programming1_FinalProject
+namespace FinalProject
 {
-    partial class Landing
+    partial class frmLanding
     {
         /// <summary>
         /// Required designer variable.

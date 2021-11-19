@@ -7,14 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Final_Project_Work_Space;
 
 namespace FinalProject
 {
     public partial class frmUpdateRefill : Form
     {
-        private Employee frmEmployee;
-        public frmUpdateRefill(Employee emp)
+        private frmEmployee frmEmployee;
+        public frmUpdateRefill(frmEmployee emp)
         {
 
             InitializeComponent();
@@ -28,7 +27,7 @@ namespace FinalProject
                 DataSet ds = new DataSet();
                 DatabaseConnections urf = new DatabaseConnections();
                 //refillID
-                ds = urf.GetRefillByID(int.Parse(Employee.g_refillID.ToString()));
+                ds = urf.GetRefillByID(int.Parse(frmEmployee.g_refillID.ToString()));
 
                 if (ds.Tables[0].Rows.Count > 0)
                 {
