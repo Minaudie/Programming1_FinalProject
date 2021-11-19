@@ -1157,6 +1157,7 @@ namespace Final_Project_Work_Space
             this.searchRefillToolStripMenuItem});
             this.contextMenuClient.Name = "contextMenuClient";
             this.contextMenuClient.Size = new System.Drawing.Size(294, 118);
+            this.contextMenuClient.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuClient_Opening);
             // 
             // contextMenuPre
             // 
@@ -1173,13 +1174,14 @@ namespace Final_Project_Work_Space
             this.updateToolStripMenuItem2,
             this.deleteToolStripMenuItem});
             this.contextMenuRefill.Name = "contextMenuRefill";
-            this.contextMenuRefill.Size = new System.Drawing.Size(168, 80);
+            this.contextMenuRefill.Size = new System.Drawing.Size(301, 124);
             // 
             // updateToolStripMenuItem
             // 
             this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-            this.updateToolStripMenuItem.Size = new System.Drawing.Size(293, 38);
+            this.updateToolStripMenuItem.Size = new System.Drawing.Size(300, 38);
             this.updateToolStripMenuItem.Text = "Update";
+            this.updateToolStripMenuItem.Click += new System.EventHandler(this.updateToolStripMenuItem_Click);
             // 
             // searchPrescriptionToolStripMenuItem
             // 
@@ -1196,14 +1198,16 @@ namespace Final_Project_Work_Space
             // updateToolStripMenuItem1
             // 
             this.updateToolStripMenuItem1.Name = "updateToolStripMenuItem1";
-            this.updateToolStripMenuItem1.Size = new System.Drawing.Size(167, 38);
+            this.updateToolStripMenuItem1.Size = new System.Drawing.Size(300, 38);
             this.updateToolStripMenuItem1.Text = "Update";
+            this.updateToolStripMenuItem1.Click += new System.EventHandler(this.updateToolStripMenuItem1_Click);
             // 
             // updateToolStripMenuItem2
             // 
             this.updateToolStripMenuItem2.Name = "updateToolStripMenuItem2";
-            this.updateToolStripMenuItem2.Size = new System.Drawing.Size(167, 38);
+            this.updateToolStripMenuItem2.Size = new System.Drawing.Size(300, 38);
             this.updateToolStripMenuItem2.Text = "Update";
+            this.updateToolStripMenuItem2.Click += new System.EventHandler(this.updateToolStripMenuItem2_Click);
             // 
             // deleteToolStripMenuItem
             // 

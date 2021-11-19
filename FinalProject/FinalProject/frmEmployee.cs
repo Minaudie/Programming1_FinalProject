@@ -515,5 +515,34 @@ namespace Final_Project_Work_Space
         {
 
         }
+
+        private void contextMenuClient_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void updateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmUpdateClient aform = new frmUpdateClient();
+            //aform.MdiParent = this;
+            //display the new form
+            aform.Show();
+        }
+
+        private void updateToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmUpdatePrescription aform = new frmUpdatePrescription();
+            //aform.MdiParent = this;
+            //display the new form
+            aform.Show();
+        }
+
+        private void updateToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            frmUpdateRefill aform = new frmUpdateRefill();
+            //aform.MdiParent = this;
+            //display the new form
+            aform.Show();
+        }
     }
 }
