@@ -523,7 +523,7 @@ namespace Final_Project_Work_Space
 
         private void updateToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmUpdateClient aform = new frmUpdateClient();
+            frmUpdateClient aform = new frmUpdateClient(this);
             //aform.MdiParent = this;
             //display the new form
             aform.Show();
@@ -531,7 +531,7 @@ namespace Final_Project_Work_Space
 
         private void updateToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            frmUpdatePrescription aform = new frmUpdatePrescription();
+            frmUpdatePrescription aform = new frmUpdatePrescription(this);
             //aform.MdiParent = this;
             //display the new form
             aform.Show();
@@ -539,7 +539,7 @@ namespace Final_Project_Work_Space
 
         private void updateToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            frmUpdateRefill aform = new frmUpdateRefill();
+            frmUpdateRefill aform = new frmUpdateRefill(this);
             //aform.MdiParent = this;
             //display the new form
             aform.Show();

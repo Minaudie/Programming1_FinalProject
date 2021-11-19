@@ -163,13 +163,13 @@ namespace Final_Project_Work_Space
             this.tabSearch.Location = new System.Drawing.Point(4, 37);
             this.tabSearch.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tabSearch.Name = "tabSearch";
-<<<<<<< Updated upstream
+
             this.tabSearch.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tabSearch.Size = new System.Drawing.Size(1596, 842);
-=======
+
             this.tabSearch.Padding = new System.Windows.Forms.Padding(3);
             this.tabSearch.Size = new System.Drawing.Size(794, 430);
->>>>>>> Stashed changes
+
             this.tabSearch.TabIndex = 4;
             this.tabSearch.Text = "Search";
             // 
@@ -256,13 +256,13 @@ namespace Final_Project_Work_Space
             this.tabNewRefill.Location = new System.Drawing.Point(4, 37);
             this.tabNewRefill.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tabNewRefill.Name = "tabNewRefill";
-<<<<<<< Updated upstream
+
             this.tabNewRefill.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tabNewRefill.Size = new System.Drawing.Size(1596, 842);
-=======
+
             this.tabNewRefill.Padding = new System.Windows.Forms.Padding(3);
             this.tabNewRefill.Size = new System.Drawing.Size(794, 430);
->>>>>>> Stashed changes
+
             this.tabNewRefill.TabIndex = 3;
             this.tabNewRefill.Text = "New Refill";
             // 
@@ -424,13 +424,13 @@ namespace Final_Project_Work_Space
             this.tabNewPrescription.Location = new System.Drawing.Point(4, 37);
             this.tabNewPrescription.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tabNewPrescription.Name = "tabNewPrescription";
-<<<<<<< Updated upstream
+
             this.tabNewPrescription.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tabNewPrescription.Size = new System.Drawing.Size(1596, 842);
-=======
+
             this.tabNewPrescription.Padding = new System.Windows.Forms.Padding(3);
             this.tabNewPrescription.Size = new System.Drawing.Size(794, 430);
->>>>>>> Stashed changes
+
             this.tabNewPrescription.TabIndex = 2;
             this.tabNewPrescription.Text = "New Prescription";
             // 
@@ -607,13 +607,13 @@ namespace Final_Project_Work_Space
             this.tabNewPhysician.Location = new System.Drawing.Point(4, 37);
             this.tabNewPhysician.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tabNewPhysician.Name = "tabNewPhysician";
-<<<<<<< Updated upstream
+
             this.tabNewPhysician.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tabNewPhysician.Size = new System.Drawing.Size(1596, 842);
-=======
+
             this.tabNewPhysician.Padding = new System.Windows.Forms.Padding(3);
             this.tabNewPhysician.Size = new System.Drawing.Size(794, 430);
->>>>>>> Stashed changes
+
             this.tabNewPhysician.TabIndex = 1;
             this.tabNewPhysician.Text = "New Physician";
             // 
@@ -792,16 +792,16 @@ namespace Final_Project_Work_Space
             this.tabNewClient.Location = new System.Drawing.Point(4, 37);
             this.tabNewClient.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tabNewClient.Name = "tabNewClient";
-<<<<<<< Updated upstream
+
             this.tabNewClient.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tabNewClient.Size = new System.Drawing.Size(1596, 842);
-=======
+
             this.tabNewClient.Padding = new System.Windows.Forms.Padding(3);
             this.tabNewClient.Size = new System.Drawing.Size(794, 430);
->>>>>>> Stashed changes
+
             this.tabNewClient.TabIndex = 0;
             this.tabNewClient.Text = "New Client";
-            this.tabNewClient.Click += new System.EventHandler(this.tabNewClient_Click);
+            //this.tabNewClient.Click += new System.EventHandler(this.tabNewClient_Click);
             // 
             // txtClientAdd2
             // 
