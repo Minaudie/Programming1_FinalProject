@@ -510,5 +510,10 @@ namespace Final_Project_Work_Space
         {
 
         }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
     }
 }
