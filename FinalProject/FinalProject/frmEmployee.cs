@@ -117,7 +117,7 @@ namespace Final_Project_Work_Space
         private void addNewPerscreiption()
         {
             int clientid = 0, physician = 0, medicationid = 0, refillcounter = 0;
-            string startdate = "", expirydate = "";
+            string expirydate = "";
             try
             {
 

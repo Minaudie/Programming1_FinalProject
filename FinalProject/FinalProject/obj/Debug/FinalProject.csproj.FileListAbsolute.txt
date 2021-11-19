@@ -41,3 +41,6 @@ C:\Users\17178\Documents\GitHub\Programming1_FinalProject\FinalProject\FinalProj
 C:\Users\Administrator\Documents\GitHub\Programming1_FinalProject\FinalProject\FinalProject\obj\Debug\FinalProject.frmUpdateClient.resources
 C:\Users\Administrator\Documents\GitHub\Programming1_FinalProject\FinalProject\FinalProject\obj\Debug\FinalProject.frmUpdatePrescription.resources
 C:\Users\Administrator\Documents\GitHub\Programming1_FinalProject\FinalProject\FinalProject\obj\Debug\FinalProject.frmUpdateRefill.resources
+C:\Users\17178\Documents\GitHub\Programming1_FinalProject\FinalProject\FinalProject\obj\Debug\FinalProject.frmUpdateClient.resources
+C:\Users\17178\Documents\GitHub\Programming1_FinalProject\FinalProject\FinalProject\obj\Debug\FinalProject.frmUpdatePrescription.resources
+C:\Users\17178\Documents\GitHub\Programming1_FinalProject\FinalProject\FinalProject\obj\Debug\FinalProject.frmUpdateRefill.resources
