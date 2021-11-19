@@ -1,6 +1,13 @@
 To Do List
 put a note with your name after the item if you did it! TY
 -------------
+frmEmployee (reference frmEdit and frmSearch from inclass)
+	global variables for IDs of client/prescription/refill
+	
+	Edit frmUpdateXX to take a frmEmployee as argument
+
+	return new clientID when creating a new client
+
 New forms:
 	Update client information (DatabaseConnections method ready)
 		show client id info, but disable the text field so it cant be edited
@@ -33,6 +40,13 @@ context menu:
 			ON REFILL -> update refill info form)
 		delete (ON REFILL ONLY, delete refill info) (dc method ready)
 
+	context menu for client dgv
+		search prescription, search refill, edit
+	context menu for prescription dgv
+		edit
+	context menu for refill dgv
+		edit, delete
+
 frmEmployee
 	new refill - disable price text box (auto filled when prescription id entered)
 		     the star thingys - placement and make red
@@ -40,10 +54,6 @@ frmEmployee
 
 marking what is not optional on frmEmployee and update forms
 	look at database, for columns not null
-
-frmEmployee tab "load" 
-	I (Miranda) thought that each tab had a loading event, but they're click events. These need to be removed.
-	I guess each tabs load when the entire form loads, so Employee_Load should have that code instead.
 
 If unused, delete GetRefillByID in DatabaseConnections
 	selectClientPrescription (stored proc)
