@@ -27,7 +27,7 @@ namespace FinalProject
                 DataSet ds = new DataSet();
                 DatabaseConnections upf = new DatabaseConnections();
                 //prescriptionID
-                ds = upf.GetPrescriptionByID(frmEmployee.prescriptionID.ToString());
+                ds = upf.GetPrescriptionByID(int.Parse(Employee.g_prescriptionID.ToString()));
                 if (ds.Tables[0].Rows.Count > 0)
                 {
                     txtUpdatePrescriptionID.Text = ds.Tables[0].Rows[0]["prescriptionID"].ToString();

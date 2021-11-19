@@ -28,7 +28,7 @@ namespace FinalProject
                 DataSet ds = new DataSet();
                 DatabaseConnections urf = new DatabaseConnections();
                 //refillID
-                ds = urf.GetRefillByID(frmEmployee.refillID.ToString());
+                ds = urf.GetRefillByID(int.Parse(Employee.g_refillID.ToString()));
                 if (ds.Tables[0].Rows.Count > 0)
                 {
                     txtUpdateRefillID.Text = ds.Tables[0].Rows[0]["refillID"].ToString();
