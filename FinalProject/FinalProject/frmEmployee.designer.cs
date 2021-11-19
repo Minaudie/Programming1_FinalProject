@@ -303,6 +303,7 @@ namespace Final_Project_Work_Space
             // 
             // txtRefPrice
             // 
+            this.txtRefPrice.Enabled = false;
             this.txtRefPrice.Location = new System.Drawing.Point(616, 312);
             this.txtRefPrice.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtRefPrice.Name = "txtRefPrice";
