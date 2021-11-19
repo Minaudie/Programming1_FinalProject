@@ -18,7 +18,7 @@ namespace FinalProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Landing());
+            Application.Run(new frmUpdatePrescription());
         }
     }
 }

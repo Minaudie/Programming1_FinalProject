@@ -38,3 +38,6 @@ C:\Users\17178\Documents\GitHub\Programming1_FinalProject\FinalProject\FinalProj
 C:\Users\17178\Documents\GitHub\Programming1_FinalProject\FinalProject\FinalProject\bin\Debug\FinalProject.exe.config
 C:\Users\17178\Documents\GitHub\Programming1_FinalProject\FinalProject\FinalProject\bin\Debug\FinalProject.exe
 C:\Users\17178\Documents\GitHub\Programming1_FinalProject\FinalProject\FinalProject\bin\Debug\FinalProject.pdb
+C:\Users\Administrator\Documents\GitHub\Programming1_FinalProject\FinalProject\FinalProject\obj\Debug\FinalProject.frmUpdateClient.resources
+C:\Users\Administrator\Documents\GitHub\Programming1_FinalProject\FinalProject\FinalProject\obj\Debug\FinalProject.frmUpdatePrescription.resources
+C:\Users\Administrator\Documents\GitHub\Programming1_FinalProject\FinalProject\FinalProject\obj\Debug\FinalProject.frmUpdateRefill.resources
