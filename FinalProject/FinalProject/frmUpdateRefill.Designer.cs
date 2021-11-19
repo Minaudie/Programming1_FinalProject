@@ -190,6 +190,7 @@ namespace FinalProject
             // 
             // btnUpdateRefillClear
             // 
+            this.btnUpdateRefillClear.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnUpdateRefillClear.Location = new System.Drawing.Point(345, 268);
             this.btnUpdateRefillClear.Name = "btnUpdateRefillClear";
             this.btnUpdateRefillClear.Size = new System.Drawing.Size(75, 23);
@@ -200,9 +201,11 @@ namespace FinalProject
             // 
             // frmUpdateRefill
             // 
+            this.AcceptButton = this.btnUpdateRefillUpdate;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.CancelButton = this.btnUpdateRefillClear;
             this.ClientSize = new System.Drawing.Size(595, 334);
             this.Controls.Add(this.btnUpdateRefillUpdate);
             this.Controls.Add(this.btnUpdateRefillClear);

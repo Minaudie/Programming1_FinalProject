@@ -38,8 +38,11 @@ namespace FinalProject
                 gender =txtClientGender.Text.Trim();
                 DOB =txtClientDOB.Text.Trim();
 
-                ncf.NewClient(fname, initial, lname, street1, street2, city, 
+                int clientID = ncf.NewClient(fname, initial, lname, street1, street2, city, 
                     state, zip, phone, email, gender, DOB);
+
+                MessageBox.Show("New client's ID is: " + clientID, "New Client ID", MessageBoxButtons.OK, 
+                    MessageBoxIcon.Information);
                 
             }
             catch (Exception ex)

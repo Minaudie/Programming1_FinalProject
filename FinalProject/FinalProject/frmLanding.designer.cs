@@ -42,7 +42,7 @@ namespace FinalProject
             // 
             this.txtLandingUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLandingUsername.Location = new System.Drawing.Point(117, 89);
-            this.txtLandingUsername.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtLandingUsername.Margin = new System.Windows.Forms.Padding(2);
             this.txtLandingUsername.Name = "txtLandingUsername";
             this.txtLandingUsername.Size = new System.Drawing.Size(210, 23);
             this.txtLandingUsername.TabIndex = 0;
@@ -52,7 +52,7 @@ namespace FinalProject
             // 
             this.txtLandingPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLandingPassword.Location = new System.Drawing.Point(117, 132);
-            this.txtLandingPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtLandingPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtLandingPassword.Name = "txtLandingPassword";
             this.txtLandingPassword.PasswordChar = '*';
             this.txtLandingPassword.Size = new System.Drawing.Size(210, 23);
@@ -115,8 +115,9 @@ namespace FinalProject
             this.lnkLandingNewClient.Text = "New Client Registration";
             this.lnkLandingNewClient.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkLandingNewClient_LinkClicked);
             // 
-            // Landing
+            // frmLanding
             // 
+            this.AcceptButton = this.btnLandingLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
@@ -128,8 +129,8 @@ namespace FinalProject
             this.Controls.Add(this.lblLandingUsername);
             this.Controls.Add(this.txtLandingPassword);
             this.Controls.Add(this.txtLandingUsername);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "Landing";
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "frmLanding";
             this.Text = "Landing";
             this.ResumeLayout(false);
             this.PerformLayout();

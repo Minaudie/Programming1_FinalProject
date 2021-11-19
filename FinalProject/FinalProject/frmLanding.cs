@@ -18,45 +18,45 @@ namespace FinalProject
         {
             InitializeComponent();
         }
+
         private void Landing_Load(object sender, EventArgs e)
         {
             btnLandingLogin.Enabled = false;
+            ClearTextBoxes();
+        }
+
+        private void ClearTextBoxes()
+        {
+            txtLandingPassword.Clear();
+            txtLandingUsername.Clear();
+        }
+
+        private void CheckTextBoxes()
+        {
+            if (txtLandingUsername.Text.Trim().Length > 0 && txtLandingPassword.Text.Trim().Length > 0)
+            {
+                btnLandingLogin.Enabled = true;
+            }
+            else
+            {
+                btnLandingLogin.Enabled = false;
+            }
         }
 
         private void txtLandingUsername_TextChanged(object sender, EventArgs e)
         {
-
-            if ((txtLandingUsername.Text.Trim().Length > 0) && (txtLandingPassword.Text.Trim().Length > 0))
-            {
-                btnLandingLogin.Enabled = true;
-
-            }
-            else
-            {
-                btnLandingLogin.Enabled = false;
-            }
+            CheckTextBoxes();
         }
 
         private void txtLandingPassword_TextChanged(object sender, EventArgs e)
         {
-
-            if ((txtLandingPassword.Text.Trim().Length > 0) && (txtLandingUsername.Text.Trim().Length > 0))
-            {
-                btnLandingLogin.Enabled = true;
-
-            }
-            else
-            {
-                btnLandingLogin.Enabled = false;
-            }
+            CheckTextBoxes();
         }
 
         private void lnkLandingNewClient_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             frmRegister frm = new frmRegister();
             frm.Show();
-          //this.Hide();
-
         }
 
         private void btnLandingLogin_Click(object sender, EventArgs e)
@@ -90,10 +90,14 @@ namespace FinalProject
                         if(user == 1) //client
                         {
                             frmClient frmClient = new frmClient();
+                            frmClient.loggedInUser = username;
+
+                            ClearTextBoxes();
                             frmClient.ShowDialog();
 
                         } else if(user == 2) //2, employee
                         {
+                            ClearTextBoxes();
                             frmEmployee frmEmp = new frmEmployee();
                             frmEmp.ShowDialog();
                         } else

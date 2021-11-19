@@ -154,6 +154,7 @@ namespace FinalProject
             // 
             // btnUpdateClientClear
             // 
+            this.btnUpdateClientClear.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnUpdateClientClear.Location = new System.Drawing.Point(412, 413);
             this.btnUpdateClientClear.Name = "btnUpdateClientClear";
             this.btnUpdateClientClear.Size = new System.Drawing.Size(75, 23);
@@ -382,9 +383,11 @@ namespace FinalProject
             // 
             // frmUpdateClient
             // 
+            this.AcceptButton = this.btnUpdateClientUpdate;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.CancelButton = this.btnUpdateClientClear;
             this.ClientSize = new System.Drawing.Size(743, 454);
             this.Controls.Add(this.lblUpdateInsurance);
             this.Controls.Add(this.cmboClientInsurance);

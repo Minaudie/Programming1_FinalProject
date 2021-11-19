@@ -45,7 +45,7 @@ namespace FinalProject
             // 
             this.txtRegisterUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRegisterUsername.Location = new System.Drawing.Point(91, 163);
-            this.txtRegisterUsername.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtRegisterUsername.Margin = new System.Windows.Forms.Padding(2);
             this.txtRegisterUsername.Name = "txtRegisterUsername";
             this.txtRegisterUsername.Size = new System.Drawing.Size(213, 23);
             this.txtRegisterUsername.TabIndex = 1;
@@ -55,7 +55,7 @@ namespace FinalProject
             // 
             this.txtRegisterPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRegisterPassword.Location = new System.Drawing.Point(91, 228);
-            this.txtRegisterPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtRegisterPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtRegisterPassword.Name = "txtRegisterPassword";
             this.txtRegisterPassword.PasswordChar = '*';
             this.txtRegisterPassword.Size = new System.Drawing.Size(213, 23);
@@ -107,6 +107,7 @@ namespace FinalProject
             // 
             // btnRegisterCancel
             // 
+            this.btnRegisterCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnRegisterCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegisterCancel.Location = new System.Drawing.Point(197, 279);
             this.btnRegisterCancel.Name = "btnRegisterCancel";
@@ -119,7 +120,7 @@ namespace FinalProject
             // txtRegisterClientID
             // 
             this.txtRegisterClientID.Location = new System.Drawing.Point(91, 100);
-            this.txtRegisterClientID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtRegisterClientID.Margin = new System.Windows.Forms.Padding(2);
             this.txtRegisterClientID.Name = "txtRegisterClientID";
             this.txtRegisterClientID.Size = new System.Drawing.Size(213, 20);
             this.txtRegisterClientID.TabIndex = 0;
@@ -145,11 +146,13 @@ namespace FinalProject
             this.btnEmployeeCreate.UseVisualStyleBackColor = true;
             this.btnEmployeeCreate.Click += new System.EventHandler(this.btnEmployeeCreate_Click);
             // 
-            // Register
+            // frmRegister
             // 
+            this.AcceptButton = this.btnRegisterRegister;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.CancelButton = this.btnRegisterCancel;
             this.ClientSize = new System.Drawing.Size(393, 378);
             this.Controls.Add(this.btnEmployeeCreate);
             this.Controls.Add(this.lblRegisterClientID);
@@ -161,8 +164,8 @@ namespace FinalProject
             this.Controls.Add(this.lblRegisterUsername);
             this.Controls.Add(this.txtRegisterPassword);
             this.Controls.Add(this.txtRegisterUsername);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "Register";
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "frmRegister";
             this.Text = "Register";
             this.Load += new System.EventHandler(this.Register_Load);
             this.ResumeLayout(false);

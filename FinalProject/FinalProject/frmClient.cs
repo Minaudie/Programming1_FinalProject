@@ -12,49 +12,43 @@ namespace FinalProject
 {
     public partial class frmClient : Form
     {
+        public static string loggedInUser;
+
         public frmClient()
         {
             InitializeComponent();
         }
 
-        private void Client_Load(object sender, EventArgs e) //disable update button on loading
+        private void Client_Load(object sender, EventArgs e)
         {
             btnClientUpdate.Enabled = false;
         }
 
-        private void txtClientUsername_TextChanged(object sender, EventArgs e)
-        {
-             if ((txtClientUsername.Text.Trim().Length > 0) && (txtClientPassword.Text.Trim().Length > 0))
-            {
-                btnClientUpdate.Enabled = true;
-                //enable buttons if value is assigned
-
-            }
-            else
-            {
-                btnClientUpdate.Enabled = false;
-                //disable buttons
-            }
-        }
-
-        private void txtClientPassword_TextChanged(object sender, EventArgs e)
+        private void CheckTextBoxes()
         {
             if ((txtClientUsername.Text.Trim().Length > 0) && (txtClientPassword.Text.Trim().Length > 0))
             {
                 btnClientUpdate.Enabled = true;
-                //enable buttons if value is assigned
-
             }
             else
             {
                 btnClientUpdate.Enabled = false;
-                //disable buttons
             }
+        }
+
+        private void txtClientUsername_TextChanged(object sender, EventArgs e)
+        {
+            CheckTextBoxes();
+        }
+
+        private void txtClientPassword_TextChanged(object sender, EventArgs e)
+        {
+            CheckTextBoxes();
         }
 
         private void btnClientCancel_Click(object sender, EventArgs e)
         {
-            //currnetly has no assigned function
+            this.Close();
         }
 
         private void btnClientUpdate_Click(object sender, EventArgs e)
@@ -71,13 +65,20 @@ namespace FinalProject
 
                 DatabaseConnections dc = new DatabaseConnections();
                 DataSet ds = new DataSet();
-                ds = dc.ReturnClientIDByUsername(username);
-                clientid = int.Parse(ds.Tables[0].Rows[0]["clientID"].ToString());
+
+                //username logged in with
+                ds = dc.ReturnClientIDByUsername(loggedInUser);
+                clientid = (int)ds.Tables[0].Rows[0]["clientID"];
 
                 string myval = Utilities.SaltKey;
                 var hash = Utilities.Get_HASH_SHA512(password, salt);
 
                 dc.UpdateClientLogin(clientid, username, hash, hash, Utilities.SaltKey);
+
+                MessageBox.Show("Username/Password updated successfully!", "Update Successful", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                this.Close();
             }
             catch (Exception ex)
             {

@@ -99,6 +99,7 @@ namespace FinalProject
             // 
             // btnUpdatePreClear
             // 
+            this.btnUpdatePreClear.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnUpdatePreClear.Location = new System.Drawing.Point(334, 225);
             this.btnUpdatePreClear.Name = "btnUpdatePreClear";
             this.btnUpdatePreClear.Size = new System.Drawing.Size(75, 23);
@@ -236,9 +237,11 @@ namespace FinalProject
             // 
             // frmUpdatePrescription
             // 
+            this.AcceptButton = this.btnUpdatePreUpdate;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.CancelButton = this.btnUpdatePreClear;
             this.ClientSize = new System.Drawing.Size(556, 334);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtUpdatePrescriptionID);

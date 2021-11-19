@@ -212,7 +212,7 @@ namespace FinalProject
                 cmdString.CommandText = "returnClientIDByUsername";
 
                 //paramenters
-                cmdString.Parameters.Add("@username", SqlDbType.Int).Value = username;
+                cmdString.Parameters.Add("@username", SqlDbType.VarChar, 25).Value = username;
 
                 SqlDataAdapter aAdapter = new SqlDataAdapter();
                 aAdapter.SelectCommand = cmdString;
@@ -234,7 +234,7 @@ namespace FinalProject
         }
 
         //new client
-        public void NewClient(string fname, string initial, string lname, string street1, string street2, string city, 
+        public int NewClient(string fname, string initial, string lname, string street1, string street2, string city, 
             string state, string zip, string phone, string email, string gender, string DOB)
         {
             try
@@ -261,10 +261,16 @@ namespace FinalProject
                 cmdString.Parameters.Add("@gender", SqlDbType.VarChar,1 ).Value = gender;
                 cmdString.Parameters.Add("@DateOfBirth", SqlDbType.Date ).Value = DateTime.Parse(DOB);
 
+                cmdString.Parameters.Add("@clientID", SqlDbType.Int).Direction = ParameterDirection.ReturnValue;
+
                 SqlDataAdapter aAdapter = new SqlDataAdapter();
                 aAdapter.SelectCommand = cmdString;
 
                 cmdString.ExecuteNonQuery();
+
+                int returnVal = (int)cmdString.Parameters["@clientID"].Value;
+
+                return returnVal;
 
             }
             catch (Exception ex)
@@ -682,8 +688,8 @@ namespace FinalProject
                 cmdString.CommandText = "updateClientUserPass";
 
                 cmdString.Parameters.Add("@clientID", SqlDbType.Int).Value = clientid;
-                cmdString.Parameters.Add("@username", SqlDbType.VarChar, 25).Value = username;
-                cmdString.Parameters.Add("@clientPassword", SqlDbType.NVarChar).Value = clientpassword;
+                cmdString.Parameters.Add("@newUsername", SqlDbType.VarChar, 25).Value = username;
+                cmdString.Parameters.Add("@userPassword", SqlDbType.NVarChar).Value = clientpassword;
                 cmdString.Parameters.Add("@comPassword", SqlDbType.NVarChar).Value = compassword;
                 cmdString.Parameters.Add("@salt", SqlDbType.NVarChar, 512).Value = salt;
 

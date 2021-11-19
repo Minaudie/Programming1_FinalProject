@@ -54,6 +54,7 @@ namespace FinalProject
             this.txtClientPassword.Location = new System.Drawing.Point(81, 174);
             this.txtClientPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtClientPassword.Name = "txtClientPassword";
+            this.txtClientPassword.PasswordChar = '*';
             this.txtClientPassword.Size = new System.Drawing.Size(218, 23);
             this.txtClientPassword.TabIndex = 1;
             this.txtClientPassword.TextChanged += new System.EventHandler(this.txtClientPassword_TextChanged);
@@ -104,6 +105,7 @@ namespace FinalProject
             // 
             // btnClientCancel
             // 
+            this.btnClientCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnClientCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClientCancel.Location = new System.Drawing.Point(188, 224);
             this.btnClientCancel.Name = "btnClientCancel";
@@ -113,11 +115,13 @@ namespace FinalProject
             this.btnClientCancel.UseVisualStyleBackColor = true;
             this.btnClientCancel.Click += new System.EventHandler(this.btnClientCancel_Click);
             // 
-            // Client
+            // frmClient
             // 
+            this.AcceptButton = this.btnClientUpdate;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.CancelButton = this.btnClientCancel;
             this.ClientSize = new System.Drawing.Size(379, 294);
             this.Controls.Add(this.btnClientCancel);
             this.Controls.Add(this.btnClientUpdate);
@@ -127,7 +131,7 @@ namespace FinalProject
             this.Controls.Add(this.txtClientPassword);
             this.Controls.Add(this.txtClientUsername);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "Client";
+            this.Name = "frmClient";
             this.Text = "Client";
             this.Load += new System.EventHandler(this.Client_Load);
             this.ResumeLayout(false);

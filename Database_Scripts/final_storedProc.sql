@@ -38,6 +38,8 @@ BEGIN
 			@street2, @city, @addr_state, @zip, @phone, @email,
 			@gender, @dateOfBirth)
 
+		DECLARE @newClientID INT
+
 		IF @@ERROR <> 0
 			BEGIN
 				ROLLBACK TRANSACTION
@@ -47,7 +49,15 @@ BEGIN
 		ELSE
 			BEGIN
 				COMMIT TRANSACTION
-				PRINT('Record added successfully!')
+
+				--get the just inserted client id
+				SET @newClientID = @@IDENTITY
+
+				--create record for clientInsurance
+				INSERT INTO clientInsurance(clientID, insuranceID, clientInsuranceNum)
+				VALUES(@newClientID, 1, @newClientID)
+
+				RETURN @newClientID
 			END
 END
 ELSE
@@ -497,7 +507,7 @@ BEGIN
 END
 GO
 
-CREATE PROC returnClientIDByUsername(
+ALTER PROC returnClientIDByUsername(
 	@username VARCHAR(25)
 )
 AS
