@@ -95,6 +95,7 @@ namespace FinalProject
             this.btnUpdatePreUpdate.TabIndex = 6;
             this.btnUpdatePreUpdate.Text = "&Update";
             this.btnUpdatePreUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdatePreUpdate.Click += new System.EventHandler(this.btnUpdatePreUpdate_Click);
             // 
             // btnUpdatePreClear
             // 
@@ -256,7 +257,7 @@ namespace FinalProject
             this.Controls.Add(this.txtUpdatePreMedicationID);
             this.Controls.Add(this.txtUpdatePrePhysicanID);
             this.Controls.Add(this.txtUpdatePreClientID);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmUpdatePrescription";
             this.Text = "Update Prescription";
             this.Load += new System.EventHandler(this.frmUpdatePrescription_Load);
