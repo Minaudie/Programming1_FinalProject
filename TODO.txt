@@ -18,13 +18,13 @@ New forms:
 		show refill id info, disable text field
 
 FIELDS TO DELETE
-	frmUpdatePrescription - start date
+	frmUpdatePrescription - start date -Mariah Completed
 	frmEmployee-	
 		client - username deleted, change not optional to gender + dob
 		presc - remove start date
 		refill - remove price
-	frmUpdateRefill - price, payment type
-	frmUpdateClient - username, insurance, change not optional to gender + dob
+	frmUpdateRefill - price, payment type -Mariah Complted
+	frmUpdateClient - username, insurance, change not optional to gender + dob -Mariah Completed
 
 frmEmployee search stuff set up (Miranda will do this)
 
