@@ -269,8 +269,11 @@ namespace FinalProject
         }
 
         //new client
+        //return 0 -> same first name, last name, and dob already in DB
+        //return -1 -> error
+        //return anything else -> client ID
         public int NewClient(string fname, string initial, string lname, string street1, string street2, string city, 
-            string state, string zip, string phone, string email, string gender, string DOB)
+            string state, string zip, string phone, string email, string gender, DateTime DOB)
         {
             try
             { 
@@ -294,19 +297,18 @@ namespace FinalProject
                 cmdString.Parameters.Add("@phone", SqlDbType.VarChar, 15).Value = phone;
                 cmdString.Parameters.Add("@email", SqlDbType.VarChar, 100).Value = email;
                 cmdString.Parameters.Add("@gender", SqlDbType.VarChar,1 ).Value = gender;
-                cmdString.Parameters.Add("@DateOfBirth", SqlDbType.Date ).Value = DateTime.Parse(DOB);
+                cmdString.Parameters.Add("@DateOfBirth", SqlDbType.Date ).Value = DOB;
 
-                cmdString.Parameters.Add("@clientID", SqlDbType.Int).Direction = ParameterDirection.ReturnValue;
+                cmdString.Parameters.Add("@Return", SqlDbType.Int).Direction = ParameterDirection.ReturnValue;
 
                 SqlDataAdapter aAdapter = new SqlDataAdapter();
                 aAdapter.SelectCommand = cmdString;
 
                 cmdString.ExecuteNonQuery();
 
-                int returnVal = (int)cmdString.Parameters["@clientID"].Value;
+                int returnVal = (int)cmdString.Parameters["@Return"].Value;
 
                 return returnVal;
-
             }
             catch (Exception ex)
             {
@@ -318,7 +320,10 @@ namespace FinalProject
             }
         }
 
-        public void NewPhysician(string fname, string initial, string lname, string phone, string email)
+        //return 0 -> same first name and last name already in DB
+        //return -1 -> error
+        //return anything else -> physician ID
+        public int NewPhysician(string fname, string initial, string lname, string phone, string email)
         {
             try
             {
@@ -337,10 +342,16 @@ namespace FinalProject
                 cmdString.Parameters.Add("@phone", SqlDbType.VarChar,15).Value = phone;
                 cmdString.Parameters.Add("@email", SqlDbType.VarChar,100).Value = email;
 
+                cmdString.Parameters.Add("@Return", SqlDbType.Int).Direction = ParameterDirection.ReturnValue;
+
                 SqlDataAdapter aAdapter = new SqlDataAdapter();
                 aAdapter.SelectCommand = cmdString;
 
                 cmdString.ExecuteNonQuery();
+
+                int returnVal = (int)cmdString.Parameters["@Return"].Value;
+
+                return returnVal;
             }
             catch (Exception ex)
             {
@@ -352,7 +363,9 @@ namespace FinalProject
             }
         }
 
-        public void NewRefill(int prescriptionid,string dosage, string frequency, int supplydays, int quantitysupplied)
+        //return -1 -> error
+        //return anything else -> refill ID
+        public int NewRefill(int prescriptionid,string dosage, string frequency, int supplydays, int quantitysupplied)
         {
             try
             {
@@ -371,10 +384,16 @@ namespace FinalProject
                 cmdString.Parameters.Add("@supplyDays", SqlDbType.TinyInt).Value = supplydays;
                 cmdString.Parameters.Add("@quantitySupplied", SqlDbType.TinyInt).Value = quantitysupplied;
 
+                cmdString.Parameters.Add("@Return", SqlDbType.Int).Direction = ParameterDirection.ReturnValue;
+
                 SqlDataAdapter aAdapter = new SqlDataAdapter();
                 aAdapter.SelectCommand = cmdString;
 
                 cmdString.ExecuteNonQuery();
+
+                int returnVal = (int)cmdString.Parameters["@Return"].Value;
+
+                return returnVal;
             }
             catch (Exception ex)
             {
@@ -386,7 +405,9 @@ namespace FinalProject
             }
         }
 
-        public void NewPrescription(int clientid, int physicianid, int medicationid, string expirydate, int refillcounter)
+        //return -1 -> error
+        //return anything else -> PRESCRIPTION ID
+        public int NewPrescription(int clientid, int physicianid, int medicationid, DateTime expirydate, int refillcounter)
         {
             try
             {
@@ -402,13 +423,19 @@ namespace FinalProject
                 cmdString.Parameters.Add("@clientID", SqlDbType.Int).Value = clientid;
                 cmdString.Parameters.Add("@physicianID", SqlDbType.Int).Value = physicianid;
                 cmdString.Parameters.Add("@medicineID", SqlDbType.Int).Value = medicationid;
-                cmdString.Parameters.Add("@expiryDate", SqlDbType.Date).Value = DateTime.Parse(expirydate);
+                cmdString.Parameters.Add("@expiryDate", SqlDbType.Date).Value = expirydate;
                 cmdString.Parameters.Add("@refillCounter", SqlDbType.TinyInt).Value = refillcounter;
+
+                cmdString.Parameters.Add("@Return", SqlDbType.Int).Direction = ParameterDirection.ReturnValue;
 
                 SqlDataAdapter aAdapter = new SqlDataAdapter();
                 aAdapter.SelectCommand = cmdString;
 
                 cmdString.ExecuteNonQuery();
+
+                int returnVal = (int)cmdString.Parameters["@Return"].Value;
+
+                return returnVal;
             }
             catch (Exception ex)
             {

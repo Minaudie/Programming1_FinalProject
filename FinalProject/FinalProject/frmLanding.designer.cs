@@ -132,6 +132,7 @@ namespace FinalProject
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmLanding";
             this.Text = "Landing";
+            this.Load += new System.EventHandler(this.frmLanding_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -19,7 +19,7 @@ namespace FinalProject
         }
 
         //disable button on form load
-        private void Register_Load(object sender, EventArgs e) 
+        private void frmRegister_Load(object sender, EventArgs e) 
         {
             btnRegisterRegister.Enabled = false;
         }

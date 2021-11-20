@@ -15,117 +15,6 @@ namespace FinalProject
         public static int g_clientID;
         public static int g_prescriptionID;
         public static int g_refillID;
-        
-        private void addNewClient()
-        {
-            string fname = "", initial = "", lname = "", street1 = "", street2 = "",
-                city = "", state = "", zip = "", phone = "", email = "", gender = "", DOB = "";
-             
-            try
-            {
-                DatabaseConnections ncf = new DatabaseConnections();
-    
-                fname = txtClientFName.Text.Trim();
-                initial = txtClientMidInt.Text.Trim();
-                lname = txtClientLName.Text.Trim();
-                street1 = txtClientAddress.Text.Trim();
-                street2 =txtClientAdd2.Text.Trim();
-                city =txtClientCity.Text.Trim();
-                state = txtClientState.Text.Trim();
-                zip = txtClientZip.Text.Trim();
-                phone = txtClientPhone.Text.Trim();
-                email = txtClientEmail.Text.Trim();
-                gender =txtClientGender.Text.Trim();
-                DOB =txtClientDOB.Text.Trim();
-
-                int clientID = ncf.NewClient(fname, initial, lname, street1, street2, city, 
-                    state, zip, phone, email, gender, DOB);
-
-                MessageBox.Show("New client's ID is: " + clientID, "New Client ID", MessageBoxButtons.OK, 
-                    MessageBoxIcon.Information);
-                
-            }
-            catch (Exception ex)
-            {
-                throw new ArgumentException(ex.Message);
-            }
-        }
-
-        private void addNewPhysician()
-        {
-            string fname = "", initial = "", lname = "", phone = "", email = "";
-
-            try
-            {
-                DatabaseConnections npf = new DatabaseConnections();
-
-                fname = txtPhyFName.Text.Trim();
-                initial = txtPhyMidInt.Text.Trim();
-                lname = txtPhyLName.Text.Trim();
-                phone = txtPhyPhone.Text.Trim();
-                email = txtPhyEmail.Text.Trim();
-
-                npf.NewPhysician(fname, initial, lname, phone, email);
-
-                MessageBox.Show("Successfully created new physician.", "Success", MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                throw new ArgumentException(ex.Message);
-            }
-        }
-
-        private void addNewRefill()
-        {
-            string dosage = "", frequency = "";
-            int supplydays = 0, quantitysupplied = 0, perscriptionid = 0;
-            try
-            {
-                DatabaseConnections nrf = new DatabaseConnections();
-
-                perscriptionid = int.Parse(txtRefPrescriptionID.Text.Trim());
-                dosage = txtRefDosage.Text.Trim();
-                frequency = txtRefFrequency.Text.Trim();                
-                supplydays = int.Parse(txtRefSupplyDays.Text.Trim());
-                quantitysupplied = int.Parse(txtRefQuantitySupplied.Text.Trim());
-
-                nrf.NewRefill(perscriptionid, dosage, frequency, supplydays, quantitysupplied);
-
-                MessageBox.Show("Successfully created new refill.", "Success", MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                throw new ArgumentException(ex.Message);
-            }
-        }
-
-        private void addNewPrescription()
-        {
-            int clientid = 0, physician = 0, medicationid = 0, refillcounter = 0;
-            string expirydate = "";
-
-            try
-            {
-                DatabaseConnections npf = new DatabaseConnections();
-
-                clientid = int.Parse(txtPreClientID.Text.Trim());
-                physician = int.Parse(txtPrePhysicanID.Text.Trim());
-                medicationid = int.Parse(txtPreMedicationID.Text.Trim());
-                expirydate = dtpPreExpirationDate.Value.ToString();
-                refillcounter = int.Parse(txtPreNumOfRefills.Text.Trim());
-                
-                npf.NewPrescription(clientid, physician, medicationid, expirydate, refillcounter);
-
-                MessageBox.Show("Successfully created new prescription.", "Success", MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                throw new ArgumentException(ex.Message);
-            }
-        }
 
         public frmEmployee()
         {
@@ -151,26 +40,32 @@ namespace FinalProject
         }
 
         //overall form load
-        private void Employee_Load(object sender, EventArgs e)
+        private void frmEmployee_Load(object sender, EventArgs e)
         {
             btnClientSave.Enabled = false;
-            // ****TO DO ****disabling buttons/clear text fields
+            btnPhySave.Enabled = false;
+            btnPreSave.Enabled = false;
+            btnRefSave.Enabled = false;
+            btnSearch.Enabled = false;
+            // ****TO DO ****clear text fields
         }
 
         /***     CLIENT TAB     ***/
 
         //returns true if all required fields are filled
-        private Boolean CheckClientFields()
+        private void CheckClientFields()
         {
             if (txtClientFName.Text.Trim().Length > 0 && txtClientLName.Text.Trim().Length > 0
                 && txtClientGender.Text.Trim().Length > 0 && txtClientDOB.Text.Trim().Length > 0)
             {
-                return true;
+                btnClientSave.Enabled = true;
             }
             else
             {
-                return false;
+                btnClientSave.Enabled = false;
             }
+
+            erpEmployee.Clear();
         }
 
         private void btnClientClear_Click(object sender, EventArgs e)
@@ -191,68 +86,100 @@ namespace FinalProject
 
         private void btnClientSave_Click(object sender, EventArgs e)
         {
-            addNewClient();
-            btnClientClear_Click(sender,e);
+            string fname = "", initial = "", lname = "", street1 = "", street2 = "",
+                city = "", state = "", zip = "", phone = "", email = "", gender = "";
+            DateTime DOB;
+
+            try
+            {
+                DatabaseConnections ncf = new DatabaseConnections();
+
+                fname = txtClientFName.Text.Trim();
+                initial = txtClientMidInt.Text.Trim();
+                lname = txtClientLName.Text.Trim();
+                street1 = txtClientAddress.Text.Trim();
+                street2 = txtClientAdd2.Text.Trim();
+                city = txtClientCity.Text.Trim();
+                state = txtClientState.Text.Trim();
+                zip = txtClientZip.Text.Trim();
+                phone = txtClientPhone.Text.Trim();
+                email = txtClientEmail.Text.Trim();
+                gender = txtClientGender.Text.Trim();
+
+                if (gender != Keys.M.ToString() && gender != Keys.F.ToString() && gender != Keys.O.ToString())
+                {
+                    erpEmployee.SetError(txtClientGender, "Error: M, F, or O only");
+                }
+                else
+                {
+                    try
+                    {
+                        DOB = DateTime.Parse(txtClientDOB.Text.Trim());
+
+                        int result = ncf.NewClient(fname, initial, lname, street1, street2, city,
+                        state, zip, phone, email, gender, DOB);
+
+                        if (result == 0)
+                        {
+                            MessageBox.Show("This client already exists in the database.", "Existing Client",
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                        else if (result == -1)
+                        {
+                            //throws the error before it gets to this point
+                            MessageBox.Show("Error while inserting record.", "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else //any other value
+                        {
+                            MessageBox.Show("Success. New client's ID is: " + result, "New Client ID", MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+
+                            btnClientClear_Click(sender, e);
+                        }
+                    }
+                    catch (Exception ex) //catches date of birth 
+                    {
+                        erpEmployee.SetError(txtClientDOB, "Error: Dates only");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException(ex.Message);
+            }
         }
 
         private void txtClientFName_TextChanged(object sender, EventArgs e)
         {
-            if (CheckClientFields())
-            {
-                btnClientSave.Enabled = true;
-            }
-            else
-            {
-                btnClientSave.Enabled = false;
-            }
+            CheckClientFields();
         }
 
         private void txtClientLName_TextChanged(object sender, EventArgs e)
         {
-            if (CheckClientFields())
-            {
-                btnClientSave.Enabled = true;
-            }
-            else
-            {
-                btnClientSave.Enabled = false;
-            }
+            CheckClientFields();
         }
 
         private void txtClientGender_TextChanged(object sender, EventArgs e)
         {
-            if (CheckClientFields())
-            {
-                btnClientSave.Enabled = true;
-            }
-            else
-            {
-                btnClientSave.Enabled = false;
-            }
+            CheckClientFields();
         }
 
         private void txtClientDOB_TextChanged(object sender, EventArgs e)
         {
-            if (CheckClientFields())
-            {
-                btnClientSave.Enabled = true;
-            }
-            else
-            {
-                btnClientSave.Enabled = false;
-            }
+            CheckClientFields();
         }
 
         /***     PHYSICIAN TAB     ***/
 
-        private Boolean CheckPhyFields()
+        private void CheckPhyFields()
         {
             if(txtPhyFName.Text.Trim().Length > 0 && txtPhyLName.Text.Trim().Length > 0)
             {
-                return true;
+                btnPhySave.Enabled = true;
             } else
             {
-                return false;
+                btnPhySave.Enabled = false;
             }
         }
 
@@ -267,50 +194,72 @@ namespace FinalProject
 
         private void btnPhySave_Click(object sender, EventArgs e)
         {
-            addNewPhysician();
-            btnPhyClear_Click(sender, e);
+            string fname = "", initial = "", lname = "", phone = "", email = "";
+
+            try
+            {
+                DatabaseConnections npf = new DatabaseConnections();
+
+                fname = txtPhyFName.Text.Trim();
+                initial = txtPhyMidInt.Text.Trim();
+                lname = txtPhyLName.Text.Trim();
+                phone = txtPhyPhone.Text.Trim();
+                email = txtPhyEmail.Text.Trim();
+
+                int result = npf.NewPhysician(fname, initial, lname, phone, email);
+
+                if (result == 0)
+                {
+                    MessageBox.Show("This physician already exists in the database.", "Existing Client",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (result == -1)
+                {
+                    MessageBox.Show("Error while inserting record.", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else //any other value
+                {
+                    MessageBox.Show("Success. New physician's ID is: " + result, "New Physician ID",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    btnPhyClear_Click(sender, e);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException(ex.Message);
+            }
         }
 
         private void txtPhyFName_TextChanged(object sender, EventArgs e)
         {
-            if (CheckPhyFields())
-            {
-                btnPhySave.Enabled = true;
-            }
-            else
-            {
-                btnPhySave.Enabled = false;
-            }
+            CheckPhyFields();
         }
 
         private void txtPhyLName_TextChanged(object sender, EventArgs e)
         {
-            if (CheckPhyFields())
-            {
-                btnPhySave.Enabled = true;
-            }
-            else
-            {
-                btnPhySave.Enabled = false;
-            }
+            CheckPhyFields();
         }
 
         /***     PRESCRIPTION TAB     ***/
 
-        private Boolean CheckPreFields()
+        private void CheckPreFields()
         {
             if(txtPreClientID.Text.Trim().Length > 0 && txtPrePhysicanID.Text.Trim().Length > 0
                 && txtPreMedicationID.Text.Trim().Length > 0 && txtPreNumOfRefills.Text.Trim().Length > 0
                 && dtpPreExpirationDate.Value != DateTime.Now)
             {
-                return true;
+                btnPreSave.Enabled = true;
             } else
             {
-                return false;
+                btnPreSave.Enabled = true;
             }
+
+            erpEmployee.Clear();
         }
 
-        private void btnPerClear_Click(object sender, EventArgs e)
+        private void btnPreClear_Click(object sender, EventArgs e)
         {
             txtPreClientID.Clear();
             txtPrePhysicanID.Clear();
@@ -319,68 +268,109 @@ namespace FinalProject
             dtpPreExpirationDate.Value = DateTime.Now;
         }
 
-        private void btnPerSave_Click(object sender, EventArgs e)
+        private void btnPreSave_Click(object sender, EventArgs e)
         {
-            addNewPrescription();
-            btnPerClear_Click(sender, e);
+            int clientid = 0, physicianid = 0, medicationid = 0, refillcounter = 0;
+            DateTime expirydate;
+
+            try
+            {
+                DatabaseConnections npf = new DatabaseConnections();
+
+                try //client id try
+                {
+                    clientid = int.Parse(txtPreClientID.Text.Trim());
+
+                    try //physician try
+                    {
+                        physicianid = int.Parse(txtPrePhysicanID.Text.Trim());
+
+                        try //medication try
+                        {
+                            medicationid = int.Parse(txtPreMedicationID.Text.Trim());
+
+                            try //expiry date try
+                            {
+                                expirydate = dtpPreExpirationDate.Value;
+
+                                try //refill counter try
+                                {
+                                    refillcounter = int.Parse(txtPreNumOfRefills.Text.Trim());
+
+                                    int result = npf.NewPrescription(clientid, physicianid, medicationid, expirydate, refillcounter);
+
+                                    if (result == -1)
+                                    {
+                                        MessageBox.Show("Error while inserting record.", "Error",
+                                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    }
+                                    else //any other value
+                                    {
+                                        MessageBox.Show("Success. New prescription ID is: " + result, "New Prescription ID",
+                                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                                        btnPreClear_Click(sender, e);
+                                    }
+
+                                }
+                                catch (Exception ex) //refill counter catch
+                                {
+                                    erpEmployee.SetError(txtPreNumOfRefills, "Error: numbers only");
+                                }
+
+                            }
+                            catch (Exception ex) //expiry date catch
+                            {
+                                erpEmployee.SetError(dtpPreExpirationDate, "Error: Dates only");
+                            }
+
+                        }
+                        catch (Exception ex) //medication id catch
+                        {
+                            erpEmployee.SetError(txtPreMedicationID, "Error: numbers only");
+                        }
+
+                    }
+                    catch (Exception ex) //physician id catch
+                    {
+                        erpEmployee.SetError(txtPrePhysicanID, "Error: numbers only");
+                    }
+
+                }
+                catch (Exception ex) //client id catch
+                {
+                    erpEmployee.SetError(txtPreClientID, "Error: numbers only");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException(ex.Message);
+            }
         }
 
         private void txtPreClientID_TextChanged(object sender, EventArgs e)
         {
-            if(CheckPreFields())
-            {
-                btnPreSave.Enabled = true;
-            } else
-            {
-                btnPreSave.Enabled = false;
-            }
+            CheckPreFields();
         }
 
         private void txtPrePhysicanID_TextChanged(object sender, EventArgs e)
         {
-            if (CheckPreFields())
-            {
-                btnPreSave.Enabled = true;
-            }
-            else
-            {
-                btnPreSave.Enabled = false;
-            }
+            CheckPreFields();
         }
 
         private void txtPreMedicationID_TextChanged(object sender, EventArgs e)
         {
-            if (CheckPreFields())
-            {
-                btnPreSave.Enabled = true;
-            }
-            else
-            {
-                btnPreSave.Enabled = false;
-            }
+            CheckPreFields();
         }
 
         private void dtpPreExpirationDate_ValueChanged(object sender, EventArgs e)
         {
-            if (CheckPreFields())
-            {
-                btnPreSave.Enabled = true;
-            }
-            else
-            {
-                btnPreSave.Enabled = false;
-            }
+            CheckPreFields();
         }
+
         private void txtPreNumOfRefills_TextChanged(object sender, EventArgs e)
         {
-            if (CheckPreFields())
-            {
-                btnPreSave.Enabled = true;
-            }
-            else
-            {
-                btnPreSave.Enabled = false;
-            }
+            CheckPreFields();
         }
 
         /***     REFILL TAB     ***/
@@ -397,6 +387,8 @@ namespace FinalProject
             {
                 btnRefSave.Enabled = false;
             }
+
+            erpEmployee.Clear();
         }
 
         private void btnRefClear_Click(object sender, EventArgs e)
@@ -412,8 +404,63 @@ namespace FinalProject
 
         private void btnRefSave_Click(object sender, EventArgs e)
         {
-            addNewRefill();
-            btnRefClear_Click(sender, e);
+            string dosage = "", frequency = "";
+            int supplydays = 0, quantitysupplied = 0, prescriptionid = 0;
+
+            try
+            {
+                DatabaseConnections nrf = new DatabaseConnections();
+
+                try //prescription id
+                {
+                    prescriptionid = int.Parse(txtRefPrescriptionID.Text.Trim());
+
+                    try
+                    {
+                        dosage = txtRefDosage.Text.Trim();
+                        frequency = txtRefFrequency.Text.Trim();
+                        supplydays = int.Parse(txtRefSupplyDays.Text.Trim());
+
+                        try
+                        {
+                            quantitysupplied = int.Parse(txtRefQuantitySupplied.Text.Trim());
+
+                            int result = nrf.NewRefill(prescriptionid, dosage, frequency, supplydays, quantitysupplied);
+
+                            if (result == -1)
+                            {
+                                MessageBox.Show("Error while inserting record.", "Error",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            else //any other value
+                            {
+                                MessageBox.Show("Success. New refill ID is: " + result, "New Refill ID",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                                btnRefClear_Click(sender, e);
+                            }
+                        }
+                        catch (Exception ex) //quantity catch
+                        {
+                            erpEmployee.SetError(txtRefQuantitySupplied, "Error: numbers only");
+                        }
+
+                    }
+                    catch (Exception ex) //supply days catch
+                    {
+                        erpEmployee.SetError(txtRefSupplyDays, "Error: numbers only");
+                    }
+
+                }
+                catch (Exception ex) //prescription id catch
+                {
+                    erpEmployee.SetError(txtRefPrescriptionID, "Error: numbers only");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException(ex.Message);
+            }
         }
 
         private void txtRefPrescriptionID_TextChanged(object sender, EventArgs e)

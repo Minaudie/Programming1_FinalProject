@@ -195,7 +195,7 @@ namespace FinalProject
             this.btnUpdateRefillClear.Name = "btnUpdateRefillClear";
             this.btnUpdateRefillClear.Size = new System.Drawing.Size(75, 23);
             this.btnUpdateRefillClear.TabIndex = 40;
-            this.btnUpdateRefillClear.Text = "&Clear";
+            this.btnUpdateRefillClear.Text = "&Cancel";
             this.btnUpdateRefillClear.UseVisualStyleBackColor = true;
             this.btnUpdateRefillClear.Click += new System.EventHandler(this.btnUpdateRefillClear_Click);
             // 

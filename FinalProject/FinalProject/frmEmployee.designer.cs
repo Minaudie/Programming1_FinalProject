@@ -158,6 +158,7 @@ namespace FinalProject
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabEmployee = new System.Windows.Forms.TabControl();
+            this.erpEmployee = new System.Windows.Forms.ErrorProvider(this.components);
             this.tabSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRefill)).BeginInit();
             this.cmuRefill.SuspendLayout();
@@ -170,6 +171,7 @@ namespace FinalProject
             this.tabNewPhysician.SuspendLayout();
             this.tabNewClient.SuspendLayout();
             this.tabEmployee.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.erpEmployee)).BeginInit();
             this.SuspendLayout();
             // 
             // tabSearch
@@ -826,7 +828,7 @@ namespace FinalProject
             this.btnPreSave.TabIndex = 6;
             this.btnPreSave.Text = "&Save";
             this.btnPreSave.UseVisualStyleBackColor = true;
-            this.btnPreSave.Click += new System.EventHandler(this.btnPerSave_Click);
+            this.btnPreSave.Click += new System.EventHandler(this.btnPreSave_Click);
             // 
             // btnPreClear
             // 
@@ -836,7 +838,7 @@ namespace FinalProject
             this.btnPreClear.TabIndex = 7;
             this.btnPreClear.Text = "&Clear";
             this.btnPreClear.UseVisualStyleBackColor = true;
-            this.btnPreClear.Click += new System.EventHandler(this.btnPerClear_Click);
+            this.btnPreClear.Click += new System.EventHandler(this.btnPreClear_Click);
             // 
             // dtpPreExpirationDate
             // 
@@ -1154,7 +1156,9 @@ namespace FinalProject
             // 
             // txtClientGender
             // 
+            this.txtClientGender.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtClientGender.Location = new System.Drawing.Point(349, 297);
+            this.txtClientGender.MaxLength = 1;
             this.txtClientGender.Name = "txtClientGender";
             this.txtClientGender.Size = new System.Drawing.Size(100, 20);
             this.txtClientGender.TabIndex = 10;
@@ -1407,6 +1411,10 @@ namespace FinalProject
             this.tabEmployee.Size = new System.Drawing.Size(802, 470);
             this.tabEmployee.TabIndex = 0;
             // 
+            // erpEmployee
+            // 
+            this.erpEmployee.ContainerControl = this;
+            // 
             // frmEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1415,7 +1423,7 @@ namespace FinalProject
             this.Controls.Add(this.tabEmployee);
             this.Name = "frmEmployee";
             this.Text = "Employee";
-            this.Load += new System.EventHandler(this.Employee_Load);
+            this.Load += new System.EventHandler(this.frmEmployee_Load);
             this.tabSearch.ResumeLayout(false);
             this.tabSearch.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRefill)).EndInit();
@@ -1433,6 +1441,7 @@ namespace FinalProject
             this.tabNewClient.ResumeLayout(false);
             this.tabNewClient.PerformLayout();
             this.tabEmployee.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.erpEmployee)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1568,5 +1577,6 @@ namespace FinalProject
         public System.Windows.Forms.DataGridView dgvClient;
         public System.Windows.Forms.DataGridView dgvPre;
         public System.Windows.Forms.DataGridView dgvRefill;
+        private System.Windows.Forms.ErrorProvider erpEmployee;
     }
 }

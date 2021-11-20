@@ -38,32 +38,31 @@ BEGIN
 			@street2, @city, @addr_state, @zip, @phone, @email,
 			@gender, @dateOfBirth)
 
-		DECLARE @newClientID INT
+		DECLARE @RESULT INT
 
 		IF @@ERROR <> 0
 			BEGIN
 				ROLLBACK TRANSACTION
-				RAISERROR('Unable to insert record.',16,1)
-				RETURN -1
+				SET @RESULT = -1
+				RETURN @RESULT
 			END
 		ELSE
 			BEGIN
 				COMMIT TRANSACTION
 
 				--get the just inserted client id
-				SET @newClientID = @@IDENTITY
+				SET @RESULT = @@IDENTITY
 
 				--create record for clientInsurance
 				INSERT INTO clientInsurance(clientID, insuranceID, clientInsuranceNum)
-				VALUES(@newClientID, 1, @newClientID)
+				VALUES(@RESULT, 1, @RESULT)
 
-				RETURN @newClientID
+				RETURN @RESULT
 			END
 END
 ELSE
 	BEGIN
-		PRINT('Record already exists.')
-		RETURN
+		RETURN 0
 	END
 GO
 
@@ -190,22 +189,25 @@ BEGIN
 			phone, email)
 		VALUES(@fName, @mInitial, @lName, @phone, @email)
 
+		DECLARE @RESULT INT
+
 		IF @@ERROR <> 0 
 			BEGIN
 				ROLLBACK TRANSACTION
-				RAISERROR('Unable to insert record.',16,1)
-				RETURN -1
+				SET @RESULT = -1
+				RETURN @RESULT
 			END
 		ELSE
 			BEGIN
 				COMMIT TRANSACTION
-				PRINT('Record added successfully!')
+				SET @RESULT = @@IDENTITY
+				RETURN @RESULT
 			END
 END
 ELSE
 	BEGIN
-		PRINT('Record already exists.')
-		RETURN
+		SET @RESULT = 0
+		RETURN @RESULT
 	END
 GO
 
@@ -226,6 +228,8 @@ BEGIN
 	BEGIN TRANSACTION
 		INSERT INTO medicine(medicineName, intakeMethod, cost)
 		VALUES(@medicineName, @intakeMethod, @cost)
+
+
 
 		IF @@ERROR <> 0
 			BEGIN
@@ -262,16 +266,19 @@ BEGIN
 			expiryDate, refillCounter)
 		VALUES(@clientID, @physicianID, @medicineID, @expiryDate, @refillCounter)
 
-		IF @@ERROR <> 0
+		DECLARE @RESULT INT
+
+		IF @@ERROR <> 0 
 			BEGIN
 				ROLLBACK TRANSACTION
-				RAISERROR('Unable to insert record.',16,1)
-				RETURN -1
+				SET @RESULT = -1
+				RETURN @RESULT
 			END
 		ELSE
 			BEGIN
 				COMMIT TRANSACTION
-				PRINT('Record added successfully!')
+				SET @RESULT = @@IDENTITY
+				RETURN @RESULT
 			END
 END
 GO
@@ -293,16 +300,19 @@ BEGIN
 		VALUES(@prescriptionID, @dosage, @frequency, @supplyDays,
 			@quantitySupplied)
 
-		IF @@ERROR <> 0
+		DECLARE @RESULT INT
+
+		IF @@ERROR <> 0 
 			BEGIN
 				ROLLBACK TRANSACTION
-				RAISERROR('Unable to insert record.',16,1)
-				RETURN -1
+				SET @RESULT = -1
+				RETURN @RESULT
 			END
 		ELSE
 			BEGIN
 				COMMIT TRANSACTION
-				PRINT('Record added successfully!')
+				SET @RESULT = @@IDENTITY
+				RETURN @RESULT
 			END
 END
 GO

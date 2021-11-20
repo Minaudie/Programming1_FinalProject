@@ -15,7 +15,6 @@ namespace FinalProject
         private frmEmployee frmEmployee;
         public frmUpdateRefill(frmEmployee emp)
         {
-
             InitializeComponent();
             frmEmployee = emp;
         }

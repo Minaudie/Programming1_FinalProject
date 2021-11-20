@@ -3,6 +3,8 @@ To Do List
 
 frmEmployee - newRefill tab
 	stars for required fields (all, except price, which auto fills)
+frmEmployee.cs - frmEmployee_Load event handler
+	clear text fields (I think each tab has a button click event to clear the fields)
 
 New forms:
 	reference to frmEmployee (might have done this when fixing the namespaces -miranda)
@@ -20,27 +22,27 @@ set icon and form titles (niko)
 
 update forms - Mariah
 
-Better error handling
-	check text field values before sending?
-	if a wrong value gets sent now it just bring the form back to landing, which is not great
-	(might have to rework the client one)
-
-//return phys/pres/refill ids after successful creation? (like client)
-	dont work on this, might be adjusting the way client does it
+Better error handling - 
+	Currently only on frmEmployee, tons of changes because of it though
 
 *** Low priority updates ***
 
-gender can only be M, F, or O, so maybe check for that before sending to DB. (niko)
+change date of birth to date time picker
+	lots to change in the backend as well, don't miss that if you do this update
+
+gender can only be M, F, or O, so maybe check for that before sending to DB. -I ended up doing this as part of error handling, Miranda
 
 Limit types of characters that can be entered in text fields
+	-sort of did this as part of error handling?? not as robust as just not allowing the keys to even be entered
 
 add update trigger on prescription to update cost if med changes/on refill to update cost if prescid changes
-
-add @RESULT vars in stored procedures for returning success/failure
 
 whitespace/naming convention check (miranda)
 
 hide new employee button (miranda)
+
+hide landing form once logged in/at registration form
+	I think this would require something like the employee form global variables and changing the instantiation method
 
 ----------------
 How to test/add employee logins
@@ -60,3 +62,4 @@ TESTING
 Client login -> update username/password -> log back in -Miranda
 employee login -> goes to employee form! -Miranda
 employee login -> new client, new phys, new presc, new refill, search -Miranda
+employee form (except search stuff) - general error handling -Miranda

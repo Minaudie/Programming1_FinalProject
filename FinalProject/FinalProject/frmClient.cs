@@ -19,7 +19,7 @@ namespace FinalProject
             InitializeComponent();
         }
 
-        private void Client_Load(object sender, EventArgs e)
+        private void frmClient_Load(object sender, EventArgs e)
         {
             btnClientUpdate.Enabled = false;
         }

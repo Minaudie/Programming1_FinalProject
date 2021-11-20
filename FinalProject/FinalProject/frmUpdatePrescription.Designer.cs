@@ -104,7 +104,7 @@ namespace FinalProject
             this.btnUpdatePreClear.Name = "btnUpdatePreClear";
             this.btnUpdatePreClear.Size = new System.Drawing.Size(75, 23);
             this.btnUpdatePreClear.TabIndex = 7;
-            this.btnUpdatePreClear.Text = "&Clear";
+            this.btnUpdatePreClear.Text = "&Cancel";
             this.btnUpdatePreClear.UseVisualStyleBackColor = true;
             this.btnUpdatePreClear.Click += new System.EventHandler(this.btnUpdatePreClear_Click);
             // 
@@ -221,18 +221,18 @@ namespace FinalProject
             this.editToolStripMenuItem,
             this.updateToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(112, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 70);
             // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.editToolStripMenuItem.Text = "edit";
             // 
             // updateToolStripMenuItem
             // 
             this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-            this.updateToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+            this.updateToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.updateToolStripMenuItem.Text = "update";
             // 
             // frmUpdatePrescription

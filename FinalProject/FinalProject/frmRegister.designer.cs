@@ -167,7 +167,7 @@ namespace FinalProject
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmRegister";
             this.Text = "Register";
-            this.Load += new System.EventHandler(this.Register_Load);
+            this.Load += new System.EventHandler(this.frmRegister_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

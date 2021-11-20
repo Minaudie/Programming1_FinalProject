@@ -19,7 +19,7 @@ namespace FinalProject
             InitializeComponent();
         }
 
-        private void Landing_Load(object sender, EventArgs e)
+        private void frmLanding_Load(object sender, EventArgs e)
         {
             btnLandingLogin.Enabled = false;
             ClearTextBoxes();

@@ -133,7 +133,7 @@ namespace FinalProject
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmClient";
             this.Text = "Client";
-            this.Load += new System.EventHandler(this.Client_Load);
+            this.Load += new System.EventHandler(this.frmClient_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
