@@ -40,23 +40,23 @@ EXEC addNewInsurance 'Green Falls Insurance',20.0,'717-555-2929','181 West Fork 
 
 EXEC newClientInsuranceRecord 1,1,1
 
-EXEC newClientInsuranceRecord 2,1,1034
+EXEC newClientInsuranceRecord 2,1,2
 
-EXEC newClientInsuranceRecord 3,1,6004
+EXEC newClientInsuranceRecord 3,1,3
 
-EXEC newClientInsuranceRecord 4,1,2
+EXEC newClientInsuranceRecord 4,1,4
 
-EXEC newClientInsuranceRecord 5,1,3
+EXEC newClientInsuranceRecord 5,1,5
 
-EXEC newClientInsuranceRecord 6,1,4
+EXEC newClientInsuranceRecord 6,1,6
 
-EXEC newClientInsuranceRecord 7,1,5
+EXEC newClientInsuranceRecord 7,1,7
 
-EXEC newClientInsuranceRecord 8,1,6
+EXEC newClientInsuranceRecord 8,1,8
 
-EXEC newClientInsuranceRecord 9,1,7
+EXEC newClientInsuranceRecord 9,1,9
 
-EXEC newClientInsuranceRecord 10,1,8
+EXEC newClientInsuranceRecord 10,1,10
 
 EXEC addNewPhysician 'Margaret','D','Vecchio','954-555-0866','margaretmd@yahoo.com'
 

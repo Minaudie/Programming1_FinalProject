@@ -100,6 +100,7 @@ namespace FinalProject
                             ClearTextBoxes();
                             frmEmployee frmEmp = new frmEmployee();
                             frmEmp.ShowDialog();
+
                         } else
                         {
                             MessageBox.Show("Unknown Username", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

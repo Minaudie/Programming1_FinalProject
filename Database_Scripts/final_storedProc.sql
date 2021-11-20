@@ -429,6 +429,19 @@ BEGIN
 END
 GO
 
+CREATE PROC selectPrescriptionPrice (
+	@prescriptionID INT
+)
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+	SELECT price 
+	FROM prescription
+	WHERE prescriptionID = @prescriptionID
+END
+GO
+
 --select refills
 CREATE PROC selectRefill (
 	@refillID INT

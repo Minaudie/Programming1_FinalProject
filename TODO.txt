@@ -1,12 +1,14 @@
 To Do List
 -------------
 
+frmEmployee - newRefill tab
+	stars for required fields (all, except price, which auto fills)
+
 New forms:
 	reference to frmEmployee (might have done this when fixing the namespaces -miranda)
 
-
 	context menu for client dgv
-		edit
+		edit (finished -Miranda)
 	context menu for prescription dgv
 		edit
 	context menu for refill dgv
@@ -18,6 +20,14 @@ set icon and form titles (niko)
 
 update forms - Mariah
 
+Better error handling
+	check text field values before sending?
+	if a wrong value gets sent now it just bring the form back to landing, which is not great
+	(might have to rework the client one)
+
+//return phys/pres/refill ids after successful creation? (like client)
+	dont work on this, might be adjusting the way client does it
+
 *** Low priority updates ***
 
 gender can only be M, F, or O, so maybe check for that before sending to DB. (niko)
@@ -26,13 +36,22 @@ Limit types of characters that can be entered in text fields
 
 add update trigger on prescription to update cost if med changes/on refill to update cost if prescid changes
 
-add @RESULT vars in stored procedures for returing success/failure
-
-fix namespace mess (Miranda)
+add @RESULT vars in stored procedures for returning success/failure
 
 whitespace/naming convention check (miranda)
 
 hide new employee button (miranda)
+
+----------------
+How to test/add employee logins
+
+IMPORTANT: to test with a database, make sure you change the database name in app.config!!
+
+On landing page, click on new client registration link
+There's a temporary button for adding employee logins
+enter a username and password (make sure username isnt being used in client), don't need an id.
+Click on the temporary employee button -> employee login is made
+Can then either add client logins or login with the employee
 
 ----------------
 TESTING
@@ -40,3 +59,4 @@ TESTING
 
 Client login -> update username/password -> log back in -Miranda
 employee login -> goes to employee form! -Miranda
+employee login -> new client, new phys, new presc, new refill, search -Miranda

@@ -62,11 +62,13 @@ namespace FinalProject
                 fname = txtPhyFName.Text.Trim();
                 initial = txtPhyMidInt.Text.Trim();
                 lname = txtPhyLName.Text.Trim();
-                phone = txtPhyLName.Text.Trim();
+                phone = txtPhyPhone.Text.Trim();
                 email = txtPhyEmail.Text.Trim();
 
                 npf.NewPhysician(fname, initial, lname, phone, email);
 
+                MessageBox.Show("Successfully created new physician.", "Success", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -90,6 +92,8 @@ namespace FinalProject
 
                 nrf.NewRefill(perscriptionid, dosage, frequency, supplydays, quantitysupplied);
 
+                MessageBox.Show("Successfully created new refill.", "Success", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -97,7 +101,7 @@ namespace FinalProject
             }
         }
 
-        private void addNewPrescreiption()
+        private void addNewPrescription()
         {
             int clientid = 0, physician = 0, medicationid = 0, refillcounter = 0;
             string expirydate = "";
@@ -114,6 +118,8 @@ namespace FinalProject
                 
                 npf.NewPrescription(clientid, physician, medicationid, expirydate, refillcounter);
 
+                MessageBox.Show("Successfully created new prescription.", "Success", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -173,6 +179,7 @@ namespace FinalProject
             txtClientMidInt.Clear();
             txtClientLName.Clear();
             txtClientAddress.Clear();
+            txtClientAdd2.Clear();
             txtClientCity.Clear();
             txtClientState.Clear();
             txtClientZip.Clear();
@@ -186,7 +193,6 @@ namespace FinalProject
         {
             addNewClient();
             btnClientClear_Click(sender,e);
-
         }
 
         private void txtClientFName_TextChanged(object sender, EventArgs e)
@@ -263,7 +269,6 @@ namespace FinalProject
         {
             addNewPhysician();
             btnPhyClear_Click(sender, e);
-
         }
 
         private void txtPhyFName_TextChanged(object sender, EventArgs e)
@@ -316,9 +321,8 @@ namespace FinalProject
 
         private void btnPerSave_Click(object sender, EventArgs e)
         {
-            addNewPrescreiption();
+            addNewPrescription();
             btnPerClear_Click(sender, e);
-
         }
 
         private void txtPreClientID_TextChanged(object sender, EventArgs e)
@@ -381,17 +385,17 @@ namespace FinalProject
 
         /***     REFILL TAB     ***/
 
-        private Boolean CheckRefillFields()
+        private void CheckRefillFields()
         {
             if(txtRefPrescriptionID.Text.Trim().Length > 0 && txtRefDosage.Text.Trim().Length > 0
                 && txtRefFrequency.Text.Trim().Length > 0 && txtRefSupplyDays.Text.Trim().Length > 0
-                && txtRefQuantitySupplied.Text.Trim().Length > 0 && txtRefPrice.Text.Trim().Length > 0
-                && txtRefPaymentType.Text.Trim().Length > 0)
+                && txtRefQuantitySupplied.Text.Trim().Length > 0 && cboRefPayment.SelectedIndex != -1)
             {
-                return true;
+                btnRefSave.Enabled = true;
+
             } else
             {
-                return false;
+                btnRefSave.Enabled = false;
             }
         }
 
@@ -403,97 +407,64 @@ namespace FinalProject
             txtRefSupplyDays.Clear();
             txtRefQuantitySupplied.Clear();
             txtRefPrice.Clear();
-            cmboRefInsurance.SelectedIndex = -1;
+            cboRefPayment.SelectedIndex = -1;
         }
 
         private void btnRefSave_Click(object sender, EventArgs e)
         {
             addNewRefill();
             btnRefClear_Click(sender, e);
-
         }
 
         private void txtRefPrescriptionID_TextChanged(object sender, EventArgs e)
         {
-            if(CheckRefillFields())
+            CheckRefillFields();
+
+            if(txtRefPrescriptionID.Text.Trim().Length > 0)
             {
-                btnRefSave.Enabled = true;
+                //run stored procedure to select price from prescription
+                DatabaseConnections dc = new DatabaseConnections();
+                int presid = int.Parse(txtRefPrescriptionID.Text.Trim());
+
+                DataSet ds = new DataSet();
+                ds = dc.GetPrescriptionPrice(presid);
+
+                txtRefPrice.Text = ds.Tables[0].Rows[0]["price"].ToString();
+
             } else
             {
-                btnRefSave.Enabled = false;
+                txtRefPrice.Clear();
             }
         }
 
         private void txtRefDosage_TextChanged(object sender, EventArgs e)
         {
-            if (CheckRefillFields())
-            {
-                btnRefSave.Enabled = true;
-            }
-            else
-            {
-                btnRefSave.Enabled = false;
-            }
+            CheckRefillFields();
         }
 
         private void txtRefFrequency_TextChanged(object sender, EventArgs e)
         {
-            if (CheckRefillFields())
-            {
-                btnRefSave.Enabled = true;
-            }
-            else
-            {
-                btnRefSave.Enabled = false;
-            }
+            CheckRefillFields();
         }
 
         private void txtRefSupplyDays_TextChanged(object sender, EventArgs e)
         {
-            if (CheckRefillFields())
-            {
-                btnRefSave.Enabled = true;
-            }
-            else
-            {
-                btnRefSave.Enabled = false;
-            }
+            CheckRefillFields();
         }
 
         private void txtRefQuantitySupplied_TextChanged(object sender, EventArgs e)
         {
-            if (CheckRefillFields())
-            {
-                btnRefSave.Enabled = true;
-            }
-            else
-            {
-                btnRefSave.Enabled = false;
-            }
+            CheckRefillFields();
         }
 
         private void txtRefPrice_TextChanged(object sender, EventArgs e)
         {
-            if (CheckRefillFields())
-            {
-                btnRefSave.Enabled = true;
-            }
-            else
-            {
-                btnRefSave.Enabled = false;
-            }
+            CheckRefillFields();
         }
 
-        private void txtRefPaymentType_SelectedIndexChanged(object sender, EventArgs e)
+        private void cboRefPayment_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (CheckRefillFields())
-            {
-                btnRefSave.Enabled = true;
-            }
-            else
-            {
-                btnRefSave.Enabled = false;
-            }
+            CheckRefillFields();
         }
 
         /***    SEARCH TAB       ***/
@@ -520,6 +491,17 @@ namespace FinalProject
             } catch (Exception ex)
             {
                 throw new ArgumentException(ex.Message);
+            }
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            if(txtSearch.Text.Trim().Length > 0)
+            {
+                btnSearch.Enabled = true;
+            } else
+            {
+                btnSearch.Enabled = false;
             }
         }
 
@@ -650,5 +632,7 @@ namespace FinalProject
                 throw new ArgumentException(ex.Message);
             }
         }
+
+        
     }
 }

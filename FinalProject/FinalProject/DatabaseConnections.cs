@@ -233,6 +233,41 @@ namespace FinalProject
             }
         }
 
+        public DataSet GetPrescriptionPrice(int prescriptionid)
+        {
+            //selectPrescriptionPrice
+            try
+            {
+                myConn.Open();
+                cmdString.Parameters.Clear();
+                cmdString.Connection = myConn;
+
+                //stored procedure -> selectRefill, takes @refillID
+                cmdString.CommandType = CommandType.StoredProcedure;
+                cmdString.CommandTimeout = 1500;
+                cmdString.CommandText = "selectPrescriptionPrice";
+
+                //paramenters
+                cmdString.Parameters.Add("@prescriptionID", SqlDbType.Int).Value = prescriptionid;
+
+                SqlDataAdapter aAdapter = new SqlDataAdapter();
+                aAdapter.SelectCommand = cmdString;
+
+                DataSet aDataSet = new DataSet();
+                aAdapter.Fill(aDataSet);
+
+                return aDataSet;
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException(ex.Message);
+            }
+            finally
+            {
+                myConn.Close();
+            }
+        }
+
         //new client
         public int NewClient(string fname, string initial, string lname, string street1, string street2, string city, 
             string state, string zip, string phone, string email, string gender, string DOB)
@@ -317,7 +352,7 @@ namespace FinalProject
             }
         }
 
-        public void NewRefill(int perscriptionid,string dosage, string frequency, int supplydays, int quantitysupplied)
+        public void NewRefill(int prescriptionid,string dosage, string frequency, int supplydays, int quantitysupplied)
         {
             try
             {
@@ -330,7 +365,7 @@ namespace FinalProject
                 cmdString.CommandText = "addNewRefill";
 
                 //paramenters
-                cmdString.Parameters.Add("@perscriptionID", SqlDbType.Int).Value = perscriptionid;
+                cmdString.Parameters.Add("@prescriptionID", SqlDbType.Int).Value = prescriptionid;
                 cmdString.Parameters.Add("@dosage", SqlDbType.VarChar,50).Value = dosage;
                 cmdString.Parameters.Add("@frequency", SqlDbType.VarChar,50).Value = frequency;
                 cmdString.Parameters.Add("@supplyDays", SqlDbType.TinyInt).Value = supplydays;
@@ -351,7 +386,7 @@ namespace FinalProject
             }
         }
 
-        public void NewPrescription(int physician, int clientid, int medicationid, string expirydate, int refillcounter)
+        public void NewPrescription(int clientid, int physicianid, int medicationid, string expirydate, int refillcounter)
         {
             try
             {
@@ -365,7 +400,7 @@ namespace FinalProject
 
                 //paramenters
                 cmdString.Parameters.Add("@clientID", SqlDbType.Int).Value = clientid;
-                cmdString.Parameters.Add("@physicianID", SqlDbType.Int).Value = physician;
+                cmdString.Parameters.Add("@physicianID", SqlDbType.Int).Value = physicianid;
                 cmdString.Parameters.Add("@medicineID", SqlDbType.Int).Value = medicationid;
                 cmdString.Parameters.Add("@expiryDate", SqlDbType.Date).Value = DateTime.Parse(expirydate);
                 cmdString.Parameters.Add("@refillCounter", SqlDbType.TinyInt).Value = refillcounter;
@@ -410,7 +445,8 @@ namespace FinalProject
                 cmdString.Parameters.Add("@zip", SqlDbType.VarChar, 10).Value = zip;
                 cmdString.Parameters.Add("@phone", SqlDbType.VarChar, 15).Value = phone;
                 cmdString.Parameters.Add("@email", SqlDbType.VarChar, 100).Value = email;
-                cmdString.Parameters.Add("@DOB", SqlDbType.Date).Value = DateTime.Parse(dob);
+                cmdString.Parameters.Add("@gender", SqlDbType.Char).Value = gender;
+                cmdString.Parameters.Add("@dateOfBirth", SqlDbType.Date).Value = DateTime.Parse(dob);
                 // adapter and dataset
                 SqlDataAdapter aAdapter = new SqlDataAdapter();
 

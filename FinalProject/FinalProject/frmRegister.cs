@@ -57,11 +57,6 @@ namespace FinalProject
 
         private void btnRegisterCancel_Click(object sender, EventArgs e)
         {
-
-            //subForm myNewForm = new subForm();
-
-            //this.Visible = false;
-
             this.Close();
         }
 
