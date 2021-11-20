@@ -16,11 +16,7 @@ C:\Users\Administrator\Documents\GitHub\Programming1_FinalProject\FinalProject\F
 C:\Users\Administrator\Documents\GitHub\Programming1_FinalProject\FinalProject\FinalProject\bin\Debug\FinalProject.exe
 C:\Users\Administrator\Documents\GitHub\Programming1_FinalProject\FinalProject\FinalProject\bin\Debug\FinalProject.pdb
 C:\Users\Administrator\Documents\GitHub\Programming1_FinalProject\FinalProject\FinalProject\obj\Debug\FinalProject.csproj.AssemblyReference.cache
-C:\Users\Administrator\Documents\GitHub\Programming1_FinalProject\FinalProject\FinalProject\obj\Debug\Programming1_FinalProject.Client.resources
-C:\Users\Administrator\Documents\GitHub\Programming1_FinalProject\FinalProject\FinalProject\obj\Debug\Final_Project_Work_Space.Employee.resources
-C:\Users\Administrator\Documents\GitHub\Programming1_FinalProject\FinalProject\FinalProject\obj\Debug\Programming1_FinalProject.Landing.resources
 C:\Users\Administrator\Documents\GitHub\Programming1_FinalProject\FinalProject\FinalProject\obj\Debug\FinalProject.Properties.Resources.resources
-C:\Users\Administrator\Documents\GitHub\Programming1_FinalProject\FinalProject\FinalProject\obj\Debug\Programming1_FinalProject.Register.resources
 C:\Users\Administrator\Documents\GitHub\Programming1_FinalProject\FinalProject\FinalProject\obj\Debug\FinalProject.csproj.GenerateResource.cache
 C:\Users\Administrator\Documents\GitHub\Programming1_FinalProject\FinalProject\FinalProject\obj\Debug\FinalProject.csproj.CoreCompileInputs.cache
 C:\Users\Administrator\Documents\GitHub\Programming1_FinalProject\FinalProject\FinalProject\obj\Debug\FinalProject.exe
@@ -60,3 +56,7 @@ C:\Users\Rai\Desktop\Files\FINAL_REPOSITORY\Programming1_FinalProject\FinalProje
 C:\Users\Rai\Desktop\Files\FINAL_REPOSITORY\Programming1_FinalProject\FinalProject\FinalProject\obj\Debug\FinalProject.frmEmployee.resources
 C:\Users\Rai\Desktop\Files\FINAL_REPOSITORY\Programming1_FinalProject\FinalProject\FinalProject\obj\Debug\FinalProject.frmLanding.resources
 C:\Users\Rai\Desktop\Files\FINAL_REPOSITORY\Programming1_FinalProject\FinalProject\FinalProject\obj\Debug\FinalProject.frmRegister.resources
+C:\Users\Administrator\Documents\GitHub\Programming1_FinalProject\FinalProject\FinalProject\obj\Debug\FinalProject.frmClient.resources
+C:\Users\Administrator\Documents\GitHub\Programming1_FinalProject\FinalProject\FinalProject\obj\Debug\FinalProject.frmEmployee.resources
+C:\Users\Administrator\Documents\GitHub\Programming1_FinalProject\FinalProject\FinalProject\obj\Debug\FinalProject.frmLanding.resources
+C:\Users\Administrator\Documents\GitHub\Programming1_FinalProject\FinalProject\FinalProject\obj\Debug\FinalProject.frmRegister.resources

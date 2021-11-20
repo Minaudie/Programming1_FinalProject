@@ -56,7 +56,7 @@ namespace FinalProject
         private void CheckClientFields()
         {
             if (txtClientFName.Text.Trim().Length > 0 && txtClientLName.Text.Trim().Length > 0
-                && txtClientGender.Text.Trim().Length > 0 && txtClientDOB.Text.Trim().Length > 0)
+                && cmboClientGender.Text.Trim().Length > 0 && txtClientDOB.Text.Trim().Length > 0)
             {
                 btnClientSave.Enabled = true;
             }
@@ -80,7 +80,7 @@ namespace FinalProject
             txtClientZip.Clear();
             txtClientPhone.Clear();
             txtClientEmail.Clear();
-            txtClientGender.Clear();
+            cmboClientGender.SelectedIndex = -1; ;
             txtClientDOB.Clear();
         }
 
@@ -104,11 +104,11 @@ namespace FinalProject
                 zip = txtClientZip.Text.Trim();
                 phone = txtClientPhone.Text.Trim();
                 email = txtClientEmail.Text.Trim();
-                gender = txtClientGender.Text.Trim();
+                gender = cmboClientGender.Text.Trim();
 
                 if (gender != Keys.M.ToString() && gender != Keys.F.ToString() && gender != Keys.O.ToString())
                 {
-                    erpEmployee.SetError(txtClientGender, "Error: M, F, or O only");
+                    erpEmployee.SetError(cmboClientGender, "Error: M, F, or O only");
                 }
                 else
                 {
@@ -379,7 +379,7 @@ namespace FinalProject
         {
             if(txtRefPrescriptionID.Text.Trim().Length > 0 && txtRefDosage.Text.Trim().Length > 0
                 && txtRefFrequency.Text.Trim().Length > 0 && txtRefSupplyDays.Text.Trim().Length > 0
-                && txtRefQuantitySupplied.Text.Trim().Length > 0 && cboRefPayment.SelectedIndex != -1)
+                && txtRefQuantitySupplied.Text.Trim().Length > 0 && cboRefPaymentType.SelectedIndex != -1)
             {
                 btnRefSave.Enabled = true;
 
@@ -399,7 +399,7 @@ namespace FinalProject
             txtRefSupplyDays.Clear();
             txtRefQuantitySupplied.Clear();
             txtRefPrice.Clear();
-            cboRefPayment.SelectedIndex = -1;
+            cboRefPaymentType.SelectedIndex = -1;
         }
 
         private void btnRefSave_Click(object sender, EventArgs e)
@@ -680,6 +680,9 @@ namespace FinalProject
             }
         }
 
-        
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
