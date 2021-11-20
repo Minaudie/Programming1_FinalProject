@@ -29,6 +29,7 @@ namespace FinalProject
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLanding));
             this.txtLandingUsername = new System.Windows.Forms.TextBox();
             this.txtLandingPassword = new System.Windows.Forms.TextBox();
             this.lblLandingUsername = new System.Windows.Forms.Label();
@@ -131,6 +132,7 @@ namespace FinalProject
             this.Controls.Add(this.lblLandingUsername);
             this.Controls.Add(this.txtLandingPassword);
             this.Controls.Add(this.txtLandingUsername);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmLanding";
             this.Text = "Welcome";

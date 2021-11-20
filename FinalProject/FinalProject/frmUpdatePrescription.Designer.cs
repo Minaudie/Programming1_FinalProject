@@ -30,6 +30,7 @@ namespace FinalProject
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUpdatePrescription));
             this.label39 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
@@ -59,9 +60,10 @@ namespace FinalProject
             this.label39.AutoSize = true;
             this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label39.ForeColor = System.Drawing.Color.Red;
-            this.label39.Location = new System.Drawing.Point(214, 122);
+            this.label39.Location = new System.Drawing.Point(428, 235);
+            this.label39.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(13, 16);
+            this.label39.Size = new System.Drawing.Size(23, 30);
             this.label39.TabIndex = 49;
             this.label39.Text = "*";
             // 
@@ -70,9 +72,10 @@ namespace FinalProject
             this.label38.AutoSize = true;
             this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label38.ForeColor = System.Drawing.Color.Red;
-            this.label38.Location = new System.Drawing.Point(214, 70);
+            this.label38.Location = new System.Drawing.Point(428, 135);
+            this.label38.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(13, 16);
+            this.label38.Size = new System.Drawing.Size(23, 30);
             this.label38.TabIndex = 48;
             this.label38.Text = "*";
             // 
@@ -81,17 +84,19 @@ namespace FinalProject
             this.label37.AutoSize = true;
             this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label37.ForeColor = System.Drawing.Color.Red;
-            this.label37.Location = new System.Drawing.Point(214, 96);
+            this.label37.Location = new System.Drawing.Point(428, 185);
+            this.label37.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(13, 16);
+            this.label37.Size = new System.Drawing.Size(23, 30);
             this.label37.TabIndex = 47;
             this.label37.Text = "*";
             // 
             // btnUpdatePreUpdate
             // 
-            this.btnUpdatePreUpdate.Location = new System.Drawing.Point(140, 225);
+            this.btnUpdatePreUpdate.Location = new System.Drawing.Point(280, 433);
+            this.btnUpdatePreUpdate.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnUpdatePreUpdate.Name = "btnUpdatePreUpdate";
-            this.btnUpdatePreUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdatePreUpdate.Size = new System.Drawing.Size(150, 44);
             this.btnUpdatePreUpdate.TabIndex = 6;
             this.btnUpdatePreUpdate.Text = "&Update";
             this.btnUpdatePreUpdate.UseVisualStyleBackColor = true;
@@ -100,9 +105,10 @@ namespace FinalProject
             // btnUpdatePreClear
             // 
             this.btnUpdatePreClear.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnUpdatePreClear.Location = new System.Drawing.Point(334, 225);
+            this.btnUpdatePreClear.Location = new System.Drawing.Point(668, 433);
+            this.btnUpdatePreClear.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnUpdatePreClear.Name = "btnUpdatePreClear";
-            this.btnUpdatePreClear.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdatePreClear.Size = new System.Drawing.Size(150, 44);
             this.btnUpdatePreClear.TabIndex = 7;
             this.btnUpdatePreClear.Text = "&Cancel";
             this.btnUpdatePreClear.UseVisualStyleBackColor = true;
@@ -110,98 +116,110 @@ namespace FinalProject
             // 
             // dtpUpdatePreExpirationDate
             // 
-            this.dtpUpdatePreExpirationDate.Location = new System.Drawing.Point(230, 152);
+            this.dtpUpdatePreExpirationDate.Location = new System.Drawing.Point(460, 292);
+            this.dtpUpdatePreExpirationDate.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.dtpUpdatePreExpirationDate.Name = "dtpUpdatePreExpirationDate";
-            this.dtpUpdatePreExpirationDate.Size = new System.Drawing.Size(200, 20);
+            this.dtpUpdatePreExpirationDate.Size = new System.Drawing.Size(396, 31);
             this.dtpUpdatePreExpirationDate.TabIndex = 4;
             // 
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(122, 179);
+            this.label24.Location = new System.Drawing.Point(244, 344);
+            this.label24.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(87, 13);
+            this.label24.Size = new System.Drawing.Size(176, 25);
             this.label24.TabIndex = 43;
             this.label24.Text = "Number of Refills";
             // 
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(130, 153);
+            this.label23.Location = new System.Drawing.Point(260, 294);
+            this.label23.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(79, 13);
+            this.label23.Size = new System.Drawing.Size(159, 25);
             this.label23.TabIndex = 42;
             this.label23.Text = "Expiration Date";
             // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(136, 124);
+            this.label21.Location = new System.Drawing.Point(272, 238);
+            this.label21.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(73, 13);
+            this.label21.Size = new System.Drawing.Size(143, 25);
             this.label21.TabIndex = 41;
             this.label21.Text = "Medication ID";
             // 
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(145, 98);
+            this.label20.Location = new System.Drawing.Point(290, 188);
+            this.label20.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(64, 13);
+            this.label20.Size = new System.Drawing.Size(126, 25);
             this.label20.TabIndex = 40;
             this.label20.Text = "Physican ID";
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(162, 71);
+            this.label19.Location = new System.Drawing.Point(324, 137);
+            this.label19.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(47, 13);
+            this.label19.Size = new System.Drawing.Size(93, 25);
             this.label19.TabIndex = 39;
             this.label19.Text = "Client ID";
             // 
             // txtUpdatePreNumOfRefills
             // 
-            this.txtUpdatePreNumOfRefills.Location = new System.Drawing.Point(230, 177);
+            this.txtUpdatePreNumOfRefills.Location = new System.Drawing.Point(460, 340);
+            this.txtUpdatePreNumOfRefills.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtUpdatePreNumOfRefills.Name = "txtUpdatePreNumOfRefills";
-            this.txtUpdatePreNumOfRefills.Size = new System.Drawing.Size(100, 20);
+            this.txtUpdatePreNumOfRefills.Size = new System.Drawing.Size(196, 31);
             this.txtUpdatePreNumOfRefills.TabIndex = 5;
             // 
             // txtUpdatePreMedicationID
             // 
-            this.txtUpdatePreMedicationID.Location = new System.Drawing.Point(230, 122);
+            this.txtUpdatePreMedicationID.Location = new System.Drawing.Point(460, 235);
+            this.txtUpdatePreMedicationID.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtUpdatePreMedicationID.Name = "txtUpdatePreMedicationID";
-            this.txtUpdatePreMedicationID.Size = new System.Drawing.Size(100, 20);
+            this.txtUpdatePreMedicationID.Size = new System.Drawing.Size(196, 31);
             this.txtUpdatePreMedicationID.TabIndex = 2;
             // 
             // txtUpdatePrePhysicanID
             // 
-            this.txtUpdatePrePhysicanID.Location = new System.Drawing.Point(230, 96);
+            this.txtUpdatePrePhysicanID.Location = new System.Drawing.Point(460, 185);
+            this.txtUpdatePrePhysicanID.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtUpdatePrePhysicanID.Name = "txtUpdatePrePhysicanID";
-            this.txtUpdatePrePhysicanID.Size = new System.Drawing.Size(100, 20);
+            this.txtUpdatePrePhysicanID.Size = new System.Drawing.Size(196, 31);
             this.txtUpdatePrePhysicanID.TabIndex = 1;
             // 
             // txtUpdatePreClientID
             // 
-            this.txtUpdatePreClientID.Location = new System.Drawing.Point(230, 69);
+            this.txtUpdatePreClientID.Location = new System.Drawing.Point(460, 133);
+            this.txtUpdatePreClientID.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtUpdatePreClientID.Name = "txtUpdatePreClientID";
-            this.txtUpdatePreClientID.Size = new System.Drawing.Size(100, 20);
+            this.txtUpdatePreClientID.Size = new System.Drawing.Size(196, 31);
             this.txtUpdatePreClientID.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(133, 46);
+            this.label1.Location = new System.Drawing.Point(266, 88);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 13);
+            this.label1.Size = new System.Drawing.Size(152, 25);
             this.label1.TabIndex = 50;
             this.label1.Text = "Prescription ID";
             // 
             // txtUpdatePrescriptionID
             // 
-            this.txtUpdatePrescriptionID.Location = new System.Drawing.Point(230, 43);
+            this.txtUpdatePrescriptionID.Location = new System.Drawing.Point(460, 83);
+            this.txtUpdatePrescriptionID.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtUpdatePrescriptionID.Name = "txtUpdatePrescriptionID";
-            this.txtUpdatePrescriptionID.Size = new System.Drawing.Size(100, 20);
+            this.txtUpdatePrescriptionID.Size = new System.Drawing.Size(196, 31);
             this.txtUpdatePrescriptionID.TabIndex = 0;
             // 
             // label2
@@ -209,40 +227,42 @@ namespace FinalProject
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(213, 44);
+            this.label2.Location = new System.Drawing.Point(426, 85);
+            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(13, 16);
+            this.label2.Size = new System.Drawing.Size(23, 30);
             this.label2.TabIndex = 52;
             this.label2.Text = "*";
             // 
             // contextMenuStrip1
             // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.editToolStripMenuItem,
             this.updateToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(166, 80);
             // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(165, 38);
             this.editToolStripMenuItem.Text = "edit";
             // 
             // updateToolStripMenuItem
             // 
             this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-            this.updateToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.updateToolStripMenuItem.Size = new System.Drawing.Size(165, 38);
             this.updateToolStripMenuItem.Text = "update";
             // 
             // frmUpdatePrescription
             // 
             this.AcceptButton = this.btnUpdatePreUpdate;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.CancelButton = this.btnUpdatePreClear;
-            this.ClientSize = new System.Drawing.Size(556, 334);
+            this.ClientSize = new System.Drawing.Size(1112, 642);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtUpdatePrescriptionID);
             this.Controls.Add(this.label1);
@@ -261,7 +281,8 @@ namespace FinalProject
             this.Controls.Add(this.txtUpdatePreMedicationID);
             this.Controls.Add(this.txtUpdatePrePhysicanID);
             this.Controls.Add(this.txtUpdatePreClientID);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmUpdatePrescription";
             this.Text = "Update Prescription";
             this.Load += new System.EventHandler(this.frmUpdatePrescription_Load);

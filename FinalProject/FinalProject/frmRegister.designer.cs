@@ -29,6 +29,7 @@ namespace FinalProject
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRegister));
             this.txtRegisterUsername = new System.Windows.Forms.TextBox();
             this.txtRegisterPassword = new System.Windows.Forms.TextBox();
             this.lblRegisterUsername = new System.Windows.Forms.Label();
@@ -168,6 +169,7 @@ namespace FinalProject
             this.Controls.Add(this.lblRegisterUsername);
             this.Controls.Add(this.txtRegisterPassword);
             this.Controls.Add(this.txtRegisterUsername);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmRegister";
             this.Text = "Registration";
