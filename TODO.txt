@@ -18,7 +18,7 @@ New forms:
 
 If unused, selectClientPrescription (stored proc) (miranda)
 
-set icon and form titles (niko)
+change frmClient icon/title
 
 update forms - Mariah
 
@@ -43,6 +43,8 @@ hide new employee button (miranda)
 
 hide landing form once logged in/at registration form
 	I think this would require something like the employee form global variables and changing the instantiation method
+
+clear landing text boxes when going to new client reg form
 
 ----------------
 How to test/add employee logins
