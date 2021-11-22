@@ -60,7 +60,7 @@ namespace FinalProject
         private void CheckClientFields()
         {
             if (txtClientFName.Text.Trim().Length > 0 && txtClientLName.Text.Trim().Length > 0
-                && cmboClientGender.Text.Trim().Length > 0 && txtClientDOB.Text.Trim().Length > 0)
+                && cboClientGender.Text.Trim().Length > 0 && txtClientDOB.Text.Trim().Length > 0)
             {
                 btnClientSave.Enabled = true;
             }
@@ -84,7 +84,7 @@ namespace FinalProject
             txtClientZip.Clear();
             txtClientPhone.Clear();
             txtClientEmail.Clear();
-            cmboClientGender.SelectedIndex = -1; ;
+            cboClientGender.SelectedIndex = -1; ;
             txtClientDOB.Clear();
         }
 
@@ -108,7 +108,7 @@ namespace FinalProject
                 zip = txtClientZip.Text.Trim();
                 phone = txtClientPhone.Text.Trim();
                 email = txtClientEmail.Text.Trim();
-                gender = cmboClientGender.Text.Trim();
+                gender = cboClientGender.Text.Trim();
 
                 try
                 {
@@ -405,24 +405,23 @@ namespace FinalProject
             string dosage = "", frequency = "";
             int supplydays = 0, quantitysupplied = 0, prescriptionid = 0;
 
-            try
+            try //prescription id
             {
                 DatabaseConnections nrf = new DatabaseConnections();
+                prescriptionid = int.Parse(txtRefPrescriptionID.Text.Trim());
 
-                try //prescription id
+                try
                 {
-                    prescriptionid = int.Parse(txtRefPrescriptionID.Text.Trim());
+                    dosage = txtRefDosage.Text.Trim();
+                    frequency = txtRefFrequency.Text.Trim();
+                    supplydays = int.Parse(txtRefSupplyDays.Text.Trim());
 
                     try
                     {
-                        dosage = txtRefDosage.Text.Trim();
-                        frequency = txtRefFrequency.Text.Trim();
-                        supplydays = int.Parse(txtRefSupplyDays.Text.Trim());
+                        quantitysupplied = int.Parse(txtRefQuantitySupplied.Text.Trim());
 
                         try
                         {
-                            quantitysupplied = int.Parse(txtRefQuantitySupplied.Text.Trim());
-
                             int result = nrf.NewRefill(prescriptionid, dosage, frequency, supplydays, quantitysupplied);
 
                             if (result == -1)
@@ -437,27 +436,22 @@ namespace FinalProject
 
                                 btnRefClear_Click(sender, e);
                             }
-                        }
-                        catch (Exception ex) //quantity catch
+
+                        } catch (Exception ex)
                         {
-                            erpEmployee.SetError(txtRefQuantitySupplied, "Error: numbers only");
+                            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
-
-                    }
-                    catch (Exception ex) //supply days catch
+                    } catch (Exception ex) //quantity catch
                     {
-                        erpEmployee.SetError(txtRefSupplyDays, "Error: numbers only");
+                        erpEmployee.SetError(txtRefQuantitySupplied, "Error: numbers only");
                     }
-
-                }
-                catch (Exception ex) //prescription id catch
+                } catch (Exception ex) //supply days catch
                 {
-                    erpEmployee.SetError(txtRefPrescriptionID, "Error: numbers only");
+                    erpEmployee.SetError(txtRefSupplyDays, "Error: numbers only");
                 }
-            }
-            catch (Exception ex)
+            } catch (Exception ex) //prescription id catch
             {
-                throw new ArgumentException(ex.Message);
+                erpEmployee.SetError(txtRefPrescriptionID, "Error: numbers only");
             }
         }
 
@@ -467,15 +461,31 @@ namespace FinalProject
 
             if(txtRefPrescriptionID.Text.Trim().Length > 0)
             {
-                //run stored procedure to select price from prescription
-                DatabaseConnections dc = new DatabaseConnections();
-                int presid = int.Parse(txtRefPrescriptionID.Text.Trim());
+                try
+                {
+                    //run stored procedure to select price from prescription
+                    DatabaseConnections dc = new DatabaseConnections();
+                    int presid = int.Parse(txtRefPrescriptionID.Text.Trim());
 
-                DataSet ds = new DataSet();
-                ds = dc.GetPrescriptionPrice(presid);
+                    try
+                    {
+                        DataSet ds = new DataSet();
+                        ds = dc.GetPrescriptionPrice(presid);
 
-                txtRefPrice.Text = ds.Tables[0].Rows[0]["price"].ToString();
+                        if(ds.Tables[0].Rows.Count > 0)
+                        {
+                            txtRefPrice.Text = ds.Tables[0].Rows[0]["price"].ToString();
+                        }
 
+                    } catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                } catch (Exception ex)
+                {
+                    erpEmployee.SetError(txtRefPrescriptionID, "Error: numbers only");
+                }
             } else
             {
                 txtRefPrice.Clear();

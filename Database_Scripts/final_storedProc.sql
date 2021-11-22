@@ -449,6 +449,10 @@ BEGIN
 	SELECT price 
 	FROM prescription
 	WHERE prescriptionID = @prescriptionID
+
+	IF @@ERROR <> 0
+		THROW 51000, 'There is no prescription with that ID.',1; 
+		
 END
 GO
 
@@ -764,7 +768,7 @@ BEGIN
 							WHERE prescriptionID = @prescriptionID)
 
 	IF @refillCount = 0 OR @expiryDate < GETDATE()
-		RAISERROR('This prescription has expired/reached the refill limit.',16,1)
+		THROW 51000, 'This prescription has expired/reached the refill limit.', 1;
 	ELSE
 		BEGIN
 			UPDATE prescription

@@ -129,7 +129,7 @@ namespace FinalProject
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.tabNewClient = new System.Windows.Forms.TabPage();
-            this.cmboClientGender = new System.Windows.Forms.ComboBox();
+            this.cboClientGender = new System.Windows.Forms.ComboBox();
             this.txtClientAdd2 = new System.Windows.Forms.TextBox();
             this.txtClientMidInt = new System.Windows.Forms.TextBox();
             this.btnClientSave = new System.Windows.Forms.Button();
@@ -620,19 +620,19 @@ namespace FinalProject
             this.cmuPrescriptionUpdate,
             this.cmuPrescriptionBack});
             this.cmuPrescription.Name = "contextMenuPre";
-            this.cmuPrescription.Size = new System.Drawing.Size(181, 70);
+            this.cmuPrescription.Size = new System.Drawing.Size(150, 48);
             // 
             // cmuPrescriptionUpdate
             // 
             this.cmuPrescriptionUpdate.Name = "cmuPrescriptionUpdate";
-            this.cmuPrescriptionUpdate.Size = new System.Drawing.Size(180, 22);
+            this.cmuPrescriptionUpdate.Size = new System.Drawing.Size(149, 22);
             this.cmuPrescriptionUpdate.Text = "Update";
             this.cmuPrescriptionUpdate.Click += new System.EventHandler(this.cmuPrescriptionUpdate_Click);
             // 
             // cmuPrescriptionBack
             // 
             this.cmuPrescriptionBack.Name = "cmuPrescriptionBack";
-            this.cmuPrescriptionBack.Size = new System.Drawing.Size(180, 22);
+            this.cmuPrescriptionBack.Size = new System.Drawing.Size(149, 22);
             this.cmuPrescriptionBack.Text = "Back To Client";
             this.cmuPrescriptionBack.Click += new System.EventHandler(this.cmuPrescriptionBack_Click);
             // 
@@ -1122,7 +1122,7 @@ namespace FinalProject
             // tabNewClient
             // 
             this.tabNewClient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.tabNewClient.Controls.Add(this.cmboClientGender);
+            this.tabNewClient.Controls.Add(this.cboClientGender);
             this.tabNewClient.Controls.Add(this.txtClientAdd2);
             this.tabNewClient.Controls.Add(this.txtClientMidInt);
             this.tabNewClient.Controls.Add(this.btnClientSave);
@@ -1160,18 +1160,18 @@ namespace FinalProject
             this.tabNewClient.TabIndex = 0;
             this.tabNewClient.Text = "New Client";
             // 
-            // cmboClientGender
+            // cboClientGender
             // 
-            this.cmboClientGender.FormattingEnabled = true;
-            this.cmboClientGender.Items.AddRange(new object[] {
+            this.cboClientGender.FormattingEnabled = true;
+            this.cboClientGender.Items.AddRange(new object[] {
             "M",
             "F",
             "O"});
-            this.cmboClientGender.Location = new System.Drawing.Point(349, 296);
-            this.cmboClientGender.Margin = new System.Windows.Forms.Padding(2);
-            this.cmboClientGender.Name = "cmboClientGender";
-            this.cmboClientGender.Size = new System.Drawing.Size(100, 21);
-            this.cmboClientGender.TabIndex = 36;
+            this.cboClientGender.Location = new System.Drawing.Point(349, 296);
+            this.cboClientGender.Margin = new System.Windows.Forms.Padding(2);
+            this.cboClientGender.Name = "cboClientGender";
+            this.cboClientGender.Size = new System.Drawing.Size(100, 21);
+            this.cboClientGender.TabIndex = 36;
             // 
             // txtClientAdd2
             // 
@@ -1629,7 +1629,7 @@ namespace FinalProject
         public System.Windows.Forms.DataGridView dgvPre;
         public System.Windows.Forms.DataGridView dgvRefill;
         private System.Windows.Forms.ErrorProvider erpEmployee;
-        private System.Windows.Forms.ComboBox cmboClientGender;
+        private System.Windows.Forms.ComboBox cboClientGender;
         private System.Windows.Forms.ToolStripMenuItem cmuRefillBack;
         private System.Windows.Forms.ToolStripMenuItem cmuPrescriptionBack;
     }
