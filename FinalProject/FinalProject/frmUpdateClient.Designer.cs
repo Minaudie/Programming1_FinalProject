@@ -29,6 +29,7 @@ namespace FinalProject
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtUpdateClientAdd2 = new System.Windows.Forms.TextBox();
             this.label41 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
@@ -62,6 +63,8 @@ namespace FinalProject
             this.label1 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.txtUpdateClientID = new System.Windows.Forms.TextBox();
+            this.erpUpdateClient = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.erpUpdateClient)).BeginInit();
             this.SuspendLayout();
             // 
             // txtUpdateClientAdd2
@@ -359,6 +362,10 @@ namespace FinalProject
             this.txtUpdateClientID.Size = new System.Drawing.Size(100, 20);
             this.txtUpdateClientID.TabIndex = 71;
             // 
+            // erpUpdateClient
+            // 
+            this.erpUpdateClient.ContainerControl = this;
+            // 
             // frmUpdateClient
             // 
             this.AcceptButton = this.btnUpdateClientUpdate;
@@ -404,6 +411,7 @@ namespace FinalProject
             this.Name = "frmUpdateClient";
             this.Text = "Update Client";
             this.Load += new System.EventHandler(this.frmUpdateClient_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.erpUpdateClient)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -443,5 +451,6 @@ namespace FinalProject
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtUpdateClientID;
+        private System.Windows.Forms.ErrorProvider erpUpdateClient;
     }
 }

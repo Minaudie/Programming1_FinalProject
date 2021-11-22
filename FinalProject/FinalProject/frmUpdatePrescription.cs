@@ -48,12 +48,85 @@ namespace FinalProject
 
         private void btnUpdatePreUpdate_Click(object sender, EventArgs e)
         {
+            int clientid = 0, physicianid = 0, medicationid = 0, refillcounter = 0;
+            DateTime expirydate;
 
-        }
+            try
+            {
+                DatabaseConnections npf = new DatabaseConnections();
 
-        private void btnUpdatePreClear_Click(object sender, EventArgs e)
-        {
-            frmUpdatePrescription_Load(sender, e);
+                try //client id try
+                {
+                    clientid = int.Parse(txtUpdatePreClientID.Text.Trim());
+
+                    try //physician try
+                    {
+                        physicianid = int.Parse(txtUpdatePrePhysicanID.Text.Trim());
+
+                        try //medication try
+                        {
+                            medicationid = int.Parse(txtUpdatePreMedicationID.Text.Trim());
+
+                            try //expiry date try
+                            {
+                                expirydate = dtpUpdatePreExpirationDate.Value;
+
+                                try //refill counter try
+                                {
+                                    refillcounter = int.Parse(txtUpdatePreNumOfRefills.Text.Trim());
+
+                                    int result = npf.NewPrescription(clientid, physicianid, medicationid, expirydate, refillcounter);
+
+                                    if (result == -1)
+                                    {
+                                        MessageBox.Show("Error while inserting record.", "Error",
+                                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    }
+                                    else //any other value
+                                    {
+                                        MessageBox.Show("Success. New prescription ID is: " + result, "New Prescription ID",
+                                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                                        this.Close();
+                                    }
+
+                                }
+                                catch (Exception ex) //refill counter catch
+                                {
+                                    erpUpdatePrescription.SetError(txtUpdatePreNumOfRefills, "Error: numbers only");
+                                }
+
+                            }
+                            catch (Exception ex) //expiry date catch
+                            {
+                                erpUpdatePrescription.SetError(dtpUpdatePreExpirationDate, "Error: Dates only");
+                            }
+
+                        }
+                        catch (Exception ex) //medication id catch
+                        {
+                            erpUpdatePrescription.SetError(txtUpdatePreMedicationID, "Error: numbers only");
+                        }
+
+                    }
+                    catch (Exception ex) //physician id catch
+                    {
+                        erpUpdatePrescription.SetError(txtUpdatePrePhysicanID, "Error: numbers only");
+                    }
+
+                }
+                catch (Exception ex) //client id catch
+                {
+                    erpUpdatePrescription.SetError(txtUpdatePreClientID, "Error: numbers only");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException(ex.Message);
+            }
         }
     }
+
+       
+    
 }

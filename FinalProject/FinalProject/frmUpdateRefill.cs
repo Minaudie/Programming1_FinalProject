@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace FinalProject
 {
     public partial class frmUpdateRefill : Form
@@ -51,12 +52,66 @@ namespace FinalProject
 
         private void btnUpdateRefillUpdate_Click(object sender, EventArgs e)
         {
+            string dosage = "", frequency = "";
+            int supplydays = 0, quantitysupplied = 0, prescriptionid = 0;
 
-        }
+            try
+            {
+                DatabaseConnections nrf = new DatabaseConnections();
 
-        private void btnUpdateRefillClear_Click(object sender, EventArgs e)
-        {
-            frmUpdateRefill_Load(sender, e);
+                try //prescription id
+                {
+                    prescriptionid = int.Parse(txtUpdateRefPrescriptionID.Text.Trim());
+
+                    try
+                    {
+                        dosage = txtUpdateRefDosage.Text.Trim();
+                        frequency = txtUpdateRefFrequency.Text.Trim();
+                        supplydays = int.Parse(txtUpdateRefSupplyDays.Text.Trim());
+
+                        try
+                        {
+                            quantitysupplied = int.Parse(txtUpdateRefQuantitySupplied.Text.Trim());
+
+                            int result = nrf.NewRefill(prescriptionid, dosage, frequency, supplydays, quantitysupplied);
+
+                            if (result == -1)
+                            {
+                                MessageBox.Show("Error while inserting record.", "Error",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            else //any other value
+                            {
+                                MessageBox.Show("Success. New refill ID is: " + result, "Updated Refill ID",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                                this.Close();
+                            }
+                        }
+                        catch (Exception ex) //quantity catch
+                        {
+                            erpUpdateRefill.SetError(txtUpdateRefQuantitySupplied, "Error: numbers only");
+                        }
+
+                    }
+                    catch (Exception ex) //supply days catch
+                    {
+                        erpUpdateRefill.SetError(txtUpdateRefSupplyDays, "Error: numbers only");
+                    }
+
+                }
+                catch (Exception ex) //prescription id catch
+                {
+                    erpUpdateRefill.SetError(txtUpdateRefPrescriptionID, "Error: numbers only");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException(ex.Message);
+            }
         }
     }
+
+       
+    
 }
