@@ -6,34 +6,14 @@ frmEmployee - newRefill tab
 frmEmployee.cs - frmEmployee_Load event handler
 	clear text fields (I think each tab has a button click event to clear the fields)
 
-New forms:
-	reference to frmEmployee (might have done this when fixing the namespaces -miranda)
-
-	context menu for client dgv
-		edit (finished -Miranda)
-	context menu for prescription dgv
-		edit
-	context menu for refill dgv
-		edit
-
 If unused, selectClientPrescription (stored proc) (miranda)
 
-change frmClient icon/title
-
-update forms - Mariah
-
 Better error handling - 
-	Currently only on frmEmployee, tons of changes because of it though
+	frmRegister - id int only
+
+database updates in their own try stmt
 
 *** Low priority updates ***
-
-change date of birth to date time picker
-	lots to change in the backend as well, don't miss that if you do this update
-
-gender can only be M, F, or O, so maybe check for that before sending to DB. -I ended up doing this as part of error handling, Miranda
-
-Limit types of characters that can be entered in text fields
-	-sort of did this as part of error handling?? not as robust as just not allowing the keys to even be entered
 
 add update trigger on prescription to update cost if med changes/on refill to update cost if prescid changes
 
