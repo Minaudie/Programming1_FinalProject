@@ -1172,7 +1172,6 @@ namespace FinalProject
             this.cmboClientGender.Name = "cmboClientGender";
             this.cmboClientGender.Size = new System.Drawing.Size(100, 21);
             this.cmboClientGender.TabIndex = 36;
-            this.cmboClientGender.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // txtClientAdd2
             // 

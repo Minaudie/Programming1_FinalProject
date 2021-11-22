@@ -47,7 +47,11 @@ namespace FinalProject
             btnPreSave.Enabled = false;
             btnRefSave.Enabled = false;
             btnSearch.Enabled = false;
-            // ****TO DO ****clear text fields
+
+            btnClientClear_Click(sender, e);
+            btnPhyClear_Click(sender, e);
+            btnPreClear_Click(sender, e);
+            btnRefClear_Click(sender, e);
         }
 
         /***     CLIENT TAB     ***/
@@ -106,18 +110,14 @@ namespace FinalProject
                 email = txtClientEmail.Text.Trim();
                 gender = cmboClientGender.Text.Trim();
 
-                if (gender != Keys.M.ToString() && gender != Keys.F.ToString() && gender != Keys.O.ToString())
+                try
                 {
-                    erpEmployee.SetError(cmboClientGender, "Error: M, F, or O only");
-                }
-                else
-                {
-                    try
-                    {
-                        DOB = DateTime.Parse(txtClientDOB.Text.Trim());
+                    DOB = DateTime.Parse(txtClientDOB.Text.Trim());
 
+                    try //database insert try
+                    {
                         int result = ncf.NewClient(fname, initial, lname, street1, street2, city,
-                        state, zip, phone, email, gender, DOB);
+                            state, zip, phone, email, gender, DOB);
 
                         if (result == 0)
                         {
@@ -137,11 +137,14 @@ namespace FinalProject
 
                             btnClientClear_Click(sender, e);
                         }
-                    }
-                    catch (Exception ex) //catches date of birth 
+                    } catch(Exception ex)
                     {
-                        erpEmployee.SetError(txtClientDOB, "Error: Dates only");
+                        throw new ArgumentException(ex.Message);
                     }
+                }
+                catch (Exception ex) //catches date of birth 
+                {
+                    erpEmployee.SetError(txtClientDOB, "Error: Dates only");
                 }
             }
             catch (Exception ex)
@@ -206,24 +209,31 @@ namespace FinalProject
                 phone = txtPhyPhone.Text.Trim();
                 email = txtPhyEmail.Text.Trim();
 
-                int result = npf.NewPhysician(fname, initial, lname, phone, email);
+                try //database insert try
+                {
+                    int result = npf.NewPhysician(fname, initial, lname, phone, email);
 
-                if (result == 0)
-                {
-                    MessageBox.Show("This physician already exists in the database.", "Existing Client",
-                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                else if (result == -1)
-                {
-                    MessageBox.Show("Error while inserting record.", "Error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else //any other value
-                {
-                    MessageBox.Show("Success. New physician's ID is: " + result, "New Physician ID",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (result == 0)
+                    {
+                        MessageBox.Show("This physician already exists in the database.", "Existing Client",
+                            MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else if (result == -1)
+                    {
+                        MessageBox.Show("Error while inserting record.", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else //any other value
+                    {
+                        MessageBox.Show("Success. New physician's ID is: " + result, "New Physician ID",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    btnPhyClear_Click(sender, e);
+                        btnPhyClear_Click(sender, e);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw new ArgumentException(ex.Message);
                 }
             }
             catch (Exception ex)
@@ -273,30 +283,29 @@ namespace FinalProject
             int clientid = 0, physicianid = 0, medicationid = 0, refillcounter = 0;
             DateTime expirydate;
 
-            try
+            try //client id try
             {
                 DatabaseConnections npf = new DatabaseConnections();
+                clientid = int.Parse(txtPreClientID.Text.Trim());
 
-                try //client id try
+                try //physician try
                 {
-                    clientid = int.Parse(txtPreClientID.Text.Trim());
+                    physicianid = int.Parse(txtPrePhysicanID.Text.Trim());
 
-                    try //physician try
+                    try //medication try
                     {
-                        physicianid = int.Parse(txtPrePhysicanID.Text.Trim());
+                        medicationid = int.Parse(txtPreMedicationID.Text.Trim());
 
-                        try //medication try
+                        try //expiry date try
                         {
-                            medicationid = int.Parse(txtPreMedicationID.Text.Trim());
+                            expirydate = dtpPreExpirationDate.Value;
 
-                            try //expiry date try
+                            try //refill counter try
                             {
-                                expirydate = dtpPreExpirationDate.Value;
+                                refillcounter = int.Parse(txtPreNumOfRefills.Text.Trim());
 
-                                try //refill counter try
+                                try //database insert try
                                 {
-                                    refillcounter = int.Parse(txtPreNumOfRefills.Text.Trim());
-
                                     int result = npf.NewPrescription(clientid, physicianid, medicationid, expirydate, refillcounter);
 
                                     if (result == -1)
@@ -311,40 +320,29 @@ namespace FinalProject
 
                                         btnPreClear_Click(sender, e);
                                     }
-
-                                }
-                                catch (Exception ex) //refill counter catch
+                                } catch (Exception ex) //database insert catch
                                 {
-                                    erpEmployee.SetError(txtPreNumOfRefills, "Error: numbers only");
+                                    throw new ArgumentException(ex.Message);
                                 }
-
-                            }
-                            catch (Exception ex) //expiry date catch
+                            } catch (Exception ex) //refill counter catch
                             {
-                                erpEmployee.SetError(dtpPreExpirationDate, "Error: Dates only");
+                                erpEmployee.SetError(txtPreNumOfRefills, "Error: numbers only");
                             }
-
-                        }
-                        catch (Exception ex) //medication id catch
+                        } catch (Exception ex) //expiry date catch
                         {
-                            erpEmployee.SetError(txtPreMedicationID, "Error: numbers only");
+                            erpEmployee.SetError(dtpPreExpirationDate, "Error: Dates only");
                         }
-
-                    }
-                    catch (Exception ex) //physician id catch
+                    } catch (Exception ex) //medication id catch
                     {
-                        erpEmployee.SetError(txtPrePhysicanID, "Error: numbers only");
+                        erpEmployee.SetError(txtPreMedicationID, "Error: numbers only");
                     }
-
-                }
-                catch (Exception ex) //client id catch
+                } catch (Exception ex) //physician id catch
                 {
-                    erpEmployee.SetError(txtPreClientID, "Error: numbers only");
+                    erpEmployee.SetError(txtPrePhysicanID, "Error: numbers only");
                 }
-            }
-            catch (Exception ex)
+            } catch (Exception ex) //client id catch
             {
-                throw new ArgumentException(ex.Message);
+                erpEmployee.SetError(txtPreClientID, "Error: numbers only");
             }
         }
 
@@ -553,7 +551,7 @@ namespace FinalProject
         }
 
         /***    CONTEXT MENUS    ***/
-
+        /***    Client    ***/
         private void cmuClientUpdate_Click(object sender, EventArgs e)
         {
             string clientid = "";
@@ -623,6 +621,7 @@ namespace FinalProject
             }
         }
 
+        /***    Prescription    ***/
         private void cmuPrescriptionUpdate_Click(object sender, EventArgs e)
         {
             string prescriptionid = "";
@@ -638,6 +637,12 @@ namespace FinalProject
             }
         }
 
+        private void cmuPrescriptionBack_Click(object sender, EventArgs e)
+        {
+            btnSearch_Click(sender, e);
+        }
+
+        /***    Refill    ***/
         private void cmuRefillUpdate_Click(object sender, EventArgs e)
         {
             string refillid = "";
@@ -680,20 +685,10 @@ namespace FinalProject
             }
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void cmuRefillBack_Click(object sender, EventArgs e)
         {
             btnSearch_Click(sender, e);
 
-        }
-
-        private void cmuPrescriptionBack_Click(object sender, EventArgs e)
-        {
-            btnSearch_Click(sender, e);
         }
     }
 }

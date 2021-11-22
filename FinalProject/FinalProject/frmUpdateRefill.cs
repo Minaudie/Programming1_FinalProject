@@ -14,6 +14,7 @@ namespace FinalProject
     public partial class frmUpdateRefill : Form
     {
         private frmEmployee frmEmployee;
+
         public frmUpdateRefill(frmEmployee emp)
         {
             InitializeComponent();
@@ -25,9 +26,9 @@ namespace FinalProject
             try
             {
                 DataSet ds = new DataSet();
-                DatabaseConnections urf = new DatabaseConnections();
+                DatabaseConnections dc = new DatabaseConnections();
                 //refillID
-                ds = urf.GetRefillByID(frmEmployee.g_refillID);
+                ds = dc.GetRefillByID(frmEmployee.g_refillID);
 
                 if (ds.Tables[0].Rows.Count > 0)
                 {
@@ -55,55 +56,51 @@ namespace FinalProject
             string dosage = "", frequency = ""; 
             int supplydays = 0, quantitysupplied = 0, prescriptionid = 0, refillid = 0;
    
-                DatabaseConnections nrf = new DatabaseConnections();
+                DatabaseConnections dc = new DatabaseConnections();
             
 
             try //prescription id
-                {
+            {
                     prescriptionid = int.Parse(txtUpdateRefPrescriptionID.Text.Trim());
                 
-                try
-                    {
+                try //supply days try
+                {
                         dosage = txtUpdateRefDosage.Text.Trim();
                         frequency = txtUpdateRefFrequency.Text.Trim();
                         supplydays = int.Parse(txtUpdateRefSupplyDays.Text.Trim());
-                    try
+                    try //quantity supplied try
                     {
                         quantitysupplied = int.Parse(txtUpdateRefQuantitySupplied.Text.Trim());
 
-                        try
+                        try //database update try
                         {
-                            nrf.UpdateRefill(refillid, prescriptionid, dosage, frequency, supplydays, quantitysupplied);
+                            dc.UpdateRefill(refillid, prescriptionid, dosage, frequency, supplydays, quantitysupplied);
+
                             MessageBox.Show("Refill record updated successfully.", "Record Updated", MessageBoxButtons.OK,
                                       MessageBoxIcon.Information);
+
                             this.Close();
-                        }
-                        catch(Exception ex)
+
+                        } catch(Exception ex) //datebase update catch
                         {
                             throw new ArgumentException(ex.Message);
                         }
-                    }
-                    
-                    catch (Exception ex) //quantity catch
+                    } catch (Exception ex) //quantity catch
                     {
                         erpUpdateRefill.SetError(txtUpdateRefQuantitySupplied, "Error: numbers only");
                     }
 
-                    }
-                    catch (Exception ex) //supply days catch
-                    {
-                        erpUpdateRefill.SetError(txtUpdateRefSupplyDays, "Error: numbers only");
-                    }
-
-                }
-                catch (Exception ex) //prescription id catch
+                } catch (Exception ex) //supply days catch
                 {
-                    erpUpdateRefill.SetError(txtUpdateRefPrescriptionID, "Error: numbers only");
+                    erpUpdateRefill.SetError(txtUpdateRefSupplyDays, "Error: numbers only");
                 }
+            } catch (Exception ex) //prescription id catch
+            {
+                    erpUpdateRefill.SetError(txtUpdateRefPrescriptionID, "Error: numbers only");
             }
-            
         }
     }
+}
 
        
     

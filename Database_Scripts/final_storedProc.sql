@@ -55,7 +55,7 @@ BEGIN
 
 				--create record for clientInsurance
 				INSERT INTO clientInsurance(clientID, insuranceID, clientInsuranceNum)
-				VALUES(@RESULT, 1, @RESULT)
+				VALUES(@RESULT, 1, @RESULT + 100)
 
 				RETURN @RESULT
 			END
@@ -530,7 +530,7 @@ BEGIN
 END
 GO
 
-ALTER PROC returnClientIDByUsername(
+CREATE PROC returnClientIDByUsername(
 	@username VARCHAR(25)
 )
 AS

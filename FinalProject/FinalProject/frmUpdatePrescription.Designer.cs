@@ -92,7 +92,7 @@ namespace FinalProject
             // 
             // btnUpdatePreUpdate
             // 
-            this.btnUpdatePreUpdate.Location = new System.Drawing.Point(140, 225);
+            this.btnUpdatePreUpdate.Location = new System.Drawing.Point(165, 225);
             this.btnUpdatePreUpdate.Name = "btnUpdatePreUpdate";
             this.btnUpdatePreUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdatePreUpdate.TabIndex = 6;
@@ -103,7 +103,7 @@ namespace FinalProject
             // btnUpdatePreClear
             // 
             this.btnUpdatePreClear.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnUpdatePreClear.Location = new System.Drawing.Point(334, 225);
+            this.btnUpdatePreClear.Location = new System.Drawing.Point(322, 225);
             this.btnUpdatePreClear.Name = "btnUpdatePreClear";
             this.btnUpdatePreClear.Size = new System.Drawing.Size(75, 23);
             this.btnUpdatePreClear.TabIndex = 7;
@@ -269,7 +269,7 @@ namespace FinalProject
             this.Controls.Add(this.txtUpdatePrePhysicanID);
             this.Controls.Add(this.txtUpdatePreClientID);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmUpdatePrescription";
             this.Text = "Update Prescription";
             this.Load += new System.EventHandler(this.frmUpdatePrescription_Load);

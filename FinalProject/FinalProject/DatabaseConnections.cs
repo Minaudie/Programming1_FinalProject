@@ -90,7 +90,6 @@ namespace FinalProject
         }
 
         //select all of a clients refills BY CLIENT ID
-        //use for search tab -> search refills
         public DataSet GetAllClientRefills(int clientid)
         {
             try
@@ -171,7 +170,7 @@ namespace FinalProject
                 cmdString.Parameters.Clear();
                 cmdString.Connection = myConn;
 
-                //stored procedure -> selectRefill, takes @refillID
+                //stored procedure -> selectPrescription, takes @prescriptionID
                 cmdString.CommandType = CommandType.StoredProcedure;
                 cmdString.CommandTimeout = 1500;
                 cmdString.CommandText = "selectPrescription";
@@ -206,7 +205,6 @@ namespace FinalProject
                 cmdString.Parameters.Clear();
                 cmdString.Connection = myConn;
 
-                //stored procedure -> selectRefill, takes @refillID
                 cmdString.CommandType = CommandType.StoredProcedure;
                 cmdString.CommandTimeout = 1500;
                 cmdString.CommandText = "returnClientIDByUsername";
@@ -242,7 +240,6 @@ namespace FinalProject
                 cmdString.Parameters.Clear();
                 cmdString.Connection = myConn;
 
-                //stored procedure -> selectRefill, takes @refillID
                 cmdString.CommandType = CommandType.StoredProcedure;
                 cmdString.CommandTimeout = 1500;
                 cmdString.CommandText = "selectPrescriptionPrice";
@@ -581,7 +578,7 @@ namespace FinalProject
                 myConn.Open();
                 //clear any parameters
                 cmdString.Parameters.Clear();
-                // command
+
                 cmdString.Connection = myConn;
                 cmdString.CommandType = CommandType.StoredProcedure;
                 cmdString.CommandTimeout = 1500;

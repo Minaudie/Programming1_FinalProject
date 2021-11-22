@@ -25,9 +25,9 @@ namespace FinalProject
             try
             {
                 DataSet ds = new DataSet();
-                DatabaseConnections upf = new DatabaseConnections();
+                DatabaseConnections dc = new DatabaseConnections();
 
-                ds = upf.GetPrescriptionByID(frmEmployee.g_prescriptionID);
+                ds = dc.GetPrescriptionByID(frmEmployee.g_prescriptionID);
 
                 if (ds.Tables[0].Rows.Count > 0)
                 {
@@ -38,7 +38,6 @@ namespace FinalProject
                     txtUpdatePreMedicationID.Text = ds.Tables[0].Rows[0]["medicineID"].ToString();
                     dtpUpdatePreExpirationDate.Value = DateTime.Parse(ds.Tables[0].Rows[0]["expiryDate"].ToString());
                     txtUpdatePreNumOfRefills.Text = ds.Tables[0].Rows[0]["refillCounter"].ToString();
-       
                 }
             }
             catch (Exception ex)
@@ -52,9 +51,9 @@ namespace FinalProject
             int clientid = 0, physicianid = 0, medicationid = 0, refillcounter = 0, prescriptionid = 0;
             DateTime expirydate;
 
-            try
+            try //prescription try
             {
-                DatabaseConnections npf = new DatabaseConnections();
+                DatabaseConnections dc = new DatabaseConnections();
                 prescriptionid = int.Parse(txtUpdatePreClientID.Text.Trim());
 
                 try //client id try
@@ -77,62 +76,49 @@ namespace FinalProject
                                 {
                                     refillcounter = int.Parse(txtUpdatePreNumOfRefills.Text.Trim());
 
-                                    //int result =
-                                     npf.UpdatePrescription(prescriptionid, clientid, physicianid, medicationid, expirydate, refillcounter);
+                                    try //database update try
+                                    {
+                                        dc.UpdatePrescription(prescriptionid, clientid, physicianid, medicationid, expirydate, refillcounter);
 
-                                    /*if (result == -1)
-                                    {
-                                        MessageBox.Show("Error while inserting record.", "Error",
-                                            MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                    }
-                                    else //any other value
-                                    {
-                                        MessageBox.Show("Success. New prescription ID is: " + result, "New Prescription ID",
-                                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                        MessageBox.Show("Prescription record updated successfully.", "Record Updated", MessageBoxButtons.OK,
+                                             MessageBoxIcon.Information);
 
                                         this.Close();
-                                    }*/
-                                    MessageBox.Show("Prescription record updated successfully.", "Record Updated", MessageBoxButtons.OK,
-                                         MessageBoxIcon.Information);
-                                    this.Close();
 
+                                    } catch (Exception ex)
+                                    {
+                                        throw new ArgumentException(ex.Message);
+                                    }
                                 }
                                 catch (Exception ex) //refill counter catch
                                 {
                                     erpUpdatePrescription.SetError(txtUpdatePreNumOfRefills, "Error: numbers only");
                                 }
-
                             }
                             catch (Exception ex) //expiry date catch
                             {
                                 erpUpdatePrescription.SetError(dtpUpdatePreExpirationDate, "Error: Dates only");
                             }
-
                         }
                         catch (Exception ex) //medication id catch
                         {
                             erpUpdatePrescription.SetError(txtUpdatePreMedicationID, "Error: numbers only");
                         }
-
                     }
                     catch (Exception ex) //physician id catch
                     {
                         erpUpdatePrescription.SetError(txtUpdatePrePhysicanID, "Error: numbers only");
                     }
-
                 }
                 catch (Exception ex) //client id catch
                 {
                     erpUpdatePrescription.SetError(txtUpdatePreClientID, "Error: numbers only");
                 }
             }
-            catch (Exception ex)
+            catch (Exception ex) //prescription catch
             {
-                throw new ArgumentException(ex.Message);
+                erpUpdatePrescription.SetError(txtUpdatePrescriptionID, "Error: numbers only");
             }
         }
     }
-
-       
-    
 }

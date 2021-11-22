@@ -5,6 +5,9 @@
 
 USE mmn_FinalProject;
 
+EXEC addNewInsurance 'Green Falls Insurance',20.0,'717-555-2929','181 West Fork Drive','',
+	'Hollywood','Florida','33024'
+
 EXEC addNewClient 'Pauline', 'D','Patterson','1489 Courtright St.','','Carson','North Dakota',
 	'58529', '701-555-8415','patterson@hotmail.com','F', '8/31/1983'
 
@@ -34,29 +37,6 @@ EXEC addNewClient 'Lisa','T','Herrera','22 Finley Avenue','','Reeder','North Dak
 
 EXEC addNewClient 'Melanie','J','Tucker','26 Timber Oak Drive','','Sherman Oaks','California',
 	'91430','805-555-2276','melanie@hotmail.com','F','1990/11/12'
-
-EXEC addNewInsurance 'Green Falls Insurance',20.0,'717-555-2929','181 West Fork Drive','',
-	'Hollywood','Florida','33024'
-
-EXEC newClientInsuranceRecord 1,1,1
-
-EXEC newClientInsuranceRecord 2,1,2
-
-EXEC newClientInsuranceRecord 3,1,3
-
-EXEC newClientInsuranceRecord 4,1,4
-
-EXEC newClientInsuranceRecord 5,1,5
-
-EXEC newClientInsuranceRecord 6,1,6
-
-EXEC newClientInsuranceRecord 7,1,7
-
-EXEC newClientInsuranceRecord 8,1,8
-
-EXEC newClientInsuranceRecord 9,1,9
-
-EXEC newClientInsuranceRecord 10,1,10
 
 EXEC addNewPhysician 'Margaret','D','Vecchio','954-555-0866','margaretmd@yahoo.com'
 

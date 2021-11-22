@@ -56,6 +56,7 @@ namespace FinalProject
         private void lnkLandingNewClient_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             frmRegister frm = new frmRegister();
+            ClearTextBoxes();
             frm.Show();
         }
 
