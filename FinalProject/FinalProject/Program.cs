@@ -13,7 +13,7 @@ namespace FinalProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmLanding());
+            Application.Run(new frmRegister());
         }
     }
 }
