@@ -60,6 +60,10 @@ EXEC newClientInsuranceRecord 10,1,10
 
 EXEC addNewPhysician 'Margaret','D','Vecchio','954-555-0866','margaretmd@yahoo.com'
 
+EXEC addNewPhysician 'Jameson','P','McFarlane','659-456-9852','jameson@aim.com'
+
+EXEC addNewPhysician 'Tyler','L','Greg','856-854-7132','greg@yahoo.com'
+
 EXEC addNewMedicine 'Morphine','oral',100.00
 
 EXEC addNewMedicine 'Sophiclox','oral',50.00

@@ -494,7 +494,7 @@ namespace FinalProject
         }
 
         public void UpdatePrescription(int prescriptionid, int clientid, int physicianid, int medicineid,
-            string expirydate, int refillcounter)
+            DateTime expirydate, int refillcounter)
         {
             try
             {
@@ -510,7 +510,7 @@ namespace FinalProject
                 cmdString.Parameters.Add("@clientID", SqlDbType.Int).Value = clientid;
                 cmdString.Parameters.Add("@physicianID", SqlDbType.Int).Value = physicianid;
                 cmdString.Parameters.Add("@medicineID", SqlDbType.Int).Value = medicineid;
-                cmdString.Parameters.Add("@expiryDate", SqlDbType.Date).Value = DateTime.Parse(expirydate);
+                cmdString.Parameters.Add("@expiryDate", SqlDbType.Date).Value = expirydate;
                 cmdString.Parameters.Add("@refillCounter", SqlDbType.TinyInt).Value = refillcounter;
                 // adapter and dataset
                 SqlDataAdapter aAdapter = new SqlDataAdapter();
@@ -551,11 +551,16 @@ namespace FinalProject
                 cmdString.Parameters.Add("@supplyDays", SqlDbType.TinyInt).Value = supplydays;
                 cmdString.Parameters.Add("@quantitySupplied", SqlDbType.TinyInt).Value = quantitysupplied;
                 // adapter and dataset
-                SqlDataAdapter aAdapter = new SqlDataAdapter();
+                cmdString.Parameters.Add("@Return", SqlDbType.Int).Direction = ParameterDirection.ReturnValue;
 
+                SqlDataAdapter aAdapter = new SqlDataAdapter();
                 aAdapter.SelectCommand = cmdString;
 
                 cmdString.ExecuteNonQuery();
+
+                int returnVal = (int)cmdString.Parameters["@Return"].Value;
+
+                //return returnVal;
 
             }
             catch (Exception ex)

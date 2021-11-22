@@ -47,6 +47,7 @@ namespace FinalProject
             this.cmuRefill = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cmuRefillUpdate = new System.Windows.Forms.ToolStripMenuItem();
             this.cmuRefillDelete = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmuRefillBack = new System.Windows.Forms.ToolStripMenuItem();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.dgvClient = new System.Windows.Forms.DataGridView();
@@ -78,6 +79,7 @@ namespace FinalProject
             this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmuPrescription = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cmuPrescriptionUpdate = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmuPrescriptionBack = new System.Windows.Forms.ToolStripMenuItem();
             this.tabNewRefill = new System.Windows.Forms.TabPage();
             this.txtRefPaymentType = new System.Windows.Forms.Label();
             this.cboRefPaymentType = new System.Windows.Forms.ComboBox();
@@ -186,7 +188,7 @@ namespace FinalProject
             this.tabSearch.Controls.Add(this.dgvPre);
             this.tabSearch.Location = new System.Drawing.Point(4, 25);
             this.tabSearch.Name = "tabSearch";
-            this.tabSearch.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabSearch.Padding = new System.Windows.Forms.Padding(2);
             this.tabSearch.Size = new System.Drawing.Size(794, 441);
             this.tabSearch.TabIndex = 4;
             this.tabSearch.Text = "Search";
@@ -297,23 +299,31 @@ namespace FinalProject
             this.cmuRefill.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.cmuRefill.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cmuRefillUpdate,
-            this.cmuRefillDelete});
+            this.cmuRefillDelete,
+            this.cmuRefillBack});
             this.cmuRefill.Name = "contextMenuRefill";
-            this.cmuRefill.Size = new System.Drawing.Size(113, 48);
+            this.cmuRefill.Size = new System.Drawing.Size(150, 70);
             // 
             // cmuRefillUpdate
             // 
             this.cmuRefillUpdate.Name = "cmuRefillUpdate";
-            this.cmuRefillUpdate.Size = new System.Drawing.Size(112, 22);
+            this.cmuRefillUpdate.Size = new System.Drawing.Size(149, 22);
             this.cmuRefillUpdate.Text = "Update";
             this.cmuRefillUpdate.Click += new System.EventHandler(this.cmuRefillUpdate_Click);
             // 
             // cmuRefillDelete
             // 
             this.cmuRefillDelete.Name = "cmuRefillDelete";
-            this.cmuRefillDelete.Size = new System.Drawing.Size(112, 22);
+            this.cmuRefillDelete.Size = new System.Drawing.Size(149, 22);
             this.cmuRefillDelete.Text = "Delete";
             this.cmuRefillDelete.Click += new System.EventHandler(this.cmuRefillDelete_Click);
+            // 
+            // cmuRefillBack
+            // 
+            this.cmuRefillBack.Name = "cmuRefillBack";
+            this.cmuRefillBack.Size = new System.Drawing.Size(149, 22);
+            this.cmuRefillBack.Text = "Back To Client";
+            this.cmuRefillBack.Click += new System.EventHandler(this.cmuRefillBack_Click);
             // 
             // txtSearch
             // 
@@ -607,16 +617,24 @@ namespace FinalProject
             // 
             this.cmuPrescription.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.cmuPrescription.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cmuPrescriptionUpdate});
+            this.cmuPrescriptionUpdate,
+            this.cmuPrescriptionBack});
             this.cmuPrescription.Name = "contextMenuPre";
-            this.cmuPrescription.Size = new System.Drawing.Size(113, 26);
+            this.cmuPrescription.Size = new System.Drawing.Size(181, 70);
             // 
             // cmuPrescriptionUpdate
             // 
             this.cmuPrescriptionUpdate.Name = "cmuPrescriptionUpdate";
-            this.cmuPrescriptionUpdate.Size = new System.Drawing.Size(112, 22);
+            this.cmuPrescriptionUpdate.Size = new System.Drawing.Size(180, 22);
             this.cmuPrescriptionUpdate.Text = "Update";
             this.cmuPrescriptionUpdate.Click += new System.EventHandler(this.cmuPrescriptionUpdate_Click);
+            // 
+            // cmuPrescriptionBack
+            // 
+            this.cmuPrescriptionBack.Name = "cmuPrescriptionBack";
+            this.cmuPrescriptionBack.Size = new System.Drawing.Size(180, 22);
+            this.cmuPrescriptionBack.Text = "Back To Client";
+            this.cmuPrescriptionBack.Click += new System.EventHandler(this.cmuPrescriptionBack_Click);
             // 
             // tabNewRefill
             // 
@@ -639,7 +657,7 @@ namespace FinalProject
             this.tabNewRefill.Controls.Add(this.label27);
             this.tabNewRefill.Location = new System.Drawing.Point(4, 25);
             this.tabNewRefill.Name = "tabNewRefill";
-            this.tabNewRefill.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabNewRefill.Padding = new System.Windows.Forms.Padding(2);
             this.tabNewRefill.Size = new System.Drawing.Size(794, 441);
             this.tabNewRefill.TabIndex = 3;
             this.tabNewRefill.Text = "New Refill";
@@ -663,7 +681,7 @@ namespace FinalProject
             "Debit",
             "Check"});
             this.cboRefPaymentType.Location = new System.Drawing.Point(308, 190);
-            this.cboRefPaymentType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboRefPaymentType.Margin = new System.Windows.Forms.Padding(2);
             this.cboRefPaymentType.Name = "cboRefPaymentType";
             this.cboRefPaymentType.Size = new System.Drawing.Size(100, 21);
             this.cboRefPaymentType.TabIndex = 6;
@@ -812,7 +830,7 @@ namespace FinalProject
             this.tabNewPrescription.Controls.Add(this.txtPreClientID);
             this.tabNewPrescription.Location = new System.Drawing.Point(4, 25);
             this.tabNewPrescription.Name = "tabNewPrescription";
-            this.tabNewPrescription.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabNewPrescription.Padding = new System.Windows.Forms.Padding(2);
             this.tabNewPrescription.Size = new System.Drawing.Size(794, 441);
             this.tabNewPrescription.TabIndex = 2;
             this.tabNewPrescription.Text = "New Prescription";
@@ -974,7 +992,7 @@ namespace FinalProject
             this.tabNewPhysician.Controls.Add(this.label14);
             this.tabNewPhysician.Location = new System.Drawing.Point(4, 25);
             this.tabNewPhysician.Name = "tabNewPhysician";
-            this.tabNewPhysician.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabNewPhysician.Padding = new System.Windows.Forms.Padding(2);
             this.tabNewPhysician.Size = new System.Drawing.Size(794, 441);
             this.tabNewPhysician.TabIndex = 1;
             this.tabNewPhysician.Text = "New Physician";
@@ -1137,7 +1155,7 @@ namespace FinalProject
             this.tabNewClient.Controls.Add(this.label1);
             this.tabNewClient.Location = new System.Drawing.Point(4, 25);
             this.tabNewClient.Name = "tabNewClient";
-            this.tabNewClient.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabNewClient.Padding = new System.Windows.Forms.Padding(2);
             this.tabNewClient.Size = new System.Drawing.Size(794, 441);
             this.tabNewClient.TabIndex = 0;
             this.tabNewClient.Text = "New Client";
@@ -1150,7 +1168,7 @@ namespace FinalProject
             "F",
             "O"});
             this.cmboClientGender.Location = new System.Drawing.Point(349, 296);
-            this.cmboClientGender.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmboClientGender.Margin = new System.Windows.Forms.Padding(2);
             this.cmboClientGender.Name = "cmboClientGender";
             this.cmboClientGender.Size = new System.Drawing.Size(100, 21);
             this.cmboClientGender.TabIndex = 36;
@@ -1613,5 +1631,7 @@ namespace FinalProject
         public System.Windows.Forms.DataGridView dgvRefill;
         private System.Windows.Forms.ErrorProvider erpEmployee;
         private System.Windows.Forms.ComboBox cmboClientGender;
+        private System.Windows.Forms.ToolStripMenuItem cmuRefillBack;
+        private System.Windows.Forms.ToolStripMenuItem cmuPrescriptionBack;
     }
 }

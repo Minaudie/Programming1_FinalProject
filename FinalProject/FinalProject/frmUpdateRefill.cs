@@ -52,46 +52,42 @@ namespace FinalProject
 
         private void btnUpdateRefillUpdate_Click(object sender, EventArgs e)
         {
-            string dosage = "", frequency = "";
-            int supplydays = 0, quantitysupplied = 0, prescriptionid = 0;
-
-            try
-            {
+            string dosage = "", frequency = ""; 
+            int supplydays = 0, quantitysupplied = 0, prescriptionid = 0, refillid = 0;
+   
                 DatabaseConnections nrf = new DatabaseConnections();
+            
 
-                try //prescription id
+            try //prescription id
                 {
                     prescriptionid = int.Parse(txtUpdateRefPrescriptionID.Text.Trim());
-
-                    try
+                
+                try
                     {
                         dosage = txtUpdateRefDosage.Text.Trim();
                         frequency = txtUpdateRefFrequency.Text.Trim();
                         supplydays = int.Parse(txtUpdateRefSupplyDays.Text.Trim());
+                    try
+                    {
+                        quantitysupplied = int.Parse(txtUpdateRefQuantitySupplied.Text.Trim());
 
                         try
                         {
-                            quantitysupplied = int.Parse(txtUpdateRefQuantitySupplied.Text.Trim());
-
-                            int result = nrf.NewRefill(prescriptionid, dosage, frequency, supplydays, quantitysupplied);
-
-                            if (result == -1)
-                            {
-                                MessageBox.Show("Error while inserting record.", "Error",
-                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
-                            else //any other value
-                            {
-                                MessageBox.Show("Success. New refill ID is: " + result, "Updated Refill ID",
-                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                                this.Close();
-                            }
+                            nrf.UpdateRefill(refillid, prescriptionid, dosage, frequency, supplydays, quantitysupplied);
+                            MessageBox.Show("Refill record updated successfully.", "Record Updated", MessageBoxButtons.OK,
+                                      MessageBoxIcon.Information);
+                            this.Close();
                         }
-                        catch (Exception ex) //quantity catch
+                        catch(Exception ex)
                         {
-                            erpUpdateRefill.SetError(txtUpdateRefQuantitySupplied, "Error: numbers only");
+                            throw new ArgumentException(ex.Message);
                         }
+                    }
+                    
+                    catch (Exception ex) //quantity catch
+                    {
+                        erpUpdateRefill.SetError(txtUpdateRefQuantitySupplied, "Error: numbers only");
+                    }
 
                     }
                     catch (Exception ex) //supply days catch
@@ -105,13 +101,10 @@ namespace FinalProject
                     erpUpdateRefill.SetError(txtUpdateRefPrescriptionID, "Error: numbers only");
                 }
             }
-            catch (Exception ex)
-            {
-                throw new ArgumentException(ex.Message);
-            }
+            
         }
     }
 
        
     
-}
+

@@ -684,5 +684,16 @@ namespace FinalProject
         {
 
         }
+
+        private void cmuRefillBack_Click(object sender, EventArgs e)
+        {
+            btnSearch_Click(sender, e);
+
+        }
+
+        private void cmuPrescriptionBack_Click(object sender, EventArgs e)
+        {
+            btnSearch_Click(sender, e);
+        }
     }
 }

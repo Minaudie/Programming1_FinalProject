@@ -38,6 +38,7 @@ namespace FinalProject
                     txtUpdatePreMedicationID.Text = ds.Tables[0].Rows[0]["medicineID"].ToString();
                     dtpUpdatePreExpirationDate.Value = DateTime.Parse(ds.Tables[0].Rows[0]["expiryDate"].ToString());
                     txtUpdatePreNumOfRefills.Text = ds.Tables[0].Rows[0]["refillCounter"].ToString();
+       
                 }
             }
             catch (Exception ex)
@@ -48,12 +49,13 @@ namespace FinalProject
 
         private void btnUpdatePreUpdate_Click(object sender, EventArgs e)
         {
-            int clientid = 0, physicianid = 0, medicationid = 0, refillcounter = 0;
+            int clientid = 0, physicianid = 0, medicationid = 0, refillcounter = 0, prescriptionid = 0;
             DateTime expirydate;
 
             try
             {
                 DatabaseConnections npf = new DatabaseConnections();
+                prescriptionid = int.Parse(txtUpdatePreClientID.Text.Trim());
 
                 try //client id try
                 {
@@ -75,9 +77,10 @@ namespace FinalProject
                                 {
                                     refillcounter = int.Parse(txtUpdatePreNumOfRefills.Text.Trim());
 
-                                    int result = npf.NewPrescription(clientid, physicianid, medicationid, expirydate, refillcounter);
+                                    //int result =
+                                     npf.UpdatePrescription(prescriptionid, clientid, physicianid, medicationid, expirydate, refillcounter);
 
-                                    if (result == -1)
+                                    /*if (result == -1)
                                     {
                                         MessageBox.Show("Error while inserting record.", "Error",
                                             MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -88,7 +91,10 @@ namespace FinalProject
                                             MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                                         this.Close();
-                                    }
+                                    }*/
+                                    MessageBox.Show("Prescription record updated successfully.", "Record Updated", MessageBoxButtons.OK,
+                                         MessageBoxIcon.Information);
+                                    this.Close();
 
                                 }
                                 catch (Exception ex) //refill counter catch
