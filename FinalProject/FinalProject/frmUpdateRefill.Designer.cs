@@ -62,7 +62,7 @@ namespace FinalProject
             this.txtUpdateRefPrescriptionID.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtUpdateRefPrescriptionID.Name = "txtUpdateRefPrescriptionID";
             this.txtUpdateRefPrescriptionID.Size = new System.Drawing.Size(196, 31);
-            this.txtUpdateRefPrescriptionID.TabIndex = 0;
+            this.txtUpdateRefPrescriptionID.TabIndex = 1;
             // 
             // txtUpdateRefDosage
             // 
@@ -70,7 +70,7 @@ namespace FinalProject
             this.txtUpdateRefDosage.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtUpdateRefDosage.Name = "txtUpdateRefDosage";
             this.txtUpdateRefDosage.Size = new System.Drawing.Size(196, 31);
-            this.txtUpdateRefDosage.TabIndex = 1;
+            this.txtUpdateRefDosage.TabIndex = 2;
             // 
             // txtUpdateRefFrequency
             // 
@@ -78,7 +78,7 @@ namespace FinalProject
             this.txtUpdateRefFrequency.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtUpdateRefFrequency.Name = "txtUpdateRefFrequency";
             this.txtUpdateRefFrequency.Size = new System.Drawing.Size(196, 31);
-            this.txtUpdateRefFrequency.TabIndex = 2;
+            this.txtUpdateRefFrequency.TabIndex = 3;
             // 
             // txtUpdateRefSupplyDays
             // 
@@ -86,7 +86,7 @@ namespace FinalProject
             this.txtUpdateRefSupplyDays.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtUpdateRefSupplyDays.Name = "txtUpdateRefSupplyDays";
             this.txtUpdateRefSupplyDays.Size = new System.Drawing.Size(196, 31);
-            this.txtUpdateRefSupplyDays.TabIndex = 3;
+            this.txtUpdateRefSupplyDays.TabIndex = 4;
             // 
             // txtUpdateRefQuantitySupplied
             // 
@@ -94,7 +94,7 @@ namespace FinalProject
             this.txtUpdateRefQuantitySupplied.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtUpdateRefQuantitySupplied.Name = "txtUpdateRefQuantitySupplied";
             this.txtUpdateRefQuantitySupplied.Size = new System.Drawing.Size(196, 31);
-            this.txtUpdateRefQuantitySupplied.TabIndex = 4;
+            this.txtUpdateRefQuantitySupplied.TabIndex = 5;
             // 
             // label31
             // 
@@ -162,7 +162,7 @@ namespace FinalProject
             this.txtUpdateRefillID.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtUpdateRefillID.Name = "txtUpdateRefillID";
             this.txtUpdateRefillID.Size = new System.Drawing.Size(196, 31);
-            this.txtUpdateRefillID.TabIndex = 37;
+            this.txtUpdateRefillID.TabIndex = 0;
             // 
             // label2
             // 
@@ -180,7 +180,7 @@ namespace FinalProject
             this.txtUpdateRefAmountDue.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtUpdateRefAmountDue.Name = "txtUpdateRefAmountDue";
             this.txtUpdateRefAmountDue.Size = new System.Drawing.Size(196, 31);
-            this.txtUpdateRefAmountDue.TabIndex = 4;
+            this.txtUpdateRefAmountDue.TabIndex = 6;
             // 
             // dtpUpdateRefDateOfRefill
             // 
@@ -189,7 +189,7 @@ namespace FinalProject
             this.dtpUpdateRefDateOfRefill.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.dtpUpdateRefDateOfRefill.Name = "dtpUpdateRefDateOfRefill";
             this.dtpUpdateRefDateOfRefill.Size = new System.Drawing.Size(364, 31);
-            this.dtpUpdateRefDateOfRefill.TabIndex = 38;
+            this.dtpUpdateRefDateOfRefill.TabIndex = 7;
             // 
             // label3
             // 
@@ -207,7 +207,7 @@ namespace FinalProject
             this.btnUpdateRefillUpdate.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnUpdateRefillUpdate.Name = "btnUpdateRefillUpdate";
             this.btnUpdateRefillUpdate.Size = new System.Drawing.Size(150, 44);
-            this.btnUpdateRefillUpdate.TabIndex = 39;
+            this.btnUpdateRefillUpdate.TabIndex = 8;
             this.btnUpdateRefillUpdate.Text = "&Update";
             this.btnUpdateRefillUpdate.UseVisualStyleBackColor = true;
             this.btnUpdateRefillUpdate.Click += new System.EventHandler(this.btnUpdateRefillUpdate_Click);
@@ -219,7 +219,7 @@ namespace FinalProject
             this.btnUpdateRefillClear.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnUpdateRefillClear.Name = "btnUpdateRefillClear";
             this.btnUpdateRefillClear.Size = new System.Drawing.Size(150, 44);
-            this.btnUpdateRefillClear.TabIndex = 40;
+            this.btnUpdateRefillClear.TabIndex = 9;
             this.btnUpdateRefillClear.Text = "&Cancel";
             this.btnUpdateRefillClear.UseVisualStyleBackColor = true;
             // 
@@ -230,31 +230,37 @@ namespace FinalProject
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(468, 73);
+            this.label4.Location = new System.Drawing.Point(468, 70);
+            this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(20, 25);
-            this.label4.TabIndex = 41;
+            this.label4.Size = new System.Drawing.Size(23, 30);
+            this.label4.TabIndex = 53;
             this.label4.Text = "*";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(468, 120);
+            this.label5.Location = new System.Drawing.Point(468, 118);
+            this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(20, 25);
-            this.label5.TabIndex = 42;
+            this.label5.Size = new System.Drawing.Size(23, 30);
+            this.label5.TabIndex = 54;
             this.label5.Text = "*";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Red;
             this.label6.Location = new System.Drawing.Point(468, 323);
+            this.label6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(20, 25);
-            this.label6.TabIndex = 43;
+            this.label6.Size = new System.Drawing.Size(23, 30);
+            this.label6.TabIndex = 55;
             this.label6.Text = "*";
             // 
             // frmUpdateRefill
@@ -317,8 +323,8 @@ namespace FinalProject
         private System.Windows.Forms.Button btnUpdateRefillUpdate;
         private System.Windows.Forms.Button btnUpdateRefillClear;
         private System.Windows.Forms.ErrorProvider erpUpdateRefill;
+        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label6;
     }
 }
