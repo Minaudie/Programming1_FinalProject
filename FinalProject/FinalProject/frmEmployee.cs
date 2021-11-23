@@ -700,5 +700,10 @@ namespace FinalProject
             btnSearch_Click(sender, e);
 
         }
+
+        private void tabNewClient_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
