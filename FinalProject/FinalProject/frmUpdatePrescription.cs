@@ -51,74 +51,45 @@ namespace FinalProject
             int clientid = 0, physicianid = 0, medicationid = 0, refillcounter = 0, prescriptionid = 0;
             DateTime expirydate;
 
-            try //prescription try
+            DatabaseConnections dc = new DatabaseConnections();
+
+            try
             {
-                DatabaseConnections dc = new DatabaseConnections();
-                prescriptionid = int.Parse(txtUpdatePreClientID.Text.Trim());
+                prescriptionid = int.Parse(txtUpdatePrescriptionID.Text.Trim());
+                clientid = int.Parse(txtUpdatePreClientID.Text.Trim());
+                physicianid = int.Parse(txtUpdatePrePhysicanID.Text.Trim());
+                medicationid = int.Parse(txtUpdatePreMedicationID.Text.Trim());
+                expirydate = dtpUpdatePreExpirationDate.Value;
+                refillcounter = int.Parse(txtUpdatePreNumOfRefills.Text.Trim());
 
-                try //client id try
+                try
                 {
-                    clientid = int.Parse(txtUpdatePreClientID.Text.Trim());
+                    dc.UpdatePrescription(prescriptionid, clientid, physicianid, medicationid, expirydate, refillcounter);
 
-                    try //physician try
-                    {
-                        physicianid = int.Parse(txtUpdatePrePhysicanID.Text.Trim());
+                    MessageBox.Show("Prescription record updated successfully.", "Record Updated", MessageBoxButtons.OK,
+                         MessageBoxIcon.Information);
 
-                        try //medication try
-                        {
-                            medicationid = int.Parse(txtUpdatePreMedicationID.Text.Trim());
+                    //update dgv on frmEmployee search tab
+                    DataSet ds = new DataSet();
+                    ds = dc.GetPrescriptionByID(prescriptionid);
+                    frmEmployee.dgvPre.DataSource = ds.Tables[0];
 
-                            try //expiry date try
-                            {
-                                expirydate = dtpUpdatePreExpirationDate.Value;
-
-                                try //refill counter try
-                                {
-                                    refillcounter = int.Parse(txtUpdatePreNumOfRefills.Text.Trim());
-
-                                    try //database update try
-                                    {
-                                        dc.UpdatePrescription(prescriptionid, clientid, physicianid, medicationid, expirydate, refillcounter);
-
-                                        MessageBox.Show("Prescription record updated successfully.", "Record Updated", MessageBoxButtons.OK,
-                                             MessageBoxIcon.Information);
-
-                                        this.Close();
-
-                                    } catch (Exception ex)
-                                    {
-                                        throw new ArgumentException(ex.Message);
-                                    }
-                                }
-                                catch (Exception ex) //refill counter catch
-                                {
-                                    erpUpdatePrescription.SetError(txtUpdatePreNumOfRefills, "Error: numbers only");
-                                }
-                            }
-                            catch (Exception ex) //expiry date catch
-                            {
-                                erpUpdatePrescription.SetError(dtpUpdatePreExpirationDate, "Error: Dates only");
-                            }
-                        }
-                        catch (Exception ex) //medication id catch
-                        {
-                            erpUpdatePrescription.SetError(txtUpdatePreMedicationID, "Error: numbers only");
-                        }
-                    }
-                    catch (Exception ex) //physician id catch
-                    {
-                        erpUpdatePrescription.SetError(txtUpdatePrePhysicanID, "Error: numbers only");
-                    }
-                }
-                catch (Exception ex) //client id catch
+                    this.Close();
+                } catch (Exception ex)
                 {
-                    erpUpdatePrescription.SetError(txtUpdatePreClientID, "Error: numbers only");
+                    throw new ArgumentException(ex.Message);
                 }
-            }
-            catch (Exception ex) //prescription catch
+
+            } catch (Exception ex)
             {
-                erpUpdatePrescription.SetError(txtUpdatePrescriptionID, "Error: numbers only");
+                MessageBox.Show("Error: Numbers only.", "Error", MessageBoxButtons.OK,
+                 MessageBoxIcon.Error);
             }
+        }
+
+        private void btnUpdatePreCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

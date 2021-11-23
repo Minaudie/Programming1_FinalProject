@@ -56,47 +56,38 @@ namespace FinalProject
             string dosage = "", frequency = ""; 
             int supplydays = 0, quantitysupplied = 0, prescriptionid = 0, refillid = 0;
    
-                DatabaseConnections dc = new DatabaseConnections();
-            
+            DatabaseConnections dc = new DatabaseConnections();
+            dosage = txtUpdateRefDosage.Text.Trim();
+            frequency = txtUpdateRefFrequency.Text.Trim();
 
-            try //prescription id
+            try
             {
-                    prescriptionid = int.Parse(txtUpdateRefPrescriptionID.Text.Trim());
-                
-                try //supply days try
+                refillid = int.Parse(txtUpdateRefillID.Text.Trim());
+                prescriptionid = int.Parse(txtUpdateRefPrescriptionID.Text.Trim());
+                supplydays = int.Parse(txtUpdateRefSupplyDays.Text.Trim());
+                quantitysupplied = int.Parse(txtUpdateRefQuantitySupplied.Text.Trim());
+
+                try
                 {
-                        dosage = txtUpdateRefDosage.Text.Trim();
-                        frequency = txtUpdateRefFrequency.Text.Trim();
-                        supplydays = int.Parse(txtUpdateRefSupplyDays.Text.Trim());
-                    try //quantity supplied try
-                    {
-                        quantitysupplied = int.Parse(txtUpdateRefQuantitySupplied.Text.Trim());
+                    dc.UpdateRefill(refillid, prescriptionid, dosage, frequency, supplydays, quantitysupplied);
 
-                        try //database update try
-                        {
-                            dc.UpdateRefill(refillid, prescriptionid, dosage, frequency, supplydays, quantitysupplied);
+                    MessageBox.Show("Refill record updated successfully.", "Record Updated", MessageBoxButtons.OK,
+                              MessageBoxIcon.Information);
 
-                            MessageBox.Show("Refill record updated successfully.", "Record Updated", MessageBoxButtons.OK,
-                                      MessageBoxIcon.Information);
+                    //update dgv on frmEmployee search tab
+                    DataSet ds = new DataSet();
+                    ds = dc.GetRefillByID(refillid);
+                    frmEmployee.dgvRefill.DataSource = ds.Tables[0];
 
-                            this.Close();
-
-                        } catch(Exception ex) //datebase update catch
-                        {
-                            throw new ArgumentException(ex.Message);
-                        }
-                    } catch (Exception ex) //quantity catch
-                    {
-                        erpUpdateRefill.SetError(txtUpdateRefQuantitySupplied, "Error: numbers only");
-                    }
-
-                } catch (Exception ex) //supply days catch
+                    this.Close();
+                } catch (Exception ex)
                 {
-                    erpUpdateRefill.SetError(txtUpdateRefSupplyDays, "Error: numbers only");
+                    throw new ArgumentException(ex.Message);
                 }
-            } catch (Exception ex) //prescription id catch
+            } catch (Exception ex)
             {
-                    erpUpdateRefill.SetError(txtUpdateRefPrescriptionID, "Error: numbers only");
+                MessageBox.Show("Error: Numbers only.", "Error", MessageBoxButtons.OK,
+                 MessageBoxIcon.Error);
             }
         }
     }

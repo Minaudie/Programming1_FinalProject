@@ -77,19 +77,25 @@ namespace FinalProject
                 gender = txtUpdateClientGender.Text.Trim();
                 dob = txtUpdateClientDOB.Text.Trim();
 
-                dc.UpdateClient(clientid, fname, minit, lname, add1, add2, city, state,
+                try
+                {
+                    dc.UpdateClient(clientid, fname, minit, lname, add1, add2, city, state,
                     zip, phone, email, gender, dob);
 
-                MessageBox.Show("Client record updated successfully.", "Record Updated", MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
+                    MessageBox.Show("Client record updated successfully.", "Record Updated", MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
 
-                //update dgv on frmEmployee search tab
-                DataSet ds = new DataSet();
-                ds = dc.GetClientByID(clientid);
-                frmEmployee.dgvClient.DataSource = ds.Tables[0];
+                    //update dgv on frmEmployee search tab
+                    DataSet ds = new DataSet();
+                    ds = dc.GetClientByID(clientid);
+                    frmEmployee.dgvClient.DataSource = ds.Tables[0];
 
-                this.Close();
+                    this.Close();
 
+                } catch (Exception ex)
+                {
+                    throw new ArgumentException(ex.Message);
+                }
             } catch (Exception ex)
             {
                 throw new ArgumentException(ex.Message);
@@ -98,7 +104,7 @@ namespace FinalProject
 
         private void btnUpdateClientClear_Click(object sender, EventArgs e)
         {
-            
+            this.Close();
         }
     }
 }

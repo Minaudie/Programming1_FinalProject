@@ -35,7 +35,7 @@ namespace FinalProject
             this.label38 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
             this.btnUpdatePreUpdate = new System.Windows.Forms.Button();
-            this.btnUpdatePreClear = new System.Windows.Forms.Button();
+            this.btnUpdatePreCancel = new System.Windows.Forms.Button();
             this.dtpUpdatePreExpirationDate = new System.Windows.Forms.DateTimePicker();
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
@@ -100,15 +100,16 @@ namespace FinalProject
             this.btnUpdatePreUpdate.UseVisualStyleBackColor = true;
             this.btnUpdatePreUpdate.Click += new System.EventHandler(this.btnUpdatePreUpdate_Click);
             // 
-            // btnUpdatePreClear
+            // btnUpdatePreCancel
             // 
-            this.btnUpdatePreClear.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnUpdatePreClear.Location = new System.Drawing.Point(322, 225);
-            this.btnUpdatePreClear.Name = "btnUpdatePreClear";
-            this.btnUpdatePreClear.Size = new System.Drawing.Size(75, 23);
-            this.btnUpdatePreClear.TabIndex = 7;
-            this.btnUpdatePreClear.Text = "&Cancel";
-            this.btnUpdatePreClear.UseVisualStyleBackColor = true;
+            this.btnUpdatePreCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnUpdatePreCancel.Location = new System.Drawing.Point(322, 225);
+            this.btnUpdatePreCancel.Name = "btnUpdatePreCancel";
+            this.btnUpdatePreCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdatePreCancel.TabIndex = 7;
+            this.btnUpdatePreCancel.Text = "&Cancel";
+            this.btnUpdatePreCancel.UseVisualStyleBackColor = true;
+            this.btnUpdatePreCancel.Click += new System.EventHandler(this.btnUpdatePreCancel_Click);
             // 
             // dtpUpdatePreExpirationDate
             // 
@@ -248,7 +249,7 @@ namespace FinalProject
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.CancelButton = this.btnUpdatePreClear;
+            this.CancelButton = this.btnUpdatePreCancel;
             this.ClientSize = new System.Drawing.Size(556, 334);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtUpdatePrescriptionID);
@@ -257,7 +258,7 @@ namespace FinalProject
             this.Controls.Add(this.label38);
             this.Controls.Add(this.label37);
             this.Controls.Add(this.btnUpdatePreUpdate);
-            this.Controls.Add(this.btnUpdatePreClear);
+            this.Controls.Add(this.btnUpdatePreCancel);
             this.Controls.Add(this.dtpUpdatePreExpirationDate);
             this.Controls.Add(this.label24);
             this.Controls.Add(this.label23);
@@ -285,7 +286,7 @@ namespace FinalProject
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Button btnUpdatePreUpdate;
-        private System.Windows.Forms.Button btnUpdatePreClear;
+        private System.Windows.Forms.Button btnUpdatePreCancel;
         private System.Windows.Forms.DateTimePicker dtpUpdatePreExpirationDate;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label23;
