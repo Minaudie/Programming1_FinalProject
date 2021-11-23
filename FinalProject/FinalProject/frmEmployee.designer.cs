@@ -665,7 +665,7 @@ namespace FinalProject
             // txtRefPaymentType
             // 
             this.txtRefPaymentType.AutoSize = true;
-            this.txtRefPaymentType.Location = new System.Drawing.Point(282, 192);
+            this.txtRefPaymentType.Location = new System.Drawing.Point(267, 205);
             this.txtRefPaymentType.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.txtRefPaymentType.Name = "txtRefPaymentType";
             this.txtRefPaymentType.Size = new System.Drawing.Size(75, 13);
@@ -680,7 +680,7 @@ namespace FinalProject
             "Credit",
             "Debit",
             "Check"});
-            this.cboRefPaymentType.Location = new System.Drawing.Point(365, 190);
+            this.cboRefPaymentType.Location = new System.Drawing.Point(350, 203);
             this.cboRefPaymentType.Margin = new System.Windows.Forms.Padding(2);
             this.cboRefPaymentType.Name = "cboRefPaymentType";
             this.cboRefPaymentType.Size = new System.Drawing.Size(100, 21);
@@ -689,7 +689,7 @@ namespace FinalProject
             // 
             // btnRefSave
             // 
-            this.btnRefSave.Location = new System.Drawing.Point(331, 231);
+            this.btnRefSave.Location = new System.Drawing.Point(303, 244);
             this.btnRefSave.Name = "btnRefSave";
             this.btnRefSave.Size = new System.Drawing.Size(75, 23);
             this.btnRefSave.TabIndex = 7;
@@ -699,7 +699,7 @@ namespace FinalProject
             // 
             // btnRefClear
             // 
-            this.btnRefClear.Location = new System.Drawing.Point(449, 231);
+            this.btnRefClear.Location = new System.Drawing.Point(413, 244);
             this.btnRefClear.Name = "btnRefClear";
             this.btnRefClear.Size = new System.Drawing.Size(75, 23);
             this.btnRefClear.TabIndex = 8;
@@ -709,7 +709,7 @@ namespace FinalProject
             // 
             // txtRefPrescriptionID
             // 
-            this.txtRefPrescriptionID.Location = new System.Drawing.Point(365, 33);
+            this.txtRefPrescriptionID.Location = new System.Drawing.Point(350, 46);
             this.txtRefPrescriptionID.Name = "txtRefPrescriptionID";
             this.txtRefPrescriptionID.Size = new System.Drawing.Size(100, 20);
             this.txtRefPrescriptionID.TabIndex = 0;
@@ -717,7 +717,7 @@ namespace FinalProject
             // 
             // txtRefDosage
             // 
-            this.txtRefDosage.Location = new System.Drawing.Point(365, 58);
+            this.txtRefDosage.Location = new System.Drawing.Point(350, 71);
             this.txtRefDosage.Name = "txtRefDosage";
             this.txtRefDosage.Size = new System.Drawing.Size(100, 20);
             this.txtRefDosage.TabIndex = 1;
@@ -725,7 +725,7 @@ namespace FinalProject
             // 
             // txtRefFrequency
             // 
-            this.txtRefFrequency.Location = new System.Drawing.Point(365, 84);
+            this.txtRefFrequency.Location = new System.Drawing.Point(350, 97);
             this.txtRefFrequency.Name = "txtRefFrequency";
             this.txtRefFrequency.Size = new System.Drawing.Size(100, 20);
             this.txtRefFrequency.TabIndex = 2;
@@ -733,7 +733,7 @@ namespace FinalProject
             // 
             // txtRefSupplyDays
             // 
-            this.txtRefSupplyDays.Location = new System.Drawing.Point(365, 110);
+            this.txtRefSupplyDays.Location = new System.Drawing.Point(350, 123);
             this.txtRefSupplyDays.Name = "txtRefSupplyDays";
             this.txtRefSupplyDays.Size = new System.Drawing.Size(100, 20);
             this.txtRefSupplyDays.TabIndex = 3;
@@ -741,7 +741,7 @@ namespace FinalProject
             // 
             // txtRefQuantitySupplied
             // 
-            this.txtRefQuantitySupplied.Location = new System.Drawing.Point(365, 136);
+            this.txtRefQuantitySupplied.Location = new System.Drawing.Point(350, 149);
             this.txtRefQuantitySupplied.Name = "txtRefQuantitySupplied";
             this.txtRefQuantitySupplied.Size = new System.Drawing.Size(100, 20);
             this.txtRefQuantitySupplied.TabIndex = 4;
@@ -750,7 +750,7 @@ namespace FinalProject
             // txtRefPrice
             // 
             this.txtRefPrice.Enabled = false;
-            this.txtRefPrice.Location = new System.Drawing.Point(365, 162);
+            this.txtRefPrice.Location = new System.Drawing.Point(350, 175);
             this.txtRefPrice.Name = "txtRefPrice";
             this.txtRefPrice.Size = new System.Drawing.Size(100, 20);
             this.txtRefPrice.TabIndex = 5;
@@ -759,7 +759,7 @@ namespace FinalProject
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(328, 165);
+            this.label32.Location = new System.Drawing.Point(313, 178);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(31, 13);
             this.label32.TabIndex = 7;
@@ -768,7 +768,7 @@ namespace FinalProject
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(269, 140);
+            this.label31.Location = new System.Drawing.Point(254, 153);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(90, 13);
             this.label31.TabIndex = 6;
@@ -777,7 +777,7 @@ namespace FinalProject
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(282, 114);
+            this.label30.Location = new System.Drawing.Point(267, 127);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(77, 13);
             this.label30.TabIndex = 5;
@@ -786,7 +786,7 @@ namespace FinalProject
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(302, 87);
+            this.label29.Location = new System.Drawing.Point(287, 100);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(57, 13);
             this.label29.TabIndex = 4;
@@ -795,7 +795,7 @@ namespace FinalProject
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(315, 63);
+            this.label28.Location = new System.Drawing.Point(300, 76);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(44, 13);
             this.label28.TabIndex = 3;
@@ -804,7 +804,7 @@ namespace FinalProject
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(283, 36);
+            this.label27.Location = new System.Drawing.Point(268, 49);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(76, 13);
             this.label27.TabIndex = 2;
@@ -1021,7 +1021,7 @@ namespace FinalProject
             // 
             // btnPhySave
             // 
-            this.btnPhySave.Location = new System.Drawing.Point(250, 215);
+            this.btnPhySave.Location = new System.Drawing.Point(303, 215);
             this.btnPhySave.Name = "btnPhySave";
             this.btnPhySave.Size = new System.Drawing.Size(75, 23);
             this.btnPhySave.TabIndex = 5;
@@ -1031,7 +1031,7 @@ namespace FinalProject
             // 
             // btnPhyClear
             // 
-            this.btnPhyClear.Location = new System.Drawing.Point(444, 215);
+            this.btnPhyClear.Location = new System.Drawing.Point(399, 215);
             this.btnPhyClear.Name = "btnPhyClear";
             this.btnPhyClear.Size = new System.Drawing.Size(75, 23);
             this.btnPhyClear.TabIndex = 6;
@@ -1168,7 +1168,7 @@ namespace FinalProject
             "M",
             "F",
             "O"});
-            this.cboClientGender.Location = new System.Drawing.Point(243, 205);
+            this.cboClientGender.Location = new System.Drawing.Point(243, 222);
             this.cboClientGender.Margin = new System.Windows.Forms.Padding(2);
             this.cboClientGender.Name = "cboClientGender";
             this.cboClientGender.Size = new System.Drawing.Size(42, 21);
@@ -1176,21 +1176,21 @@ namespace FinalProject
             // 
             // txtClientAdd2
             // 
-            this.txtClientAdd2.Location = new System.Drawing.Point(429, 75);
+            this.txtClientAdd2.Location = new System.Drawing.Point(429, 92);
             this.txtClientAdd2.Name = "txtClientAdd2";
             this.txtClientAdd2.Size = new System.Drawing.Size(181, 20);
             this.txtClientAdd2.TabIndex = 4;
             // 
             // txtClientMidInt
             // 
-            this.txtClientMidInt.Location = new System.Drawing.Point(358, 31);
+            this.txtClientMidInt.Location = new System.Drawing.Point(358, 48);
             this.txtClientMidInt.Name = "txtClientMidInt";
             this.txtClientMidInt.Size = new System.Drawing.Size(33, 20);
             this.txtClientMidInt.TabIndex = 1;
             // 
             // btnClientSave
             // 
-            this.btnClientSave.Location = new System.Drawing.Point(243, 246);
+            this.btnClientSave.Location = new System.Drawing.Point(243, 263);
             this.btnClientSave.Name = "btnClientSave";
             this.btnClientSave.Size = new System.Drawing.Size(75, 23);
             this.btnClientSave.TabIndex = 14;
@@ -1200,7 +1200,7 @@ namespace FinalProject
             // 
             // btnClientClear
             // 
-            this.btnClientClear.Location = new System.Drawing.Point(348, 246);
+            this.btnClientClear.Location = new System.Drawing.Point(348, 263);
             this.btnClientClear.Name = "btnClientClear";
             this.btnClientClear.Size = new System.Drawing.Size(75, 23);
             this.btnClientClear.TabIndex = 15;
@@ -1210,7 +1210,7 @@ namespace FinalProject
             // 
             // txtClientDOB
             // 
-            this.txtClientDOB.Location = new System.Drawing.Point(335, 205);
+            this.txtClientDOB.Location = new System.Drawing.Point(335, 222);
             this.txtClientDOB.Name = "txtClientDOB";
             this.txtClientDOB.Size = new System.Drawing.Size(100, 20);
             this.txtClientDOB.TabIndex = 11;
@@ -1218,49 +1218,49 @@ namespace FinalProject
             // 
             // txtClientEmail
             // 
-            this.txtClientEmail.Location = new System.Drawing.Point(349, 161);
+            this.txtClientEmail.Location = new System.Drawing.Point(349, 178);
             this.txtClientEmail.Name = "txtClientEmail";
             this.txtClientEmail.Size = new System.Drawing.Size(204, 20);
             this.txtClientEmail.TabIndex = 9;
             // 
             // txtClientPhone
             // 
-            this.txtClientPhone.Location = new System.Drawing.Point(243, 161);
+            this.txtClientPhone.Location = new System.Drawing.Point(243, 178);
             this.txtClientPhone.Name = "txtClientPhone";
             this.txtClientPhone.Size = new System.Drawing.Size(100, 20);
             this.txtClientPhone.TabIndex = 8;
             // 
             // txtClientZip
             // 
-            this.txtClientZip.Location = new System.Drawing.Point(433, 115);
+            this.txtClientZip.Location = new System.Drawing.Point(433, 132);
             this.txtClientZip.Name = "txtClientZip";
             this.txtClientZip.Size = new System.Drawing.Size(82, 20);
             this.txtClientZip.TabIndex = 7;
             // 
             // txtClientState
             // 
-            this.txtClientState.Location = new System.Drawing.Point(368, 115);
+            this.txtClientState.Location = new System.Drawing.Point(368, 132);
             this.txtClientState.Name = "txtClientState";
             this.txtClientState.Size = new System.Drawing.Size(29, 20);
             this.txtClientState.TabIndex = 6;
             // 
             // txtClientCity
             // 
-            this.txtClientCity.Location = new System.Drawing.Point(243, 115);
+            this.txtClientCity.Location = new System.Drawing.Point(243, 132);
             this.txtClientCity.Name = "txtClientCity";
             this.txtClientCity.Size = new System.Drawing.Size(100, 20);
             this.txtClientCity.TabIndex = 5;
             // 
             // txtClientAddress
             // 
-            this.txtClientAddress.Location = new System.Drawing.Point(243, 75);
+            this.txtClientAddress.Location = new System.Drawing.Point(243, 92);
             this.txtClientAddress.Name = "txtClientAddress";
             this.txtClientAddress.Size = new System.Drawing.Size(181, 20);
             this.txtClientAddress.TabIndex = 3;
             // 
             // txtClientLName
             // 
-            this.txtClientLName.Location = new System.Drawing.Point(429, 31);
+            this.txtClientLName.Location = new System.Drawing.Point(429, 48);
             this.txtClientLName.Name = "txtClientLName";
             this.txtClientLName.Size = new System.Drawing.Size(100, 20);
             this.txtClientLName.TabIndex = 2;
@@ -1268,7 +1268,7 @@ namespace FinalProject
             // 
             // txtClientFName
             // 
-            this.txtClientFName.Location = new System.Drawing.Point(243, 31);
+            this.txtClientFName.Location = new System.Drawing.Point(243, 48);
             this.txtClientFName.Name = "txtClientFName";
             this.txtClientFName.Size = new System.Drawing.Size(100, 20);
             this.txtClientFName.TabIndex = 0;
@@ -1280,7 +1280,7 @@ namespace FinalProject
             this.label35.BackColor = System.Drawing.Color.Transparent;
             this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label35.ForeColor = System.Drawing.Color.Red;
-            this.label35.Location = new System.Drawing.Point(436, 189);
+            this.label35.Location = new System.Drawing.Point(436, 206);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(13, 16);
             this.label35.TabIndex = 35;
@@ -1289,7 +1289,7 @@ namespace FinalProject
             // label41
             // 
             this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(429, 59);
+            this.label41.Location = new System.Drawing.Point(429, 76);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(51, 13);
             this.label41.TabIndex = 34;
@@ -1298,7 +1298,7 @@ namespace FinalProject
             // label40
             // 
             this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(355, 15);
+            this.label40.Location = new System.Drawing.Point(355, 32);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(42, 13);
             this.label40.TabIndex = 33;
@@ -1311,7 +1311,7 @@ namespace FinalProject
             this.label33.BackColor = System.Drawing.Color.Transparent;
             this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label33.ForeColor = System.Drawing.Color.Red;
-            this.label33.Location = new System.Drawing.Point(285, 188);
+            this.label33.Location = new System.Drawing.Point(285, 205);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(13, 16);
             this.label33.TabIndex = 31;
@@ -1323,7 +1323,7 @@ namespace FinalProject
             this.label22.BackColor = System.Drawing.Color.Transparent;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.ForeColor = System.Drawing.Color.Red;
-            this.label22.Location = new System.Drawing.Point(484, 16);
+            this.label22.Location = new System.Drawing.Point(484, 33);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(13, 16);
             this.label22.TabIndex = 29;
@@ -1335,7 +1335,7 @@ namespace FinalProject
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.Red;
-            this.label12.Location = new System.Drawing.Point(305, 15);
+            this.label12.Location = new System.Drawing.Point(305, 32);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(13, 16);
             this.label12.TabIndex = 28;
@@ -1345,7 +1345,7 @@ namespace FinalProject
             // 
             this.label11.AutoSize = true;
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label11.Location = new System.Drawing.Point(332, 191);
+            this.label11.Location = new System.Drawing.Point(332, 208);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(105, 13);
             this.label11.TabIndex = 10;
@@ -1355,7 +1355,7 @@ namespace FinalProject
             // 
             this.label10.AutoSize = true;
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label10.Location = new System.Drawing.Point(243, 188);
+            this.label10.Location = new System.Drawing.Point(243, 205);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(42, 13);
             this.label10.TabIndex = 9;
@@ -1365,7 +1365,7 @@ namespace FinalProject
             // 
             this.label9.AutoSize = true;
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label9.Location = new System.Drawing.Point(349, 145);
+            this.label9.Location = new System.Drawing.Point(349, 162);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(32, 13);
             this.label9.TabIndex = 8;
@@ -1374,7 +1374,7 @@ namespace FinalProject
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(408, 251);
+            this.label8.Location = new System.Drawing.Point(408, 268);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(0, 13);
             this.label8.TabIndex = 7;
@@ -1383,7 +1383,7 @@ namespace FinalProject
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label7.Location = new System.Drawing.Point(243, 145);
+            this.label7.Location = new System.Drawing.Point(243, 162);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(38, 13);
             this.label7.TabIndex = 6;
@@ -1393,7 +1393,7 @@ namespace FinalProject
             // 
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label6.Location = new System.Drawing.Point(430, 101);
+            this.label6.Location = new System.Drawing.Point(430, 118);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(50, 13);
             this.label6.TabIndex = 5;
@@ -1403,7 +1403,7 @@ namespace FinalProject
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label5.Location = new System.Drawing.Point(365, 101);
+            this.label5.Location = new System.Drawing.Point(365, 118);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(32, 13);
             this.label5.TabIndex = 4;
@@ -1413,7 +1413,7 @@ namespace FinalProject
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label4.Location = new System.Drawing.Point(243, 101);
+            this.label4.Location = new System.Drawing.Point(243, 118);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(24, 13);
             this.label4.TabIndex = 3;
@@ -1423,7 +1423,7 @@ namespace FinalProject
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label3.Location = new System.Drawing.Point(243, 58);
+            this.label3.Location = new System.Drawing.Point(243, 75);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(45, 13);
             this.label3.TabIndex = 2;
@@ -1433,7 +1433,7 @@ namespace FinalProject
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label2.Location = new System.Drawing.Point(429, 18);
+            this.label2.Location = new System.Drawing.Point(429, 35);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 13);
             this.label2.TabIndex = 1;
@@ -1443,7 +1443,7 @@ namespace FinalProject
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(243, 15);
+            this.label1.Location = new System.Drawing.Point(243, 32);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 13);
             this.label1.TabIndex = 0;
@@ -1471,7 +1471,7 @@ namespace FinalProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(795, 348);
+            this.ClientSize = new System.Drawing.Size(795, 465);
             this.Controls.Add(this.tabEmployee);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmEmployee";
